@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mundial 2026 — Resultados y Clasificación</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --card: #1a1a2e;
+    --border: #2a2a4a;
+    --text: #e0e0f0;
+    --muted: #8888aa;
+    --accent: #00d4aa;
+    --green: #00c853;
+    --yellow: #ffd600;
+    --red: #ff1744;
+    --orange: #ff9100;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+    color: #fff;
+  }
+  .subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 0.8rem;
+  }
+  .legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+  .dot.green { background: var(--green); }
+  .dot.yellow { background: var(--yellow); }
+  .dot.orange { background: var(--orange); }
+  .dot.red { background: var(--red); }
+
+  .groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .group-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .group-card h2 {
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+  }
+  th {
+    text-align: left;
+    color: var(--muted);
+    font-weight: 500;
+    padding: 4px 3px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  th.pts { text-align: center; width: 28px; }
+  th.status { text-align: center; width: 40px; }
+  td { padding: 5px 3px; border-top: 1px solid rgba(255,255,255,0.04); }
+  td.team { font-weight: 500; }
+  td.pts { text-align: center; font-weight: 700; }
+  td.status { text-align: center; font-size: 1rem; }
+  .flag { font-size: 1.1rem; margin-right: 4px; }
+  .matches {
+    margin-top: 6px;
+    font-size: 0.7rem;
+    color: var(--muted);
+    line-height: 1.5;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .matches span { display: inline; }
+  .win { color: var(--green); }
+  .draw { color: var(--yellow); }
+  .loss { color: var(--red); }
+  .tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    padding: 1px 6px;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .tag-green { background: rgba(0,200,83,0.15); color: var(--green); }
+  .tag-yellow { background: rgba(255,214,0,0.15); color: var(--yellow); }
+  .tag-orange { background: rgba(255,145,0,0.15); color: var(--orange); }
+  .tag-red { background: rgba(255,23,68,0.15); color: var(--red); }
+
+  .footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+  @media (max-width: 480px) {
+    .groups-grid { grid-template-columns: 1fr; }
+    body { padding: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>⚽ Mundial 2026</h1>
+<p class="subtitle">Resultados y situación de clasificación — Actualizado 24 Jun 2026 (antes de partidos de hoy)</p>
+
+<div class="legend">
+  <span><span class="dot green"></span> Clasificado</span>
+  <span><span class="dot yellow"></span> Depende de sí mismo</span>
+  <span><span class="dot orange"></span> Necesita combo</span>
+  <span><span class="dot red"></span> Eliminado</span>
+</div>
+
+<div class="groups-grid" id="app"></div>
+
+<div class="footer">
+  Datos: TUDN · DAZN · Olympics.com · Marca — <a href="#" style="color:var(--accent);" onclick="location.reload()">↻ Recargar</a>
+</div>
+
+<script>
+const groups = [
+  {
+    name: "Grupo A",
+    teams: [
+      { flag: "🇲🇽", name: "México", pts: 6, dg: "+3", status: "✅", tag: "Clasificado", tagClass: "green",
+        matches: "🇲🇽 2–0 🇿🇦 W · 🇲🇽 1–0 🇰🇷 W" },
+      { flag: "🇰🇷", name: "Corea del Sur", pts: 3, dg: "0", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
+        matches: "🇰🇷 2–1 🇨🇿 W · 🇰🇷 0–1 🇲🇽 L" },
+      { flag: "🇨🇿", name: "Rep. Checa", pts: 1, dg: "-1", status: "🛟", tag: "Casi imposible", tagClass: "orange",
+        matches: "🇨🇿 1–2 🇰🇷 L · 🇨🇿 1–1 🇿🇦 D" },
+      { flag: "🇿🇦", name: "Sudáfrica", pts: 1, dg: "-2", status: "🛟", tag: "Casi imposible", tagClass: "orange",
+        matches: "🇿🇦 0–2 🇲🇽 L · 🇿🇦 1–1 🇨🇿 D" }
+    ]
+  },
+  {
+    name: "Grupo B",
+    teams: [
+      { flag: "🇨🇦", name: "Canadá", pts: 4, dg: "+6", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
+        matches: "🇨🇦 1–1 🇧🇦 D · 🇨🇦 6–0 🇶🇦 W" },
+      { flag: "🇨🇭", name: "Suiza", pts: 4, dg: "+3", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
+        matches: "🇨🇭 1–1 🇶🇦 D · 🇨🇭 4–1 🇧🇦 W" },
+      { flag: "🇧🇦", name: "Bosnia H.", pts: 1, dg: "-3", status: "🛟", tag: "Difícil", tagClass: "orange",
+        matches: "🇧🇦 1–1 🇨🇦 D · 🇧🇦 1–4 🇨🇭 L" },
+      { flag: "🇶🇦", name: "Qatar", pts: 1, dg: "-6", status: "🛟", tag: "Casi imposible", tagClass: "orange",
+        matches: "🇶🇦 1–1 🇨🇭 D · 🇶🇦 0–6 🇨🇦 L" }
+    ]
+  },
+  {
+    name: "Grupo C",
+    teams: [
+      { flag: "🇧🇷", name: "Brasil", pts: 7, dg: "+4", status: "✅", tag: "Clasificado", tagClass: "green",
+        matches: "🇧🇷 1–1 🇲🇦 D · 🇧🇷 3–0 🇭🇹 W · 🏴󠁧󠁢󠁳󠁣󠁴󠁿 0–1 🇧🇷 W" },
+      { flag: "🇲🇦", name: "Marruecos", pts: 7, dg: "+4", status: "✅", tag: "Clasificado", tagClass: "green",
+        matches: "🇲🇦 1–1 🇧🇷 D · 🇲🇦 3–0 🇭🇹 W · 🇲🇦 1–0 🏴󠁧󠁢󠁳󠁣󠁴󠁿 W" },
+      { flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", name: "Escocia", pts: 3, dg: "-1", status: "🛟", tag: "Combo", tagClass: "orange",
+        matches: "🏴󠁧󠁢󠁳󠁣󠁴󠁿 1–0 🇭🇹 W · 🏴󠁧󠁢󠁳󠁣󠁴󠁿 0–1 🇧🇷 L · 🏴󠁧󠁢󠁳󠁣󠁴󠁿 0–1 🇲🇦 L" },
+      { flag: "🇭🇹", name: "Haití", pts: 0, dg: "-7", status: "⛔", tag: "Eliminado", tagClass: "red",
+        matches: "🇭🇹 0–1 🏴󠁧󠁢󠁳󠁣󠁴󠁿 L · 🇭🇹 0–3 🇧🇷 L · 🇭🇹 0–3 🇲🇦 L" }
+    ]
+  },
+  {
+    name: "Grupo D",
+    teams: [
+      { flag: "🇺🇸", name: "EE.UU.", pts: 6, dg: "+5", status: "✅", tag: "Clasificado", tagClass: "green",
+        matches: "🇺🇸 4–1 🇵🇾 W · 🇺🇸 2–0 🇦🇺 W" },
+      { flag: "🇦🇺", name: "Australia", pts: 3, dg: "0", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
+        matches: "🇦🇺 2–0 🇹🇷 W · 🇦🇺 0–2 🇺🇸 L" },
+      { flag: "🇵🇾", name: "Paraguay", pts: 3, dg: "-2", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
+        matches: "🇵🇾 1–4 🇺🇸 L · 🇵🇾 1–0 🇹🇷 W" },
+      { flag: "🇹🇷", name: "Turquía", pts: 0, dg: "-5", status: "⛔", tag: "Eliminado", tagClass: "red",
+        matches: "🇹🇷 0–2 🇦🇺 L · 🇹🇷 0–1 🇵🇾 L" }
+    ]
+  },
+  {
+    name: "Grupo E",
+    teams: [
+      { flag: "🇩🇪", name: "Alemania", pts: 6, dg: "+7", status: "✅", tag: "Clasificado", tagClass: "green",
+        matches: "🇩🇪 7–1 🇨🇼 W · 🇩🇪 2–1 🇨🇮 W" },
+      { flag: "🇨🇮", name: "Costa de Marfil", pts: 3, dg: "+1", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
+        matches: "🇨🇮 1–0 🇪🇨 W · 🇨🇮 1–2 🇩🇪 L" },
+      { flag: "🇪🇨", name: "Ecuador", pts: 1, dg: "-1", status: "🛟", tag: "Difícil", tagClass: "orange",
+        matches: "🇪🇨 0–1 🇨🇮 L · 🇪🇨 0–0 🇨🇼 D" },
+      { flag: "🇨🇼", name: "Curazao", pts: 1, dg: "-7", status: "🛟", tag: "Difícil", tagClass: "orange",
+        matches: "🇨🇼 1–7 🇩🇪 L · 🇨🇼 0–0 🇪🇨 D" }
+    ]
+  },
+  {
+    name: "Grupo F",
+    teams: [
+      { flag: "🇳🇱", name: "Países Bajos", pts: 4, dg: "+4", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
+        matches: "🇳🇱 2–2 🇯🇵 D · 🇳🇱 5–1 🇸🇪 W" },
+      { flag: "🇯🇵", name: "Japón", pts: 4, dg: "+4", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
+        matches: "🇯🇵 2–2 🇳🇱 D · 🇯🇵 4–0 🇹🇳 W" },
+      { flag: "🇸🇪", name: "Suecia", pts: 3, dg: "0", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
+        matches: "🇸🇪 5–1 🇹🇳 W · 🇸🇪 1–5 🇳🇱 L" },
+      { flag: "🇹🇳", name: "Túnez", pts: 0, dg: "-8", status: "🛟", tag: "Milagro", tagClass: "orange",
+        matches: "🇹🇳 1–5 🇸🇪 L · 🇹🇳 0–4 🇯🇵 L" }
+    ]
+  },
+  {
+    name: "Grupo G",
+    teams: [
+      { flag: "🇪🇬", name: "Egipto", pts: 7, dg: "+4", status: "✅", tag: "Clasificado", tagClass: "green",
+        matches: "🇪🇬 1–1 🇧🇪 D · 🇪🇬 2–1 🇮🇷 W · 🇳🇿 1–3 🇪🇬 W" },
+      { flag: "🇮🇷", name: "Irán", pts: 2, dg: "0", status: "🛟", tag: "Gana + combo", tagClass: "orange",
+        matches: "🇮🇷 2–2 🇳🇿 D · 🇮🇷 0–0 🇧🇪 D · 🇮🇷 1–2 🇪🇬 L" },
+      { flag: "🇧🇪", name: "Bélgica", pts: 2, dg: "0", status: "🛟", tag: "Gana + combo", tagClass: "orange",
+        matches: "🇧🇪 1–1 🇪🇬 D · 🇧🇪 0–0 🇮🇷 D" },
+      { flag: "🇳🇿", name: "N. Zelanda", pts: 1, dg: "-2", status: "🛟", tag: "Difícil", tagClass: "orange",
+        matches: "🇳🇿 2–2 🇮🇷 D · 🇳🇿 1–3 🇪🇬 L" }
+    ]
+  },
+  {
+    name: "Grupo H",
+    teams: [
+      { flag: "🇪🇸", name: "España", pts: 4, dg: "+4", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
+        matches: "🇪🇸 0–0 🇨🇻 D · 🇪🇸 4–0 🇸🇦 W" },
+      { flag: "🇺🇾", name: "Uruguay", pts: 2, dg: "0", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
+        matches: "🇺🇾 1–1 🇸🇦 D · 🇺🇾 2–2 🇨🇻 D" },
+      { flag: "🇨🇻", name: "Cabo Verde", pts: 2, dg: "0", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
+        matches: "🇨🇻 0–0 🇪🇸 D · 🇨🇻 2–2 🇺🇾 D" },
+      { flag: "🇸🇦", name: "Arabia Saudita", pts: 1, dg: "-4", status: "🛟", tag: "Difícil", tagClass: "orange",
+        matches: "🇸🇦 1–1 🇺🇾 D · 🇸🇦 0–4 🇪🇸 L" }
+    ]
+  },
+  {
+    name: "Grupo I",
+    teams: [
+      { flag: "🇫🇷", name: "Francia", pts: 6, dg: "+5", status: "✅", tag: "Clasificada", tagClass: "green",
+        matches: "🇫🇷 3–1 🇸🇳 W · 🇫🇷 3–0 🇮🇶 W" },
+      { flag: "🇳🇴", name: "Noruega", pts: 6, dg: "+4", status: "✅", tag: "Clasificada", tagClass: "green",
+        matches: "🇳🇴 4–1 🇮🇶 W · 🇳🇴 3–2 🇸🇳 W" },
+      { flag: "🇸🇳", name: "Senegal", pts: 0, dg: "-3", status: "🛟", tag: "Milagro", tagClass: "orange",
+        matches: "🇸🇳 1–3 🇫🇷 L · 🇸🇳 2–3 🇳🇴 L" },
+      { flag: "🇮🇶", name: "Irak", pts: 0, dg: "-6", status: "⛔", tag: "Eliminado", tagClass: "red",
+        matches: "🇮🇶 1–4 🇳🇴 L · 🇮🇶 0–3 🇫🇷 L" }
+    ]
+  },
+  {
+    name: "Grupo J",
+    teams: [
+      { flag: "🇦🇷", name: "Argentina", pts: 6, dg: "+5", status: "✅", tag: "Clasificada", tagClass: "green",
+        matches: "🇦🇷 3–0 🇩🇿 W · 🇦🇷 2–0 🇦🇹 W" },
+      { flag: "🇦🇹", name: "Austria", pts: 3, dg: "0", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
+        matches: "🇦🇹 3–1 🇯🇴 W · 🇦🇹 0–2 🇦🇷 L" },
+      { flag: "🇩🇿", name: "Argelia", pts: 3, dg: "-2", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
+        matches: "🇩🇿 0–3 🇦🇷 L · 🇩🇿 2–1 🇯🇴 W" },
+      { flag: "🇯🇴", name: "Jordania", pts: 0, dg: "-3", status: "🛟", tag: "Milagro", tagClass: "orange",
+        matches: "🇯🇴 1–3 🇦🇹 L · 🇯🇴 1–2 🇩🇿 L" }
+    ]
+  },
+  {
+    name: "Grupo K",
+    teams: [
+      { flag: "🇨🇴", name: "Colombia", pts: 6, dg: "+3", status: "✅", tag: "Clasificada", tagClass: "green",
+        matches: "🇨🇴 3–1 🇺🇿 W · 🇨🇴 1–0 🇨🇩 W" },
+      { flag: "🇵🇹", name: "Portugal", pts: 4, dg: "+5", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
+        matches: "🇵🇹 1–1 🇨🇴 D · 🇵🇹 5–0 🇺🇿 W" },
+      { flag: "🇨🇩", name: "RD Congo", pts: 3, dg: "-1", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
+        matches: "🇨🇩 1–0 🇺🇿 W · 🇨🇩 0–1 🇨🇴 L" },
+      { flag: "🇺🇿", name: "Uzbekistán", pts: 0, dg: "-7", status: "🛟", tag: "Milagro", tagClass: "orange",
+        matches: "🇺🇿 1–3 🇨🇴 L · 🇺🇿 0–1 🇨🇩 L · 🇺🇿 0–5 🇵🇹 L" }
+    ]
+  },
+  {
+    name: "Grupo L",
+    teams: [
+      { flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", name: "Inglaterra", pts: 4, dg: "+2", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
+        matches: "🏴󠁧󠁢󠁥󠁮󠁧󠁿 4–2 🇭🇷 W · 🏴󠁧󠁢󠁥󠁮󠁧󠁿 0–0 🇬🇭 D" },
+      { flag: "🇬🇭", name: "Ghana", pts: 4, dg: "+1", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
+        matches: "🇬🇭 1–0 🇵🇦 W · 🇬🇭 0–0 🏴󠁧󠁢󠁥󠁮󠁧󠁿 D" },
+      { flag: "🇭🇷", name: "Croacia", pts: 3, dg: "-1", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
+        matches: "🇭🇷 2–4 🏴󠁧󠁢󠁥󠁮󠁧󠁿 L · 🇭🇷 1–0 🇵🇦 W" },
+      { flag: "🇵🇦", name: "Panamá", pts: 0, dg: "-2", status: "⛔", tag: "Eliminado", tagClass: "red",
+        matches: "🇵🇦 0–1 🇬🇭 L · 🇵🇦 0–1 🇭🇷 L" }
+    ]
+  }
+];
+
+function tagHtml(text, cls) {
+  return '<span class="tag tag-' + cls + '">' + text + '</span>';
+}
+
+function matchesHtml(arr) {
+  return arr.map(m => {
+    if (m.includes('W')) return '<span class="win">' + m.replace(' W', ' ✅') + '</span>';
+    if (m.includes('D')) return '<span class="draw">' + m.replace(' D', ' ⚖️') + '</span>';
+    if (m.includes('L')) return '<span class="loss">' + m.replace(' L', ' ❌') + '</span>';
+    return m;
+  }).join(' · ');
+}
+
+function render() {
+  const container = document.getElementById('app');
+  groups.forEach(g => {
+    const card = document.createElement('div');
+    card.className = 'group-card';
+    let html = '<h2>' + g.name + '</h2>';
+    html += '<table><thead><tr><th>Equipo</th><th class="pts">Pts</th><th>DG</th><th class="status"></th></tr></thead><tbody>';
+    g.teams.forEach(t => {
+      html += '<tr>';
+      html += '<td class="team"><span class="flag">' + t.flag + '</span>' + t.name + '</td>';
+      html += '<td class="pts">' + t.pts + '</td>';
+      html += '<td>' + t.dg + '</td>';
+      html += '<td class="status">' + t.status + '</td>';
+      html += '</tr>';
+      html += '<tr><td colspan="4" class="matches">' + matchesHtml(t.matches.split(' · '));
+      html += ' &nbsp;—&nbsp; ' + tagHtml(t.tag, t.tagClass);
+      html += '</td></tr>';
+    });
+    html += '</tbody></table>';
+    card.innerHTML = html;
+    container.appendChild(card);
+  });
+}
+render();
+</script>
+</body>
+</html>
