@@ -291,8 +291,8 @@
     letter-spacing: 0.3px;
   }
   .status-clasificado { background: rgba(16,185,129,0.12); color: var(--green); }
-  .status-manos { background: rgba(246,168,33,0.12); color: var(--gold); }
-  .status-ayuda { background: rgba(249,115,22,0.12); color: var(--orange); }
+  .status-comodo { background: rgba(0,180,184,0.12); color: var(--teal); }
+  .status-complicado { background: rgba(249,115,22,0.12); color: var(--orange); }
   .status-eliminado { background: rgba(239,68,68,0.12); color: var(--red); }
 
   /* ═══════════ TEAM DETAIL ROW ═══════════ */
@@ -326,8 +326,8 @@
   .group-reqs strong { color: var(--text); }
   .group-reqs .req-item { padding: 2px 0; }
   .group-reqs .req-clasif { color: var(--green); }
-  .group-reqs .req-manos { color: var(--gold); }
-  .group-reqs .req-ayuda { color: var(--orange); }
+  .group-reqs .req-comodo { color: var(--teal); }
+  .group-reqs .req-complicado { color: var(--orange); }
   .group-reqs .req-elim { color: var(--red); }
 
   /* ═══════════ FOOTER ═══════════ */
@@ -371,8 +371,8 @@
 <!-- ═══════════ LEGEND ═══════════ -->
 <div class="legend">
   <div class="legend-item"><span class="legend-dot" style="background:var(--green)"></span> Clasificado</div>
-  <div class="legend-item"><span class="legend-dot" style="background:var(--gold)"></span> Depende de sí</div>
-  <div class="legend-item"><span class="legend-dot" style="background:var(--orange)"></span> Necesita ayuda</div>
+  <div class="legend-item"><span class="legend-dot" style="background:var(--teal)"></span> Cómodo</div>
+  <div class="legend-item"><span class="legend-dot" style="background:var(--orange)"></span> Complicado</div>
   <div class="legend-item"><span class="legend-dot" style="background:var(--red)"></span> Eliminado</div>
 </div>
 
@@ -397,13 +397,13 @@ const groups = [
       { flag:"🇲🇽",name:"México",pts:6,pp:0,dg:"+3",status:"Clasificado",sClass:"clasificado",
         played:[{t:"🇿🇦 Sudáfrica",s:"2–0",r:"w"},{t:"🇰🇷 Corea del Sur",s:"1–0",r:"w"}],
         pending:[],req:"" },
-      { flag:"🇰🇷",name:"Corea del Sur",pts:3,pp:1,dg:"0",status:"En sus manos",sClass:"manos",
+      { flag:"🇰🇷",name:"Corea del Sur",pts:3,pp:1,dg:"0",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇨🇿 Rep. Checa",s:"2–1",r:"w"},{t:"🇲🇽 México",s:"0–1",r:"l"}],
         pending:[{d:"24 Jun 22:00",v:"Sudáfrica"}],req:"Ganando clasifica; empatando espera ser 3°" },
-      { flag:"🇨🇿",name:"Rep. Checa",pts:1,pp:1,dg:"-1",status:"Necesita ayuda",sClass:"ayuda",
+      { flag:"🇨🇿",name:"Rep. Checa",pts:1,pp:1,dg:"-1",status:"Complicado",sClass:"complicado",
         played:[{t:"🇰🇷 Corea del Sur",s:"1–2",r:"l"},{t:"🇿🇦 Sudáfrica",s:"1–1",r:"d"}],
         pending:[{d:"24 Jun 22:00",v:"México"}],req:"Ganar + que Corea pierda + remontar 2 goles de DG" },
-      { flag:"🇿🇦",name:"Sudáfrica",pts:1,pp:1,dg:"-2",status:"Necesita ayuda",sClass:"ayuda",
+      { flag:"🇿🇦",name:"Sudáfrica",pts:1,pp:1,dg:"-2",status:"Complicado",sClass:"complicado",
         played:[{t:"🇲🇽 México",s:"0–2",r:"l"},{t:"🇨🇿 Rep. Checa",s:"1–1",r:"d"}],
         pending:[{d:"24 Jun 22:00",v:"Corea del Sur"}],req:"Ganar + que Checa no gane + remontar DG" }
     ],
@@ -418,16 +418,16 @@ const groups = [
   {
     name:"Grupo B",
     teams:[
-      { flag:"🇨🇦",name:"Canadá",pts:4,pp:1,dg:"+6",status:"En sus manos",sClass:"manos",
+      { flag:"🇨🇦",name:"Canadá",pts:4,pp:1,dg:"+6",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇧🇦 Bosnia H.",s:"1–1",r:"d"},{t:"🇶🇦 Qatar",s:"6–0",r:"w"}],
         pending:[{d:"24 Jun 16:00",v:"Suiza"}],req:"Empatando clasifica; ganando es 1°" },
-      { flag:"🇨🇭",name:"Suiza",pts:4,pp:1,dg:"+3",status:"En sus manos",sClass:"manos",
+      { flag:"🇨🇭",name:"Suiza",pts:4,pp:1,dg:"+3",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇶🇦 Qatar",s:"1–1",r:"d"},{t:"🇧🇦 Bosnia H.",s:"4–1",r:"w"}],
         pending:[{d:"24 Jun 16:00",v:"Canadá"}],req:"Empatando clasifica; ganando es 1°" },
-      { flag:"🇧🇦",name:"Bosnia H.",pts:1,pp:1,dg:"-3",status:"Necesita ayuda",sClass:"ayuda",
+      { flag:"🇧🇦",name:"Bosnia H.",pts:1,pp:1,dg:"-3",status:"Complicado",sClass:"complicado",
         played:[{t:"🇨🇦 Canadá",s:"1–1",r:"d"},{t:"🇨🇭 Suiza",s:"1–4",r:"l"}],
         pending:[{d:"24 Jun 16:00",v:"Qatar"}],req:"Ganar + que Suiza-Canadá no empaten + remontar 3 goles DG" },
-      { flag:"🇶🇦",name:"Qatar",pts:1,pp:1,dg:"-6",status:"Necesita ayuda",sClass:"ayuda",
+      { flag:"🇶🇦",name:"Qatar",pts:1,pp:1,dg:"-6",status:"Complicado",sClass:"complicado",
         played:[{t:"🇨🇭 Suiza",s:"1–1",r:"d"},{t:"🇨🇦 Canadá",s:"0–6",r:"l"}],
         pending:[{d:"24 Jun 16:00",v:"Bosnia H."}],req:"Ganar por goleada + que el otro resultado ayude + remontar 6 goles DG" }
     ],
@@ -441,13 +441,13 @@ const groups = [
   {
     name:"Grupo C",
     teams:[
-      { flag:"🇧🇷",name:"Brasil",pts:4,pp:1,dg:"+3",status:"En sus manos",sClass:"manos",
+      { flag:"🇧🇷",name:"Brasil",pts:4,pp:1,dg:"+3",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇲🇦 Marruecos",s:"1–1",r:"d"},{t:"🇭🇹 Haití",s:"3–0",r:"w"}],
         pending:[{d:"24 Jun 19:00",v:"Escocia"}],req:"Empatando clasifica; ganando es 1°" },
-      { flag:"🇲🇦",name:"Marruecos",pts:4,pp:1,dg:"+1",status:"En sus manos",sClass:"manos",
+      { flag:"🇲🇦",name:"Marruecos",pts:4,pp:1,dg:"+1",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇧🇷 Brasil",s:"1–1",r:"d"},{t:"🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia",s:"1–0",r:"w"}],
         pending:[{d:"24 Jun 19:00",v:"Haití"}],req:"Empatando clasifica; ganando puede ser 1°" },
-      { flag:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",name:"Escocia",pts:3,pp:1,dg:"0",status:"En sus manos",sClass:"manos",
+      { flag:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",name:"Escocia",pts:3,pp:1,dg:"0",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇭🇹 Haití",s:"1–0",r:"w"},{t:"🇲🇦 Marruecos",s:"0–1",r:"l"}],
         pending:[{d:"24 Jun 19:00",v:"Brasil"}],req:"Ganándole a Brasil clasifica como 1° o 2°" },
       { flag:"🇭🇹",name:"Haití",pts:0,pp:1,dg:"-4",status:"Eliminado",sClass:"eliminado",
@@ -467,10 +467,10 @@ const groups = [
       { flag:"🇺🇸",name:"EE.UU.",pts:6,pp:1,dg:"+5",status:"Clasificado",sClass:"clasificado",
         played:[{t:"🇵🇾 Paraguay",s:"4–1",r:"w"},{t:"🇦🇺 Australia",s:"2–0",r:"w"}],
         pending:[{d:"25 Jun 23:00",v:"Turquía"}],req:"" },
-      { flag:"🇦🇺",name:"Australia",pts:3,pp:1,dg:"0",status:"En sus manos",sClass:"manos",
+      { flag:"🇦🇺",name:"Australia",pts:3,pp:1,dg:"0",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇹🇷 Turquía",s:"2–0",r:"w"},{t:"🇺🇸 EE.UU.",s:"0–2",r:"l"}],
         pending:[{d:"25 Jun 23:00",v:"Paraguay"}],req:"Ganándole a Paraguay clasifica; empate le basta por DG" },
-      { flag:"🇵🇾",name:"Paraguay",pts:3,pp:1,dg:"-2",status:"En sus manos",sClass:"manos",
+      { flag:"🇵🇾",name:"Paraguay",pts:3,pp:1,dg:"-2",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇺🇸 EE.UU.",s:"1–4",r:"l"},{t:"🇹🇷 Turquía",s:"1–0",r:"w"}],
         pending:[{d:"25 Jun 23:00",v:"Australia"}],req:"Ganándole a Australia clasifica" },
       { flag:"🇹🇷",name:"Turquía",pts:0,pp:1,dg:"-5",status:"Eliminado",sClass:"eliminado",
@@ -489,13 +489,13 @@ const groups = [
       { flag:"🇩🇪",name:"Alemania",pts:6,pp:1,dg:"+7",status:"Clasificado",sClass:"clasificado",
         played:[{t:"🇨🇼 Curazao",s:"7–1",r:"w"},{t:"🇨🇮 Costa de Marfil",s:"2–1",r:"w"}],
         pending:[{d:"25 Jun 17:00",v:"Ecuador"}],req:"" },
-      { flag:"🇨🇮",name:"Costa de Marfil",pts:3,pp:1,dg:"+1",status:"En sus manos",sClass:"manos",
+      { flag:"🇨🇮",name:"Costa de Marfil",pts:3,pp:1,dg:"+1",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇪🇨 Ecuador",s:"1–0",r:"w"},{t:"🇩🇪 Alemania",s:"1–2",r:"l"}],
         pending:[{d:"25 Jun 17:00",v:"Curazao"}],req:"Ganándole a Curazao clasifica" },
-      { flag:"🇪🇨",name:"Ecuador",pts:1,pp:1,dg:"-1",status:"Necesita ayuda",sClass:"ayuda",
+      { flag:"🇪🇨",name:"Ecuador",pts:1,pp:1,dg:"-1",status:"Complicado",sClass:"complicado",
         played:[{t:"🇨🇮 Costa de Marfil",s:"0–1",r:"l"},{t:"🇨🇼 Curazao",s:"0–0",r:"d"}],
         pending:[{d:"25 Jun 17:00",v:"Alemania"}],req:"Ganarle a Alemania + que Costa de Marfil pierda + remontar 2 goles DG" },
-      { flag:"🇨🇼",name:"Curazao",pts:1,pp:1,dg:"-7",status:"Necesita ayuda",sClass:"ayuda",
+      { flag:"🇨🇼",name:"Curazao",pts:1,pp:1,dg:"-7",status:"Complicado",sClass:"complicado",
         played:[{t:"🇩🇪 Alemania",s:"1–7",r:"l"},{t:"🇪🇨 Ecuador",s:"0–0",r:"d"}],
         pending:[{d:"25 Jun 17:00",v:"Costa de Marfil"}],req:"Golear a Costa de Marfil + que Ecuador no gane + remontar 8 goles DG" }
     ],
@@ -510,16 +510,16 @@ const groups = [
   {
     name:"Grupo F",
     teams:[
-      { flag:"🇳🇱",name:"Países Bajos",pts:4,pp:1,dg:"+4",status:"En sus manos",sClass:"manos",
+      { flag:"🇳🇱",name:"Países Bajos",pts:4,pp:1,dg:"+4",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇯🇵 Japón",s:"2–2",r:"d"},{t:"🇸🇪 Suecia",s:"5–1",r:"w"}],
         pending:[{d:"25 Jun 20:00",v:"Túnez"}],req:"Empatando clasifica; ganando es 1°" },
-      { flag:"🇯🇵",name:"Japón",pts:4,pp:1,dg:"+4",status:"En sus manos",sClass:"manos",
+      { flag:"🇯🇵",name:"Japón",pts:4,pp:1,dg:"+4",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇳🇱 Países Bajos",s:"2–2",r:"d"},{t:"🇹🇳 Túnez",s:"4–0",r:"w"}],
         pending:[{d:"25 Jun 20:00",v:"Suecia"}],req:"Empatando clasifica; ganando es 1°" },
-      { flag:"🇸🇪",name:"Suecia",pts:3,pp:1,dg:"0",status:"En sus manos",sClass:"manos",
+      { flag:"🇸🇪",name:"Suecia",pts:3,pp:1,dg:"0",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇹🇳 Túnez",s:"5–1",r:"w"},{t:"🇳🇱 Países Bajos",s:"1–5",r:"l"}],
         pending:[{d:"25 Jun 20:00",v:"Japón"}],req:"Ganándole a Japón clasifica directo" },
-      { flag:"🇹🇳",name:"Túnez",pts:0,pp:1,dg:"-8",status:"Necesita ayuda",sClass:"ayuda",
+      { flag:"🇹🇳",name:"Túnez",pts:0,pp:1,dg:"-8",status:"Complicado",sClass:"complicado",
         played:[{t:"🇸🇪 Suecia",s:"1–5",r:"l"},{t:"🇯🇵 Japón",s:"0–4",r:"l"}],
         pending:[{d:"25 Jun 20:00",v:"Países Bajos"}],req:"Golear a Países Bajos + Suecia pierda + remontar 8 goles DG" }
     ],
@@ -533,16 +533,16 @@ const groups = [
   {
     name:"Grupo G",
     teams:[
-      { flag:"🇪🇬",name:"Egipto",pts:4,pp:1,dg:"+2",status:"En sus manos",sClass:"manos",
+      { flag:"🇪🇬",name:"Egipto",pts:4,pp:1,dg:"+2",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇧🇪 Bélgica",s:"1–1",r:"d"},{t:"🇳🇿 N. Zelanda",s:"3–1",r:"w"}],
         pending:[{d:"27 Jun 00:00",v:"Irán"}],req:"Empatando clasifica" },
-      { flag:"🇮🇷",name:"Irán",pts:2,pp:1,dg:"0",status:"En sus manos",sClass:"manos",
+      { flag:"🇮🇷",name:"Irán",pts:2,pp:1,dg:"0",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇳🇿 N. Zelanda",s:"2–2",r:"d"},{t:"🇧🇪 Bélgica",s:"0–0",r:"d"}],
         pending:[{d:"27 Jun 00:00",v:"Egipto"}],req:"Ganándole a Egipto clasifica" },
-      { flag:"🇧🇪",name:"Bélgica",pts:2,pp:1,dg:"0",status:"En sus manos",sClass:"manos",
+      { flag:"🇧🇪",name:"Bélgica",pts:2,pp:1,dg:"0",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇪🇬 Egipto",s:"1–1",r:"d"},{t:"🇮🇷 Irán",s:"0–0",r:"d"}],
         pending:[{d:"27 Jun 00:00",v:"N. Zelanda"}],req:"Ganándole a N. Zelanda + que Egipto-Irán lo favorezca" },
-      { flag:"🇳🇿",name:"N. Zelanda",pts:1,pp:1,dg:"-2",status:"Necesita ayuda",sClass:"ayuda",
+      { flag:"🇳🇿",name:"N. Zelanda",pts:1,pp:1,dg:"-2",status:"Complicado",sClass:"complicado",
         played:[{t:"🇮🇷 Irán",s:"2–2",r:"d"},{t:"🇪🇬 Egipto",s:"1–3",r:"l"}],
         pending:[{d:"27 Jun 00:00",v:"Bélgica"}],req:"Ganarle a Bélgica + que Irán no gane" }
     ],
@@ -557,16 +557,16 @@ const groups = [
   {
     name:"Grupo H",
     teams:[
-      { flag:"🇪🇸",name:"España",pts:4,pp:1,dg:"+4",status:"En sus manos",sClass:"manos",
+      { flag:"🇪🇸",name:"España",pts:4,pp:1,dg:"+4",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇨🇻 Cabo Verde",s:"0–0",r:"d"},{t:"🇸🇦 Arabia Saudita",s:"4–0",r:"w"}],
         pending:[{d:"26 Jun 21:00",v:"Uruguay"}],req:"Empatando clasifica" },
-      { flag:"🇺🇾",name:"Uruguay",pts:2,pp:1,dg:"0",status:"En sus manos",sClass:"manos",
+      { flag:"🇺🇾",name:"Uruguay",pts:2,pp:1,dg:"0",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇸🇦 Arabia Saudita",s:"1–1",r:"d"},{t:"🇨🇻 Cabo Verde",s:"2–2",r:"d"}],
         pending:[{d:"26 Jun 21:00",v:"España"}],req:"Ganándole a España clasifica" },
-      { flag:"🇨🇻",name:"Cabo Verde",pts:2,pp:1,dg:"0",status:"En sus manos",sClass:"manos",
+      { flag:"🇨🇻",name:"Cabo Verde",pts:2,pp:1,dg:"0",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇪🇸 España",s:"0–0",r:"d"},{t:"🇺🇾 Uruguay",s:"2–2",r:"d"}],
         pending:[{d:"26 Jun 21:00",v:"Arabia Saudita"}],req:"Ganándole a Arabia Saudita clasifica" },
-      { flag:"🇸🇦",name:"Arabia Saudita",pts:1,pp:1,dg:"-4",status:"Necesita ayuda",sClass:"ayuda",
+      { flag:"🇸🇦",name:"Arabia Saudita",pts:1,pp:1,dg:"-4",status:"Complicado",sClass:"complicado",
         played:[{t:"🇺🇾 Uruguay",s:"1–1",r:"d"},{t:"🇪🇸 España",s:"0–4",r:"l"}],
         pending:[{d:"26 Jun 21:00",v:"Cabo Verde"}],req:"Ganarle a Cabo Verde + que Uruguay pierda + remontar 4 goles DG" }
     ],
@@ -606,13 +606,13 @@ const groups = [
       { flag:"🇦🇷",name:"Argentina",pts:6,pp:1,dg:"+5",status:"Clasificado",sClass:"clasificado",
         played:[{t:"🇩🇿 Argelia",s:"3–0",r:"w"},{t:"🇦🇹 Austria",s:"2–0",r:"w"}],
         pending:[{d:"27 Jun 23:00",v:"Jordania"}],req:"" },
-      { flag:"🇦🇹",name:"Austria",pts:3,pp:1,dg:"0",status:"En sus manos",sClass:"manos",
+      { flag:"🇦🇹",name:"Austria",pts:3,pp:1,dg:"0",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇯🇴 Jordania",s:"3–1",r:"w"},{t:"🇦🇷 Argentina",s:"0–2",r:"l"}],
         pending:[{d:"27 Jun 23:00",v:"Argelia"}],req:"Ganándole a Argelia clasifica; empate le basta por DG" },
-      { flag:"🇩🇿",name:"Argelia",pts:3,pp:1,dg:"-2",status:"En sus manos",sClass:"manos",
+      { flag:"🇩🇿",name:"Argelia",pts:3,pp:1,dg:"-2",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇦🇷 Argentina",s:"0–3",r:"l"},{t:"🇯🇴 Jordania",s:"2–1",r:"w"}],
         pending:[{d:"27 Jun 23:00",v:"Austria"}],req:"Ganándole a Austria clasifica" },
-      { flag:"🇯🇴",name:"Jordania",pts:0,pp:1,dg:"-3",status:"Necesita ayuda",sClass:"ayuda",
+      { flag:"🇯🇴",name:"Jordania",pts:0,pp:1,dg:"-3",status:"Complicado",sClass:"complicado",
         played:[{t:"🇦🇹 Austria",s:"1–3",r:"l"},{t:"🇩🇿 Argelia",s:"1–2",r:"l"}],
         pending:[{d:"27 Jun 23:00",v:"Argentina"}],req:"Ganarle a Argentina + Austria-Argelia empaten" }
     ],
@@ -628,13 +628,13 @@ const groups = [
       { flag:"🇨🇴",name:"Colombia",pts:6,pp:1,dg:"+3",status:"Clasificado",sClass:"clasificado",
         played:[{t:"🇺🇿 Uzbekistán",s:"3–1",r:"w"},{t:"🇨🇩 RD Congo",s:"1–0",r:"w"}],
         pending:[{d:"27 Jun 20:30",v:"Portugal"}],req:"" },
-      { flag:"🇵🇹",name:"Portugal",pts:4,pp:1,dg:"+5",status:"En sus manos",sClass:"manos",
+      { flag:"🇵🇹",name:"Portugal",pts:4,pp:1,dg:"+5",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇨🇩 RD Congo",s:"1–1",r:"d"},{t:"🇺🇿 Uzbekistán",s:"5–0",r:"w"}],
         pending:[{d:"27 Jun 20:30",v:"Colombia"}],req:"Empatando clasifica" },
-      { flag:"🇨🇩",name:"RD Congo",pts:3,pp:1,dg:"-1",status:"En sus manos",sClass:"manos",
+      { flag:"🇨🇩",name:"RD Congo",pts:3,pp:1,dg:"-1",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇺🇿 Uzbekistán",s:"1–0",r:"w"},{t:"🇨🇴 Colombia",s:"0–1",r:"l"}],
         pending:[{d:"27 Jun 20:30",v:"Uzbekistán"}],req:"Ganándole a Uzbekistán clasifica" },
-      { flag:"🇺🇿",name:"Uzbekistán",pts:0,pp:1,dg:"-7",status:"Necesita ayuda",sClass:"ayuda",
+      { flag:"🇺🇿",name:"Uzbekistán",pts:0,pp:1,dg:"-7",status:"Complicado",sClass:"complicado",
         played:[{t:"🇨🇴 Colombia",s:"1–3",r:"l"},{t:"🇵🇹 Portugal",s:"0–5",r:"l"}],
         pending:[{d:"27 Jun 20:30",v:"RD Congo"}],req:"Golear a RD Congo + que se den otros resultados" }
     ],
@@ -649,13 +649,13 @@ const groups = [
   {
     name:"Grupo L",
     teams:[
-      { flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",name:"Inglaterra",pts:4,pp:1,dg:"+2",status:"En sus manos",sClass:"manos",
+      { flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",name:"Inglaterra",pts:4,pp:1,dg:"+2",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇭🇷 Croacia",s:"4–2",r:"w"},{t:"🇬🇭 Ghana",s:"0–0",r:"d"}],
         pending:[{d:"27 Jun 18:00",v:"Panamá"}],req:"Empatando clasifica" },
-      { flag:"🇬🇭",name:"Ghana",pts:4,pp:1,dg:"+1",status:"En sus manos",sClass:"manos",
+      { flag:"🇬🇭",name:"Ghana",pts:4,pp:1,dg:"+1",status:"Cómodo",sClass:"comodo",
         played:[{t:"🇵🇦 Panamá",s:"1–0",r:"w"},{t:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra",s:"0–0",r:"d"}],
         pending:[{d:"27 Jun 18:00",v:"Croacia"}],req:"Empatando clasifica" },
-      { flag:"🇭🇷",name:"Croacia",pts:3,pp:1,dg:"-1",status:"En sus manos",sClass:"manos",
+      { flag:"🇭🇷",name:"Croacia",pts:3,pp:1,dg:"-1",status:"Cómodo",sClass:"comodo",
         played:[{t:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra",s:"2–4",r:"l"},{t:"🇵🇦 Panamá",s:"1–0",r:"w"}],
         pending:[{d:"27 Jun 18:00",v:"Ghana"}],req:"Ganándole a Ghana clasifica" },
       { flag:"🇵🇦",name:"Panamá",pts:0,pp:1,dg:"-2",status:"Eliminado",sClass:"eliminado",
