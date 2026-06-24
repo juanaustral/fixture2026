@@ -355,7 +355,7 @@
 <!-- ═══════════ HEADER ═══════════ -->
 <div class="header">
   <h1>⚽ Fixture <span>2026</span></h1>
-  <div class="author">Desarrollado por <a href="https://github.com/juanaustral" target="_blank">Juan Martínez García</a></div>
+  <div class="author">Desarrollado por <a href="https://juanmartinezgarcia.com" target="_blank">Juan Martinez Garcia</a></div>
   <div class="update-info">
     <span class="update-dot"></span> Última actualización: <strong id="lastUpdate">—</strong>
   </div>
@@ -672,26 +672,33 @@ const groups = [
 
 // ═══════════ TODAY'S MATCHES ═══════════
 const todayMatches = [
-  { group:"B",home:"🇧🇦 Bosnia H.",away:"🇶🇦 Qatar",time:"16:00",score:null },
-  { group:"B",home:"🇨🇭 Suiza",away:"🇨🇦 Canadá",time:"16:00",score:null },
-  { group:"C",home:"🇲🇦 Marruecos",away:"🇭🇹 Haití",time:"19:00",score:null },
-  { group:"C",home:"🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia",away:"🇧🇷 Brasil",time:"19:00",score:null },
-  { group:"A",home:"🇨🇿 Rep. Checa",away:"🇲🇽 México",time:"22:00",score:null },
-  { group:"A",home:"🇿🇦 Sudáfrica",away:"🇰🇷 Corea del Sur",time:"22:00",score:null }
+  { group:"B",home:"🇧🇦 Bosnia H.",away:"🇶🇦 Qatar",time:"16:00",score:null,
+    comment:"Ambos necesitan ganar por goleada para tener chances. El que pierde queda eliminado. Bosnia (-3 DG) y Qatar (-6 DG) dependen también de que Suiza-Canadá no empaten." },
+  { group:"B",home:"🇨🇭 Suiza",away:"🇨🇦 Canadá",time:"16:00",score:null,
+    comment:"Los dos clasifican con solo empatar. El ganador se queda con el 1° puesto del grupo y juega en Vancouver; el 2° viaja a Los Ángeles." },
+  { group:"C",home:"🇲🇦 Marruecos",away:"🇭🇹 Haití",time:"19:00",score:null,
+    comment:"Marruecos (4 pts, +1 DG) clasifica empatando. Haití ya está eliminado (0 pts, -4 DG). Si Marruecos gana y Brasil no, se queda con el 1°." },
+  { group:"C",home:"🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia",away:"🇧🇷 Brasil",time:"19:00",score:null,
+    comment:"Escocia (3 pts) necesita GANAR para clasificar directo. Brasil (4 pts, +3 DG) clasifica empatando. Si Escocia pierde, depende de ser 3°." },
+  { group:"A",home:"🇨🇿 Rep. Checa",away:"🇲🇽 México",time:"22:00",score:null,
+    comment:"Checa (1 pt, -1 DG) debe ganar SÍ O SÍ y esperar que Corea del Sur pierda. México ya está clasificado como 1° del grupo." },
+  { group:"A",home:"🇿🇦 Sudáfrica",away:"🇰🇷 Corea del Sur",time:"22:00",score:null,
+    comment:"Sudáfrica (1 pt, -2 DG) debe ganar y que Checa no gane. Corea del Sur (3 pts) clasifica con solo empatar; si gana, es 2°." }
 ];
 
 // ═══════════ RENDER ═══════════
 function renderToday() {
   const grid = document.getElementById('todayGrid');
-  const now = new Date();
   grid.innerHTML = todayMatches.map(m => {
     const statusHtml = m.score
       ? '<span class="score">' + m.score + '</span>'
       : '<span class="pending-tag">' + m.time + ' ARG</span>';
     return '<div class="today-match">' +
       '<span class="group-tag">G' + m.group + '</span>' +
-      m.home + ' vs ' + m.away +
-      statusHtml +
+      '<div style="flex:1">' +
+      '<div>' + m.home + ' vs ' + m.away + ' ' + statusHtml + '</div>' +
+      '<div style="font-size:0.65rem;color:var(--muted);margin-top:4px;line-height:1.35">' + m.comment + '</div>' +
+      '</div>' +
       '</div>';
   }).join('');
 }
