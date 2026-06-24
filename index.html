@@ -76,26 +76,15 @@
   .header .author { font-size: 0.85rem; color: var(--muted); margin-bottom: 4px; }
   .header .author a { color: var(--blue); text-decoration: none; font-weight: 600; }
   .header .update-info {
-    font-size: 0.72rem; color: var(--muted); margin-bottom: 16px;
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-  }
-  .update-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); display: inline-block; box-shadow: 0 0 6px rgba(60,172,59,0.5); animation: pulse-dot 2s infinite; }
-  @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  .btn-refresh {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 13px 40px; background: linear-gradient(135deg, var(--red), #c41820);
-    color: #fff; border: none; border-radius: 30px; font-size: 0.95rem; font-weight: 700;
-    cursor: pointer; transition: all 0.25s; font-family: inherit; letter-spacing: -0.2px;
-    box-shadow: 0 4px 24px rgba(230,29,37,0.25);
-    position: relative; overflow: hidden;
-  }
-  .btn-refresh::after {
-    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-    transition: left 0.5s;
-  }
-  .btn-refresh:hover::after { left: 100%; }
-  .btn-refresh:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(230,29,37,0.35); }
+   font-size: 0.8rem; color: var(--text);
+   margin-bottom: 16px; line-height: 1.6;
+ }
+ .update-info strong { color: var(--dgray); }
+ .update-info .next {
+   font-size: 0.72rem; color: var(--muted);
+   margin-top: 2px;
+ }
+ .update-info .countdown { color: var(--blue); font-weight: 600; }
 
   /* ═══════════ PARTIDOS DE HOY ═══════════ */
   .today-matches {
@@ -263,8 +252,10 @@
 <div class="header">
   <h1><img src="ball.png" class="ball-icon" alt="⚽"> Fixture <span>2026</span></h1>
   <div class="author">Desarrollado por <a href="https://juanmartinezgarcia.com" target="_blank">Juan Martinez Garcia</a></div>
-  <div class="update-info"><span class="update-dot"></span> Última actualización: <strong id="lastUpdate">—</strong></div>
-  <button class="btn-refresh" onclick="location.reload()">🔄 Actualizar resultados</button>
+  <div class="update-info">
+    <div>🟢 Resultados actualizados a las <strong id="lastUpdate">—</strong></div>
+    <div class="next">⏰ Próxima actualización: <strong id="nextUpdate">—</strong> <span class="countdown" id="countdown"></span></div>
+  </div>
 </div>
 
 <div class="today-matches" id="todayBox">
@@ -299,7 +290,33 @@ function buildMatchLine(m){var c=m.r==='w'?'win':m.r==='d'?'draw':'loss';var i=m
 
 function buildPendingLine(p){return'<span class="pending-line">⏳ vs '+p.f+' <strong>'+p.v+'</strong> <span class="p-date">('+p.d+')</span></span>'}
 
-function render(){const c=document.getElementById('app');groups.forEach((g,i)=>{const d=document.createElement('div');d.className='group-card t'+(i%5);let h='<h2>'+g.name+'<span class="badge">Jornada '+(g.teams[0].played.length)+'/3</span></h2>';h+='<table class="standings-table"><thead><tr><th>Equipo</th><th class="num">PTS</th><th class="num">PP</th><th>Estado</th></tr></thead><tbody>';g.teams.forEach((t,j)=>{const r=j%2===0?'team-block-even':'team-block-odd';h+='<tr class="'+r+'"><td class="team-cell"><span class="flag">'+t.flag+'</span>'+t.name+'</td><td class="num">'+t.pts+'</td><td class="num">'+t.pp+'</td><td><span class="status-text status-'+t.sClass+'">'+t.status+'</span></td></tr>';h+='<tr class="'+r+'"><td colspan="4"><div class="team-detail">';h+='<span class="section-label">Resultados</span>';t.played.forEach(m=>{h+=buildMatchLine(m)});if(t.pending.length>0){t.pending.forEach(p=>{h+=buildPendingLine(p)})}if(t.req)h+='<div class="requirement">→ '+t.req+'</div>';h+='</div></td></tr>'});h+='</tbody></table>';h+='<div class="group-reqs"><strong>Estado del grupo:</strong><br>';g.reqs.forEach(r=>{h+='<div class="req-item">'+r+'</div>'});h+='</div>';d.innerHTML=h;c.appendChild(d)});document.getElementById('lastUpdate').textContent=new Date().toLocaleDateString('es-AR',{day:'2-digit',month:'short',year:'numeric'})+' '+new Date().toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+' ARG'}
+function render(){const c=document.getElementById('app');groups.forEach((g,i)=>{const d=document.createElement('div');d.className='group-card t'+(i%5);let h='<h2>'+g.name+'<span class=\"badge\">Jornada '+(g.teams[0].played.length)+'/3</span></h2>';h+='<table class=\"standings-table\"><thead><tr><th>Equipo</th><th class=\"num\">PTS</th><th class=\"num\">PP</th><th>Estado</th></tr></thead><tbody>';g.teams.forEach((t,j)=>{const r=j%2===0?'team-block-even':'team-block-odd';h+='<tr class=\"'+r+'\"><td class=\"team-cell\"><span class=\"flag\">'+t.flag+'</span>'+t.name+'</td><td class=\"num\">'+t.pts+'</td><td class=\"num\">'+t.pp+'</td><td><span class=\"status-text status-'+t.sClass+'\">'+t.status+'</span></td></tr>';h+='<tr class=\"'+r+'\"><td colspan=\"4\"><div class=\"team-detail\">';h+='<span class=\"section-label\">Resultados</span>';t.played.forEach(m=>{h+=buildMatchLine(m)});if(t.pending.length>0){t.pending.forEach(p=>{h+=buildPendingLine(p)})}if(t.req)h+='<div class=\"requirement\">→ '+t.req+'</div>';h+='</div></td></tr>'});h+='</tbody></table>';h+='<div class=\"group-reqs\"><strong>Estado del grupo:</strong><br>';g.reqs.forEach(r=>{h+='<div class=\"req-item\">'+r+'</div>'});h+='</div>';d.innerHTML=h;c.appendChild(d)})}
+
+function updateTimers(){
+  var now=new Date();
+  // Last update = right now (page load time, stored once)
+  if(!updateTimers._last){updateTimers._last=now}
+  var last=updateTimers._last;
+  document.getElementById('lastUpdate').textContent=
+    last.toLocaleDateString('es-AR',{day:'2-digit',month:'short',year:'numeric'})+' '+
+    last.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+' ARG';
+
+  // Next update = next 30-min mark + 5 min for cron to finish
+  var ms=now.getTime();
+  var next=new Date(Math.ceil(ms/1800000)*1800000 + 300000);
+  document.getElementById('nextUpdate').textContent=
+    next.toLocaleDateString('es-AR',{day:'2-digit',month:'short',year:'numeric'})+' '+
+    next.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'})+' ARG';
+
+  // Countdown
+  var diff=Math.max(0,Math.floor((next-now)/1000));
+  var m=Math.floor(diff/60),s=diff%60;
+  document.getElementById('countdown').textContent='(en '+m+':'+(s<10?'0':'')+s+')';
+
+  // Hard refresh when time arrives
+  if(diff===0){location.reload(true)}
+  else{setTimeout(updateTimers,1000)}
+}
 
 // ═══════════ SPAWN FLOATING TROPHIES ═══════════
 (function spawnTrophies(){
@@ -320,7 +337,7 @@ function render(){const c=document.getElementById('app');groups.forEach((g,i)=>{
   }
 })();
 
-renderToday();render();
+renderToday();render();updateTimers();
 </script>
 </body>
 </html>
