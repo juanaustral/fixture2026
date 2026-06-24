@@ -21,7 +21,7 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  /* ═══════════ FONDO SVG ═══════════ */
+  /* ═══════════ FONDO SVG + TROFEOS FLOTANTES ═══════════ */
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     background-color: var(--bg);
@@ -30,6 +30,20 @@
     color: var(--text);
     line-height: 1.5;
     min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ═══════════ TROFEOS FLOTANTES ═══════════ */
+  .trophy-float {
+    position: fixed; pointer-events: none; z-index: 0;
+    opacity: 0; width: 40px; height: auto;
+    animation: floatTrophy var(--dur) var(--delay) infinite linear;
+  }
+  @keyframes floatTrophy {
+    0%   { opacity: 0; transform: translate(0, 100vh) rotate(0deg) scale(0.5); }
+    10%  { opacity: var(--op); }
+    90%  { opacity: var(--op); }
+    100% { opacity: 0; transform: translate(var(--dx), -120px) rotate(var(--rot)) scale(0.4); }
   }
 
   .page { position: relative; z-index: 1; padding: 20px 16px; max-width: 1680px; margin: 0 auto; }
@@ -47,8 +61,9 @@
     display: flex; align-items: center; justify-content: center; gap: 10px;
   }
   .ball-icon {
-    display: inline-block; font-size: 2.2rem; line-height: 1;
-    animation: spin-ball 3s infinite linear;
+    display: inline-block; width: 48px; height: 48px; vertical-align: middle;
+    animation: spin-ball 4s infinite linear;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));
   }
   @keyframes spin-ball {
     0% { transform: rotate(0deg); }
@@ -218,7 +233,7 @@
   /* ═══════════ MOBILE ═══════════ */
   @media (max-width: 768px) {
     .header h1 { font-size: 2rem; }
-    .ball-icon { font-size: 1.8rem; }
+    .ball-icon { width: 36px; height: 36px; }
     .groups-grid { grid-template-columns: 1fr; }
     .group-card { padding: 14px; border-radius: 12px; }
     .standings-table { font-size: 0.72rem; }
@@ -230,7 +245,7 @@
   }
   @media (max-width: 400px) {
     .header h1 { font-size: 1.6rem; letter-spacing: -1px; }
-    .ball-icon { font-size: 1.5rem; }
+    .ball-icon { width: 28px; height: 28px; }
     .group-card { padding: 10px; }
     .group-card h2 { font-size: 0.88rem; }
     .standings-table th, .standings-table td { padding: 5px 4px; }
@@ -240,10 +255,13 @@
 </style>
 </head>
 <body>
+<!-- TROFEOS FLOTANTES -->
+<div id="trophyField"></div>
+
 <div class="page">
 
 <div class="header">
-  <h1><span class="ball-icon">⚽</span> Fixture <span>2026</span></h1>
+  <h1><img src="ball.png" class="ball-icon" alt="⚽"> Fixture <span>2026</span></h1>
   <div class="author">Desarrollado por <a href="https://juanmartinezgarcia.com" target="_blank">Juan Martinez Garcia</a></div>
   <div class="update-info"><span class="update-dot"></span> Última actualización: <strong id="lastUpdate">—</strong></div>
   <button class="btn-refresh" onclick="location.reload()">🔄 Actualizar resultados</button>
@@ -282,6 +300,25 @@ function buildMatchLine(m){var c=m.r==='w'?'win':m.r==='d'?'draw':'loss';var i=m
 function buildPendingLine(p){return'<span class="pending-line">⏳ vs '+p.f+' <strong>'+p.v+'</strong> <span class="p-date">('+p.d+')</span></span>'}
 
 function render(){const c=document.getElementById('app');groups.forEach((g,i)=>{const d=document.createElement('div');d.className='group-card t'+(i%5);let h='<h2>'+g.name+'<span class="badge">Jornada '+(g.teams[0].played.length)+'/3</span></h2>';h+='<table class="standings-table"><thead><tr><th>Equipo</th><th class="num">PTS</th><th class="num">PP</th><th>Estado</th></tr></thead><tbody>';g.teams.forEach((t,j)=>{const r=j%2===0?'team-block-even':'team-block-odd';h+='<tr class="'+r+'"><td class="team-cell"><span class="flag">'+t.flag+'</span>'+t.name+'</td><td class="num">'+t.pts+'</td><td class="num">'+t.pp+'</td><td><span class="status-text status-'+t.sClass+'">'+t.status+'</span></td></tr>';h+='<tr class="'+r+'"><td colspan="4"><div class="team-detail">';h+='<span class="section-label">Resultados</span>';t.played.forEach(m=>{h+=buildMatchLine(m)});if(t.pending.length>0){t.pending.forEach(p=>{h+=buildPendingLine(p)})}if(t.req)h+='<div class="requirement">→ '+t.req+'</div>';h+='</div></td></tr>'});h+='</tbody></table>';h+='<div class="group-reqs"><strong>Estado del grupo:</strong><br>';g.reqs.forEach(r=>{h+='<div class="req-item">'+r+'</div>'});h+='</div>';d.innerHTML=h;c.appendChild(d)});document.getElementById('lastUpdate').textContent=new Date().toLocaleDateString('es-AR',{day:'2-digit',month:'short',year:'numeric'})+' '+new Date().toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+' ARG'}
+
+// ═══════════ SPAWN FLOATING TROPHIES ═══════════
+(function spawnTrophies(){
+  var f=document.getElementById('trophyField');
+  for(var i=0;i<24;i++){
+    var t=document.createElement('img');
+    t.src='trophy.png';
+    t.className='trophy-float';
+    t.style.cssText=
+      '--dur:'+(14+Math.random()*20)+'s;'+
+      '--delay:'+(Math.random()*-20)+'s;'+
+      '--dx:'+((Math.random()-0.5)*200)+'px;'+
+      '--rot:'+(Math.random()*720-360)+'deg;'+
+      '--op:'+(0.04+Math.random()*0.06)+';'+
+      'left:'+(Math.random()*95)+'vw;'+
+      'width:'+(24+Math.random()*36)+'px';
+    f.appendChild(t);
+  }
+})();
 
 renderToday();render();
 </script>
