@@ -47,23 +47,10 @@
     display: flex; align-items: center; justify-content: center; gap: 10px;
   }
   .ball-icon {
-    display: inline-block; width: 42px; height: 42px;
-    background: radial-gradient(circle at 35% 35%, #fff 15%, #d4d4d4 40%, #1a1a1a 70%);
-    border-radius: 50%; position: relative;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15), inset 0 -2px 4px rgba(0,0,0,0.3);
-    animation: roll 4s infinite linear;
+    display: inline-block; font-size: 2.2rem; line-height: 1;
+    animation: spin-ball 3s infinite linear;
   }
-  .ball-icon::after {
-    content: '';
-    position: absolute; top: 6px; left: 6px; right: 6px; bottom: 6px;
-    border: 1.5px solid rgba(255,255,255,0.25);
-    border-radius: 50%;
-    background:
-      linear-gradient(60deg, transparent 48%, rgba(255,255,255,0.15) 48%, rgba(255,255,255,0.15) 52%, transparent 52%),
-      linear-gradient(-60deg, transparent 48%, rgba(255,255,255,0.1) 48%, rgba(255,255,255,0.1) 52%, transparent 52%),
-      linear-gradient(0deg, transparent 48%, rgba(0,0,0,0.2) 48%, rgba(0,0,0,0.2) 52%, transparent 52%);
-  }
-  @keyframes roll {
+  @keyframes spin-ball {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
@@ -144,11 +131,11 @@
     transition: box-shadow 0.2s, transform 0.15s;
   }
   .group-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); transform: translateY(-1px); }
-  .group-card.t0 { background: linear-gradient(135deg, #ffffff 60%, rgba(60,172,59,0.06)); }
-  .group-card.t1 { background: linear-gradient(135deg, #ffffff 60%, rgba(42,57,141,0.05)); }
-  .group-card.t2 { background: linear-gradient(135deg, #ffffff 60%, rgba(230,29,37,0.04)); }
-  .group-card.t3 { background: linear-gradient(135deg, #ffffff 60%, rgba(71,74,74,0.04)); }
-  .group-card.t4 { background: linear-gradient(135deg, #ffffff 60%, rgba(60,172,59,0.04)); }
+  .group-card.t0 { background: linear-gradient(135deg, rgba(60,172,59,0.10) 0%, #ffffff 50%); }
+  .group-card.t1 { background: linear-gradient(135deg, rgba(42,57,141,0.09) 0%, #ffffff 50%); }
+  .group-card.t2 { background: linear-gradient(135deg, rgba(230,29,37,0.07) 0%, #ffffff 50%); }
+  .group-card.t3 { background: linear-gradient(135deg, rgba(71,74,74,0.07) 0%, #ffffff 50%); }
+  .group-card.t4 { background: linear-gradient(135deg, rgba(60,172,59,0.06) 0%, #ffffff 50%); }
   .group-card::before {
     content: ''; position: absolute; top: -30px; right: -30px;
     width: 120px; height: 120px;
@@ -178,8 +165,8 @@
   .standings-table td.team-cell .flag { font-size: 1.15rem; }
   .standings-table td.num { text-align: center; font-weight: 800; font-size: 0.88rem; }
 
-  .team-block-even { background: rgba(255,255,255,0.5); }
-  .team-block-odd  { background: rgba(0,0,0,0.02); }
+  .team-block-even { background: rgba(255,255,255,0.9); }
+  .team-block-odd  { background: rgba(0,0,0,0.05); }
   .team-block-even td, .team-block-odd td { border-bottom: 1px solid rgba(0,0,0,0.04); }
 
   .status-text {
@@ -231,7 +218,7 @@
   /* ═══════════ MOBILE ═══════════ */
   @media (max-width: 768px) {
     .header h1 { font-size: 2rem; }
-    .ball-icon { width: 32px; height: 32px; }
+    .ball-icon { font-size: 1.8rem; }
     .groups-grid { grid-template-columns: 1fr; }
     .group-card { padding: 14px; border-radius: 12px; }
     .standings-table { font-size: 0.72rem; }
@@ -243,7 +230,7 @@
   }
   @media (max-width: 400px) {
     .header h1 { font-size: 1.6rem; letter-spacing: -1px; }
-    .ball-icon { width: 26px; height: 26px; }
+    .ball-icon { font-size: 1.5rem; }
     .group-card { padding: 10px; }
     .group-card h2 { font-size: 0.88rem; }
     .standings-table th, .standings-table td { padding: 5px 4px; }
@@ -256,7 +243,7 @@
 <div class="page">
 
 <div class="header">
-  <h1><span class="ball-icon"></span> Fixture <span>2026</span></h1>
+  <h1><span class="ball-icon">⚽</span> Fixture <span>2026</span></h1>
   <div class="author">Desarrollado por <a href="https://juanmartinezgarcia.com" target="_blank">Juan Martinez Garcia</a></div>
   <div class="update-info"><span class="update-dot"></span> Última actualización: <strong id="lastUpdate">—</strong></div>
   <button class="btn-refresh" onclick="location.reload()">🔄 Actualizar resultados</button>
