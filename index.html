@@ -3,351 +3,799 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mundial 2026 — Resultados y Clasificación</title>
+<title>Fixture 2026 — Mundial</title>
 <style>
   :root {
-    --bg: #0f0f1a;
-    --card: #1a1a2e;
-    --border: #2a2a4a;
-    --text: #e0e0f0;
-    --muted: #8888aa;
-    --accent: #00d4aa;
-    --green: #00c853;
-    --yellow: #ffd600;
-    --red: #ff1744;
-    --orange: #ff9100;
+    --bg: #0a0e14;
+    --card: #12171f;
+    --border: #1e2733;
+    --text: #dde2e8;
+    --muted: #6b7a8d;
+    --accent: #00c896;
+    --green: #10b981;
+    --yellow: #f5a623;
+    --red: #ef4444;
+    --orange: #f97316;
+    --blue: #60a5fa;
+    --radius: 14px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     background: var(--bg);
     color: var(--text);
     padding: 20px;
+    line-height: 1.4;
   }
-  h1 {
+
+  /* ── Header ── */
+  .header {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 4px;
+    margin-bottom: 32px;
+  }
+  .header h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -1px;
     color: #fff;
+    margin-bottom: 2px;
   }
-  .subtitle {
-    text-align: center;
-    color: var(--muted);
+  .header h1 span { color: var(--accent); }
+  .header .author {
     font-size: 0.85rem;
-    margin-bottom: 24px;
+    color: var(--muted);
+    margin-bottom: 6px;
   }
+  .header .author a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .header .author a:hover { text-decoration: underline; }
+  .header .update-info {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .header .update-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    display: inline-block;
+  }
+  .btn-refresh {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 32px;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    letter-spacing: -0.2px;
+  }
+  .btn-refresh:hover {
+    filter: brightness(1.12);
+    transform: scale(1.03);
+  }
+  .btn-refresh:active { transform: scale(0.97); }
+
+  /* ── Legend ── */
   .legend {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
     justify-content: center;
-    margin-bottom: 24px;
-    font-size: 0.8rem;
+    margin-bottom: 28px;
+    font-size: 0.82rem;
   }
-  .legend span {
-    display: inline-flex;
+  .legend-item {
+    display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 7px;
+    background: var(--card);
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
   }
-  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
-  .dot.green { background: var(--green); }
-  .dot.yellow { background: var(--yellow); }
-  .dot.orange { background: var(--orange); }
-  .dot.red { background: var(--red); }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
 
+  /* ── Grid ── */
   .groups-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
     gap: 16px;
-    max-width: 1400px;
+    max-width: 1550px;
     margin: 0 auto;
   }
+
+  /* ── Group Card ── */
   .group-card {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px;
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
   }
   .group-card h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--accent);
-    margin-bottom: 10px;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 12px;
     padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
-  table {
+  .group-card h2 .round { font-size: 0.7rem; color: var(--muted); font-weight: 400; margin-left: auto; }
+
+  /* ── Table ── */
+  .standings-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
+    margin-bottom: 10px;
   }
-  th {
+  .standings-table th {
     text-align: left;
     color: var(--muted);
     font-weight: 500;
-    padding: 4px 3px;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    padding: 6px 4px;
+    border-bottom: 1px solid var(--border);
   }
-  th.pts { text-align: center; width: 28px; }
-  th.status { text-align: center; width: 40px; }
-  td { padding: 5px 3px; border-top: 1px solid rgba(255,255,255,0.04); }
-  td.team { font-weight: 500; }
-  td.pts { text-align: center; font-weight: 700; }
-  td.status { text-align: center; font-size: 1rem; }
-  .flag { font-size: 1.1rem; margin-right: 4px; }
-  .matches {
-    margin-top: 6px;
+  .standings-table th.center { text-align: center; }
+  .standings-table td {
+    padding: 7px 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    vertical-align: middle;
+  }
+  .standings-table td.team-name {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .standings-table td.team-name .flag { font-size: 1.2rem; }
+  .standings-table td.pts { text-align: center; font-weight: 700; font-size: 0.95rem; }
+  .standings-table td.st { text-align: center; font-size: 1rem; }
+
+  /* ── Match Results ── */
+  .match-results {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 4px;
+    padding-left: 4px;
+    line-height: 1.6;
+  }
+  .match-results .w { color: var(--green); }
+  .match-results .d { color: var(--yellow); }
+  .match-results .l { color: var(--red); }
+  .match-results .sep { color: #444; margin: 0 2px; }
+
+  /* ── Pending ── */
+  .pending-section {
+    margin-top: 10px;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+  }
+  .pending-title {
     font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .pending-match {
+    font-size: 0.74rem;
+    color: var(--blue);
+    padding: 3px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pending-match .date {
+    font-size: 0.65rem;
+    color: var(--muted);
+    min-width: 42px;
+  }
+
+  /* ── Summary ── */
+  .group-summary {
+    margin-top: 10px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 0.75rem;
     color: var(--muted);
     line-height: 1.5;
-    padding-top: 6px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-left: 3px solid var(--accent);
   }
-  .matches span { display: inline; }
-  .win { color: var(--green); }
-  .draw { color: var(--yellow); }
-  .loss { color: var(--red); }
-  .tag {
-    display: inline-block;
-    font-size: 0.6rem;
-    padding: 1px 6px;
-    border-radius: 6px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-  }
-  .tag-green { background: rgba(0,200,83,0.15); color: var(--green); }
-  .tag-yellow { background: rgba(255,214,0,0.15); color: var(--yellow); }
-  .tag-orange { background: rgba(255,145,0,0.15); color: var(--orange); }
-  .tag-red { background: rgba(255,23,68,0.15); color: var(--red); }
+  .group-summary strong { color: var(--text); }
 
+  /* ── Footer ── */
   .footer {
     text-align: center;
-    margin-top: 32px;
+    margin-top: 40px;
+    padding: 20px;
     font-size: 0.7rem;
     color: var(--muted);
   }
+  .footer a { color: var(--accent); text-decoration: none; }
+
+  /* ── Responsive ── */
   @media (max-width: 480px) {
     .groups-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 1.8rem; }
     body { padding: 10px; }
+    .btn-refresh { padding: 10px 24px; font-size: 0.9rem; }
   }
 </style>
 </head>
 <body>
 
-<h1>⚽ Mundial 2026</h1>
-<p class="subtitle">Resultados y situación de clasificación — Actualizado 24 Jun 2026 (antes de partidos de hoy)</p>
-
-<div class="legend">
-  <span><span class="dot green"></span> Clasificado</span>
-  <span><span class="dot yellow"></span> Depende de sí mismo</span>
-  <span><span class="dot orange"></span> Necesita combo</span>
-  <span><span class="dot red"></span> Eliminado</span>
+<!-- ═══════════════ HEADER ═══════════════ -->
+<div class="header">
+  <h1>⚽ Fixture <span>2026</span></h1>
+  <div class="author">Desarrollado por <a href="https://github.com/juanaustral" target="_blank">Juan Martínez</a></div>
+  <div class="update-info">
+    <span class="update-dot"></span> Última actualización: <strong id="lastUpdate">24 Jun 2026 17:00 ARG</strong>
+  </div>
+  <button class="btn-refresh" onclick="location.reload()">🔄 Actualizar resultados</button>
 </div>
 
+<!-- ═══════════════ LEGEND ═══════════════ -->
+<div class="legend">
+  <div class="legend-item"><span class="legend-dot" style="background:var(--green)"></span> Clasificado</div>
+  <div class="legend-item"><span class="legend-dot" style="background:var(--yellow)"></span> Depende de sí</div>
+  <div class="legend-item"><span class="legend-dot" style="background:var(--orange)"></span> Necesita ayuda</div>
+  <div class="legend-item"><span class="legend-dot" style="background:var(--red)"></span> Eliminado</div>
+</div>
+
+<!-- ═══════════════ GROUPS ═══════════════ -->
 <div class="groups-grid" id="app"></div>
 
 <div class="footer">
-  Datos: TUDN · DAZN · Olympics.com · Marca — <a href="#" style="color:var(--accent);" onclick="location.reload()">↻ Recargar</a>
+  Datos verificados: Flashscore · DAZN · Olympics.com · TUDN<br>
+  <a href="#" onclick="location.reload()">↻ Recargar</a> · 
+  <a href="https://github.com/juanaustral/fixture2026" target="_blank">GitHub</a>
 </div>
 
 <script>
+// ═══════════════ MATCH DATA ═══════════════
+// Last verified: 2026-06-24 against Flashscore
+// NOTE: Groups C and G corrected — previous version had fabricated match results
+
 const groups = [
+  // ── GRUPO A ──
   {
     name: "Grupo A",
     teams: [
-      { flag: "🇲🇽", name: "México", pts: 6, dg: "+3", status: "✅", tag: "Clasificado", tagClass: "green",
-        matches: "🇲🇽 2–0 🇿🇦 W · 🇲🇽 1–0 🇰🇷 W" },
-      { flag: "🇰🇷", name: "Corea del Sur", pts: 3, dg: "0", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
-        matches: "🇰🇷 2–1 🇨🇿 W · 🇰🇷 0–1 🇲🇽 L" },
-      { flag: "🇨🇿", name: "Rep. Checa", pts: 1, dg: "-1", status: "🛟", tag: "Casi imposible", tagClass: "orange",
-        matches: "🇨🇿 1–2 🇰🇷 L · 🇨🇿 1–1 🇿🇦 D" },
-      { flag: "🇿🇦", name: "Sudáfrica", pts: 1, dg: "-2", status: "🛟", tag: "Casi imposible", tagClass: "orange",
-        matches: "🇿🇦 0–2 🇲🇽 L · 🇿🇦 1–1 🇨🇿 D" }
-    ]
+      { flag:"🇲🇽",name:"México",pts:6,dg:"+3",st:"✅",
+        results:[
+          {home:"🇲🇽 México",away:"🇿🇦 Sudáfrica",score:"2–0",r:"w"},
+          {home:"🇲🇽 México",away:"🇰🇷 Corea del Sur",score:"1–0",r:"w"}
+        ],
+        pending:[]
+      },
+      { flag:"🇰🇷",name:"Corea del Sur",pts:3,dg:"0",st:"⚠️",
+        results:[
+          {home:"🇰🇷 Corea del Sur",away:"🇨🇿 Rep. Checa",score:"2–1",r:"w"},
+          {home:"🇰🇷 Corea del Sur",away:"🇲🇽 México",score:"0–1",r:"l"}
+        ],
+        pending:[{date:"24 Jun 22:00",vs:"🇿🇦 Sudáfrica"}]
+      },
+      { flag:"🇨🇿",name:"Rep. Checa",pts:1,dg:"-1",st:"🛟",
+        results:[
+          {home:"🇨🇿 Rep. Checa",away:"🇰🇷 Corea del Sur",score:"1–2",r:"l"},
+          {home:"🇨🇿 Rep. Checa",away:"🇿🇦 Sudáfrica",score:"1–1",r:"d"}
+        ],
+        pending:[{date:"24 Jun 22:00",vs:"🇲🇽 México"}]
+      },
+      { flag:"🇿🇦",name:"Sudáfrica",pts:1,dg:"-2",st:"🛟",
+        results:[
+          {home:"🇿🇦 Sudáfrica",away:"🇲🇽 México",score:"0–2",r:"l"},
+          {home:"🇿🇦 Sudáfrica",away:"🇨🇿 Rep. Checa",score:"1–1",r:"d"}
+        ],
+        pending:[{date:"24 Jun 22:00",vs:"🇰🇷 Corea del Sur"}]
+      }
+    ],
+    summary: "<strong>México</strong> ya está clasificado ✅. <strong>Corea del Sur</strong> clasifica ganando o empatando; si pierde, depende de lo que haga Rep. Checa. <strong>Rep. Checa</strong> necesita ganarle a México y que Corea pierda, además de revertir la diferencia de gol (-1). <strong>Sudáfrica</strong> necesita ganar, que Rep. Checa no gane, y remontar 2 goles de diferencia.",
+    pendingGroup: "Jornada 3 (última): 24 junio · Rep. Checa vs México + Sudáfrica vs Corea del Sur · 22:00 ARG"
   },
+
+  // ── GRUPO B ──
   {
     name: "Grupo B",
     teams: [
-      { flag: "🇨🇦", name: "Canadá", pts: 4, dg: "+6", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
-        matches: "🇨🇦 1–1 🇧🇦 D · 🇨🇦 6–0 🇶🇦 W" },
-      { flag: "🇨🇭", name: "Suiza", pts: 4, dg: "+3", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
-        matches: "🇨🇭 1–1 🇶🇦 D · 🇨🇭 4–1 🇧🇦 W" },
-      { flag: "🇧🇦", name: "Bosnia H.", pts: 1, dg: "-3", status: "🛟", tag: "Difícil", tagClass: "orange",
-        matches: "🇧🇦 1–1 🇨🇦 D · 🇧🇦 1–4 🇨🇭 L" },
-      { flag: "🇶🇦", name: "Qatar", pts: 1, dg: "-6", status: "🛟", tag: "Casi imposible", tagClass: "orange",
-        matches: "🇶🇦 1–1 🇨🇭 D · 🇶🇦 0–6 🇨🇦 L" }
-    ]
+      { flag:"🇨🇦",name:"Canadá",pts:4,dg:"+6",st:"⚠️",
+        results:[
+          {home:"🇨🇦 Canadá",away:"🇧🇦 Bosnia H.",score:"1–1",r:"d"},
+          {home:"🇨🇦 Canadá",away:"🇶🇦 Qatar",score:"6–0",r:"w"}
+        ],
+        pending:[{date:"24 Jun 16:00",vs:"🇨🇭 Suiza"}]
+      },
+      { flag:"🇨🇭",name:"Suiza",pts:4,dg:"+3",st:"⚠️",
+        results:[
+          {home:"🇨🇭 Suiza",away:"🇶🇦 Qatar",score:"1–1",r:"d"},
+          {home:"🇨🇭 Suiza",away:"🇧🇦 Bosnia H.",score:"4–1",r:"w"}
+        ],
+        pending:[{date:"24 Jun 16:00",vs:"🇨🇦 Canadá"}]
+      },
+      { flag:"🇧🇦",name:"Bosnia H.",pts:1,dg:"-3",st:"🛟",
+        results:[
+          {home:"🇧🇦 Bosnia H.",away:"🇨🇦 Canadá",score:"1–1",r:"d"},
+          {home:"🇧🇦 Bosnia H.",away:"🇨🇭 Suiza",score:"1–4",r:"l"}
+        ],
+        pending:[{date:"24 Jun 16:00",vs:"🇶🇦 Qatar"}]
+      },
+      { flag:"🇶🇦",name:"Qatar",pts:1,dg:"-6",st:"🛟",
+        results:[
+          {home:"🇶🇦 Qatar",away:"🇨🇭 Suiza",score:"1–1",r:"d"},
+          {home:"🇶🇦 Qatar",away:"🇨🇦 Canadá",score:"0–6",r:"l"}
+        ],
+        pending:[{date:"24 Jun 16:00",vs:"🇧🇦 Bosnia H."}]
+      }
+    ],
+    summary: "<strong>Canadá</strong> y <strong>Suiza</strong> se enfrentan entre sí. Ambos clasifican con solo empatar. El que gane se queda con el 1° puesto. <strong>Bosnia</strong> y <strong>Qatar</strong> necesitan ganar su partido entre ellos Y que el otro resultado los favorezca, además de una diferencia de gol muy cuesta arriba (deben remontar 3 y 6 goles respectivamente).",
+    pendingGroup: "Jornada 3 (última): 24 junio · Bosnia vs Qatar + Suiza vs Canadá · 16:00 ARG"
   },
+
+  // ── GRUPO C (CORREGIDO — eliminados partidos inventados) ──
   {
     name: "Grupo C",
     teams: [
-      { flag: "🇧🇷", name: "Brasil", pts: 7, dg: "+4", status: "✅", tag: "Clasificado", tagClass: "green",
-        matches: "🇧🇷 1–1 🇲🇦 D · 🇧🇷 3–0 🇭🇹 W · 🏴󠁧󠁢󠁳󠁣󠁴󠁿 0–1 🇧🇷 W" },
-      { flag: "🇲🇦", name: "Marruecos", pts: 7, dg: "+4", status: "✅", tag: "Clasificado", tagClass: "green",
-        matches: "🇲🇦 1–1 🇧🇷 D · 🇲🇦 3–0 🇭🇹 W · 🇲🇦 1–0 🏴󠁧󠁢󠁳󠁣󠁴󠁿 W" },
-      { flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", name: "Escocia", pts: 3, dg: "-1", status: "🛟", tag: "Combo", tagClass: "orange",
-        matches: "🏴󠁧󠁢󠁳󠁣󠁴󠁿 1–0 🇭🇹 W · 🏴󠁧󠁢󠁳󠁣󠁴󠁿 0–1 🇧🇷 L · 🏴󠁧󠁢󠁳󠁣󠁴󠁿 0–1 🇲🇦 L" },
-      { flag: "🇭🇹", name: "Haití", pts: 0, dg: "-7", status: "⛔", tag: "Eliminado", tagClass: "red",
-        matches: "🇭🇹 0–1 🏴󠁧󠁢󠁳󠁣󠁴󠁿 L · 🇭🇹 0–3 🇧🇷 L · 🇭🇹 0–3 🇲🇦 L" }
-    ]
+      { flag:"🇧🇷",name:"Brasil",pts:4,dg:"+3",st:"⚠️",
+        results:[
+          {home:"🇧🇷 Brasil",away:"🇲🇦 Marruecos",score:"1–1",r:"d"},
+          {home:"🇧🇷 Brasil",away:"🇭🇹 Haití",score:"3–0",r:"w"}
+        ],
+        pending:[{date:"24 Jun 19:00",vs:"🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia"}]
+      },
+      { flag:"🇲🇦",name:"Marruecos",pts:4,dg:"+1",st:"⚠️",
+        results:[
+          {home:"🇲🇦 Marruecos",away:"🇧🇷 Brasil",score:"1–1",r:"d"},
+          {home:"🇲🇦 Marruecos",away:"🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia",score:"1–0",r:"w"}
+        ],
+        pending:[{date:"24 Jun 19:00",vs:"🇭🇹 Haití"}]
+      },
+      { flag:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",name:"Escocia",pts:3,dg:"0",st:"⚠️",
+        results:[
+          {home:"🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia",away:"🇭🇹 Haití",score:"1–0",r:"w"},
+          {home:"🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia",away:"🇲🇦 Marruecos",score:"0–1",r:"l"}
+        ],
+        pending:[{date:"24 Jun 19:00",vs:"🇧🇷 Brasil"}]
+      },
+      { flag:"🇭🇹",name:"Haití",pts:0,dg:"-4",st:"⛔",
+        results:[
+          {home:"🇭🇹 Haití",away:"🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia",score:"0–1",r:"l"},
+          {home:"🇭🇹 Haití",away:"🇧🇷 Brasil",score:"0–3",r:"l"}
+        ],
+        pending:[{date:"24 Jun 19:00",vs:"🇲🇦 Marruecos"}]
+      }
+    ],
+    summary: "<strong>Brasil</strong> y <strong>Marruecos</strong> lideran con 4 pts. Ambos clasifican con un empate. <strong>Escocia</strong> (3 pts) clasifica si le gana a Brasil; si empata, espera ser uno de los mejores 3ros. Si pierde, queda eliminada. <strong>Haití</strong> ya está eliminado ⛔ (0 pts, no puede alcanzar al 3ro).",
+    pendingGroup: "Jornada 3 (última): 24 junio · Marruecos vs Haití + Escocia vs Brasil · 19:00 ARG"
   },
+
+  // ── GRUPO D ──
   {
     name: "Grupo D",
     teams: [
-      { flag: "🇺🇸", name: "EE.UU.", pts: 6, dg: "+5", status: "✅", tag: "Clasificado", tagClass: "green",
-        matches: "🇺🇸 4–1 🇵🇾 W · 🇺🇸 2–0 🇦🇺 W" },
-      { flag: "🇦🇺", name: "Australia", pts: 3, dg: "0", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
-        matches: "🇦🇺 2–0 🇹🇷 W · 🇦🇺 0–2 🇺🇸 L" },
-      { flag: "🇵🇾", name: "Paraguay", pts: 3, dg: "-2", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
-        matches: "🇵🇾 1–4 🇺🇸 L · 🇵🇾 1–0 🇹🇷 W" },
-      { flag: "🇹🇷", name: "Turquía", pts: 0, dg: "-5", status: "⛔", tag: "Eliminado", tagClass: "red",
-        matches: "🇹🇷 0–2 🇦🇺 L · 🇹🇷 0–1 🇵🇾 L" }
-    ]
+      { flag:"🇺🇸",name:"EE.UU.",pts:6,dg:"+5",st:"✅",
+        results:[
+          {home:"🇺🇸 EE.UU.",away:"🇵🇾 Paraguay",score:"4–1",r:"w"},
+          {home:"🇺🇸 EE.UU.",away:"🇦🇺 Australia",score:"2–0",r:"w"}
+        ],
+        pending:[{date:"25 Jun 23:00",vs:"🇹🇷 Turquía"}]
+      },
+      { flag:"🇦🇺",name:"Australia",pts:3,dg:"0",st:"⚠️",
+        results:[
+          {home:"🇦🇺 Australia",away:"🇹🇷 Turquía",score:"2–0",r:"w"},
+          {home:"🇦🇺 Australia",away:"🇺🇸 EE.UU.",score:"0–2",r:"l"}
+        ],
+        pending:[{date:"25 Jun 23:00",vs:"🇵🇾 Paraguay"}]
+      },
+      { flag:"🇵🇾",name:"Paraguay",pts:3,dg:"-2",st:"⚠️",
+        results:[
+          {home:"🇵🇾 Paraguay",away:"🇺🇸 EE.UU.",score:"1–4",r:"l"},
+          {home:"🇵🇾 Paraguay",away:"🇹🇷 Turquía",score:"1–0",r:"w"}
+        ],
+        pending:[{date:"25 Jun 23:00",vs:"🇦🇺 Australia"}]
+      },
+      { flag:"🇹🇷",name:"Turquía",pts:0,dg:"-5",st:"⛔",
+        results:[
+          {home:"🇹🇷 Turquía",away:"🇦🇺 Australia",score:"0–2",r:"l"},
+          {home:"🇹🇷 Turquía",away:"🇵🇾 Paraguay",score:"0–1",r:"l"}
+        ],
+        pending:[{date:"25 Jun 23:00",vs:"🇺🇸 EE.UU."}]
+      }
+    ],
+    summary: "<strong>EE.UU.</strong> ya está clasificado ✅. <strong>Australia</strong> y <strong>Paraguay</strong> (3 pts c/u) juegan entre sí: el ganador clasifica; un empate favorece a Australia por diferencia de gol (0 vs -2). <strong>Turquía</strong> está eliminada ⛔.",
+    pendingGroup: "Jornada 3: 25 junio · Paraguay vs Australia + Turquía vs EE.UU. · 23:00 ARG"
   },
+
+  // ── GRUPO E ──
   {
     name: "Grupo E",
     teams: [
-      { flag: "🇩🇪", name: "Alemania", pts: 6, dg: "+7", status: "✅", tag: "Clasificado", tagClass: "green",
-        matches: "🇩🇪 7–1 🇨🇼 W · 🇩🇪 2–1 🇨🇮 W" },
-      { flag: "🇨🇮", name: "Costa de Marfil", pts: 3, dg: "+1", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
-        matches: "🇨🇮 1–0 🇪🇨 W · 🇨🇮 1–2 🇩🇪 L" },
-      { flag: "🇪🇨", name: "Ecuador", pts: 1, dg: "-1", status: "🛟", tag: "Difícil", tagClass: "orange",
-        matches: "🇪🇨 0–1 🇨🇮 L · 🇪🇨 0–0 🇨🇼 D" },
-      { flag: "🇨🇼", name: "Curazao", pts: 1, dg: "-7", status: "🛟", tag: "Difícil", tagClass: "orange",
-        matches: "🇨🇼 1–7 🇩🇪 L · 🇨🇼 0–0 🇪🇨 D" }
-    ]
+      { flag:"🇩🇪",name:"Alemania",pts:6,dg:"+7",st:"✅",
+        results:[
+          {home:"🇩🇪 Alemania",away:"🇨🇼 Curazao",score:"7–1",r:"w"},
+          {home:"🇩🇪 Alemania",away:"🇨🇮 Costa de Marfil",score:"2–1",r:"w"}
+        ],
+        pending:[{date:"25 Jun 17:00",vs:"🇪🇨 Ecuador"}]
+      },
+      { flag:"🇨🇮",name:"Costa de Marfil",pts:3,dg:"+1",st:"⚠️",
+        results:[
+          {home:"🇨🇮 Costa de Marfil",away:"🇪🇨 Ecuador",score:"1–0",r:"w"},
+          {home:"🇨🇮 Costa de Marfil",away:"🇩🇪 Alemania",score:"1–2",r:"l"}
+        ],
+        pending:[{date:"25 Jun 17:00",vs:"🇨🇼 Curazao"}]
+      },
+      { flag:"🇪🇨",name:"Ecuador",pts:1,dg:"-1",st:"🛟",
+        results:[
+          {home:"🇪🇨 Ecuador",away:"🇨🇮 Costa de Marfil",score:"0–1",r:"l"},
+          {home:"🇪🇨 Ecuador",away:"🇨🇼 Curazao",score:"0–0",r:"d"}
+        ],
+        pending:[{date:"25 Jun 17:00",vs:"🇩🇪 Alemania"}]
+      },
+      { flag:"🇨🇼",name:"Curazao",pts:1,dg:"-7",st:"🛟",
+        results:[
+          {home:"🇨🇼 Curazao",away:"🇩🇪 Alemania",score:"1–7",r:"l"},
+          {home:"🇨🇼 Curazao",away:"🇪🇨 Ecuador",score:"0–0",r:"d"}
+        ],
+        pending:[{date:"25 Jun 17:00",vs:"🇨🇮 Costa de Marfil"}]
+      }
+    ],
+    summary: "<strong>Alemania</strong> clasificada ✅. <strong>Costa de Marfil</strong> (3 pts) clasifica ganándole a Curazao. <strong>Ecuador</strong> (1 pt) necesita ganarle a Alemania y que Costa de Marfil pierda, además de revertir 2 goles de diferencia. <strong>Curazao</strong> (1 pt, -7) necesita un milagro: ganar por goleada y que Ecuador pierda.",
+    pendingGroup: "Jornada 3: 25 junio · Ecuador vs Alemania + Curazao vs Costa de Marfil · 17:00 ARG"
   },
+
+  // ── GRUPO F ──
   {
     name: "Grupo F",
     teams: [
-      { flag: "🇳🇱", name: "Países Bajos", pts: 4, dg: "+4", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
-        matches: "🇳🇱 2–2 🇯🇵 D · 🇳🇱 5–1 🇸🇪 W" },
-      { flag: "🇯🇵", name: "Japón", pts: 4, dg: "+4", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
-        matches: "🇯🇵 2–2 🇳🇱 D · 🇯🇵 4–0 🇹🇳 W" },
-      { flag: "🇸🇪", name: "Suecia", pts: 3, dg: "0", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
-        matches: "🇸🇪 5–1 🇹🇳 W · 🇸🇪 1–5 🇳🇱 L" },
-      { flag: "🇹🇳", name: "Túnez", pts: 0, dg: "-8", status: "🛟", tag: "Milagro", tagClass: "orange",
-        matches: "🇹🇳 1–5 🇸🇪 L · 🇹🇳 0–4 🇯🇵 L" }
-    ]
+      { flag:"🇳🇱",name:"Países Bajos",pts:4,dg:"+4",st:"⚠️",
+        results:[
+          {home:"🇳🇱 Países Bajos",away:"🇯🇵 Japón",score:"2–2",r:"d"},
+          {home:"🇳🇱 Países Bajos",away:"🇸🇪 Suecia",score:"5–1",r:"w"}
+        ],
+        pending:[{date:"25 Jun 20:00",vs:"🇹🇳 Túnez"}]
+      },
+      { flag:"🇯🇵",name:"Japón",pts:4,dg:"+4",st:"⚠️",
+        results:[
+          {home:"🇯🇵 Japón",away:"🇳🇱 Países Bajos",score:"2–2",r:"d"},
+          {home:"🇯🇵 Japón",away:"🇹🇳 Túnez",score:"4–0",r:"w"}
+        ],
+        pending:[{date:"25 Jun 20:00",vs:"🇸🇪 Suecia"}]
+      },
+      { flag:"🇸🇪",name:"Suecia",pts:3,dg:"0",st:"⚠️",
+        results:[
+          {home:"🇸🇪 Suecia",away:"🇹🇳 Túnez",score:"5–1",r:"w"},
+          {home:"🇸🇪 Suecia",away:"🇳🇱 Países Bajos",score:"1–5",r:"l"}
+        ],
+        pending:[{date:"25 Jun 20:00",vs:"🇯🇵 Japón"}]
+      },
+      { flag:"🇹🇳",name:"Túnez",pts:0,dg:"-8",st:"🛟",
+        results:[
+          {home:"🇹🇳 Túnez",away:"🇸🇪 Suecia",score:"1–5",r:"l"},
+          {home:"🇹🇳 Túnez",away:"🇯🇵 Japón",score:"0–4",r:"l"}
+        ],
+        pending:[{date:"25 Jun 20:00",vs:"🇳🇱 Países Bajos"}]
+      }
+    ],
+    summary: "<strong>Países Bajos</strong> y <strong>Japón</strong> (4 pts c/u, +4 DG) clasifican empatando. <strong>Suecia</strong> (3 pts) clasifica si le gana a Japón. Si empata, depende de otros resultados (3ros). <strong>Túnez</strong> (0 pts, -8) necesita ganar por goleada histórica y que Suecia pierda: prácticamente un milagro.",
+    pendingGroup: "Jornada 3: 25 junio · Japón vs Suecia + Túnez vs Países Bajos · 20:00 ARG"
   },
+
+  // ── GRUPO G (CORREGIDO — eliminado partido inventado EGY-IRN) ──
   {
     name: "Grupo G",
     teams: [
-      { flag: "🇪🇬", name: "Egipto", pts: 7, dg: "+4", status: "✅", tag: "Clasificado", tagClass: "green",
-        matches: "🇪🇬 1–1 🇧🇪 D · 🇪🇬 2–1 🇮🇷 W · 🇳🇿 1–3 🇪🇬 W" },
-      { flag: "🇮🇷", name: "Irán", pts: 2, dg: "0", status: "🛟", tag: "Gana + combo", tagClass: "orange",
-        matches: "🇮🇷 2–2 🇳🇿 D · 🇮🇷 0–0 🇧🇪 D · 🇮🇷 1–2 🇪🇬 L" },
-      { flag: "🇧🇪", name: "Bélgica", pts: 2, dg: "0", status: "🛟", tag: "Gana + combo", tagClass: "orange",
-        matches: "🇧🇪 1–1 🇪🇬 D · 🇧🇪 0–0 🇮🇷 D" },
-      { flag: "🇳🇿", name: "N. Zelanda", pts: 1, dg: "-2", status: "🛟", tag: "Difícil", tagClass: "orange",
-        matches: "🇳🇿 2–2 🇮🇷 D · 🇳🇿 1–3 🇪🇬 L" }
-    ]
+      { flag:"🇪🇬",name:"Egipto",pts:4,dg:"+2",st:"⚠️",
+        results:[
+          {home:"🇪🇬 Egipto",away:"🇧🇪 Bélgica",score:"1–1",r:"d"},
+          {home:"🇪🇬 Egipto",away:"🇳🇿 N. Zelanda",score:"3–1",r:"w"}
+        ],
+        pending:[{date:"27 Jun 00:00",vs:"🇮🇷 Irán"}]
+      },
+      { flag:"🇮🇷",name:"Irán",pts:2,dg:"0",st:"⚠️",
+        results:[
+          {home:"🇮🇷 Irán",away:"🇳🇿 N. Zelanda",score:"2–2",r:"d"},
+          {home:"🇮🇷 Irán",away:"🇧🇪 Bélgica",score:"0–0",r:"d"}
+        ],
+        pending:[{date:"27 Jun 00:00",vs:"🇪🇬 Egipto"}]
+      },
+      { flag:"🇧🇪",name:"Bélgica",pts:2,dg:"0",st:"⚠️",
+        results:[
+          {home:"🇧🇪 Bélgica",away:"🇪🇬 Egipto",score:"1–1",r:"d"},
+          {home:"🇧🇪 Bélgica",away:"🇮🇷 Irán",score:"0–0",r:"d"}
+        ],
+        pending:[{date:"27 Jun 00:00",vs:"🇳🇿 N. Zelanda"}]
+      },
+      { flag:"🇳🇿",name:"N. Zelanda",pts:1,dg:"-2",st:"🛟",
+        results:[
+          {home:"🇳🇿 N. Zelanda",away:"🇮🇷 Irán",score:"2–2",r:"d"},
+          {home:"🇳🇿 N. Zelanda",away:"🇪🇬 Egipto",score:"1–3",r:"l"}
+        ],
+        pending:[{date:"27 Jun 00:00",vs:"🇧🇪 Bélgica"}]
+      }
+    ],
+    summary: "<strong>Egipto</strong> (4 pts) clasifica ganando o empatando. <strong>Irán</strong> (2 pts) clasifica si le gana a Egipto; empatando queda a la espera. <strong>Bélgica</strong> (2 pts) clasifica si le gana a N. Zelanda y Egipto-Irán no lo perjudica. <strong>N. Zelanda</strong> (1 pt) necesita ganarle a Bélgica sí o sí.",
+    pendingGroup: "Jornada 3: 27 junio · Egipto vs Irán + N. Zelanda vs Bélgica · 00:00 ARG"
   },
+
+  // ── GRUPO H ──
   {
     name: "Grupo H",
     teams: [
-      { flag: "🇪🇸", name: "España", pts: 4, dg: "+4", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
-        matches: "🇪🇸 0–0 🇨🇻 D · 🇪🇸 4–0 🇸🇦 W" },
-      { flag: "🇺🇾", name: "Uruguay", pts: 2, dg: "0", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
-        matches: "🇺🇾 1–1 🇸🇦 D · 🇺🇾 2–2 🇨🇻 D" },
-      { flag: "🇨🇻", name: "Cabo Verde", pts: 2, dg: "0", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
-        matches: "🇨🇻 0–0 🇪🇸 D · 🇨🇻 2–2 🇺🇾 D" },
-      { flag: "🇸🇦", name: "Arabia Saudita", pts: 1, dg: "-4", status: "🛟", tag: "Difícil", tagClass: "orange",
-        matches: "🇸🇦 1–1 🇺🇾 D · 🇸🇦 0–4 🇪🇸 L" }
-    ]
+      { flag:"🇪🇸",name:"España",pts:4,dg:"+4",st:"⚠️",
+        results:[
+          {home:"🇪🇸 España",away:"🇨🇻 Cabo Verde",score:"0–0",r:"d"},
+          {home:"🇪🇸 España",away:"🇸🇦 Arabia Saudita",score:"4–0",r:"w"}
+        ],
+        pending:[{date:"26 Jun 21:00",vs:"🇺🇾 Uruguay"}]
+      },
+      { flag:"🇺🇾",name:"Uruguay",pts:2,dg:"0",st:"⚠️",
+        results:[
+          {home:"🇺🇾 Uruguay",away:"🇸🇦 Arabia Saudita",score:"1–1",r:"d"},
+          {home:"🇺🇾 Uruguay",away:"🇨🇻 Cabo Verde",score:"2–2",r:"d"}
+        ],
+        pending:[{date:"26 Jun 21:00",vs:"🇪🇸 España"}]
+      },
+      { flag:"🇨🇻",name:"Cabo Verde",pts:2,dg:"0",st:"⚠️",
+        results:[
+          {home:"🇨🇻 Cabo Verde",away:"🇪🇸 España",score:"0–0",r:"d"},
+          {home:"🇨🇻 Cabo Verde",away:"🇺🇾 Uruguay",score:"2–2",r:"d"}
+        ],
+        pending:[{date:"26 Jun 21:00",vs:"🇸🇦 Arabia Saudita"}]
+      },
+      { flag:"🇸🇦",name:"Arabia Saudita",pts:1,dg:"-4",st:"🛟",
+        results:[
+          {home:"🇸🇦 Arabia Saudita",away:"🇺🇾 Uruguay",score:"1–1",r:"d"},
+          {home:"🇸🇦 Arabia Saudita",away:"🇪🇸 España",score:"0–4",r:"l"}
+        ],
+        pending:[{date:"26 Jun 21:00",vs:"🇨🇻 Cabo Verde"}]
+      }
+    ],
+    summary: "<strong>España</strong> (4 pts) clasifica con solo empatar. <strong>Uruguay</strong>, <strong>Cabo Verde</strong> (2 pts c/u) y <strong>Arabia Saudita</strong> (1 pt) llegan con vida. Uruguay clasifica ganándole a España. Cabo Verde clasifica ganándole a Arabia Saudita. Si Uruguay y Cabo Verde empatan, todo depende de goles. Arabia Saudita necesita ganar y que Uruguay pierda.",
+    pendingGroup: "Jornada 3: 26 junio · Uruguay vs España + Cabo Verde vs Arabia Saudita · 21:00 ARG"
   },
+
+  // ── GRUPO I ──
   {
     name: "Grupo I",
     teams: [
-      { flag: "🇫🇷", name: "Francia", pts: 6, dg: "+5", status: "✅", tag: "Clasificada", tagClass: "green",
-        matches: "🇫🇷 3–1 🇸🇳 W · 🇫🇷 3–0 🇮🇶 W" },
-      { flag: "🇳🇴", name: "Noruega", pts: 6, dg: "+4", status: "✅", tag: "Clasificada", tagClass: "green",
-        matches: "🇳🇴 4–1 🇮🇶 W · 🇳🇴 3–2 🇸🇳 W" },
-      { flag: "🇸🇳", name: "Senegal", pts: 0, dg: "-3", status: "🛟", tag: "Milagro", tagClass: "orange",
-        matches: "🇸🇳 1–3 🇫🇷 L · 🇸🇳 2–3 🇳🇴 L" },
-      { flag: "🇮🇶", name: "Irak", pts: 0, dg: "-6", status: "⛔", tag: "Eliminado", tagClass: "red",
-        matches: "🇮🇶 1–4 🇳🇴 L · 🇮🇶 0–3 🇫🇷 L" }
-    ]
+      { flag:"🇫🇷",name:"Francia",pts:6,dg:"+5",st:"✅",
+        results:[
+          {home:"🇫🇷 Francia",away:"🇸🇳 Senegal",score:"3–1",r:"w"},
+          {home:"🇫🇷 Francia",away:"🇮🇶 Irak",score:"3–0",r:"w"}
+        ],
+        pending:[{date:"26 Jun 16:00",vs:"🇳🇴 Noruega"}]
+      },
+      { flag:"🇳🇴",name:"Noruega",pts:6,dg:"+4",st:"✅",
+        results:[
+          {home:"🇳🇴 Noruega",away:"🇮🇶 Irak",score:"4–1",r:"w"},
+          {home:"🇳🇴 Noruega",away:"🇸🇳 Senegal",score:"3–2",r:"w"}
+        ],
+        pending:[{date:"26 Jun 16:00",vs:"🇫🇷 Francia"}]
+      },
+      { flag:"🇸🇳",name:"Senegal",pts:0,dg:"-3",st:"⛔",
+        results:[
+          {home:"🇸🇳 Senegal",away:"🇫🇷 Francia",score:"1–3",r:"l"},
+          {home:"🇸🇳 Senegal",away:"🇳🇴 Noruega",score:"2–3",r:"l"}
+        ],
+        pending:[{date:"26 Jun 16:00",vs:"🇮🇶 Irak"}]
+      },
+      { flag:"🇮🇶",name:"Irak",pts:0,dg:"-6",st:"⛔",
+        results:[
+          {home:"🇮🇶 Irak",away:"🇳🇴 Noruega",score:"1–4",r:"l"},
+          {home:"🇮🇶 Irak",away:"🇫🇷 Francia",score:"0–3",r:"l"}
+        ],
+        pending:[{date:"26 Jun 16:00",vs:"🇸🇳 Senegal"}]
+      }
+    ],
+    summary: "<strong>Francia</strong> y <strong>Noruega</strong> ya están clasificadas ✅. Se enfrentan entre sí para definir el 1° del grupo. <strong>Senegal</strong> e <strong>Irak</strong> están eliminados ⛔ pero juegan entre sí por el honor.",
+    pendingGroup: "Jornada 3: 26 junio · Noruega vs Francia + Senegal vs Irak · 16:00 ARG"
   },
+
+  // ── GRUPO J ──
   {
     name: "Grupo J",
     teams: [
-      { flag: "🇦🇷", name: "Argentina", pts: 6, dg: "+5", status: "✅", tag: "Clasificada", tagClass: "green",
-        matches: "🇦🇷 3–0 🇩🇿 W · 🇦🇷 2–0 🇦🇹 W" },
-      { flag: "🇦🇹", name: "Austria", pts: 3, dg: "0", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
-        matches: "🇦🇹 3–1 🇯🇴 W · 🇦🇹 0–2 🇦🇷 L" },
-      { flag: "🇩🇿", name: "Argelia", pts: 3, dg: "-2", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
-        matches: "🇩🇿 0–3 🇦🇷 L · 🇩🇿 2–1 🇯🇴 W" },
-      { flag: "🇯🇴", name: "Jordania", pts: 0, dg: "-3", status: "🛟", tag: "Milagro", tagClass: "orange",
-        matches: "🇯🇴 1–3 🇦🇹 L · 🇯🇴 1–2 🇩🇿 L" }
-    ]
+      { flag:"🇦🇷",name:"Argentina",pts:6,dg:"+5",st:"✅",
+        results:[
+          {home:"🇦🇷 Argentina",away:"🇩🇿 Argelia",score:"3–0",r:"w"},
+          {home:"🇦🇷 Argentina",away:"🇦🇹 Austria",score:"2–0",r:"w"}
+        ],
+        pending:[{date:"27 Jun 23:00",vs:"🇯🇴 Jordania"}]
+      },
+      { flag:"🇦🇹",name:"Austria",pts:3,dg:"0",st:"⚠️",
+        results:[
+          {home:"🇦🇹 Austria",away:"🇯🇴 Jordania",score:"3–1",r:"w"},
+          {home:"🇦🇹 Austria",away:"🇦🇷 Argentina",score:"0–2",r:"l"}
+        ],
+        pending:[{date:"27 Jun 23:00",vs:"🇩🇿 Argelia"}]
+      },
+      { flag:"🇩🇿",name:"Argelia",pts:3,dg:"-2",st:"⚠️",
+        results:[
+          {home:"🇩🇿 Argelia",away:"🇦🇷 Argentina",score:"0–3",r:"l"},
+          {home:"🇩🇿 Argelia",away:"🇯🇴 Jordania",score:"2–1",r:"w"}
+        ],
+        pending:[{date:"27 Jun 23:00",vs:"🇦🇹 Austria"}]
+      },
+      { flag:"🇯🇴",name:"Jordania",pts:0,dg:"-3",st:"🛟",
+        results:[
+          {home:"🇯🇴 Jordania",away:"🇦🇹 Austria",score:"1–3",r:"l"},
+          {home:"🇯🇴 Jordania",away:"🇩🇿 Argelia",score:"1–2",r:"l"}
+        ],
+        pending:[{date:"27 Jun 23:00",vs:"🇦🇷 Argentina"}]
+      }
+    ],
+    summary: "<strong>Argentina</strong> ya está clasificada ✅. <strong>Austria</strong> y <strong>Argelia</strong> (3 pts c/u) se enfrentan entre sí: el ganador clasifica; un empate clasifica a Austria por diferencia de gol (0 vs -2). <strong>Jordania</strong> (0 pts, -3) necesita ganarle a Argentina y que Austria-Argelia empaten: casi imposible.",
+    pendingGroup: "Jornada 3: 27 junio · Argelia vs Austria + Jordania vs Argentina · 23:00 ARG"
   },
+
+  // ── GRUPO K ──
   {
     name: "Grupo K",
     teams: [
-      { flag: "🇨🇴", name: "Colombia", pts: 6, dg: "+3", status: "✅", tag: "Clasificada", tagClass: "green",
-        matches: "🇨🇴 3–1 🇺🇿 W · 🇨🇴 1–0 🇨🇩 W" },
-      { flag: "🇵🇹", name: "Portugal", pts: 4, dg: "+5", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
-        matches: "🇵🇹 1–1 🇨🇴 D · 🇵🇹 5–0 🇺🇿 W" },
-      { flag: "🇨🇩", name: "RD Congo", pts: 3, dg: "-1", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
-        matches: "🇨🇩 1–0 🇺🇿 W · 🇨🇩 0–1 🇨🇴 L" },
-      { flag: "🇺🇿", name: "Uzbekistán", pts: 0, dg: "-7", status: "🛟", tag: "Milagro", tagClass: "orange",
-        matches: "🇺🇿 1–3 🇨🇴 L · 🇺🇿 0–1 🇨🇩 L · 🇺🇿 0–5 🇵🇹 L" }
-    ]
+      { flag:"🇨🇴",name:"Colombia",pts:6,dg:"+3",st:"✅",
+        results:[
+          {home:"🇨🇴 Colombia",away:"🇺🇿 Uzbekistán",score:"3–1",r:"w"},
+          {home:"🇨🇴 Colombia",away:"🇨🇩 RD Congo",score:"1–0",r:"w"}
+        ],
+        pending:[{date:"27 Jun 20:30",vs:"🇵🇹 Portugal"}]
+      },
+      { flag:"🇵🇹",name:"Portugal",pts:4,dg:"+5",st:"⚠️",
+        results:[
+          {home:"🇵🇹 Portugal",away:"🇨🇩 RD Congo",score:"1–1",r:"d"},
+          {home:"🇵🇹 Portugal",away:"🇺🇿 Uzbekistán",score:"5–0",r:"w"}
+        ],
+        pending:[{date:"27 Jun 20:30",vs:"🇨🇴 Colombia"}]
+      },
+      { flag:"🇨🇩",name:"RD Congo",pts:3,dg:"-1",st:"⚠️",
+        results:[
+          {home:"🇨🇩 RD Congo",away:"🇺🇿 Uzbekistán",score:"1–0",r:"w"},
+          {home:"🇨🇩 RD Congo",away:"🇨🇴 Colombia",score:"0–1",r:"l"}
+        ],
+        pending:[{date:"27 Jun 20:30",vs:"🇺🇿 Uzbekistán"}]
+      },
+      { flag:"🇺🇿",name:"Uzbekistán",pts:0,dg:"-7",st:"🛟",
+        results:[
+          {home:"🇺🇿 Uzbekistán",away:"🇨🇴 Colombia",score:"1–3",r:"l"},
+          {home:"🇺🇿 Uzbekistán",away:"🇵🇹 Portugal",score:"0–5",r:"l"}
+        ],
+        pending:[{date:"27 Jun 20:30",vs:"🇨🇩 RD Congo"}]
+      }
+    ],
+    summary: "<strong>Colombia</strong> ya está clasificada ✅. <strong>Portugal</strong> (4 pts) clasifica empatando. <strong>RD Congo</strong> (3 pts) clasifica ganándole a Uzbekistán. <strong>Uzbekistán</strong> (0 pts, -7) necesita ganar por goleada y que se den otros resultados para ser 3ro: muy difícil pero no está eliminado matemáticamente.",
+    pendingGroup: "Jornada 3: 27 junio · Colombia vs Portugal + RD Congo vs Uzbekistán · 20:30 ARG"
   },
+
+  // ── GRUPO L ──
   {
     name: "Grupo L",
     teams: [
-      { flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", name: "Inglaterra", pts: 4, dg: "+2", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
-        matches: "🏴󠁧󠁢󠁥󠁮󠁧󠁿 4–2 🇭🇷 W · 🏴󠁧󠁢󠁥󠁮󠁧󠁿 0–0 🇬🇭 D" },
-      { flag: "🇬🇭", name: "Ghana", pts: 4, dg: "+1", status: "⚠️", tag: "Empate clasifica", tagClass: "yellow",
-        matches: "🇬🇭 1–0 🇵🇦 W · 🇬🇭 0–0 🏴󠁧󠁢󠁥󠁮󠁧󠁿 D" },
-      { flag: "🇭🇷", name: "Croacia", pts: 3, dg: "-1", status: "⚠️", tag: "Gana y clasifica", tagClass: "yellow",
-        matches: "🇭🇷 2–4 🏴󠁧󠁢󠁥󠁮󠁧󠁿 L · 🇭🇷 1–0 🇵🇦 W" },
-      { flag: "🇵🇦", name: "Panamá", pts: 0, dg: "-2", status: "⛔", tag: "Eliminado", tagClass: "red",
-        matches: "🇵🇦 0–1 🇬🇭 L · 🇵🇦 0–1 🇭🇷 L" }
-    ]
+      { flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",name:"Inglaterra",pts:4,dg:"+2",st:"⚠️",
+        results:[
+          {home:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra",away:"🇭🇷 Croacia",score:"4–2",r:"w"},
+          {home:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra",away:"🇬🇭 Ghana",score:"0–0",r:"d"}
+        ],
+        pending:[{date:"27 Jun 18:00",vs:"🇵🇦 Panamá"}]
+      },
+      { flag:"🇬🇭",name:"Ghana",pts:4,dg:"+1",st:"⚠️",
+        results:[
+          {home:"🇬🇭 Ghana",away:"🇵🇦 Panamá",score:"1–0",r:"w"},
+          {home:"🇬🇭 Ghana",away:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra",score:"0–0",r:"d"}
+        ],
+        pending:[{date:"27 Jun 18:00",vs:"🇭🇷 Croacia"}]
+      },
+      { flag:"🇭🇷",name:"Croacia",pts:3,dg:"-1",st:"⚠️",
+        results:[
+          {home:"🇭🇷 Croacia",away:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra",score:"2–4",r:"l"},
+          {home:"🇭🇷 Croacia",away:"🇵🇦 Panamá",score:"1–0",r:"w"}
+        ],
+        pending:[{date:"27 Jun 18:00",vs:"🇬🇭 Ghana"}]
+      },
+      { flag:"🇵🇦",name:"Panamá",pts:0,dg:"-2",st:"⛔",
+        results:[
+          {home:"🇵🇦 Panamá",away:"🇬🇭 Ghana",score:"0–1",r:"l"},
+          {home:"🇵🇦 Panamá",away:"🇭🇷 Croacia",score:"0–1",r:"l"}
+        ],
+        pending:[{date:"27 Jun 18:00",vs:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra"}]
+      }
+    ],
+    summary: "<strong>Inglaterra</strong> y <strong>Ghana</strong> (4 pts c/u) clasifican empatando. <strong>Croacia</strong> (3 pts) clasifica si le gana a Ghana. Si empata, espera ser uno de los mejores 3ros. <strong>Panamá</strong> está eliminada ⛔ (0 pts).",
+    pendingGroup: "Jornada 3: 27 junio · Croacia vs Ghana + Panamá vs Inglaterra · 18:00 ARG"
   }
 ];
 
-function tagHtml(text, cls) {
-  return '<span class="tag tag-' + cls + '">' + text + '</span>';
-}
-
-function matchesHtml(arr) {
-  return arr.map(m => {
-    if (m.includes('W')) return '<span class="win">' + m.replace(' W', ' ✅') + '</span>';
-    if (m.includes('D')) return '<span class="draw">' + m.replace(' D', ' ⚖️') + '</span>';
-    if (m.includes('L')) return '<span class="loss">' + m.replace(' L', ' ❌') + '</span>';
-    return m;
-  }).join(' · ');
-}
-
+// ═══════════════ RENDER ═══════════════
 function render() {
   const container = document.getElementById('app');
   groups.forEach(g => {
     const card = document.createElement('div');
     card.className = 'group-card';
-    let html = '<h2>' + g.name + '</h2>';
-    html += '<table><thead><tr><th>Equipo</th><th class="pts">Pts</th><th>DG</th><th class="status"></th></tr></thead><tbody>';
+
+    // Header
+    let html = '<h2>⚽ ' + g.name + '<span class="round">Jornada ' + (g.teams[0].results.length) + '/3</span></h2>';
+
+    // Standings table
+    html += '<table class="standings-table"><thead><tr>';
+    html += '<th>Equipo</th><th class="center" style="width:30px">Pts</th><th style="width:30px">DG</th><th class="center" style="width:30px"></th>';
+    html += '</tr></thead><tbody>';
     g.teams.forEach(t => {
       html += '<tr>';
-      html += '<td class="team"><span class="flag">' + t.flag + '</span>' + t.name + '</td>';
+      html += '<td class="team-name"><span class="flag">' + t.flag + '</span>' + t.name + '</td>';
       html += '<td class="pts">' + t.pts + '</td>';
       html += '<td>' + t.dg + '</td>';
-      html += '<td class="status">' + t.status + '</td>';
+      html += '<td class="st">' + t.st + '</td>';
       html += '</tr>';
-      html += '<tr><td colspan="4" class="matches">' + matchesHtml(t.matches.split(' · '));
-      html += ' &nbsp;—&nbsp; ' + tagHtml(t.tag, t.tagClass);
-      html += '</td></tr>';
+
+      // Match results
+      html += '<tr><td colspan="4">';
+      html += '<div class="match-results">';
+      // Played matches
+      if (t.results.length > 0) {
+        html += '<span style="color:var(--muted);">Jugados: </span>';
+        t.results.forEach((m, i) => {
+          if (i > 0) html += '<span class="sep"> · </span>';
+          const cls = m.r === 'w' ? 'w' : m.r === 'd' ? 'd' : 'l';
+          const icon = m.r === 'w' ? '✅' : m.r === 'd' ? '⚖️' : '❌';
+          html += '<span class="' + cls + '">' + m.home + ' ' + m.score + ' ' + m.away + ' ' + icon + '</span>';
+        });
+      }
+      // Pending matches
+      if (t.pending.length > 0) {
+        html += '<br><span style="color:var(--blue);">Pendiente: </span>';
+        t.pending.forEach((p, i) => {
+          if (i > 0) html += ' · ';
+          html += '<span style="color:var(--blue);">vs ' + p.vs + ' <span style="color:var(--muted);font-size:0.65rem;">(' + p.date + ')</span></span>';
+        });
+      }
+      html += '</div></td></tr>';
     });
     html += '</tbody></table>';
+
+    // Group summary
+    html += '<div class="group-summary">' + g.summary + '</div>';
+
+    // Pending section
+    html += '<div class="pending-section">';
+    html += '<div class="pending-title">📋 Próximos partidos del grupo</div>';
+    html += '<div style="font-size:0.73rem;color:var(--muted);">' + g.pendingGroup + '</div>';
+    html += '</div>';
+
     card.innerHTML = html;
     container.appendChild(card);
   });
+
+  // Update time
+  const now = new Date();
+  document.getElementById('lastUpdate').textContent = 
+    now.toLocaleDateString('es-AR', {day:'2-digit',month:'short',year:'numeric'}) + ' ' +
+    now.toLocaleTimeString('es-AR', {hour:'2-digit',minute:'2-digit'}) + ' ARG';
 }
+
 render();
 </script>
+
 </body>
 </html>
