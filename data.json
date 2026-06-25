@@ -8,17 +8,17 @@
         {
           "flag": "🇲🇽",
           "name": "México",
-          "pts": 7,
-          "dg": "+4",
+          "pts": 9,
+          "dg": "+6",
           "played": 3,
           "pending": 0,
           "status": "Clasificado",
           "sclass": "st-c",
           "matches": [
             {
-              "score": "2–2",
+              "score": "2–0",
               "opponent": "🇿🇦",
-              "result": "d"
+              "result": "w"
             },
             {
               "score": "1–0",
@@ -37,12 +37,12 @@
         {
           "flag": "🇿🇦",
           "name": "Sudáfrica",
-          "pts": 5,
-          "dg": "+1",
+          "pts": 4,
+          "dg": "-1",
           "played": 3,
           "pending": 0,
-          "status": "Clasificado",
-          "sclass": "st-c",
+          "status": "Cómodo",
+          "sclass": "st-a",
           "matches": [
             {
               "score": "2–2",
@@ -90,7 +90,7 @@
             }
           ],
           "pendientes": [],
-          "req": "3° con 3 pts (-1 DG). Espera ser uno de los 8 mejores terceros."
+          "req": "3° con 3 pts (-1 DG). Depende de otros grupos."
         },
         {
           "flag": "🇨🇿",
@@ -124,10 +124,10 @@
       ],
       "pendientes": "—",
       "resumen": [
-        "✅ México: 1° (7 pts, +4 DG).",
-        "✅ Sudáfrica: 2° (5 pts, +1 DG).",
-        "🟠 Corea del Sur: 3° con 3 pts (-1 DG).",
-        "🔴 Rep. Checa: eliminado."
+        "✅ México: 1° (9 pts, +6 DG). Ganó los 3 partidos.",
+        "🔵 Sudáfrica: 2° (4 pts, -1 DG). Venció a Corea en la última fecha.",
+        "🔴 Corea del Sur: 3° (3 pts, -1 DG). Depende de otros grupos.",
+        "🔴 Rep. Checa: eliminado (1 pt, -4 DG)."
       ],
       "cerrado": true
     },
