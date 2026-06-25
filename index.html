@@ -507,56 +507,38 @@ function generarComentarioPartido(hInfo, aInfo) {
   if (!hInfo || !aInfo) return "";
   const h = hInfo.equipo;
   const a = aInfo.equipo;
-  const gh = hInfo.grupo;
-  const ga = aInfo.grupo;
   
-  const hPts = `${h.p} pts (${h.d} DG)`;
-  const aPts = `${a.p} pts (${a.d} DG)`;
-  
-  function estadoLargo(s) {
-    if (s === "✅") return "ya clasificado";
-    if (s === "⚠️") return "depende de sí mismo";
-    if (s === "🛟") return "necesita combo de resultados";
-    if (s === "⛔") return "eliminado";
-    return s;
+  function presion(s) {
+    if (s === "⛔") return "sin presión";
+    if (s === "✅") return "sin presión";
+    if (s === "⚠️") return "máxima presión";
+    if (s === "🛟") return "presión extrema";
+    return "";
   }
   
-  function queNecesita(equipo) {
-    if (equipo.s === "✅") return `ya aseguró su lugar en 16vos`;
-    if (equipo.s === "⛔") return `matemáticamente eliminado`;
+  function situacion(equipo) {
+    if (equipo.s === "✅") return `ya está en 16vos`;
+    if (equipo.s === "⛔") return `ya está eliminado`;
     if (equipo.s === "⚠️") {
-      if (equipo.p >= 4) return `le alcanza con un empate para clasificar`;
-      return `necesita ganar para tener chances de clasificar`;
+      if (equipo.p >= 4) return `le basta un empate`;
+      return `tiene que ganar sí o sí`;
     }
     if (equipo.s === "🛟") {
-      if (equipo.p >= 3) return `ganando queda con 6 pts y espera ser uno de los mejores terceros`;
-      return `ganar no le alcanza por sí solo — necesita que otros resultados lo favorezcan`;
+      if (equipo.p >= 3) return `gana pero depende de otros`;
+      return `necesita un milagro`;
     }
     return "";
   }
   
-  // Mismo grupo
-  if (gh === ga) {
-    let txt = `${gh}: `;
-    txt += `${h.n} (${hPts}, ${estadoLargo(h.s)}) vs ${a.n} (${aPts}, ${estadoLargo(a.s)}). `;
-    txt += `${h.n} ${queNecesita(h)}. `;
-    txt += `${a.n} ${queNecesita(a)}. `;
-    
-    // Contexto extra si es duelo directo
-    if (h.s === "⚠️" && a.s === "⚠️" && Math.abs(h.p - a.p) <= 1) {
-      txt += `Es un duelo directo por la clasificación: el ganador avanza, el perdedor puede quedar afuera.`;
-    }
-    if ((h.s === "✅" && a.s === "⚠️") || (h.s === "⚠️" && a.s === "✅")) {
-      txt += `El clasificado parte como favorito, pero el otro equipo tiene todo por ganar.`;
-    }
-    if (h.s === "⛔" || a.s === "⛔") {
-      txt += `Partido de trámite para el eliminado, que juega por el honor.`;
-    }
-    return txt;
-  }
+  const hPre = presion(h.s);
+  const aPre = presion(a.s);
+  const hSit = situacion(h);
+  const aSit = situacion(a);
   
-  // Distintos grupos (no debería pasar en fase de grupos)
-  return `${h.n} (${hPts}) vs ${a.n} (${aPts}) — partido de la fecha ${gh}`;
+  let linea1 = `${h.f} ${h.n} (${h.p}pts): ${hSit} — ${hPre}`;
+  let linea2 = `${a.f} ${a.n} (${a.p}pts): ${aSit} — ${aPre}`;
+  
+  return [linea1, linea2];
 }
 
 const grid = document.getElementById('matchGrid');
@@ -588,8 +570,9 @@ upcoming.forEach(m => {
       <span style="color:#86868b;font-size:0.6rem"> vs </span>
       <span class="status-tag ${aStCls}" style="font-size:0.6rem">${aStText}</span>
     </div>
-    <div style="margin-top:5px;font-size:0.7rem;line-height:1.4;color:#0066cc;font-weight:500;text-align:center;background:#eef3ff;padding:4px 6px;border-radius:6px">
-      ${comentario}
+    <div style="margin-top:5px;font-size:0.65rem;line-height:1.4;text-align:left;background:#eef3ff;padding:5px 7px;border-radius:6px">
+      <div>${comentario[0]}</div>
+      <div style="margin-top:1px">${comentario[1]}</div>
     </div>`;
   grid.appendChild(card);
 });
