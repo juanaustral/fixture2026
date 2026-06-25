@@ -14,7 +14,6 @@
   }
   .container { max-width: 1200px; margin: 0 auto; }
 
-  /* Header */
   .header {
     text-align: center;
     margin-bottom: 24px;
@@ -42,7 +41,6 @@
     font-weight: 500;
   }
 
-  /* Next matches widget */
   .next-matches {
     background: white;
     border-radius: 14px;
@@ -87,7 +85,6 @@
     font-size: 0.85rem;
     font-weight: 600;
   }
-  .match-card .match-teams .flag { font-size: 1.2rem; }
   .match-card .match-teams .vs { color: #86868b; font-weight: 400; font-size: 0.75rem; }
   .match-card .match-info {
     margin-top: 6px;
@@ -103,36 +100,25 @@
     color: #555;
   }
 
-  /* Filters */
-  .filters {
+  .legend {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 14px;
     justify-content: center;
+    margin-bottom: 20px;
+    font-size: 0.75rem;
+    color: #555;
   }
-  .filters button {
-    background: white;
-    border: 1px solid #d2d2d7;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: #1d1d1f;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .filters button:hover { background: #e8e8ed; }
-  .filters button.active {
-    background: #0066cc;
-    color: white;
-    border-color: #0066cc;
-  }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .legend .ldot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+  .ldot.g { background: #2e7d32; }
+  .ldot.y { background: #f57f17; }
+  .ldot.o { background: #e65100; }
+  .ldot.r { background: #c62828; }
 
-  /* Group cards */
   .groups-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     gap: 16px;
   }
   .group-card {
@@ -152,14 +138,6 @@
     display: flex;
     align-items: center;
     gap: 8px;
-  }
-  .group-card h2 .g-badge {
-    font-size: 0.6rem;
-    background: #e8e8ed;
-    padding: 2px 8px;
-    border-radius: 8px;
-    color: #555;
-    font-weight: 500;
   }
 
   table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
@@ -187,19 +165,21 @@
     font-weight: 600;
     letter-spacing: 0.2px;
   }
-  .st-clasificado { background: #e8f5e9; color: #2e7d32; }
-  .st-alerta { background: #fff8e1; color: #f57f17; }
-  .st-peligro { background: #fff3e0; color: #e65100; }
-  .st-eliminado { background: #ffebee; color: #c62828; }
+  .st-c { background: #e8f5e9; color: #2e7d32; }
+  .st-a { background: #fff8e1; color: #f57f17; }
+  .st-p { background: #fff3e0; color: #e65100; }
+  .st-e { background: #ffebee; color: #c62828; }
 
   .matches-line {
-    margin-top: 5px;
+    margin-top: 4px;
     font-size: 0.7rem;
     color: #555;
-    line-height: 1.5;
-    padding: 5px 0;
+    line-height: 1.6;
+    padding: 4px 0;
   }
-  .matches-line .label { color: #86868b; font-weight: 500; }
+  .wl { color: #2e7d32; font-weight: 600; }
+  .dl { color: #f57f17; font-weight: 600; }
+  .ll { color: #c62828; }
 
   .pendientes {
     margin-top: 6px;
@@ -242,23 +222,6 @@
   .footer a { color: #0066cc; text-decoration: none; }
   .footer a:hover { text-decoration: underline; }
 
-  /* Legend */
-  .legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-size: 0.75rem;
-    color: #555;
-  }
-  .legend span { display: inline-flex; align-items: center; gap: 5px; }
-  .legend .ldot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
-  .ldot.g { background: #2e7d32; }
-  .ldot.y { background: #f57f17; }
-  .ldot.o { background: #e65100; }
-  .ldot.r { background: #c62828; }
-
   @media (max-width: 480px) {
     body { padding: 12px; }
     .groups-grid { grid-template-columns: 1fr; }
@@ -272,10 +235,9 @@
 <div class="header">
   <h1>⚽ Mundial <span>2026</span></h1>
   <p class="subtitle">Resultados · Clasificación · Partidos pendientes</p>
-  <span class="update-badge">🔄 Actualizado 25 Jun 2026</span>
+  <span class="update-badge">🔄 25 Jun 2026 — Jornada 3 en curso</span>
 </div>
 
-<!-- Próximos partidos -->
 <div class="next-matches" id="nextMatches">
   <h2>📅 Próximos partidos <span class="badge">Jornada 3</span></h2>
   <div class="match-grid" id="matchGrid"></div>
@@ -286,194 +248,194 @@
   <span><span class="ldot y"></span> Depende de sí</span>
   <span><span class="ldot o"></span> Necesita combo</span>
   <span><span class="ldot r"></span> Eliminado</span>
+  <span style="color:#2e7d32">✅ Victoria</span>
+  <span style="color:#f57f17">⚖️ Empate</span>
+  <span style="color:#c62828">❌ Derrota</span>
 </div>
 
 <div class="groups-grid" id="app"></div>
 
 <div class="footer">
   <p>Datos: Yahoo Sports · TUDN · DAZN · Olympics.com</p>
-  <p><a href="https://github.com/juanaustral/fixture2026">📦 GitHub</a> · <a href="https://juanaustral.github.io/fixture2026/">🌐 GitHub Pages</a></p>
+  <p><a href="https://github.com/juanaustral/fixture2026">📦 GitHub</a></p>
 </div>
 
 </div>
 
 <script>
-const DATA = {
-  groups: [
-    { name: "Grupo A", teams: [
-      { flag: "🇲🇽", name: "México", pts: 6, dg: "+3", cls: "✅", st: "Clasificado", stc: "st-clasificado",
-        res: "2–0 🇿🇦 · 1–0 🇰🇷" },
-      { flag: "🇰🇷", name: "Corea del Sur", pts: 3, dg: "0", cls: "⚠️", st: "Gana y clasifica", stc: "st-alerta",
-        res: "2–1 🇨🇿 · 0–1 🇲🇽" },
-      { flag: "🇨🇿", name: "Rep. Checa", pts: 1, dg: "-1", cls: "🛟", st: "Casi imposible", stc: "st-peligro",
-        res: "1–2 🇰🇷 · 1–1 🇿🇦" },
-      { flag: "🇿🇦", name: "Sudáfrica", pts: 1, dg: "-2", cls: "🛟", st: "Casi imposible", stc: "st-peligro",
-        res: "0–2 🇲🇽 · 1–1 🇨🇿" }
-    ], pend: "🇨🇿 vs 🇲🇽 · 🇿🇦 vs 🇰🇷" },
-    { name: "Grupo B", teams: [
-      { flag: "🇨🇭", name: "Suiza", pts: 7, dg: "+4", cls: "✅", st: "Clasificada", stc: "st-clasificado",
-        res: "1–1 🇶🇦 · 4–1 🇧🇦 · 2–0 🇨🇦" },
-      { flag: "🇨🇦", name: "Canadá", pts: 4, dg: "+5", cls: "⚠️", st: "Espera como 2° o 3°", stc: "st-alerta",
-        res: "1–1 🇧🇦 · 6–0 🇶🇦 · 0–2 🇨🇭" },
-      { flag: "🇧🇦", name: "Bosnia H.", pts: 4, dg: "-1", cls: "⚠️", st: "Depende de DG", stc: "st-alerta",
-        res: "1–1 🇨🇦 · 1–4 🇨🇭 · 3–1 🇶🇦" },
-      { flag: "🇶🇦", name: "Qatar", pts: 1, dg: "-8", cls: "⛔", st: "Eliminado", stc: "st-eliminado",
-        res: "1–1 🇨🇭 · 0–6 🇨🇦 · 1–3 🇧🇦" }
-    ], pend: "—" },
-    { name: "Grupo C", teams: [
-      { flag: "🇧🇷", name: "Brasil", pts: 7, dg: "+6", cls: "✅", st: "Clasificado", stc: "st-clasificado",
-        res: "1–1 🇲🇦 · 3–0 🇭🇹 · 3–0 🏴󠁧󠁢󠁳󠁣󠁴󠁿" },
-      { flag: "🇲🇦", name: "Marruecos", pts: 7, dg: "+3", cls: "✅", st: "Clasificado", stc: "st-clasificado",
-        res: "1–1 🇧🇷 · 3–0 🇭🇹 · 2–0 🏴󠁧󠁢󠁳󠁣󠁴󠁿" },
-      { flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", name: "Escocia", pts: 3, dg: "-3", cls: "🛟", st: "Combo difícil", stc: "st-peligro",
-        res: "1–0 🇭🇹 · 0–3 🇧🇷 · 0–2 🇲🇦" },
-      { flag: "🇭🇹", name: "Haití", pts: 0, dg: "-6", cls: "⛔", st: "Eliminado", stc: "st-eliminado",
-        res: "0–1 🏴󠁧󠁢󠁳󠁣󠁴󠁿 · 0–3 🇧🇷 · 0–3 🇲🇦" }
-    ], pend: "—" },
-    { name: "Grupo D", teams: [
-      { flag: "🇺🇸", name: "EE.UU.", pts: 6, dg: "+5", cls: "✅", st: "Clasificado", stc: "st-clasificado",
-        res: "4–1 🇵🇾 · 2–0 🇦🇺" },
-      { flag: "🇦🇺", name: "Australia", pts: 3, dg: "0", cls: "⚠️", st: "Gana y clasifica", stc: "st-alerta",
-        res: "2–0 🇹🇷 · 0–2 🇺🇸" },
-      { flag: "🇵🇾", name: "Paraguay", pts: 3, dg: "-2", cls: "⚠️", st: "Gana y clasifica", stc: "st-alerta",
-        res: "1–4 🇺🇸 · 1–0 🇹🇷" },
-      { flag: "🇹🇷", name: "Turquía", pts: 0, dg: "-3", cls: "⛔", st: "Eliminado", stc: "st-eliminado",
-        res: "0–2 🇦🇺 · 0–1 🇵🇾" }
-    ], pend: "🇹🇷 vs 🇺🇸 · 🇵🇾 vs 🇦🇺" },
-    { name: "Grupo E", teams: [
-      { flag: "🇩🇪", name: "Alemania", pts: 6, dg: "+7", cls: "✅", st: "Clasificado", stc: "st-clasificado",
-        res: "7–1 🇨🇼 · 2–1 🇨🇮" },
-      { flag: "🇨🇮", name: "Costa de Marfil", pts: 3, dg: "0", cls: "⚠️", st: "Gana y clasifica", stc: "st-alerta",
-        res: "1–0 🇪🇨 · 1–2 🇩🇪" },
-      { flag: "🇪🇨", name: "Ecuador", pts: 1, dg: "-1", cls: "🛟", st: "Gana + combo", stc: "st-peligro",
-        res: "0–1 🇨🇮 · 0–0 🇨🇼" },
-      { flag: "🇨🇼", name: "Curazao", pts: 1, dg: "-6", cls: "🛟", st: "Gana + combo", stc: "st-peligro",
-        res: "1–7 🇩🇪 · 0–0 🇪🇨" }
-    ], pend: "🇪🇨 vs 🇩🇪 · 🇨🇼 vs 🇨🇮" },
-    { name: "Grupo F", teams: [
-      { flag: "🇳🇱", name: "Países Bajos", pts: 4, dg: "+4", cls: "⚠️", st: "Empate clasifica", stc: "st-alerta",
-        res: "2–2 🇯🇵 · 5–1 🇸🇪" },
-      { flag: "🇯🇵", name: "Japón", pts: 4, dg: "+4", cls: "⚠️", st: "Empate clasifica", stc: "st-alerta",
-        res: "2–2 🇳🇱 · 4–0 🇹🇳" },
-      { flag: "🇸🇪", name: "Suecia", pts: 3, dg: "0", cls: "⚠️", st: "Gana y clasifica", stc: "st-alerta",
-        res: "5–1 🇹🇳 · 1–5 🇳🇱" },
-      { flag: "🇹🇳", name: "Túnez", pts: 0, dg: "-8", cls: "🛟", st: "Milagro", stc: "st-peligro",
-        res: "1–5 🇸🇪 · 0–4 🇯🇵" }
-    ], pend: "🇹🇳 vs 🇳🇱 · 🇯🇵 vs 🇸🇪" },
-    { name: "Grupo G", teams: [
-      { flag: "🇪🇬", name: "Egipto", pts: 4, dg: "+2", cls: "⚠️", st: "Empate clasifica", stc: "st-alerta",
-        res: "1–1 🇧🇪 · 2–1 🇮🇷" },
-      { flag: "🇮🇷", name: "Irán", pts: 2, dg: "0", cls: "🛟", st: "Gana + combo", stc: "st-peligro",
-        res: "2–2 🇳🇿 · 0–0 🇧🇪" },
-      { flag: "🇧🇪", name: "Bélgica", pts: 2, dg: "0", cls: "🛟", st: "Gana + combo", stc: "st-peligro",
-        res: "1–1 🇪🇬 · 0–0 🇮🇷" },
-      { flag: "🇳🇿", name: "N. Zelanda", pts: 1, dg: "-2", cls: "🛟", st: "Gana + combo", stc: "st-peligro",
-        res: "2–2 🇮🇷" }
-    ], pend: "🇪🇬 vs 🇮🇷 · 🇳🇿 vs 🇧🇪" },
-    { name: "Grupo H", teams: [
-      { flag: "🇪🇸", name: "España", pts: 4, dg: "+4", cls: "⚠️", st: "Empate clasifica", stc: "st-alerta",
-        res: "0–0 🇨🇻 · 4–0 🇸🇦" },
-      { flag: "🇨🇻", name: "Cabo Verde", pts: 2, dg: "0", cls: "⚠️", st: "Gana y clasifica", stc: "st-alerta",
-        res: "0–0 🇪🇸 · 2–2 🇺🇾" },
-      { flag: "🇺🇾", name: "Uruguay", pts: 2, dg: "0", cls: "⚠️", st: "Gana y clasifica", stc: "st-alerta",
-        res: "1–1 🇸🇦 · 2–2 🇨🇻" },
-      { flag: "🇸🇦", name: "Arabia Saudita", pts: 1, dg: "-4", cls: "🛟", st: "Difícil", stc: "st-peligro",
-        res: "1–1 🇺🇾 · 0–4 🇪🇸" }
-    ], pend: "🇺🇾 vs 🇪🇸 · 🇨🇻 vs 🇸🇦" },
-    { name: "Grupo I", teams: [
-      { flag: "🇫🇷", name: "Francia", pts: 6, dg: "+5", cls: "✅", st: "Clasificada", stc: "st-clasificado",
-        res: "3–1 🇸🇳 · 3–0 🇮🇶" },
-      { flag: "🇳🇴", name: "Noruega", pts: 6, dg: "+4", cls: "✅", st: "Clasificada", stc: "st-clasificado",
-        res: "4–1 🇮🇶 · 3–2 🇸🇳" },
-      { flag: "🇸🇳", name: "Senegal", pts: 0, dg: "-3", cls: "🛟", st: "Milagro", stc: "st-peligro",
-        res: "1–3 🇫🇷 · 2–3 🇳🇴" },
-      { flag: "🇮🇶", name: "Irak", pts: 0, dg: "-6", cls: "⛔", st: "Eliminado", stc: "st-eliminado",
-        res: "1–4 🇳🇴 · 0–3 🇫🇷" }
-    ], pend: "🇳🇴 vs 🇫🇷 · 🇸🇳 vs 🇮🇶" },
-    { name: "Grupo J", teams: [
-      { flag: "🇦🇷", name: "Argentina", pts: 6, dg: "+5", cls: "✅", st: "Clasificada", stc: "st-clasificado",
-        res: "3–0 🇩🇿 · 2–0 🇦🇹" },
-      { flag: "🇦🇹", name: "Austria", pts: 3, dg: "0", cls: "⚠️", st: "Gana y clasifica", stc: "st-alerta",
-        res: "3–1 🇯🇴 · 0–2 🇦🇷" },
-      { flag: "🇩🇿", name: "Argelia", pts: 3, dg: "-2", cls: "⚠️", st: "Gana y clasifica", stc: "st-alerta",
-        res: "0–3 🇦🇷 · 2–1 🇯🇴" },
-      { flag: "🇯🇴", name: "Jordania", pts: 0, dg: "-3", cls: "🛟", st: "Milagro", stc: "st-peligro",
-        res: "1–3 🇦🇹 · 1–2 🇩🇿" }
-    ], pend: "🇩🇿 vs 🇦🇹 · 🇯🇴 vs 🇦🇷" },
-    { name: "Grupo K", teams: [
-      { flag: "🇨🇴", name: "Colombia", pts: 6, dg: "+3", cls: "✅", st: "Clasificada", stc: "st-clasificado",
-        res: "3–1 🇺🇿 · 1–0 🇨🇩" },
-      { flag: "🇵🇹", name: "Portugal", pts: 4, dg: "+5", cls: "⚠️", st: "Empate clasifica", stc: "st-alerta",
-        res: "1–1 🇨🇴 · 5–0 🇺🇿" },
-      { flag: "🇨🇩", name: "RD Congo", pts: 1, dg: "-1", cls: "🛟", st: "Gana + combo", stc: "st-peligro",
-        res: "1–0 🇺🇿 · 0–1 🇨🇴" },
-      { flag: "🇺🇿", name: "Uzbekistán", pts: 0, dg: "-7", cls: "⛔", st: "Eliminado", stc: "st-eliminado",
-        res: "1–3 🇨🇴 · 0–5 🇵🇹" }
-    ], pend: "🇨🇩 vs 🇺🇿 · 🇨🇴 vs 🇵🇹" },
-    { name: "Grupo L", teams: [
-      { flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", name: "Inglaterra", pts: 4, dg: "+2", cls: "⚠️", st: "Empate clasifica", stc: "st-alerta",
-        res: "4–2 🇭🇷 · 0–0 🇬🇭" },
-      { flag: "🇬🇭", name: "Ghana", pts: 4, dg: "+1", cls: "⚠️", st: "Empate clasifica", stc: "st-alerta",
-        res: "1–0 🇵🇦 · 0–0 🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
-      { flag: "🇭🇷", name: "Croacia", pts: 3, dg: "-1", cls: "⚠️", st: "Gana y clasifica", stc: "st-alerta",
-        res: "2–4 🏴󠁧󠁢󠁥󠁮󠁧󠁿 · 1–0 🇵🇦" },
-      { flag: "🇵🇦", name: "Panamá", pts: 0, dg: "-2", cls: "⛔", st: "Eliminado", stc: "st-eliminado",
-        res: "0–1 🇬🇭 · 0–1 🇭🇷" }
-    ], pend: "🇭🇷 vs 🇬🇭 · 🇵🇦 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿" }
-  ],
-  nextMatches: [
-    { home: "🇨🇿 Rep. Checa", away: "🇲🇽 México", group: "A", time: "25 Jun 22:00" },
-    { home: "🇿🇦 Sudáfrica", away: "🇰🇷 Corea del Sur", group: "A", time: "25 Jun 22:00" },
-    { home: "🇪🇨 Ecuador", away: "🇩🇪 Alemania", group: "E", time: "25 Jun 17:00" },
-    { home: "🇨🇼 Curazao", away: "🇨🇮 Costa de Marfil", group: "E", time: "25 Jun 17:00" },
-    { home: "🇹🇳 Túnez", away: "🇳🇱 Países Bajos", group: "F", time: "25 Jun 20:00" },
-    { home: "🇯🇵 Japón", away: "🇸🇪 Suecia", group: "F", time: "25 Jun 20:00" },
-    { home: "🇹🇷 Turquía", away: "🇺🇸 EE.UU.", group: "D", time: "25 Jun 23:00" },
-    { home: "🇵🇾 Paraguay", away: "🇦🇺 Australia", group: "D", time: "25 Jun 23:00" }
-  ]
-};
+const G = [
+  { name: "Grupo A", teams: [
+    { f:"🇲🇽", n:"México", p:6, d:"+3", s:"✅", st:"Clasificado", sc:"st-c",
+      m:[{v:"2–0",c:"🇿🇦",r:"w"},{v:"1–0",c:"🇰🇷",r:"w"}] },
+    { f:"🇰🇷", n:"Corea del Sur", p:3, d:"0", s:"⚠️", st:"Gana y clasifica", sc:"st-a",
+      m:[{v:"2–1",c:"🇨🇿",r:"w"},{v:"0–1",c:"🇲🇽",r:"l"}] },
+    { f:"🇨🇿", n:"Rep. Checa", p:1, d:"-1", s:"🛟", st:"Casi imposible", sc:"st-p",
+      m:[{v:"1–2",c:"🇰🇷",r:"l"},{v:"1–1",c:"🇿🇦",r:"d"}] },
+    { f:"🇿🇦", n:"Sudáfrica", p:1, d:"-2", s:"🛟", st:"Casi imposible", sc:"st-p",
+      m:[{v:"0–2",c:"🇲🇽",r:"l"},{v:"1–1",c:"🇨🇿",r:"d"}] }
+  ], pend:"🇨🇿 vs 🇲🇽 · 🇿🇦 vs 🇰🇷" },
+  { name: "Grupo B", teams: [
+    { f:"🇨🇭", n:"Suiza", p:7, d:"+4", s:"✅", st:"Clasificada", sc:"st-c",
+      m:[{v:"1–1",c:"🇶🇦",r:"d"},{v:"4–1",c:"🇧🇦",r:"w"},{v:"2–0",c:"🇨🇦",r:"w"}] },
+    { f:"🇨🇦", n:"Canadá", p:4, d:"+5", s:"⚠️", st:"Espera como 2° o 3°", sc:"st-a",
+      m:[{v:"1–1",c:"🇧🇦",r:"d"},{v:"6–0",c:"🇶🇦",r:"w"},{v:"0–2",c:"🇨🇭",r:"l"}] },
+    { f:"🇧🇦", n:"Bosnia H.", p:4, d:"-1", s:"⚠️", st:"Depende de DG", sc:"st-a",
+      m:[{v:"1–1",c:"🇨🇦",r:"d"},{v:"1–4",c:"🇨🇭",r:"l"},{v:"3–1",c:"🇶🇦",r:"w"}] },
+    { f:"🇶🇦", n:"Qatar", p:1, d:"-8", s:"⛔", st:"Eliminado", sc:"st-e",
+      m:[{v:"1–1",c:"🇨🇭",r:"d"},{v:"0–6",c:"🇨🇦",r:"l"},{v:"1–3",c:"🇧🇦",r:"l"}] }
+  ], pend:"—" },
+  { name: "Grupo C", teams: [
+    { f:"🇧🇷", n:"Brasil", p:7, d:"+6", s:"✅", st:"Clasificado", sc:"st-c",
+      m:[{v:"1–1",c:"🇲🇦",r:"d"},{v:"3–0",c:"🇭🇹",r:"w"},{v:"3–0",c:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",r:"w"}] },
+    { f:"🇲🇦", n:"Marruecos", p:7, d:"+3", s:"✅", st:"Clasificado", sc:"st-c",
+      m:[{v:"1–1",c:"🇧🇷",r:"d"},{v:"3–0",c:"🇭🇹",r:"w"},{v:"2–0",c:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",r:"w"}] },
+    { f:"🏴󠁧󠁢󠁳󠁣󠁴󠁿", n:"Escocia", p:3, d:"-3", s:"🛟", st:"Combo difícil", sc:"st-p",
+      m:[{v:"1–0",c:"🇭🇹",r:"w"},{v:"0–3",c:"🇧🇷",r:"l"},{v:"0–2",c:"🇲🇦",r:"l"}] },
+    { f:"🇭🇹", n:"Haití", p:0, d:"-6", s:"⛔", st:"Eliminado", sc:"st-e",
+      m:[{v:"0–1",c:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",r:"l"},{v:"0–3",c:"🇧🇷",r:"l"},{v:"0–3",c:"🇲🇦",r:"l"}] }
+  ], pend:"—" },
+  { name: "Grupo D", teams: [
+    { f:"🇺🇸", n:"EE.UU.", p:6, d:"+5", s:"✅", st:"Clasificado", sc:"st-c",
+      m:[{v:"4–1",c:"🇵🇾",r:"w"},{v:"2–0",c:"🇦🇺",r:"w"}] },
+    { f:"🇦🇺", n:"Australia", p:3, d:"0", s:"⚠️", st:"Gana y clasifica", sc:"st-a",
+      m:[{v:"2–0",c:"🇹🇷",r:"w"},{v:"0–2",c:"🇺🇸",r:"l"}] },
+    { f:"🇵🇾", n:"Paraguay", p:3, d:"-2", s:"⚠️", st:"Gana y clasifica", sc:"st-a",
+      m:[{v:"1–4",c:"🇺🇸",r:"l"},{v:"1–0",c:"🇹🇷",r:"w"}] },
+    { f:"🇹🇷", n:"Turquía", p:0, d:"-3", s:"⛔", st:"Eliminado", sc:"st-e",
+      m:[{v:"0–2",c:"🇦🇺",r:"l"},{v:"0–1",c:"🇵🇾",r:"l"}] }
+  ], pend:"🇹🇷 vs 🇺🇸 · 🇵🇾 vs 🇦🇺" },
+  { name: "Grupo E", teams: [
+    { f:"🇩🇪", n:"Alemania", p:6, d:"+7", s:"✅", st:"Clasificado", sc:"st-c",
+      m:[{v:"7–1",c:"🇨🇼",r:"w"},{v:"2–1",c:"🇨🇮",r:"w"}] },
+    { f:"🇨🇮", n:"Costa de Marfil", p:3, d:"0", s:"⚠️", st:"Gana y clasifica", sc:"st-a",
+      m:[{v:"1–0",c:"🇪🇨",r:"w"},{v:"1–2",c:"🇩🇪",r:"l"}] },
+    { f:"🇪🇨", n:"Ecuador", p:1, d:"-1", s:"🛟", st:"Gana + combo", sc:"st-p",
+      m:[{v:"0–1",c:"🇨🇮",r:"l"},{v:"0–0",c:"🇨🇼",r:"d"}] },
+    { f:"🇨🇼", n:"Curazao", p:1, d:"-6", s:"🛟", st:"Gana + combo", sc:"st-p",
+      m:[{v:"1–7",c:"🇩🇪",r:"l"},{v:"0–0",c:"🇪🇨",r:"d"}] }
+  ], pend:"🇪🇨 vs 🇩🇪 · 🇨🇼 vs 🇨🇮" },
+  { name: "Grupo F", teams: [
+    { f:"🇳🇱", n:"Países Bajos", p:4, d:"+4", s:"⚠️", st:"Empate clasifica", sc:"st-a",
+      m:[{v:"2–2",c:"🇯🇵",r:"d"},{v:"5–1",c:"🇸🇪",r:"w"}] },
+    { f:"🇯🇵", n:"Japón", p:4, d:"+4", s:"⚠️", st:"Empate clasifica", sc:"st-a",
+      m:[{v:"2–2",c:"🇳🇱",r:"d"},{v:"4–0",c:"🇹🇳",r:"w"}] },
+    { f:"🇸🇪", n:"Suecia", p:3, d:"0", s:"⚠️", st:"Gana y clasifica", sc:"st-a",
+      m:[{v:"5–1",c:"🇹🇳",r:"w"},{v:"1–5",c:"🇳🇱",r:"l"}] },
+    { f:"🇹🇳", n:"Túnez", p:0, d:"-8", s:"🛟", st:"Milagro", sc:"st-p",
+      m:[{v:"1–5",c:"🇸🇪",r:"l"},{v:"0–4",c:"🇯🇵",r:"l"}] }
+  ], pend:"🇹🇳 vs 🇳🇱 · 🇯🇵 vs 🇸🇪" },
+  { name: "Grupo G", teams: [
+    { f:"🇪🇬", n:"Egipto", p:4, d:"+2", s:"⚠️", st:"Empate clasifica", sc:"st-a",
+      m:[{v:"1–1",c:"🇧🇪",r:"d"},{v:"2–1",c:"🇮🇷",r:"w"}] },
+    { f:"🇮🇷", n:"Irán", p:2, d:"0", s:"🛟", st:"Gana + combo", sc:"st-p",
+      m:[{v:"2–2",c:"🇳🇿",r:"d"},{v:"0–0",c:"🇧🇪",r:"d"}] },
+    { f:"🇧🇪", n:"Bélgica", p:2, d:"0", s:"🛟", st:"Gana + combo", sc:"st-p",
+      m:[{v:"1–1",c:"🇪🇬",r:"d"},{v:"0–0",c:"🇮🇷",r:"d"}] },
+    { f:"🇳🇿", n:"N. Zelanda", p:1, d:"-2", s:"🛟", st:"Gana + combo", sc:"st-p",
+      m:[{v:"2–2",c:"🇮🇷",r:"d"}] }
+  ], pend:"🇪🇬 vs 🇮🇷 · 🇳🇿 vs 🇧🇪" },
+  { name: "Grupo H", teams: [
+    { f:"🇪🇸", n:"España", p:4, d:"+4", s:"⚠️", st:"Empate clasifica", sc:"st-a",
+      m:[{v:"0–0",c:"🇨🇻",r:"d"},{v:"4–0",c:"🇸🇦",r:"w"}] },
+    { f:"🇨🇻", n:"Cabo Verde", p:2, d:"0", s:"⚠️", st:"Gana y clasifica", sc:"st-a",
+      m:[{v:"0–0",c:"🇪🇸",r:"d"},{v:"2–2",c:"🇺🇾",r:"d"}] },
+    { f:"🇺🇾", n:"Uruguay", p:2, d:"0", s:"⚠️", st:"Gana y clasifica", sc:"st-a",
+      m:[{v:"1–1",c:"🇸🇦",r:"d"},{v:"2–2",c:"🇨🇻",r:"d"}] },
+    { f:"🇸🇦", n:"Arabia Saudita", p:1, d:"-4", s:"🛟", st:"Difícil", sc:"st-p",
+      m:[{v:"1–1",c:"🇺🇾",r:"d"},{v:"0–4",c:"🇪🇸",r:"l"}] }
+  ], pend:"🇺🇾 vs 🇪🇸 · 🇨🇻 vs 🇸🇦" },
+  { name: "Grupo I", teams: [
+    { f:"🇫🇷", n:"Francia", p:6, d:"+5", s:"✅", st:"Clasificada", sc:"st-c",
+      m:[{v:"3–1",c:"🇸🇳",r:"w"},{v:"3–0",c:"🇮🇶",r:"w"}] },
+    { f:"🇳🇴", n:"Noruega", p:6, d:"+4", s:"✅", st:"Clasificada", sc:"st-c",
+      m:[{v:"4–1",c:"🇮🇶",r:"w"},{v:"3–2",c:"🇸🇳",r:"w"}] },
+    { f:"🇸🇳", n:"Senegal", p:0, d:"-3", s:"🛟", st:"Milagro", sc:"st-p",
+      m:[{v:"1–3",c:"🇫🇷",r:"l"},{v:"2–3",c:"🇳🇴",r:"l"}] },
+    { f:"🇮🇶", n:"Irak", p:0, d:"-6", s:"⛔", st:"Eliminado", sc:"st-e",
+      m:[{v:"1–4",c:"🇳🇴",r:"l"},{v:"0–3",c:"🇫🇷",r:"l"}] }
+  ], pend:"🇳🇴 vs 🇫🇷 · 🇸🇳 vs 🇮🇶" },
+  { name: "Grupo J", teams: [
+    { f:"🇦🇷", n:"Argentina", p:6, d:"+5", s:"✅", st:"Clasificada", sc:"st-c",
+      m:[{v:"3–0",c:"🇩🇿",r:"w"},{v:"2–0",c:"🇦🇹",r:"w"}] },
+    { f:"🇦🇹", n:"Austria", p:3, d:"0", s:"⚠️", st:"Gana y clasifica", sc:"st-a",
+      m:[{v:"3–1",c:"🇯🇴",r:"w"},{v:"0–2",c:"🇦🇷",r:"l"}] },
+    { f:"🇩🇿", n:"Argelia", p:3, d:"-2", s:"⚠️", st:"Gana y clasifica", sc:"st-a",
+      m:[{v:"0–3",c:"🇦🇷",r:"l"},{v:"2–1",c:"🇯🇴",r:"w"}] },
+    { f:"🇯🇴", n:"Jordania", p:0, d:"-3", s:"🛟", st:"Milagro", sc:"st-p",
+      m:[{v:"1–3",c:"🇦🇹",r:"l"},{v:"1–2",c:"🇩🇿",r:"l"}] }
+  ], pend:"🇩🇿 vs 🇦🇹 · 🇯🇴 vs 🇦🇷" },
+  { name: "Grupo K", teams: [
+    { f:"🇨🇴", n:"Colombia", p:6, d:"+3", s:"✅", st:"Clasificada", sc:"st-c",
+      m:[{v:"3–1",c:"🇺🇿",r:"w"},{v:"1–0",c:"🇨🇩",r:"w"}] },
+    { f:"🇵🇹", n:"Portugal", p:4, d:"+5", s:"⚠️", st:"Empate clasifica", sc:"st-a",
+      m:[{v:"1–1",c:"🇨🇴",r:"d"},{v:"5–0",c:"🇺🇿",r:"w"}] },
+    { f:"🇨🇩", n:"RD Congo", p:1, d:"-1", s:"🛟", st:"Gana + combo", sc:"st-p",
+      m:[{v:"1–0",c:"🇺🇿",r:"w"},{v:"0–1",c:"🇨🇴",r:"l"}] },
+    { f:"🇺🇿", n:"Uzbekistán", p:0, d:"-7", s:"⛔", st:"Eliminado", sc:"st-e",
+      m:[{v:"1–3",c:"🇨🇴",r:"l"},{v:"0–5",c:"🇵🇹",r:"l"}] }
+  ], pend:"🇨🇩 vs 🇺🇿 · 🇨🇴 vs 🇵🇹" },
+  { name: "Grupo L", teams: [
+    { f:"🏴󠁧󠁢󠁥󠁮󠁧󠁿", n:"Inglaterra", p:4, d:"+2", s:"⚠️", st:"Empate clasifica", sc:"st-a",
+      m:[{v:"4–2",c:"🇭🇷",r:"w"},{v:"0–0",c:"🇬🇭",r:"d"}] },
+    { f:"🇬🇭", n:"Ghana", p:4, d:"+1", s:"⚠️", st:"Empate clasifica", sc:"st-a",
+      m:[{v:"1–0",c:"🇵🇦",r:"w"},{v:"0–0",c:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",r:"d"}] },
+    { f:"🇭🇷", n:"Croacia", p:3, d:"-1", s:"⚠️", st:"Gana y clasifica", sc:"st-a",
+      m:[{v:"2–4",c:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",r:"l"},{v:"1–0",c:"🇵🇦",r:"w"}] },
+    { f:"🇵🇦", n:"Panamá", p:0, d:"-2", s:"⛔", st:"Eliminado", sc:"st-e",
+      m:[{v:"0–1",c:"🇬🇭",r:"l"},{v:"0–1",c:"🇭🇷",r:"l"}] }
+  ], pend:"🇭🇷 vs 🇬🇭 · 🇵🇦 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿" }
+];
 
-function render() {
-  // Next matches widget
-  const grid = document.getElementById('matchGrid');
-  DATA.nextMatches.forEach(m => {
-    const card = document.createElement('div');
-    card.className = 'match-card';
-    card.innerHTML = `
-      <div class="match-teams">
-        <span>${m.home}</span>
-        <span class="vs">vs</span>
-        <span>${m.away}</span>
-      </div>
-      <div class="match-info">
-        <span class="group-label">${m.group}</span> · ${m.time}
-      </div>
-    `;
-    grid.appendChild(card);
-  });
+const upcoming = [
+  { h:"🇨🇿 Rep. Checa", a:"🇲🇽 México", g:"A", t:"25 Jun 22:00" },
+  { h:"🇿🇦 Sudáfrica", a:"🇰🇷 Corea del Sur", g:"A", t:"25 Jun 22:00" },
+  { h:"🇪🇨 Ecuador", a:"🇩🇪 Alemania", g:"E", t:"25 Jun 17:00" },
+  { h:"🇨🇼 Curazao", a:"🇨🇮 Costa de Marfil", g:"E", t:"25 Jun 17:00" },
+  { h:"🇹🇳 Túnez", a:"🇳🇱 Países Bajos", g:"F", t:"25 Jun 20:00" },
+  { h:"🇯🇵 Japón", a:"🇸🇪 Suecia", g:"F", t:"25 Jun 20:00" },
+  { h:"🇹🇷 Turquía", a:"🇺🇸 EE.UU.", g:"D", t:"25 Jun 23:00" },
+  { h:"🇵🇾 Paraguay", a:"🇦🇺 Australia", g:"D", t:"25 Jun 23:00" }
+];
 
-  // Groups
-  const c = document.getElementById('app');
-  DATA.groups.forEach(g => {
-    const card = document.createElement('div');
-    card.className = 'group-card';
-    let h = `<h2>${g.name} <span class="g-badge">${g.teams.length} equipos</span></h2>`;
-    h += '<table><thead><tr><th>Equipo</th><th class="c">Pts</th><th class="c">DG</th><th class="c"></th></tr></thead><tbody>';
-    g.teams.forEach(t => {
-      h += `<tr><td class="team"><span class="flag">${t.flag}</span>${t.name}</td>`;
-      h += `<td class="pts c">${t.pts}</td><td class="c">${t.dg}</td><td class="c">${t.cls}</td></tr>`;
-      h += `<tr><td colspan="4" class="matches-line"><span class="label">Partidos:</span> ${t.res} · <span class="status-tag ${t.stc}">${t.st}</span></td></tr>`;
-    });
-    h += '</tbody></table>';
-    if (g.pend && g.pend !== "—") {
-      h += `<div class="pendientes"><strong>⏳ Pendientes:</strong> ${g.pend}</div>`;
-    }
-    h += `<div class="card-footer"><span class="source">Yahoo Sports · TUDN</span><button class="btn" onclick="location.reload()">↻ Recargar</button></div>`;
-    card.innerHTML = h;
-    c.appendChild(card);
+const resultLabel = { w: '✅', d: '⚖️', l: '❌' };
+const resultClass = { w: 'wl', d: 'dl', l: 'll' };
+
+// Próximos partidos
+const grid = document.getElementById('matchGrid');
+upcoming.forEach(m => {
+  const card = document.createElement('div');
+  card.className = 'match-card';
+  card.innerHTML = `
+    <div class="match-teams">
+      <span>${m.h}</span> <span class="vs">vs</span> <span>${m.a}</span>
+    </div>
+    <div class="match-info">
+      <span class="group-label">${m.g}</span> · ${m.t}
+    </div>`;
+  grid.appendChild(card);
+});
+
+// Grupos
+const app = document.getElementById('app');
+G.forEach(g => {
+  const card = document.createElement('div');
+  card.className = 'group-card';
+  let h = `<h2>${g.name}</h2>`;
+  h += '<table><thead><tr><th>Equipo</th><th class="c">Pts</th><th class="c">DG</th><th class="c"></th></tr></thead><tbody>';
+  g.teams.forEach(t => {
+    const parts = t.m.map(m => `<span class="${resultClass[m.r]}">${m.v} ${m.c} ${resultLabel[m.r]}</span>`).join(' · ');
+    h += `<tr><td class="team"><span class="flag">${t.f}</span>${t.n}</td>`;
+    h += `<td class="pts c">${t.p}</td><td class="c">${t.d}</td><td class="c">${t.s}</td></tr>`;
+    h += `<tr><td colspan="4" class="matches-line">${parts} · <span class="status-tag ${t.sc}">${t.st}</span></td></tr>`;
   });
-}
-render();
+  h += '</tbody></table>';
+  if (g.pend && g.pend !== "—") {
+    h += `<div class="pendientes"><strong>⏳ Pendientes:</strong> ${g.pend}</div>`;
+  }
+  h += `<div class="card-footer"><span class="source">Yahoo Sports · TUDN</span><button class="btn" onclick="location.reload()">↻ Recargar</button></div>`;
+  card.innerHTML = h;
+  app.appendChild(card);
+});
 </script>
 </body>
 </html>
