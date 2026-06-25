@@ -191,6 +191,25 @@
   }
   .pendientes strong { color: #1d1d1f; }
 
+  .analisis {
+    margin-top: 6px;
+    padding: 8px 10px;
+    background: #f0f4ff;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    line-height: 1.6;
+    color: #1d1d1f;
+    border-left: 3px solid #0066cc;
+  }
+  .analisis ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .analisis li {
+    padding: 1px 0;
+  }
+
   .card-footer {
     display: flex;
     justify-content: space-between;
@@ -273,7 +292,7 @@ const G = [
       m:[{v:"1–2",c:"🇰🇷",r:"l"},{v:"1–1",c:"🇿🇦",r:"d"}] },
     { f:"🇿🇦", n:"Sudáfrica", p:1, d:"-2", s:"🛟", st:"Casi imposible", sc:"st-p",
       m:[{v:"0–2",c:"🇲🇽",r:"l"},{v:"1–1",c:"🇨🇿",r:"d"}] }
-  ], pend:"🇨🇿 vs 🇲🇽 · 🇿🇦 vs 🇰🇷" },
+  ], pend:"🇨🇿 vs 🇲🇽 · 🇿🇦 vs 🇰🇷", analisis:"México ya clasificó con puntaje perfecto. Corea del Sur depende de sí misma: ganando a Sudáfrica se asegura el 2° puesto. Rep. Checa y Sudáfrica necesitan ganar y rezar." },
   { name: "Grupo B", teams: [
     { f:"🇨🇭", n:"Suiza", p:7, d:"+4", s:"✅", st:"Clasificada", sc:"st-c",
       m:[{v:"1–1",c:"🇶🇦",r:"d"},{v:"4–1",c:"🇧🇦",r:"w"},{v:"2–0",c:"🇨🇦",r:"w"}] },
@@ -283,7 +302,7 @@ const G = [
       m:[{v:"1–1",c:"🇨🇦",r:"d"},{v:"1–4",c:"🇨🇭",r:"l"},{v:"3–1",c:"🇶🇦",r:"w"}] },
     { f:"🇶🇦", n:"Qatar", p:1, d:"-8", s:"⛔", st:"Eliminado", sc:"st-e",
       m:[{v:"1–1",c:"🇨🇭",r:"d"},{v:"0–6",c:"🇨🇦",r:"l"},{v:"1–3",c:"🇧🇦",r:"l"}] }
-  ], pend:"—" },
+  ], pend:"—", analisis:"Suiza ganó el grupo con autoridad. Canadá y Bosnia terminan con 4 pts cada uno — la diferencia de gol define quién pasa como 2° y quién espera como mejor 3°. Qatar eliminado sin victorias." },
   { name: "Grupo C", teams: [
     { f:"🇧🇷", n:"Brasil", p:7, d:"+6", s:"✅", st:"Clasificado", sc:"st-c",
       m:[{v:"1–1",c:"🇲🇦",r:"d"},{v:"3–0",c:"🇭🇹",r:"w"},{v:"3–0",c:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",r:"w"}] },
@@ -293,7 +312,7 @@ const G = [
       m:[{v:"1–0",c:"🇭🇹",r:"w"},{v:"0–3",c:"🇧🇷",r:"l"},{v:"0–2",c:"🇲🇦",r:"l"}] },
     { f:"🇭🇹", n:"Haití", p:0, d:"-6", s:"⛔", st:"Eliminado", sc:"st-e",
       m:[{v:"0–1",c:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",r:"l"},{v:"0–3",c:"🇧🇷",r:"l"},{v:"0–3",c:"🇲🇦",r:"l"}] }
-  ], pend:"—" },
+  ], pend:"—", analisis:"Brasil y Marruecos barrieron el grupo: ambos clasifican invictos con 7 pts. Escocia ganó solo a Haití y queda tercera con chances matemáticas mínimas. Haití se va sin puntos ni goles a favor." },
   { name: "Grupo D", teams: [
     { f:"🇺🇸", n:"EE.UU.", p:6, d:"+5", s:"✅", st:"Clasificado", sc:"st-c",
       m:[{v:"4–1",c:"🇵🇾",r:"w"},{v:"2–0",c:"🇦🇺",r:"w"}] },
@@ -303,7 +322,7 @@ const G = [
       m:[{v:"1–4",c:"🇺🇸",r:"l"},{v:"1–0",c:"🇹🇷",r:"w"}] },
     { f:"🇹🇷", n:"Turquía", p:0, d:"-3", s:"⛔", st:"Eliminado", sc:"st-e",
       m:[{v:"0–2",c:"🇦🇺",r:"l"},{v:"0–1",c:"🇵🇾",r:"l"}] }
-  ], pend:"🇹🇷 vs 🇺🇸 · 🇵🇾 vs 🇦🇺" },
+  ], pend:"🇹🇷 vs 🇺🇸 · 🇵🇾 vs 🇦🇺", analisis:"EE.UU. ya clasificado con una fecha de anticipación. Australia y Paraguay llegan igualados en pts — el duelo directo definirá quién avanza como 2°. Turquía se despidió sin goles." },
   { name: "Grupo E", teams: [
     { f:"🇩🇪", n:"Alemania", p:6, d:"+7", s:"✅", st:"Clasificado", sc:"st-c",
       m:[{v:"7–1",c:"🇨🇼",r:"w"},{v:"2–1",c:"🇨🇮",r:"w"}] },
@@ -313,7 +332,7 @@ const G = [
       m:[{v:"0–1",c:"🇨🇮",r:"l"},{v:"0–0",c:"🇨🇼",r:"d"}] },
     { f:"🇨🇼", n:"Curazao", p:1, d:"-6", s:"🛟", st:"Gana + combo", sc:"st-p",
       m:[{v:"1–7",c:"🇩🇪",r:"l"},{v:"0–0",c:"🇪🇨",r:"d"}] }
-  ], pend:"🇪🇨 vs 🇩🇪 · 🇨🇼 vs 🇨🇮" },
+  ], pend:"🇪🇨 vs 🇩🇪 · 🇨🇼 vs 🇨🇮", analisis:"Alemania ya está en 16vos de final. Costa de Marfil depende de sí: ganando a Curazao asegura el pase. Ecuador y Curazao necesitan ganar y esperar una carambola." },
   { name: "Grupo F", teams: [
     { f:"🇳🇱", n:"Países Bajos", p:4, d:"+4", s:"⚠️", st:"Empate clasifica", sc:"st-a",
       m:[{v:"2–2",c:"🇯🇵",r:"d"},{v:"5–1",c:"🇸🇪",r:"w"}] },
@@ -323,7 +342,7 @@ const G = [
       m:[{v:"5–1",c:"🇹🇳",r:"w"},{v:"1–5",c:"🇳🇱",r:"l"}] },
     { f:"🇹🇳", n:"Túnez", p:0, d:"-8", s:"🛟", st:"Milagro", sc:"st-p",
       m:[{v:"1–5",c:"🇸🇪",r:"l"},{v:"0–4",c:"🇯🇵",r:"l"}] }
-  ], pend:"🇹🇳 vs 🇳🇱 · 🇯🇵 vs 🇸🇪" },
+  ], pend:"🇹🇳 vs 🇳🇱 · 🇯🇵 vs 🇸🇪", analisis:"El grupo F está al rojo vivo: Países Bajos y Japón lideran con 4 pts y les alcanza un empate para clasificar. Suecia necesita ganarle a Japón sí o sí. Túnez necesita una hazaña." },
   { name: "Grupo G", teams: [
     { f:"🇪🇬", n:"Egipto", p:4, d:"+2", s:"⚠️", st:"Empate clasifica", sc:"st-a",
       m:[{v:"1–1",c:"🇧🇪",r:"d"},{v:"2–1",c:"🇮🇷",r:"w"}] },
@@ -333,7 +352,7 @@ const G = [
       m:[{v:"1–1",c:"🇪🇬",r:"d"},{v:"0–0",c:"🇮🇷",r:"d"}] },
     { f:"🇳🇿", n:"N. Zelanda", p:1, d:"-2", s:"🛟", st:"Gana + combo", sc:"st-p",
       m:[{v:"2–2",c:"🇮🇷",r:"d"}] }
-  ], pend:"🇪🇬 vs 🇮🇷 · 🇳🇿 vs 🇧🇪" },
+  ], pend:"🇪🇬 vs 🇮🇷 · 🇳🇿 vs 🇧🇪", analisis:"Egipto es el único que depende de sí mismo: un empate le alcanza. Irán, Bélgica y Nueva Zelanda están en un triple empate a 2 pts o menos — todos necesitan ganar y esperar." },
   { name: "Grupo H", teams: [
     { f:"🇪🇸", n:"España", p:4, d:"+4", s:"⚠️", st:"Empate clasifica", sc:"st-a",
       m:[{v:"0–0",c:"🇨🇻",r:"d"},{v:"4–0",c:"🇸🇦",r:"w"}] },
@@ -343,7 +362,7 @@ const G = [
       m:[{v:"1–1",c:"🇸🇦",r:"d"},{v:"2–2",c:"🇨🇻",r:"d"}] },
     { f:"🇸🇦", n:"Arabia Saudita", p:1, d:"-4", s:"🛟", st:"Difícil", sc:"st-p",
       m:[{v:"1–1",c:"🇺🇾",r:"d"},{v:"0–4",c:"🇪🇸",r:"l"}] }
-  ], pend:"🇺🇾 vs 🇪🇸 · 🇨🇻 vs 🇸🇦" },
+  ], pend:"🇺🇾 vs 🇪🇸 · 🇨🇻 vs 🇸🇦", analisis:"España llega como líder y le basta un empate con Uruguay. Uruguay y Cabo Verde están igualados en todo — el que gane avanza, el que empaté se juega a la DG. Arabia Saudita necesita ganar por goleada." },
   { name: "Grupo I", teams: [
     { f:"🇫🇷", n:"Francia", p:6, d:"+5", s:"✅", st:"Clasificada", sc:"st-c",
       m:[{v:"3–1",c:"🇸🇳",r:"w"},{v:"3–0",c:"🇮🇶",r:"w"}] },
@@ -353,7 +372,7 @@ const G = [
       m:[{v:"1–3",c:"🇫🇷",r:"l"},{v:"2–3",c:"🇳🇴",r:"l"}] },
     { f:"🇮🇶", n:"Irak", p:0, d:"-6", s:"⛔", st:"Eliminado", sc:"st-e",
       m:[{v:"1–4",c:"🇳🇴",r:"l"},{v:"0–3",c:"🇫🇷",r:"l"}] }
-  ], pend:"🇳🇴 vs 🇫🇷 · 🇸🇳 vs 🇮🇶" },
+  ], pend:"🇳🇴 vs 🇫🇷 · 🇸🇳 vs 🇮🇶", analisis:"Francia y Noruega ya están clasificadas y se juegan el primer puesto en un duelo directo. Senegal e Irak se despiden del Mundial sin puntos." },
   { name: "Grupo J", teams: [
     { f:"🇦🇷", n:"Argentina", p:6, d:"+5", s:"✅", st:"Clasificada", sc:"st-c",
       m:[{v:"3–0",c:"🇩🇿",r:"w"},{v:"2–0",c:"🇦🇹",r:"w"}] },
@@ -363,7 +382,7 @@ const G = [
       m:[{v:"0–3",c:"🇦🇷",r:"l"},{v:"2–1",c:"🇯🇴",r:"w"}] },
     { f:"🇯🇴", n:"Jordania", p:0, d:"-3", s:"🛟", st:"Milagro", sc:"st-p",
       m:[{v:"1–3",c:"🇦🇹",r:"l"},{v:"1–2",c:"🇩🇿",r:"l"}] }
-  ], pend:"🇩🇿 vs 🇦🇹 · 🇯🇴 vs 🇦🇷" },
+  ], pend:"🇩🇿 vs 🇦🇹 · 🇯🇴 vs 🇦🇷", analisis:"Argentina arrasó el grupo con puntaje perfecto y sin goles en contra. Austria y Argelia se juegan todo en un duelo directo por el 2° puesto. Jordania se va sin victorias." },
   { name: "Grupo K", teams: [
     { f:"🇨🇴", n:"Colombia", p:6, d:"+3", s:"✅", st:"Clasificada", sc:"st-c",
       m:[{v:"3–1",c:"🇺🇿",r:"w"},{v:"1–0",c:"🇨🇩",r:"w"}] },
@@ -373,7 +392,7 @@ const G = [
       m:[{v:"1–0",c:"🇺🇿",r:"w"},{v:"0–1",c:"🇨🇴",r:"l"}] },
     { f:"🇺🇿", n:"Uzbekistán", p:0, d:"-7", s:"⛔", st:"Eliminado", sc:"st-e",
       m:[{v:"1–3",c:"🇨🇴",r:"l"},{v:"0–5",c:"🇵🇹",r:"l"}] }
-  ], pend:"🇨🇩 vs 🇺🇿 · 🇨🇴 vs 🇵🇹" },
+  ], pend:"🇨🇩 vs 🇺🇿 · 🇨🇴 vs 🇵🇹", analisis:"Colombia es líder indiscutido con 6 pts. Portugal necesita solo un empate para asegurar su lugar. RD Congo debe ganar y esperar un resultado. Uzbekistán ya está eliminado." },
   { name: "Grupo L", teams: [
     { f:"🏴󠁧󠁢󠁥󠁮󠁧󠁿", n:"Inglaterra", p:4, d:"+2", s:"⚠️", st:"Empate clasifica", sc:"st-a",
       m:[{v:"4–2",c:"🇭🇷",r:"w"},{v:"0–0",c:"🇬🇭",r:"d"}] },
@@ -383,7 +402,7 @@ const G = [
       m:[{v:"2–4",c:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",r:"l"},{v:"1–0",c:"🇵🇦",r:"w"}] },
     { f:"🇵🇦", n:"Panamá", p:0, d:"-2", s:"⛔", st:"Eliminado", sc:"st-e",
       m:[{v:"0–1",c:"🇬🇭",r:"l"},{v:"0–1",c:"🇭🇷",r:"l"}] }
-  ], pend:"🇭🇷 vs 🇬🇭 · 🇵🇦 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿" }
+  ], pend:"🇭🇷 vs 🇬🇭 · 🇵🇦 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿", analisis:"Inglaterra y Ghana lideran con 4 pts — un empate a cada uno les alcanza para clasificar. Croacia necesita ganarle a Ghana sí o sí. Panamá se despidió sin marcar un solo gol." }
 ];
 
 const upcoming = [
@@ -399,6 +418,60 @@ const upcoming = [
 
 const resultLabel = { w: '✅', d: '⚖️', l: '❌' };
 const resultClass = { w: 'wl', d: 'dl', l: 'll' };
+
+// Genera análisis automático basado en puntos, DG y fecha
+function generarAnalisis(teams, pend) {
+  const lines = [];
+  const ordenados = [...teams].sort((a,b) => b.p - a.p || (parseInt(b.d) - parseInt(a.d)));
+  
+  // Si no hay partidos pendientes, el grupo está cerrado
+  const cerrado = !pend || pend === "—";
+  
+  ordenados.forEach(t => {
+    let txt = "";
+    const tienePartido = pend && pend.includes(t.f);
+    
+    if (t.s === "✅") {
+      txt = `${t.f} ${t.n} — ya clasificado`;
+      if (t.p === 9 || (t.p === 7 && cerrado)) txt += " como 1° del grupo";
+      else if (t.p >= 4 && !tienePartido) txt += ".c.position";
+    } else if (t.s === "⛔") {
+      txt = `${t.f} ${t.n} — eliminado`;
+    } else if (t.s === "⚠️") {
+      if (tienePartido || (t.p >= 3 && !cerrado)) {
+        txt = `${t.f} ${t.n} — depende de sí mismo`;
+        // Determinar si necesita ganar o empate
+        const difConSiguiente = ordenados.indexOf(t) > 0 ? 
+          ordenados[ordenados.indexOf(t)-1].p - t.p : 0;
+        if (difConSiguiente <= 1 && t.p >= 4) txt += " (empate le alcanza)";
+        else txt += " (necesita ganar)";
+      } else {
+        txt = `${t.f} ${t.n} — espera como mejor 3°`;
+      }
+    } else if (t.s === "🛟") {
+      const puedeGanar = tienePartido;
+      if (puedeGanar) txt = `${t.f} ${t.n} — necesita ganar y esperar resultados`;
+      else txt = `${t.f} ${t.n} — chances matemáticas casi nulas`;
+    }
+    lines.push(txt);
+  });
+  
+  // Resumen del grupo
+  if (!cerrado && pend) {
+    const enJuego = ordenados.filter(t => pend.includes(t.f.split(" ")[0])).length;
+    if (enJuego > 0) lines.push(`⚡ ${pend.replace(/·/g,'y')} definirán el grupo`);
+  }
+  
+  // Quien tiene la clasificación asegurada
+  const clasificados = ordenados.filter(t => t.s === "✅").length;
+  if (clasificados > 0 && !cerrado) {
+    lines.unshift(`🏆 ${clasificados} equipo(s) ya clasificado(s)`);
+  }
+  
+  // Ordenar: primero resumen, después cada equipo
+  // Devolvemos solo los bullets relevantes
+  return lines.filter(l => l.length > 5);
+}
 
 // Próximos partidos
 const grid = document.getElementById('matchGrid');
@@ -431,6 +504,13 @@ G.forEach(g => {
   h += '</tbody></table>';
   if (g.pend && g.pend !== "—") {
     h += `<div class="pendientes"><strong>⏳ Pendientes:</strong> ${g.pend}</div>`;
+  }
+  // Análisis automático
+  const bullets = generarAnalisis(g.teams, g.pend);
+  if (bullets.length > 0) {
+    h += '<div class="analisis"><ul>';
+    bullets.forEach(b => { h += `<li>• ${b}</li>`; });
+    h += '</ul></div>';
   }
   h += `<div class="card-footer"><span class="source">Yahoo Sports · TUDN</span><button class="btn" onclick="location.reload()">↻ Recargar</button></div>`;
   card.innerHTML = h;
