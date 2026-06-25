@@ -28,19 +28,18 @@
   .ball-icon{width:44px;height:44px;vertical-align:middle;animation:spin 4s infinite linear;filter:drop-shadow(0 2px 6px rgba(0,0,0,.2))}
   @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
   .header h1 span{background:linear-gradient(135deg,var(--red) 20%,var(--blue) 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .header .author{font-size:.8rem;color:var(--muted);margin-bottom:8px;letter-spacing:.3px;display:flex;align-items:center;justify-content:center;gap:6px}
-  .header .author::before,.header .author::after{content:'';display:inline-block;width:24px;height:1px;background:var(--border)}
-  .header .author a{color:var(--blue);text-decoration:none;font-weight:600;transition:color .2s}
+  .header .author{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(42,57,141,.08),rgba(230,29,37,.06));padding:6px 20px;border-radius:24px;font-size:.78rem;color:var(--muted);margin-bottom:10px;border:1px solid rgba(42,57,141,.12)}
+  .header .author span{font-weight:400;letter-spacing:.3px}
+  .header .author a{color:var(--blue);text-decoration:none;font-weight:700;letter-spacing:-.2px;transition:color .2s;font-size:.85rem}
   .header .author a:hover{color:var(--red)}
-  .header .update-info{font-size:.8rem;color:var(--text);margin:10px 0;line-height:1.5}
-  .header .update-info strong{color:var(--dgray)}
-  .header .next-update{font-size:.72rem;color:var(--muted)}
-  .countdown{color:var(--blue);font-weight:600}
+  .header .update-info{font-size:.78rem;color:var(--text);margin:8px 0;line-height:1.5}
+  .header .next-update{font-size:.76rem;color:var(--muted)}
+  .countdown{color:var(--blue);font-weight:700}
 
   /* WIDGET */
   .widget{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:24px;box-shadow:var(--shadow)}
   .widget h3{font-size:.85rem;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;font-weight:700}
-  .widget-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+  .widget-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .w-match{background:#f6f7f5;border-radius:12px;padding:14px;border:1px solid var(--border);transition:all .2s}
   .w-match:hover{background:#eef0ec}
   .w-teams{display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:700;margin-bottom:6px}
@@ -114,10 +113,12 @@
 
 <div class="header">
   <h1><img src="ball.png" class="ball-icon" alt="⚽"> Fixture <span>2026</span></h1>
-  <div class="author">Desarrollado por <a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a></div>
+  <div class="author">
+    <span>Desarrollado por</span>
+    <a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a>
+  </div>
   <div class="update-info">
-    🟢 Actualizado: <strong id="lastUpdate">—</strong><br>
-    <span class="next-update">⏰ Próxima: <strong id="nextUpdate">—</strong> <span class="countdown" id="countdown"></span></span>
+    <span class="next-update">⏰ Próxima actualización: <strong id="nextUpdate">—</strong> <span class="countdown" id="countdown"></span></span>
   </div>
 </div>
 
@@ -147,22 +148,34 @@ function buscarEquipo(nombre,grupos){const limpio=nombre.replace(/[^a-zA-Záéí
 // ── WIDGET RENDER ──
 function renderWidget(){
   const grid=document.getElementById('widgetGrid');
-  upcoming.forEach(m=>{
-    const hInfo=buscarEquipo(m.h.replace(/[^a-zA-Záéíóúñü ]/g,'').trim(),G);
-    const aInfo=buscarEquipo(m.a.replace(/[^a-zA-Záéíóúñü ]/g,'').trim(),G);
-    let analisis='';
-    if(hInfo&&aInfo){
-      const h=hInfo.equipo,a=aInfo.equipo;
-      const hSit=h.st,aSit=a.st;
-      analisis='<strong>'+h.f+' '+h.n+':</strong> '+hSit.toLowerCase()+'. ';
-      if(h.rq)analisis+=h.rq+'. ';
-      analisis+='<br><strong>'+a.f+' '+a.n+':</strong> '+aSit.toLowerCase()+'. ';
-      if(a.rq)analisis+=a.rq+'.';
-    }
-    const card=document.createElement('div');
-    card.className='w-match';
-    card.innerHTML='<div class="w-teams"><span class="w-group">'+m.g+'</span>'+m.h+' <span class="vs">vs</span> '+m.a+' <span class="w-time">'+m.t+'</span></div><div class="w-analysis">'+analisis+'</div>';
-    grid.appendChild(card);
+  // Group by time
+  const slots={};
+  upcoming.forEach(m=>{if(!slots[m.t])slots[m.t]=[];slots[m.t].push(m)});
+  const order=['25 Jun 17:00','25 Jun 20:00','25 Jun 22:00','25 Jun 23:00'];
+  order.forEach(time=>{
+    if(!slots[time])return;
+    // Time header
+    const hdr=document.createElement('div');
+    hdr.style.cssText='grid-column:1/-1;font-size:.72rem;font-weight:700;color:var(--blue);margin-top:4px;padding:4px 0;border-bottom:1px solid var(--border)';
+    hdr.textContent='🕐 '+time+' ARG';
+    grid.appendChild(hdr);
+    // Match cards
+    slots[time].forEach(m=>{
+      const hInfo=buscarEquipo(m.h.replace(/[^a-zA-Záéíóúñü ]/g,'').trim(),G);
+      const aInfo=buscarEquipo(m.a.replace(/[^a-zA-Záéíóúñü ]/g,'').trim(),G);
+      let analisis='';
+      if(hInfo&&aInfo){
+        const h=hInfo.equipo,a=aInfo.equipo;
+        analisis='<strong>'+h.f+' '+h.n+':</strong> '+h.st.toLowerCase()+'. ';
+        if(h.rq)analisis+=h.rq+'. ';
+        analisis+='<br><strong>'+a.f+' '+a.n+':</strong> '+a.st.toLowerCase()+'. ';
+        if(a.rq)analisis+=a.rq+'.';
+      }
+      const card=document.createElement('div');
+      card.className='w-match';
+      card.innerHTML='<div class="w-teams"><span class="w-group">'+m.g+'</span>'+m.h+' <span class="vs">vs</span> '+m.a+'</div><div class="w-analysis">'+analisis+'</div>';
+      grid.appendChild(card);
+    });
   });
 }
 
@@ -188,15 +201,11 @@ function render(){
     h+='<div class="group-reqs"><strong>Estado del grupo:</strong><br>'+g.reqs.map(r=>'<div>'+r+'</div>').join('')+'</div>';
     card.innerHTML=h;app.appendChild(card);
   });
-  document.getElementById('lastUpdate').textContent=new Date().toLocaleDateString('es-AR',{day:'2-digit',month:'short',year:'numeric'})+' '+new Date().toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+' ARG';
 }
 
 // ── UPDATE TIMER ──
 function updateTimers(){
   var now=new Date();
-  if(!updateTimers._last)updateTimers._last=now;
-  var last=updateTimers._last;
-  document.getElementById('lastUpdate').textContent=last.toLocaleDateString('es-AR',{day:'2-digit',month:'short',year:'numeric'})+' '+last.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+' ARG';
   var next=new Date(Math.ceil(now.getTime()/1800000)*1800000+300000);
   document.getElementById('nextUpdate').textContent=next.toLocaleDateString('es-AR',{day:'2-digit',month:'short',year:'numeric'})+' '+next.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'})+' ARG';
   var diff=Math.max(0,Math.floor((next-now)/1000));
