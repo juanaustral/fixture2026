@@ -160,7 +160,7 @@ function render(){
 }
 
 function updateTimers(){
-  var n=new Date(),nx=new Date(Math.ceil(n.getTime()/1800000)*1800000+300000);
+  var n=new Date(),nx=new Date(Math.ceil(n.getTime()/1800000)*1800000+480000);
   document.getElementById('nextUpdate').textContent=nx.toLocaleDateString('es-AR',{day:'2-digit',month:'short',year:'numeric'})+' '+nx.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'})+' ARG';
   var d=Math.max(0,Math.floor((nx-n)/1000));
   document.getElementById('countdown').textContent='(en '+Math.floor(d/60)+':'+('0'+(d%60)).slice(-2)+')';
