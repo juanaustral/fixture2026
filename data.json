@@ -8,17 +8,51 @@
         {
           "flag": "🇲🇽",
           "name": "México",
-          "pts": 6,
-          "dg": "+3",
-          "played": 2,
-          "pending": 1,
+          "pts": 7,
+          "dg": "+4",
+          "played": 3,
+          "pending": 0,
           "status": "Clasificado",
           "sclass": "st-c",
           "matches": [
             {
-              "score": "2–0",
+              "score": "2–2",
               "opponent": "🇿🇦",
+              "result": "d"
+            },
+            {
+              "score": "1–0",
+              "opponent": "🇰🇷",
               "result": "w"
+            },
+            {
+              "score": "3–0",
+              "opponent": "🇨🇿",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇿🇦",
+          "name": "Sudáfrica",
+          "pts": 5,
+          "dg": "+1",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "2–2",
+              "opponent": "🇲🇽",
+              "result": "d"
+            },
+            {
+              "score": "1–1",
+              "opponent": "🇨🇿",
+              "result": "d"
             },
             {
               "score": "1–0",
@@ -33,11 +67,11 @@
           "flag": "🇰🇷",
           "name": "Corea del Sur",
           "pts": 3,
-          "dg": "0",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "dg": "-1",
+          "played": 3,
+          "pending": 0,
+          "status": "Complicado",
+          "sclass": "st-p",
           "matches": [
             {
               "score": "2–1",
@@ -48,26 +82,25 @@
               "score": "0–1",
               "opponent": "🇲🇽",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 22:00",
-              "vs": "Sudáfrica",
-              "flag": "🇿🇦"
+              "score": "0–1",
+              "opponent": "🇿🇦",
+              "result": "l"
             }
           ],
-          "req": "Ganando clasifica; empatando espera ser 3°"
+          "pendientes": [],
+          "req": "3° con 3 pts (-1 DG). Espera ser uno de los 8 mejores terceros."
         },
         {
           "flag": "🇨🇿",
           "name": "Rep. Checa",
           "pts": 1,
-          "dg": "-1",
-          "played": 2,
-          "pending": 1,
-          "status": "Complicado",
-          "sclass": "st-p",
+          "dg": "-4",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
           "matches": [
             {
               "score": "1–2",
@@ -78,56 +111,25 @@
               "score": "1–1",
               "opponent": "🇿🇦",
               "result": "d"
-            }
-          ],
-          "pendientes": [
-            {
-              "date": "25 Jun 22:00",
-              "vs": "México",
-              "flag": "🇲🇽"
-            }
-          ],
-          "req": "Ganar + Corea pierda + remontar 2 goles DG"
-        },
-        {
-          "flag": "🇿🇦",
-          "name": "Sudáfrica",
-          "pts": 1,
-          "dg": "-2",
-          "played": 2,
-          "pending": 1,
-          "status": "Complicado",
-          "sclass": "st-p",
-          "matches": [
-            {
-              "score": "0–2",
-              "opponent": "🇲🇽",
-              "result": "l"
             },
             {
-              "score": "1–1",
-              "opponent": "🇨🇿",
-              "result": "d"
+              "score": "0–3",
+              "opponent": "🇲🇽",
+              "result": "l"
             }
           ],
-          "pendientes": [
-            {
-              "date": "25 Jun 22:00",
-              "vs": "Corea del Sur",
-              "flag": "🇰🇷"
-            }
-          ],
-          "req": "Ganar + Checa no gane + remontar DG"
+          "pendientes": [],
+          "req": "Eliminado."
         }
       ],
-      "pendientes": "🇨🇿 vs 🇲🇽 · 🇿🇦 vs 🇰🇷",
+      "pendientes": "—",
       "resumen": [
-        "✅ México: clasificado.",
-        "🔵 Corea del Sur: ganando o empatando clasifica.",
-        "🔴 Rep. Checa: ganar + Corea pierda.",
-        "🔴 Sudáfrica: ganar + Checa no gane."
+        "✅ México: 1° (7 pts, +4 DG).",
+        "✅ Sudáfrica: 2° (5 pts, +1 DG).",
+        "🟠 Corea del Sur: 3° con 3 pts (-1 DG).",
+        "🔴 Rep. Checa: eliminado."
       ],
-      "cerrado": false
+      "cerrado": true
     },
     {
       "name": "Grupo B",
@@ -253,7 +255,7 @@
       "resumen": [
         "✅ Suiza: 1° (7 pts, +4 DG).",
         "✅ Canadá: 2° (4 pts, +5 DG).",
-        "🟠 Bosnia: 3° con 4 pts (-1 DG). Espera mejores terceros.",
+        "🟠 Bosnia H.: 3° con 4 pts (-1 DG).",
         "🔴 Qatar: eliminado."
       ],
       "cerrado": true
@@ -294,7 +296,7 @@
           "flag": "🇲🇦",
           "name": "Marruecos",
           "pts": 7,
-          "dg": "+5",
+          "dg": "+3",
           "played": 3,
           "pending": 0,
           "status": "Clasificado",
@@ -306,13 +308,13 @@
               "result": "d"
             },
             {
-              "score": "3–0",
-              "opponent": "🇭🇹",
+              "score": "1–0",
+              "opponent": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
               "result": "w"
             },
             {
-              "score": "2–0",
-              "opponent": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+              "score": "4–2",
+              "opponent": "🇭🇹",
               "result": "w"
             }
           ],
@@ -323,7 +325,7 @@
           "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
           "name": "Escocia",
           "pts": 3,
-          "dg": "-5",
+          "dg": "-3",
           "played": 3,
           "pending": 0,
           "status": "Complicado",
@@ -335,18 +337,18 @@
               "result": "w"
             },
             {
-              "score": "0–3",
-              "opponent": "🇧🇷",
+              "score": "0–1",
+              "opponent": "🇲🇦",
               "result": "l"
             },
             {
-              "score": "0–2",
-              "opponent": "🇲🇦",
+              "score": "0–3",
+              "opponent": "🇧🇷",
               "result": "l"
             }
           ],
           "pendientes": [],
-          "req": "3° con 3 pts (-5 DG). Depende de otros grupos."
+          "req": "3° con 3 pts (-3 DG). Espera ser uno de los 8 mejores terceros."
         },
         {
           "flag": "🇭🇹",
@@ -369,21 +371,21 @@
               "result": "l"
             },
             {
-              "score": "0–3",
+              "score": "2–4",
               "opponent": "🇲🇦",
               "result": "l"
             }
           ],
           "pendientes": [],
-          "req": "Eliminado. Sin goles a favor."
+          "req": "Eliminado."
         }
       ],
       "pendientes": "—",
       "resumen": [
         "✅ Brasil: 1° (7 pts, +6 DG).",
-        "✅ Marruecos: 2° (7 pts, +5 DG).",
-        "🟠 Escocia: 3° con 3 pts (-5 DG).",
-        "🔴 Haití: eliminado (0 pts, 0 GF)."
+        "✅ Marruecos: 2° (7 pts, +3 DG).",
+        "🟠 Escocia: 3° con 3 pts (-3 DG).",
+        "🔴 Haití: eliminado."
       ],
       "cerrado": true
     },
@@ -424,7 +426,7 @@
           "flag": "🇦🇺",
           "name": "Australia",
           "pts": 3,
-          "dg": "0",
+          "dg": "+0",
           "played": 2,
           "pending": 1,
           "status": "Cómodo",
@@ -448,7 +450,7 @@
               "flag": "🇵🇾"
             }
           ],
-          "req": "Ganando clasifica; empate le basta por DG"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇵🇾",
@@ -478,7 +480,7 @@
               "flag": "🇦🇺"
             }
           ],
-          "req": "Ganándole a Australia clasifica"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇹🇷",
@@ -487,8 +489,8 @@
           "dg": "-3",
           "played": 2,
           "pending": 1,
-          "status": "Eliminado",
-          "sclass": "st-e",
+          "status": "Complicado",
+          "sclass": "st-p",
           "matches": [
             {
               "score": "0–2",
@@ -508,7 +510,7 @@
               "flag": "🇺🇸"
             }
           ],
-          "req": "Eliminado."
+          "req": "Ganar y esperar."
         }
       ],
       "pendientes": "🇹🇷 vs 🇺🇸 · 🇵🇾 vs 🇦🇺",
@@ -555,7 +557,7 @@
           "flag": "🇨🇮",
           "name": "Costa de Marfil",
           "pts": 3,
-          "dg": "0",
+          "dg": "+0",
           "played": 2,
           "pending": 1,
           "status": "Cómodo",
@@ -579,7 +581,7 @@
               "flag": "🇨🇼"
             }
           ],
-          "req": "Ganándole a Curazao clasifica"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇪🇨",
@@ -588,8 +590,8 @@
           "dg": "-1",
           "played": 2,
           "pending": 1,
-          "status": "Complicado",
-          "sclass": "st-p",
+          "status": "Cómodo",
+          "sclass": "st-a",
           "matches": [
             {
               "score": "0–1",
@@ -609,7 +611,7 @@
               "flag": "🇩🇪"
             }
           ],
-          "req": "Ganarle a Alemania + Costa de Marfil pierda + DG"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇨🇼",
@@ -618,8 +620,8 @@
           "dg": "-6",
           "played": 2,
           "pending": 1,
-          "status": "Complicado",
-          "sclass": "st-p",
+          "status": "Cómodo",
+          "sclass": "st-a",
           "matches": [
             {
               "score": "1–7",
@@ -639,7 +641,7 @@
               "flag": "🇨🇮"
             }
           ],
-          "req": "Golear a Costa de Marfil + Ecuador no gane + remontar 8 DG"
+          "req": "Ganando clasifica."
         }
       ],
       "pendientes": "🇪🇨 vs 🇩🇪 · 🇨🇼 vs 🇨🇮",
@@ -682,7 +684,7 @@
               "flag": "🇹🇳"
             }
           ],
-          "req": "Empatando clasifica; ganando es 1°"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇯🇵",
@@ -712,13 +714,13 @@
               "flag": "🇸🇪"
             }
           ],
-          "req": "Empatando clasifica; ganando es 1°"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇸🇪",
           "name": "Suecia",
           "pts": 3,
-          "dg": "0",
+          "dg": "+0",
           "played": 2,
           "pending": 1,
           "status": "Cómodo",
@@ -742,7 +744,7 @@
               "flag": "🇯🇵"
             }
           ],
-          "req": "Ganándole a Japón clasifica directo"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇹🇳",
@@ -772,7 +774,7 @@
               "flag": "🇳🇱"
             }
           ],
-          "req": "Golear a Países Bajos + Suecia pierda + 8 DG"
+          "req": "Ganar y esperar."
         }
       ],
       "pendientes": "🇹🇳 vs 🇳🇱 · 🇯🇵 vs 🇸🇪",
@@ -814,13 +816,13 @@
               "flag": "🇮🇷"
             }
           ],
-          "req": "Empatando clasifica"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇮🇷",
           "name": "Irán",
           "pts": 2,
-          "dg": "0",
+          "dg": "+0",
           "played": 2,
           "pending": 1,
           "status": "Cómodo",
@@ -844,13 +846,13 @@
               "flag": "🇪🇬"
             }
           ],
-          "req": "Ganándole a Egipto clasifica"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇧🇪",
           "name": "Bélgica",
           "pts": 2,
-          "dg": "0",
+          "dg": "+0",
           "played": 2,
           "pending": 1,
           "status": "Cómodo",
@@ -874,7 +876,7 @@
               "flag": "🇳🇿"
             }
           ],
-          "req": "Ganarle a NZ + resultado favorable"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇳🇿",
@@ -883,8 +885,8 @@
           "dg": "-2",
           "played": 2,
           "pending": 1,
-          "status": "Complicado",
-          "sclass": "st-p",
+          "status": "Cómodo",
+          "sclass": "st-a",
           "matches": [
             {
               "score": "2–2",
@@ -904,7 +906,7 @@
               "flag": "🇧🇪"
             }
           ],
-          "req": "Ganarle a Bélgica + Irán no gane"
+          "req": "Ganando clasifica."
         }
       ],
       "pendientes": "🇪🇬 vs 🇮🇷 · 🇳🇿 vs 🇧🇪",
@@ -947,43 +949,13 @@
               "flag": "🇺🇾"
             }
           ],
-          "req": "Empatando clasifica"
-        },
-        {
-          "flag": "🇨🇻",
-          "name": "Cabo Verde",
-          "pts": 2,
-          "dg": "0",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
-          "matches": [
-            {
-              "score": "0–0",
-              "opponent": "🇪🇸",
-              "result": "d"
-            },
-            {
-              "score": "2–2",
-              "opponent": "🇺🇾",
-              "result": "d"
-            }
-          ],
-          "pendientes": [
-            {
-              "date": "26 Jun 21:00",
-              "vs": "Arabia Saudita",
-              "flag": "🇸🇦"
-            }
-          ],
-          "req": "Ganándole a Arabia Saudita clasifica"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇺🇾",
           "name": "Uruguay",
           "pts": 2,
-          "dg": "0",
+          "dg": "+0",
           "played": 2,
           "pending": 1,
           "status": "Cómodo",
@@ -1007,7 +979,37 @@
               "flag": "🇪🇸"
             }
           ],
-          "req": "Ganándole a España clasifica"
+          "req": "Ganando clasifica."
+        },
+        {
+          "flag": "🇨🇻",
+          "name": "Cabo Verde",
+          "pts": 2,
+          "dg": "+0",
+          "played": 2,
+          "pending": 1,
+          "status": "Cómodo",
+          "sclass": "st-a",
+          "matches": [
+            {
+              "score": "0–0",
+              "opponent": "🇪🇸",
+              "result": "d"
+            },
+            {
+              "score": "2–2",
+              "opponent": "🇺🇾",
+              "result": "d"
+            }
+          ],
+          "pendientes": [
+            {
+              "date": "26 Jun 21:00",
+              "vs": "Arabia Saudita",
+              "flag": "🇸🇦"
+            }
+          ],
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇸🇦",
@@ -1016,8 +1018,8 @@
           "dg": "-4",
           "played": 2,
           "pending": 1,
-          "status": "Complicado",
-          "sclass": "st-p",
+          "status": "Cómodo",
+          "sclass": "st-a",
           "matches": [
             {
               "score": "1–1",
@@ -1037,7 +1039,7 @@
               "flag": "🇨🇻"
             }
           ],
-          "req": "Ganar + Uruguay pierda + remontar 4 DG"
+          "req": "Ganando clasifica."
         }
       ],
       "pendientes": "🇺🇾 vs 🇪🇸 · 🇨🇻 vs 🇸🇦",
@@ -1119,8 +1121,8 @@
           "dg": "-3",
           "played": 2,
           "pending": 1,
-          "status": "Eliminado",
-          "sclass": "st-e",
+          "status": "Complicado",
+          "sclass": "st-p",
           "matches": [
             {
               "score": "1–3",
@@ -1140,7 +1142,7 @@
               "flag": "🇮🇶"
             }
           ],
-          "req": "Eliminado."
+          "req": "Ganar y esperar."
         },
         {
           "flag": "🇮🇶",
@@ -1149,8 +1151,8 @@
           "dg": "-6",
           "played": 2,
           "pending": 1,
-          "status": "Eliminado",
-          "sclass": "st-e",
+          "status": "Complicado",
+          "sclass": "st-p",
           "matches": [
             {
               "score": "1–4",
@@ -1170,7 +1172,7 @@
               "flag": "🇸🇳"
             }
           ],
-          "req": "Eliminado."
+          "req": "Ganar y esperar."
         }
       ],
       "pendientes": "🇳🇴 vs 🇫🇷 · 🇸🇳 vs 🇮🇶",
@@ -1217,7 +1219,7 @@
           "flag": "🇦🇹",
           "name": "Austria",
           "pts": 3,
-          "dg": "0",
+          "dg": "+0",
           "played": 2,
           "pending": 1,
           "status": "Cómodo",
@@ -1241,7 +1243,7 @@
               "flag": "🇩🇿"
             }
           ],
-          "req": "Ganando clasifica; empate basta por DG"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇩🇿",
@@ -1271,7 +1273,7 @@
               "flag": "🇦🇹"
             }
           ],
-          "req": "Ganándole a Austria clasifica"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇯🇴",
@@ -1301,7 +1303,7 @@
               "flag": "🇦🇷"
             }
           ],
-          "req": "Ganarle a Argentina + Austria-Argelia empaten"
+          "req": "Ganar y esperar."
         }
       ],
       "pendientes": "🇩🇿 vs 🇦🇹 · 🇯🇴 vs 🇦🇷",
@@ -1372,12 +1374,12 @@
               "flag": "🇨🇴"
             }
           ],
-          "req": "Empatando clasifica"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇨🇩",
           "name": "RD Congo",
-          "pts": 3,
+          "pts": 1,
           "dg": "-1",
           "played": 2,
           "pending": 1,
@@ -1385,9 +1387,9 @@
           "sclass": "st-a",
           "matches": [
             {
-              "score": "1–0",
-              "opponent": "🇺🇿",
-              "result": "w"
+              "score": "1–1",
+              "opponent": "🇵🇹",
+              "result": "d"
             },
             {
               "score": "0–1",
@@ -1402,7 +1404,7 @@
               "flag": "🇺🇿"
             }
           ],
-          "req": "Ganándole a Uzbekistán clasifica"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇺🇿",
@@ -1432,7 +1434,7 @@
               "flag": "🇨🇩"
             }
           ],
-          "req": "Golear + resultados ajenos"
+          "req": "Ganar y esperar."
         }
       ],
       "pendientes": "🇨🇩 vs 🇺🇿 · 🇨🇴 vs 🇵🇹",
@@ -1475,7 +1477,7 @@
               "flag": "🇵🇦"
             }
           ],
-          "req": "Empatando clasifica"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇬🇭",
@@ -1505,7 +1507,7 @@
               "flag": "🇭🇷"
             }
           ],
-          "req": "Empatando clasifica"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇭🇷",
@@ -1535,7 +1537,7 @@
               "flag": "🇬🇭"
             }
           ],
-          "req": "Ganándole a Ghana clasifica"
+          "req": "Ganando clasifica."
         },
         {
           "flag": "🇵🇦",
@@ -1544,8 +1546,8 @@
           "dg": "-2",
           "played": 2,
           "pending": 1,
-          "status": "Eliminado",
-          "sclass": "st-e",
+          "status": "Complicado",
+          "sclass": "st-p",
           "matches": [
             {
               "score": "0–1",
@@ -1565,7 +1567,7 @@
               "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
             }
           ],
-          "req": "Eliminado."
+          "req": "Ganar y esperar."
         }
       ],
       "pendientes": "🇭🇷 vs 🇬🇭 · 🇵🇦 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -1578,18 +1580,6 @@
     }
   ],
   "upcoming": [
-    {
-      "home": "🇨🇿 Rep. Checa",
-      "away": "🇲🇽 México",
-      "group": "A",
-      "time": "25 Jun 22:00"
-    },
-    {
-      "home": "🇿🇦 Sudáfrica",
-      "away": "🇰🇷 Corea del Sur",
-      "group": "A",
-      "time": "25 Jun 22:00"
-    },
     {
       "home": "🇪🇨 Ecuador",
       "away": "🇩🇪 Alemania",
