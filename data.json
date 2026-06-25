@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T10:00:00-03:00",
+  "updated": "2026-06-25T17:30:00-03:00",
   "source": "Flashscore",
   "groups": [
     {
@@ -527,9 +527,9 @@
           "flag": "🇩🇪",
           "name": "Alemania",
           "pts": 6,
-          "dg": "+7",
-          "played": 2,
-          "pending": 1,
+          "dg": "+6",
+          "played": 3,
+          "pending": 0,
           "status": "Clasificado",
           "sclass": "st-c",
           "matches": [
@@ -542,26 +542,25 @@
               "score": "2–1",
               "opponent": "🇨🇮",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 17:00",
-              "vs": "Ecuador",
-              "flag": "🇪🇨"
+              "score": "1–2",
+              "opponent": "🇪🇨",
+              "result": "l"
             }
           ],
+          "pendientes": [],
           "req": ""
         },
         {
           "flag": "🇨🇮",
           "name": "Costa de Marfil",
-          "pts": 3,
-          "dg": "+0",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "pts": 6,
+          "dg": "+2",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
           "matches": [
             {
               "score": "1–0",
@@ -572,24 +571,23 @@
               "score": "1–2",
               "opponent": "🇩🇪",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 17:00",
-              "vs": "Curazao",
-              "flag": "🇨🇼"
+              "score": "2–0",
+              "opponent": "🇨🇼",
+              "result": "w"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": ""
         },
         {
           "flag": "🇪🇨",
           "name": "Ecuador",
-          "pts": 1,
-          "dg": "-1",
-          "played": 2,
-          "pending": 1,
+          "pts": 4,
+          "dg": "+0",
+          "played": 3,
+          "pending": 0,
           "status": "Cómodo",
           "sclass": "st-a",
           "matches": [
@@ -602,26 +600,25 @@
               "score": "0–0",
               "opponent": "🇨🇼",
               "result": "d"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 17:00",
-              "vs": "Alemania",
-              "flag": "🇩🇪"
+              "score": "2–1",
+              "opponent": "🇩🇪",
+              "result": "w"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": "3° con 4 pts (+0 DG). Espera ser uno de los 8 mejores terceros."
         },
         {
           "flag": "🇨🇼",
           "name": "Curazao",
           "pts": 1,
-          "dg": "-6",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "dg": "-8",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
           "matches": [
             {
               "score": "1–7",
@@ -632,26 +629,25 @@
               "score": "0–0",
               "opponent": "🇪🇨",
               "result": "d"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 17:00",
-              "vs": "Costa de Marfil",
-              "flag": "🇨🇮"
+              "score": "0–2",
+              "opponent": "🇨🇮",
+              "result": "l"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": "Eliminado."
         }
       ],
-      "pendientes": "🇪🇨 vs 🇩🇪 · 🇨🇼 vs 🇨🇮",
+      "pendientes": "—",
       "resumen": [
-        "✅ Alemania: clasificada.",
-        "🔵 Costa de Marfil: ganando clasifica.",
-        "🔴 Ecuador: ganar + Costa de Marfil pierda + DG.",
-        "🔴 Curazao: milagro — golear + Ecuador no gane + 8 DG."
+        "✅ Alemania: 1° (6 pts, +6 DG). Perdió ante Ecuador pero avanzó.",
+        "✅ Costa de Marfil: 2° (6 pts, +2 DG). Venció a Curazao y clasifica.",
+        "🟠 Ecuador: 3° con 4 pts (+0 DG). Espera ser uno de los 8 mejores terceros.",
+        "🔴 Curazao: eliminado (1 pt, -8 DG)."
       ],
-      "cerrado": false
+      "cerrado": true
     },
     {
       "name": "Grupo F",
@@ -1580,18 +1576,6 @@
     }
   ],
   "upcoming": [
-    {
-      "home": "🇪🇨 Ecuador",
-      "away": "🇩🇪 Alemania",
-      "group": "E",
-      "time": "25 Jun 17:00"
-    },
-    {
-      "home": "🇨🇼 Curazao",
-      "away": "🇨🇮 Costa de Marfil",
-      "group": "E",
-      "time": "25 Jun 17:00"
-    },
     {
       "home": "🇹🇳 Túnez",
       "away": "🇳🇱 Países Bajos",
