@@ -503,6 +503,77 @@ function statusClass(s) {
 }
 
 // Próximos partidos con análisis
+function generarComentarioPartido(hInfo, aInfo) {
+  if (!hInfo || !aInfo) return "";
+  const h = hInfo.equipo;
+  const a = aInfo.equipo;
+  
+  // Caso 1: Ambos clasificados
+  if (h.s === "✅" && a.s === "✅") {
+    if (h.p > a.p) return `🇫🇷 ${h.n} busca asegurar el 1° puesto ante ${a.n}`;
+    if (a.p > h.p) return `🇫🇷 ${a.n} busca asegurar el 1° puesto ante ${h.n}`;
+    return `⚔️ ${h.n} y ${a.n} se juegan el liderato del grupo`;
+  }
+  
+  // Caso 2: Uno clasificado vs otro que depende de sí
+  if (h.s === "✅" && a.s === "⚠️") {
+    return `🎯 ${a.n} necesita sumar puntos para clasificar — ${h.n} ya está adentro`;
+  }
+  if (a.s === "✅" && h.s === "⚠️") {
+    return `🎯 ${h.n} necesita sumar puntos para clasificar — ${a.n} ya está adentro`;
+  }
+  
+  // Caso 3: Uno clasificado vs otro que necesita combo
+  if (h.s === "✅" && a.s === "🛟") {
+    return `🆘 ${a.n} necesita ganar y esperar — ${h.n} ya clasificado como favorito`;
+  }
+  if (a.s === "✅" && h.s === "🛟") {
+    return `🆘 ${h.n} necesita ganar y esperar — ${a.n} ya clasificado como favorito`;
+  }
+  
+  // Caso 4: Uno clasificado vs eliminado
+  if (h.s === "✅" && a.s === "⛔") {
+    return `💪 ${h.n} favorito ante ${a.n} que ya está eliminado`;
+  }
+  if (a.s === "✅" && h.s === "⛔") {
+    return `💪 ${a.n} favorito ante ${h.n} que ya está eliminado`;
+  }
+  
+  // Caso 5: Ambos dependen de sí mismos
+  if (h.s === "⚠️" && a.s === "⚠️") {
+    return `🔥 DUELO DIRECTO — ${h.n} y ${a.n} se juegan la clasificación`;
+  }
+  
+  // Caso 6: Uno depende de sí vs otro combo
+  if (h.s === "⚠️" && a.s === "🛟") {
+    return `⚡ ${h.n} depende de sí mismo — ${a.n} necesita un milagro`;
+  }
+  if (a.s === "⚠️" && h.s === "🛟") {
+    return `⚡ ${a.n} depende de sí mismo — ${h.n} necesita un milagro`;
+  }
+  
+  // Caso 7: Uno depende de sí vs eliminado
+  if (h.s === "⚠️" && a.s === "⛔") {
+    return `✅ ${h.n} debe ganarle a ${a.n} (ya eliminado) para asegurar el pase`;
+  }
+  if (a.s === "⚠️" && h.s === "⛔") {
+    return `✅ ${a.n} debe ganarle a ${h.n} (ya eliminado) para asegurar el pase`;
+  }
+  
+  // Caso 8: Ambos combo
+  if (h.s === "🛟" && a.s === "🛟") {
+    return `🤞 ${h.n} y ${a.n} necesitan ganar y esperar resultados — el que pierda queda afuera`;
+  }
+  
+  // Caso 9: Ambos eliminados
+  if (h.s === "⛔" && a.s === "⛔") {
+    return `😔 Partido sin trascendencia — ambos ya están eliminados`;
+  }
+  
+  // Default
+  return `⚽ ${h.n} vs ${a.n} — partido clave para la definición del grupo`;
+}
+
 const grid = document.getElementById('matchGrid');
 upcoming.forEach(m => {
   const card = document.createElement('div');
@@ -518,6 +589,7 @@ upcoming.forEach(m => {
   const aStCls = aInfo ? statusClass(aInfo.equipo.s) : "";
   const hStText = hInfo ? hInfo.equipo.st : "";
   const aStText = aInfo ? aInfo.equipo.st : "";
+  const comentario = generarComentarioPartido(hInfo, aInfo);
   
   card.innerHTML = `
     <div class="match-teams">
@@ -530,6 +602,9 @@ upcoming.forEach(m => {
       <span class="status-tag ${hStCls}" style="font-size:0.6rem">${hStText}</span>
       <span style="color:#86868b;font-size:0.6rem"> vs </span>
       <span class="status-tag ${aStCls}" style="font-size:0.6rem">${aStText}</span>
+    </div>
+    <div style="margin-top:5px;font-size:0.7rem;line-height:1.4;color:#0066cc;font-weight:500;text-align:center;background:#eef3ff;padding:4px 6px;border-radius:6px">
+      ${comentario}
     </div>`;
   grid.appendChild(card);
 });
