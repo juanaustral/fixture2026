@@ -3,341 +3,387 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fixture 2026 — Mundial</title>
+<title>Mundial 2026 — Resultados y Clasificación</title>
 <style>
   :root {
-    --green:  #3CAC3B;
-    --blue:   #2A398D;
-    --red:    #E61D25;
-    --lgray:  #D1D4D1;
-    --dgray:  #474A4A;
-    --bg:     #eff0ed;
-    --card:   #ffffff;
-    --border: #dde0dc;
-    --text:   #2a2d2d;
-    --muted:  #6b706e;
-    --radius: 16px;
-    --shadow: 0 2px 12px rgba(0,0,0,0.05);
+    --bg: #0f0f1a;
+    --card: #1a1a2e;
+    --border: #2a2a4a;
+    --text: #e0e0f0;
+    --muted: #8888aa;
+    --accent: #00d4aa;
+    --green: #00c853;
+    --yellow: #ffd600;
+    --orange: #ff9100;
+    --red: #ff1744;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  /* ═══════════ FONDO SVG + TROFEOS FLOTANTES ═══════════ */
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-    background-color: var(--bg);
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' viewBox='0 0 280 280'%3E%3Cdefs%3E%3Cpattern id='h' width='52' height='90' patternUnits='userSpaceOnUse'%3E%3Cpath d='M26 0l26 15v30l-26 15L0 45V15z' fill='none' stroke='%232A398D' stroke-width='0.6' stroke-opacity='0.12'/%3E%3Cpath d='M26 90l26-15V45l-26-15L0 45v30z' fill='none' stroke='%232A398D' stroke-width='0.5' stroke-opacity='0.10'/%3E%3C/pattern%3E%3Cpattern id='s' width='180' height='180' patternUnits='userSpaceOnUse'%3E%3Cpolygon points='90,8 97,68 152,68 104,106 122,164 90,130 58,164 76,106 28,68 83,68' fill='none' stroke='%23E61D25' stroke-width='0.5' stroke-opacity='0.07'/%3E%3C/pattern%3E%3Cpattern id='d' width='64' height='64' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='32' cy='32' r='1' fill='%233CAC3B' fill-opacity='0.08'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='280' height='280' fill='url(%23h)'/%3E%3Crect width='280' height='280' fill='url(%23s)'/%3E%3Crect width='280' height='280' fill='url(%23d)'/%3E%3C/svg%3E");
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+    background: var(--bg);
     color: var(--text);
-    line-height: 1.5;
-    min-height: 100vh;
-    overflow-x: hidden;
+    padding: 12px;
   }
+  h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 2px;
+    color: #fff;
+  }
+  .subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+  .last-update {
+    text-align: center;
+    color: var(--accent);
+    font-size: 0.7rem;
+    margin-bottom: 12px;
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 0.75rem;
+  }
+  .legend span { display: inline-flex; align-items: center; gap: 4px; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; }
+  .dot.green { background: var(--green); }
+  .dot.yellow { background: var(--yellow); }
+  .dot.orange { background: var(--orange); }
+  .dot.red { background: var(--red); }
 
-  /* ═══════════ TROFEOS FLOTANTES ═══════════ */
-  .trophy-float {
-    position: fixed; pointer-events: none; z-index: 0;
-    opacity: 0; width: 40px; height: auto;
-    animation: floatTrophy var(--dur) var(--delay) infinite linear;
-  }
-  @keyframes floatTrophy {
-    0%   { opacity: 0; transform: translate(0, 100vh) rotate(0deg) scale(0.5); }
-    10%  { opacity: var(--op); }
-    90%  { opacity: var(--op); }
-    100% { opacity: 0; transform: translate(var(--dx), -120px) rotate(var(--rot)) scale(0.4); }
-  }
-
-  .page { position: relative; z-index: 1; padding: 20px 16px; max-width: 1680px; margin: 0 auto; }
-
-  /* ═══════════ HEADER ═══════════ */
-  .header { text-align: center; margin-bottom: 28px; }
-  .header::after {
-    content: ''; display: block; width: 80px; height: 4px;
-    background: linear-gradient(90deg, var(--red), var(--blue), var(--green));
-    margin: 18px auto 0; border-radius: 2px;
-  }
-  .header h1 {
-    font-size: 2.8rem; font-weight: 900; letter-spacing: -2px;
-    color: var(--dgray); margin-bottom: 4px;
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-  }
-  .ball-icon {
-    display: inline-block; width: 48px; height: 48px; vertical-align: middle;
-    animation: spin-ball 4s infinite linear;
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));
-  }
-  @keyframes spin-ball {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  .header h1 span {
-    background: linear-gradient(135deg, var(--red) 20%, var(--blue) 80%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  }
-  .header .author { font-size: 0.85rem; color: var(--muted); margin-bottom: 4px; }
-  .header .author a { color: var(--blue); text-decoration: none; font-weight: 600; }
-  .header .update-info {
-   font-size: 0.8rem; color: var(--text);
-   margin-bottom: 16px; line-height: 1.6;
- }
- .update-info strong { color: var(--dgray); }
- .update-info .next {
-   font-size: 0.72rem; color: var(--muted);
-   margin-top: 2px;
- }
- .update-info .countdown { color: var(--blue); font-weight: 600; }
-
-  /* ═══════════ PARTIDOS DE HOY ═══════════ */
-  .today-matches {
-    max-width: 960px; margin: 0 auto 28px auto;
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 18px 22px; box-shadow: var(--shadow);
-  }
-  .today-matches h3 {
-    font-size: 0.8rem; color: var(--blue); text-transform: uppercase;
-    letter-spacing: 0.6px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; font-weight: 700;
-  }
-  .today-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
-  .today-match {
-    display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px;
-    background: #f7f8f5; border-radius: 12px; border: 1px solid var(--border); font-size: 0.78rem;
-    transition: all 0.2s;
-  }
-  .today-match:hover { background: #eef0ec; border-color: #c8ccc6; }
-  .today-match .group-tag {
-    font-size: 0.62rem; background: var(--blue); color: #fff;
-    padding: 3px 8px; border-radius: 5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px;
-  }
-  .today-match .teams { font-weight: 600; }
-  .today-match .score { font-weight: 800; font-size: 0.88rem; color: var(--red); margin: 0 6px; min-width: 30px; text-align: center; }
-  .today-match .pending-tag { font-size: 0.62rem; color: var(--blue); white-space: nowrap; background: rgba(42,57,141,0.06); padding: 2px 8px; border-radius: 4px; }
-
-  /* ═══════════ LEGEND ═══════════ */
-  .legend { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 28px; font-size: 0.76rem; }
-  .legend-item {
-    display: flex; align-items: center; gap: 7px; background: var(--card);
-    padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.03); transition: transform 0.15s;
-  }
-  .legend-item:hover { transform: translateY(-1px); }
-  .legend-dot { width: 9px; height: 9px; border-radius: 3px; }
-
-  /* ═══════════ GROUPS GRID ═══════════ */
   .groups-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+    max-width: 1400px;
+    margin: 0 auto;
   }
-
-  /* ═══════════ GROUP CARDS — TINTED ═══════════ */
   .group-card {
-    border-radius: var(--radius); padding: 18px;
-    position: relative; overflow: hidden;
-    box-shadow: var(--shadow); border: 1px solid var(--border);
-    transition: box-shadow 0.2s, transform 0.15s;
-  }
-  .group-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); transform: translateY(-1px); }
-  .group-card.t0 { background: linear-gradient(180deg, rgba(60,172,59,0.50) 0%, #ffffff 15%); }
-  .group-card.t1 { background: linear-gradient(180deg, rgba(42,57,141,0.50) 0%, #ffffff 15%); }
-  .group-card.t2 { background: linear-gradient(180deg, rgba(230,29,37,0.50) 0%, #ffffff 15%); }
-  .group-card.t3 { background: linear-gradient(180deg, rgba(71,74,74,0.50) 0%, #ffffff 15%); }
-  .group-card.t4 { background: linear-gradient(180deg, rgba(60,172,59,0.50) 0%, #ffffff 15%); }
-  .group-card::before {
-    content: ''; position: absolute; top: -30px; right: -30px;
-    width: 120px; height: 120px;
-    background: radial-gradient(circle, rgba(42,57,141,0.05) 0%, transparent 70%);
-    border-radius: 50%; pointer-events: none;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
   }
   .group-card h2 {
-    font-size: 1rem; color: var(--blue); margin-bottom: 12px; padding-bottom: 8px;
-    border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 8px;
-    position: relative; z-index: 1; font-weight: 700; letter-spacing: -0.2px;
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
   }
-  .group-card h2 .badge {
-    font-size: 0.62rem; color: var(--muted); font-weight: 600; margin-left: auto;
-    background: rgba(255,255,255,0.7); padding: 3px 10px; border-radius: 8px; border: 1px solid var(--border);
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.75rem;
   }
-
-  /* ═══════════ STANDINGS TABLE ═══════════ */
-  .standings-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
-  .standings-table th {
-    text-align: left; color: var(--muted); font-weight: 700;
-    font-size: 0.63rem; text-transform: uppercase; letter-spacing: 0.7px;
-    padding: 8px 8px; border-bottom: 2px solid var(--border); background: rgba(255,255,255,0.5);
+  th {
+    text-align: left;
+    color: var(--muted);
+    font-weight: 500;
+    padding: 3px 2px;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
   }
-  .standings-table th.num { text-align: center; width: 34px; }
-  .standings-table td { padding: 7px 8px; vertical-align: middle; }
-  .standings-table td.team-cell { display: flex; align-items: center; gap: 7px; font-weight: 700; font-size: 0.8rem; }
-  .standings-table td.team-cell .flag { font-size: 1.15rem; }
-  .standings-table td.num { text-align: center; font-weight: 800; font-size: 0.88rem; }
-
-  .team-block-even { background: rgba(255,255,255,0.9); }
-  .team-block-odd  { background: rgba(0,0,0,0.05); }
-  .team-block-even td, .team-block-odd td { border-bottom: 1px solid rgba(0,0,0,0.04); }
-
-  .status-text {
-    font-size: 0.62rem; font-weight: 700; white-space: nowrap;
-    padding: 4px 10px; border-radius: 5px; text-align: center; letter-spacing: 0.3px; display: inline-block;
+  th.pts { text-align: center; width: 24px; }
+  th.dg { text-align: center; width: 24px; }
+  th.st { text-align: center; width: 30px; }
+  td { padding: 4px 2px; border-top: 1px solid rgba(255,255,255,0.04); }
+  td.team { font-weight: 500; white-space: nowrap; }
+  td.pts { text-align: center; font-weight: 700; font-size: 0.85rem; }
+  td.dg { text-align: center; }
+  td.st { text-align: center; font-size: 0.85rem; }
+  .flag { font-size: 1rem; margin-right: 3px; }
+  .summary {
+    margin-top: 5px;
+    font-size: 0.65rem;
+    color: var(--muted);
+    line-height: 1.4;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255,255,255,0.05);
   }
-  .status-clasificado { background: rgba(60,172,59,0.1); color: #2a7d2b; }
-  .status-comodo     { background: rgba(42,57,141,0.08); color: var(--blue); }
-  .status-complicado { background: rgba(230,29,37,0.07); color: #c41820; }
-  .status-eliminado  { background: rgba(71,74,74,0.08); color: var(--dgray); }
-
-  /* ═══════════ MATCH RESULTS — REDESIGNED ═══════════ */
-  .team-detail { font-size: 0.68rem; color: var(--muted); padding: 6px 0 4px 10px; }
-  .match-line { display: flex; align-items: center; gap: 6px; padding: 2px 0; flex-wrap: wrap; }
-  .match-line .m-result {
-    font-weight: 700; font-size: 0.72rem; min-width: 28px; text-align: center;
-    padding: 1px 5px; border-radius: 3px;
+  .tag {
+    display: inline-block;
+    font-size: 0.55rem;
+    padding: 1px 5px;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
   }
-  .match-line .m-win  { color: var(--green); background: rgba(60,172,59,0.08); }
-  .match-line .m-draw { color: #a0850b; background: rgba(160,133,11,0.07); }
-  .match-line .m-loss { color: var(--red); background: rgba(230,29,37,0.07); }
-  .match-line .m-vs { color: var(--muted); font-size: 0.6rem; margin: 0 2px; }
-  .match-line .m-icon { font-size: 0.7rem; }
-  .team-detail .section-label {
-    font-size: 0.6rem; text-transform: uppercase; font-weight: 700; color: var(--muted);
-    margin-right: 4px; letter-spacing: 0.4px;
+  .tag-green { background: rgba(0,200,83,0.15); color: var(--green); }
+  .tag-yellow { background: rgba(255,214,0,0.15); color: var(--yellow); }
+  .tag-orange { background: rgba(255,145,0,0.15); color: var(--orange); }
+  .tag-red { background: rgba(255,23,68,0.15); color: var(--red); }
+  .pending {
+    margin-top: 4px;
+    font-size: 0.65rem;
+    color: var(--yellow);
+    line-height: 1.3;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255,255,255,0.04);
   }
-  .team-detail .pending-line { color: var(--blue); font-size: 0.66rem; margin-top: 2px; }
-  .team-detail .pending-line .p-date { color: var(--muted); font-size: 0.6rem; }
-  .team-detail .requirement {
-    color: var(--dgray); font-weight: 600; margin-top: 4px; font-size: 0.68rem;
-    border-top: 1px dotted var(--border); padding-top: 4px; margin-left: -4px;
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid var(--border);
   }
-
-  /* ═══════════ GROUP REQUIREMENTS BOX ═══════════ */
-  .group-reqs {
-    margin-top: 14px; padding: 12px 14px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
-    border-radius: 10px; border-left: 3px solid var(--blue);
-    font-size: 0.7rem; color: var(--muted); line-height: 1.55;
+  .btn-reload {
+    background: var(--accent);
+    color: #0f0f1a;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 5px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    cursor: pointer;
   }
-  .group-reqs strong { color: var(--text); font-weight: 700; }
-  .group-reqs .req-item { padding: 2px 0; }
-
-  /* ═══════════ FOOTER ═══════════ */
-  .footer { text-align: center; margin-top: 36px; padding: 16px; font-size: 0.66rem; color: var(--muted); border-top: 1px solid var(--border); }
-  .footer a { color: var(--blue); text-decoration: none; font-weight: 600; }
-
-  /* ═══════════ MOBILE ═══════════ */
-  @media (max-width: 768px) {
-    .header h1 { font-size: 2rem; }
-    .ball-icon { width: 36px; height: 36px; }
+  .btn-reload:hover { opacity: 0.8; }
+  .source {
+    font-size: 0.6rem;
+    color: var(--muted);
+  }
+  .footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 0.65rem;
+    color: var(--muted);
+  }
+  @media (max-width: 480px) {
     .groups-grid { grid-template-columns: 1fr; }
-    .group-card { padding: 14px; border-radius: 12px; }
-    .standings-table { font-size: 0.72rem; }
-    .standings-table td.team-cell { font-size: 0.74rem; }
-    .today-grid { grid-template-columns: 1fr; }
-    .page { padding: 10px 8px; }
-    .btn-refresh { padding: 11px 28px; font-size: 0.88rem; }
-    .today-matches { padding: 14px 12px; }
-  }
-  @media (max-width: 400px) {
-    .header h1 { font-size: 1.6rem; letter-spacing: -1px; }
-    .ball-icon { width: 28px; height: 28px; }
-    .group-card { padding: 10px; }
-    .group-card h2 { font-size: 0.88rem; }
-    .standings-table th, .standings-table td { padding: 5px 4px; }
-    .standings-table td.team-cell .flag { font-size: 1rem; }
-    .standings-table td.team-cell { font-size: 0.7rem; gap: 4px; }
+    body { padding: 8px; }
   }
 </style>
 </head>
 <body>
-<!-- TROFEOS FLOTANTES -->
-<div id="trophyField"></div>
 
-<div class="page">
-
-<div class="header">
-  <h1><img src="ball.png" class="ball-icon" alt="⚽"> Fixture <span>2026</span></h1>
-  <div class="author">Desarrollado por <a href="https://juanmartinezgarcia.com" target="_blank">Juan Martinez Garcia</a></div>
-  <div class="update-info">
-    <div>🟢 Resultados actualizados a las <strong id="lastUpdate">—</strong></div>
-    <div class="next">⏰ Próxima actualización: <strong id="nextUpdate">—</strong> <span class="countdown" id="countdown"></span></div>
-  </div>
-</div>
-
-<div class="today-matches" id="todayBox">
-  <h3>📅 Partidos de hoy — 24 de junio</h3>
-  <div class="today-grid" id="todayGrid"></div>
-</div>
+<h1>⚽ Mundial 2026</h1>
+<p class="subtitle">Fixture · Resultados · Situación de clasificación</p>
+<p class="last-update" id="updateLabel">🔄 Actualizado: 25 Jun 2026 (jornada 3 en curso)</p>
 
 <div class="legend">
-  <div class="legend-item"><span class="legend-dot" style="background:var(--green)"></span> Clasificado</div>
-  <div class="legend-item"><span class="legend-dot" style="background:var(--blue)"></span> Cómodo</div>
-  <div class="legend-item"><span class="legend-dot" style="background:var(--red)"></span> Complicado</div>
-  <div class="legend-item"><span class="legend-dot" style="background:var(--dgray)"></span> Eliminado</div>
+  <span><span class="dot green"></span> Clasificado</span>
+  <span><span class="dot yellow"></span> Depende de sí</span>
+  <span><span class="dot orange"></span> Necesita combo</span>
+  <span><span class="dot red"></span> Eliminado</span>
 </div>
 
 <div class="groups-grid" id="app"></div>
 
 <div class="footer">
-  Datos verificados: Flashscore · DAZN · Olympics.com<br>
-  <a href="#" onclick="location.reload()">↻ Recargar</a> · <a href="https://github.com/juanaustral/fixture2026" target="_blank">GitHub</a>
-</div>
-
+  <p>Datos: Yahoo Sports · TUDN · DAZN · Olympics.com · FIFA</p>
+  <p><a href="https://github.com/juanaustral/fixture2026" style="color:var(--accent)">📦 GitHub</a></p>
 </div>
 
 <script>
-const groups=[{name:"Grupo A",teams:[{flag:"🇲🇽",name:"México",pts:6,pp:0,status:"Clasificado",sClass:"clasificado",played:[{t:"Sudáfrica",f:"🇿🇦",s:"2–0",r:"w"},{t:"Corea del Sur",f:"🇰🇷",s:"1–0",r:"w"}],pending:[],req:""},{flag:"🇰🇷",name:"Corea del Sur",pts:3,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Rep. Checa",f:"🇨🇿",s:"2–1",r:"w"},{t:"México",f:"🇲🇽",s:"0–1",r:"l"}],pending:[{d:"24 Jun 22:00",v:"Sudáfrica",f:"🇿🇦"}],req:"Ganando clasifica; empatando espera ser 3°"},{flag:"🇨🇿",name:"Rep. Checa",pts:1,pp:1,status:"Complicado",sClass:"complicado",played:[{t:"Corea del Sur",f:"🇰🇷",s:"1–2",r:"l"},{t:"Sudáfrica",f:"🇿🇦",s:"1–1",r:"d"}],pending:[{d:"24 Jun 22:00",v:"México",f:"🇲🇽"}],req:"Ganar + que Corea pierda + remontar 2 goles DG"},{flag:"🇿🇦",name:"Sudáfrica",pts:1,pp:1,status:"Complicado",sClass:"complicado",played:[{t:"México",f:"🇲🇽",s:"0–2",r:"l"},{t:"Rep. Checa",f:"🇨🇿",s:"1–1",r:"d"}],pending:[{d:"24 Jun 22:00",v:"Corea del Sur",f:"🇰🇷"}],req:"Ganar + que Checa no gane + remontar DG"}],reqs:["✅ <strong>México</strong>: clasificado.","🔵 <strong>Corea del Sur</strong>: ganando o empatando clasifica.","🔴 <strong>Rep. Checa</strong>: debe ganarle a México y esperar que Corea pierda.","🔴 <strong>Sudáfrica</strong>: debe ganarle a Corea y esperar que Checa no gane."]},{name:"Grupo B",teams:[{flag:"🇨🇦",name:"Canadá",pts:4,pp:0,status:"Clasificado",sClass:"clasificado",played:[{t:"Bosnia H.",f:"🇧🇦",s:"1–1",r:"d"},{t:"Qatar",f:"🇶🇦",s:"6–0",r:"w"},{t:"Suiza",f:"🇨🇭",s:"1–2",r:"l"}],pending:[],req:""},{flag:"🇨🇭",name:"Suiza",pts:7,pp:0,status:"Clasificado",sClass:"clasificado",played:[{t:"Qatar",f:"🇶🇦",s:"1–1",r:"d"},{t:"Bosnia H.",f:"🇧🇦",s:"4–1",r:"w"},{t:"Canadá",f:"🇨🇦",s:"2–1",r:"w"}],pending:[],req:""},{flag:"🇧🇦",name:"Bosnia H.",pts:4,pp:0,status:"Complicado",sClass:"complicado",played:[{t:"Canadá",f:"🇨🇦",s:"1–1",r:"d"},{t:"Suiza",f:"🇨🇭",s:"1–4",r:"l"},{t:"Qatar",f:"🇶🇦",s:"3–1",r:"w"}],pending:[],req:"Tercero con 4 pts (-1 DG). Depende de otros grupos."},{flag:"🇶🇦",name:"Qatar",pts:1,pp:0,status:"Eliminado",sClass:"eliminado",played:[{t:"Suiza",f:"🇨🇭",s:"1–1",r:"d"},{t:"Canadá",f:"🇨🇦",s:"0–6",r:"l"},{t:"Bosnia H.",f:"🇧🇦",s:"1–3",r:"l"}],pending:[],req:"Eliminado."}],reqs:["✅ <strong>Suiza</strong>: clasificado 1° (7 pts).","✅ <strong>Canadá</strong>: clasificado 2° (4 pts, +5 DG).","🟠 <strong>Bosnia</strong>: 3° con 4 pts (-1 DG). Espera ser uno de los 8 mejores terceros.","🔴 <strong>Qatar</strong>: eliminado (1 pt, -8 DG)."]},{name:"Grupo C",teams:[{flag:"🇧🇷",name:"Brasil",pts:4,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Marruecos",f:"🇲🇦",s:"1–1",r:"d"},{t:"Haití",f:"🇭🇹",s:"3–0",r:"w"}],pending:[{d:"24 Jun 19:00",v:"Escocia",f:"🏴󠁧󠁢󠁳󠁣󠁴󠁿"}],req:"Empatando clasifica; ganando es 1°"},{flag:"🇲🇦",name:"Marruecos",pts:4,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Brasil",f:"🇧🇷",s:"1–1",r:"d"},{t:"Escocia",f:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",s:"1–0",r:"w"}],pending:[{d:"24 Jun 19:00",v:"Haití",f:"🇭🇹"}],req:"Empatando clasifica; ganando puede ser 1°"},{flag:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",name:"Escocia",pts:3,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Haití",f:"🇭🇹",s:"1–0",r:"w"},{t:"Marruecos",f:"🇲🇦",s:"0–1",r:"l"}],pending:[{d:"24 Jun 19:00",v:"Brasil",f:"🇧🇷"}],req:"Ganándole a Brasil clasifica directo"},{flag:"🇭🇹",name:"Haití",pts:0,pp:1,status:"Eliminado",sClass:"eliminado",played:[{t:"Escocia",f:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",s:"0–1",r:"l"},{t:"Brasil",f:"🇧🇷",s:"0–3",r:"l"}],pending:[{d:"24 Jun 19:00",v:"Marruecos",f:"🇲🇦"}],req:"Sin posibilidades matemáticas."}],reqs:["🔵 <strong>Brasil y Marruecos</strong>: empatando clasifican.","🔵 <strong>Escocia</strong>: ganándole a Brasil clasifica directo.","⚫ <strong>Haití</strong>: eliminado."]},{name:"Grupo D",teams:[{flag:"🇺🇸",name:"EE.UU.",pts:6,pp:1,status:"Clasificado",sClass:"clasificado",played:[{t:"Paraguay",f:"🇵🇾",s:"4–1",r:"w"},{t:"Australia",f:"🇦🇺",s:"2–0",r:"w"}],pending:[{d:"25 Jun 23:00",v:"Turquía",f:"🇹🇷"}],req:""},{flag:"🇦🇺",name:"Australia",pts:3,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Turquía",f:"🇹🇷",s:"2–0",r:"w"},{t:"EE.UU.",f:"🇺🇸",s:"0–2",r:"l"}],pending:[{d:"25 Jun 23:00",v:"Paraguay",f:"🇵🇾"}],req:"Ganando clasifica; empate le basta por DG"},{flag:"🇵🇾",name:"Paraguay",pts:3,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"EE.UU.",f:"🇺🇸",s:"1–4",r:"l"},{t:"Turquía",f:"🇹🇷",s:"1–0",r:"w"}],pending:[{d:"25 Jun 23:00",v:"Australia",f:"🇦🇺"}],req:"Ganándole a Australia clasifica"},{flag:"🇹🇷",name:"Turquía",pts:0,pp:1,status:"Eliminado",sClass:"eliminado",played:[{t:"Australia",f:"🇦🇺",s:"0–2",r:"l"},{t:"Paraguay",f:"🇵🇾",s:"0–1",r:"l"}],pending:[{d:"25 Jun 23:00",v:"EE.UU.",f:"🇺🇸"}],req:"Eliminado."}],reqs:["✅ <strong>EE.UU.</strong>: clasificado.","🔵 <strong>Australia vs Paraguay</strong>: el ganador clasifica; si empatan, Australia pasa por mejor DG."]},{name:"Grupo E",teams:[{flag:"🇩🇪",name:"Alemania",pts:6,pp:1,status:"Clasificado",sClass:"clasificado",played:[{t:"Curazao",f:"🇨🇼",s:"7–1",r:"w"},{t:"Costa de Marfil",f:"🇨🇮",s:"2–1",r:"w"}],pending:[{d:"25 Jun 17:00",v:"Ecuador",f:"🇪🇨"}],req:""},{flag:"🇨🇮",name:"Costa de Marfil",pts:3,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Ecuador",f:"🇪🇨",s:"1–0",r:"w"},{t:"Alemania",f:"🇩🇪",s:"1–2",r:"l"}],pending:[{d:"25 Jun 17:00",v:"Curazao",f:"🇨🇼"}],req:"Ganándole a Curazao clasifica"},{flag:"🇪🇨",name:"Ecuador",pts:1,pp:1,status:"Complicado",sClass:"complicado",played:[{t:"Costa de Marfil",f:"🇨🇮",s:"0–1",r:"l"},{t:"Curazao",f:"🇨🇼",s:"0–0",r:"d"}],pending:[{d:"25 Jun 17:00",v:"Alemania",f:"🇩🇪"}],req:"Ganarle a Alemania + Costa de Marfil pierda + remontar 2 goles DG"},{flag:"🇨🇼",name:"Curazao",pts:1,pp:1,status:"Complicado",sClass:"complicado",played:[{t:"Alemania",f:"🇩🇪",s:"1–7",r:"l"},{t:"Ecuador",f:"🇪🇨",s:"0–0",r:"d"}],pending:[{d:"25 Jun 17:00",v:"Costa de Marfil",f:"🇨🇮"}],req:"Golear a Costa de Marfil + Ecuador no gane + remontar 8 goles DG"}],reqs:["✅ <strong>Alemania</strong>: clasificada.","🔵 <strong>Costa de Marfil</strong>: ganándole a Curazao clasifica.","🔴 <strong>Ecuador</strong>: ganarle a Alemania + Costa de Marfil pierda + DG.","🔴 <strong>Curazao</strong>: milagro — ganar por goleada + Ecuador no gane + remontar 8 goles."]},{name:"Grupo F",teams:[{flag:"🇳🇱",name:"Países Bajos",pts:4,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Japón",f:"🇯🇵",s:"2–2",r:"d"},{t:"Suecia",f:"🇸🇪",s:"5–1",r:"w"}],pending:[{d:"25 Jun 20:00",v:"Túnez",f:"🇹🇳"}],req:"Empatando clasifica; ganando es 1°"},{flag:"🇯🇵",name:"Japón",pts:4,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Países Bajos",f:"🇳🇱",s:"2–2",r:"d"},{t:"Túnez",f:"🇹🇳",s:"4–0",r:"w"}],pending:[{d:"25 Jun 20:00",v:"Suecia",f:"🇸🇪"}],req:"Empatando clasifica; ganando es 1°"},{flag:"🇸🇪",name:"Suecia",pts:3,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Túnez",f:"🇹🇳",s:"5–1",r:"w"},{t:"Países Bajos",f:"🇳🇱",s:"1–5",r:"l"}],pending:[{d:"25 Jun 20:00",v:"Japón",f:"🇯🇵"}],req:"Ganándole a Japón clasifica directo"},{flag:"🇹🇳",name:"Túnez",pts:0,pp:1,status:"Complicado",sClass:"complicado",played:[{t:"Suecia",f:"🇸🇪",s:"1–5",r:"l"},{t:"Japón",f:"🇯🇵",s:"0–4",r:"l"}],pending:[{d:"25 Jun 20:00",v:"Países Bajos",f:"🇳🇱"}],req:"Golear a Países Bajos + Suecia pierda + remontar 8 goles DG"}],reqs:["🔵 <strong>Países Bajos y Japón</strong>: empatando clasifican.","🔵 <strong>Suecia</strong>: ganándole a Japón clasifica.","🔴 <strong>Túnez</strong>: necesita goleada histórica y que Suecia pierda."]},{name:"Grupo G",teams:[{flag:"🇪🇬",name:"Egipto",pts:4,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Bélgica",f:"🇧🇪",s:"1–1",r:"d"},{t:"N. Zelanda",f:"🇳🇿",s:"3–1",r:"w"}],pending:[{d:"27 Jun 00:00",v:"Irán",f:"🇮🇷"}],req:"Empatando clasifica"},{flag:"🇮🇷",name:"Irán",pts:2,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"N. Zelanda",f:"🇳🇿",s:"2–2",r:"d"},{t:"Bélgica",f:"🇧🇪",s:"0–0",r:"d"}],pending:[{d:"27 Jun 00:00",v:"Egipto",f:"🇪🇬"}],req:"Ganándole a Egipto clasifica"},{flag:"🇧🇪",name:"Bélgica",pts:2,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Egipto",f:"🇪🇬",s:"1–1",r:"d"},{t:"Irán",f:"🇮🇷",s:"0–0",r:"d"}],pending:[{d:"27 Jun 00:00",v:"N. Zelanda",f:"🇳🇿"}],req:"Ganándole a N. Zelanda + resultado favorable"},{flag:"🇳🇿",name:"N. Zelanda",pts:1,pp:1,status:"Complicado",sClass:"complicado",played:[{t:"Irán",f:"🇮🇷",s:"2–2",r:"d"},{t:"Egipto",f:"🇪🇬",s:"1–3",r:"l"}],pending:[{d:"27 Jun 00:00",v:"Bélgica",f:"🇧🇪"}],req:"Ganarle a Bélgica + que Irán no gane"}],reqs:["🔵 <strong>Egipto</strong>: empatando clasifica.","🔵 <strong>Irán</strong>: ganándole a Egipto clasifica.","🔵 <strong>Bélgica</strong>: ganarle a N. Zelanda y esperar.","🔴 <strong>N. Zelanda</strong>: debe ganar sí o sí."]},{name:"Grupo H",teams:[{flag:"🇪🇸",name:"España",pts:4,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Cabo Verde",f:"🇨🇻",s:"0–0",r:"d"},{t:"Arabia Saudita",f:"🇸🇦",s:"4–0",r:"w"}],pending:[{d:"26 Jun 21:00",v:"Uruguay",f:"🇺🇾"}],req:"Empatando clasifica"},{flag:"🇺🇾",name:"Uruguay",pts:2,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Arabia Saudita",f:"🇸🇦",s:"1–1",r:"d"},{t:"Cabo Verde",f:"🇨🇻",s:"2–2",r:"d"}],pending:[{d:"26 Jun 21:00",v:"España",f:"🇪🇸"}],req:"Ganándole a España clasifica"},{flag:"🇨🇻",name:"Cabo Verde",pts:2,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"España",f:"🇪🇸",s:"0–0",r:"d"},{t:"Uruguay",f:"🇺🇾",s:"2–2",r:"d"}],pending:[{d:"26 Jun 21:00",v:"Arabia Saudita",f:"🇸🇦"}],req:"Ganándole a Arabia Saudita clasifica"},{flag:"🇸🇦",name:"Arabia Saudita",pts:1,pp:1,status:"Complicado",sClass:"complicado",played:[{t:"Uruguay",f:"🇺🇾",s:"1–1",r:"d"},{t:"España",f:"🇪🇸",s:"0–4",r:"l"}],pending:[{d:"26 Jun 21:00",v:"Cabo Verde",f:"🇨🇻"}],req:"Ganarle a Cabo Verde + Uruguay pierda + remontar 4 goles DG"}],reqs:["🔵 <strong>España</strong>: empatando clasifica.","🔵 <strong>Uruguay</strong>: ganándole a España clasifica.","🔵 <strong>Cabo Verde</strong>: ganándole a Arabia Saudita clasifica.","🔴 <strong>Arabia Saudita</strong>: ganar + Uruguay pierda + remontar 4 goles."]},{name:"Grupo I",teams:[{flag:"🇫🇷",name:"Francia",pts:6,pp:1,status:"Clasificado",sClass:"clasificado",played:[{t:"Senegal",f:"🇸🇳",s:"3–1",r:"w"},{t:"Irak",f:"🇮🇶",s:"3–0",r:"w"}],pending:[{d:"26 Jun 16:00",v:"Noruega",f:"🇳🇴"}],req:""},{flag:"🇳🇴",name:"Noruega",pts:6,pp:1,status:"Clasificado",sClass:"clasificado",played:[{t:"Irak",f:"🇮🇶",s:"4–1",r:"w"},{t:"Senegal",f:"🇸🇳",s:"3–2",r:"w"}],pending:[{d:"26 Jun 16:00",v:"Francia",f:"🇫🇷"}],req:""},{flag:"🇸🇳",name:"Senegal",pts:0,pp:1,status:"Eliminado",sClass:"eliminado",played:[{t:"Francia",f:"🇫🇷",s:"1–3",r:"l"},{t:"Noruega",f:"🇳🇴",s:"2–3",r:"l"}],pending:[{d:"26 Jun 16:00",v:"Irak",f:"🇮🇶"}],req:"Eliminado."},{flag:"🇮🇶",name:"Irak",pts:0,pp:1,status:"Eliminado",sClass:"eliminado",played:[{t:"Noruega",f:"🇳🇴",s:"1–4",r:"l"},{t:"Francia",f:"🇫🇷",s:"0–3",r:"l"}],pending:[{d:"26 Jun 16:00",v:"Senegal",f:"🇸🇳"}],req:"Eliminado."}],reqs:["✅ <strong>Francia y Noruega</strong>: ambos clasificados. Juegan entre sí por el 1°.","⚫ <strong>Senegal e Irak</strong>: eliminados."]},{name:"Grupo J",teams:[{flag:"🇦🇷",name:"Argentina",pts:6,pp:1,status:"Clasificado",sClass:"clasificado",played:[{t:"Argelia",f:"🇩🇿",s:"3–0",r:"w"},{t:"Austria",f:"🇦🇹",s:"2–0",r:"w"}],pending:[{d:"27 Jun 23:00",v:"Jordania",f:"🇯🇴"}],req:""},{flag:"🇦🇹",name:"Austria",pts:3,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Jordania",f:"🇯🇴",s:"3–1",r:"w"},{t:"Argentina",f:"🇦🇷",s:"0–2",r:"l"}],pending:[{d:"27 Jun 23:00",v:"Argelia",f:"🇩🇿"}],req:"Ganando clasifica; empate le basta por DG"},{flag:"🇩🇿",name:"Argelia",pts:3,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Argentina",f:"🇦🇷",s:"0–3",r:"l"},{t:"Jordania",f:"🇯🇴",s:"2–1",r:"w"}],pending:[{d:"27 Jun 23:00",v:"Austria",f:"🇦🇹"}],req:"Ganándole a Austria clasifica"},{flag:"🇯🇴",name:"Jordania",pts:0,pp:1,status:"Complicado",sClass:"complicado",played:[{t:"Austria",f:"🇦🇹",s:"1–3",r:"l"},{t:"Argelia",f:"🇩🇿",s:"1–2",r:"l"}],pending:[{d:"27 Jun 23:00",v:"Argentina",f:"🇦🇷"}],req:"Ganarle a Argentina + Austria-Argelia empaten"}],reqs:["✅ <strong>Argentina</strong>: clasificada.","🔵 <strong>Austria vs Argelia</strong>: el ganador clasifica; empate favorece a Austria por DG."]},{name:"Grupo K",teams:[{flag:"🇨🇴",name:"Colombia",pts:6,pp:1,status:"Clasificado",sClass:"clasificado",played:[{t:"Uzbekistán",f:"🇺🇿",s:"3–1",r:"w"},{t:"RD Congo",f:"🇨🇩",s:"1–0",r:"w"}],pending:[{d:"27 Jun 20:30",v:"Portugal",f:"🇵🇹"}],req:""},{flag:"🇵🇹",name:"Portugal",pts:4,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"RD Congo",f:"🇨🇩",s:"1–1",r:"d"},{t:"Uzbekistán",f:"🇺🇿",s:"5–0",r:"w"}],pending:[{d:"27 Jun 20:30",v:"Colombia",f:"🇨🇴"}],req:"Empatando clasifica"},{flag:"🇨🇩",name:"RD Congo",pts:3,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Uzbekistán",f:"🇺🇿",s:"1–0",r:"w"},{t:"Colombia",f:"🇨🇴",s:"0–1",r:"l"}],pending:[{d:"27 Jun 20:30",v:"Uzbekistán",f:"🇺🇿"}],req:"Ganándole a Uzbekistán clasifica"},{flag:"🇺🇿",name:"Uzbekistán",pts:0,pp:1,status:"Complicado",sClass:"complicado",played:[{t:"Colombia",f:"🇨🇴",s:"1–3",r:"l"},{t:"Portugal",f:"🇵🇹",s:"0–5",r:"l"}],pending:[{d:"27 Jun 20:30",v:"RD Congo",f:"🇨🇩"}],req:"Golear a RD Congo + resultados ajenos"}],reqs:["✅ <strong>Colombia</strong>: clasificada.","🔵 <strong>Portugal</strong>: empatando clasifica.","🔵 <strong>RD Congo</strong>: ganándole a Uzbekistán clasifica.","🔴 <strong>Uzbekistán</strong>: golear y esperar."]},{name:"Grupo L",teams:[{flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",name:"Inglaterra",pts:4,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Croacia",f:"🇭🇷",s:"4–2",r:"w"},{t:"Ghana",f:"🇬🇭",s:"0–0",r:"d"}],pending:[{d:"27 Jun 18:00",v:"Panamá",f:"🇵🇦"}],req:"Empatando clasifica"},{flag:"🇬🇭",name:"Ghana",pts:4,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Panamá",f:"🇵🇦",s:"1–0",r:"w"},{t:"Inglaterra",f:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",s:"0–0",r:"d"}],pending:[{d:"27 Jun 18:00",v:"Croacia",f:"🇭🇷"}],req:"Empatando clasifica"},{flag:"🇭🇷",name:"Croacia",pts:3,pp:1,status:"Cómodo",sClass:"comodo",played:[{t:"Inglaterra",f:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",s:"2–4",r:"l"},{t:"Panamá",f:"🇵🇦",s:"1–0",r:"w"}],pending:[{d:"27 Jun 18:00",v:"Ghana",f:"🇬🇭"}],req:"Ganándole a Ghana clasifica"},{flag:"🇵🇦",name:"Panamá",pts:0,pp:1,status:"Eliminado",sClass:"eliminado",played:[{t:"Ghana",f:"🇬🇭",s:"0–1",r:"l"},{t:"Croacia",f:"🇭🇷",s:"0–1",r:"l"}],pending:[{d:"27 Jun 18:00",v:"Inglaterra",f:"🏴󠁧󠁢󠁥󠁮󠁧󠁿"}],req:"Eliminado."}],reqs:["🔵 <strong>Inglaterra y Ghana</strong>: empatando clasifican.","🔵 <strong>Croacia</strong>: ganándole a Ghana clasifica.","⚫ <strong>Panamá</strong>: eliminado."]}];
+const groups = [
+  {
+    name: "Grupo A",
+    teams: [
+      { flag: "🇲🇽", name: "México", pts: 6, dg: "+3", st: "✅", cls: "Clasificado", tg: "green",
+        res: "2–0 🇿🇦 · 1–0 🇰🇷" },
+      { flag: "🇰🇷", name: "Corea del Sur", pts: 3, dg: "0", st: "⚠️", cls: "Gana y clasifica", tg: "yellow",
+        res: "2–1 🇨🇿 · 0–1 🇲🇽" },
+      { flag: "🇨🇿", name: "Rep. Checa", pts: 1, dg: "-1", st: "🛟", cls: "Casi imposible", tg: "orange",
+        res: "1–2 🇰🇷 · 1–1 🇿🇦" },
+      { flag: "🇿🇦", name: "Sudáfrica", pts: 1, dg: "-2", st: "🛟", cls: "Casi imposible", tg: "orange",
+        res: "0–2 🇲🇽 · 1–1 🇨🇿" }
+    ],
+    pend: "🇨🇿 vs 🇲🇽 · 🇿🇦 vs 🇰🇷"
+  },
+  {
+    name: "Grupo B",
+    teams: [
+      { flag: "🇨🇭", name: "Suiza", pts: 7, dg: "+4", st: "✅", cls: "Clasificada", tg: "green",
+        res: "1–1 🇶🇦 · 4–1 🇧🇦 · 2–0 🇨🇦" },
+      { flag: "🇨🇦", name: "Canadá", pts: 4, dg: "+5", st: "⚠️", cls: "Espera como 2° o 3°", tg: "yellow",
+        res: "1–1 🇧🇦 · 6–0 🇶🇦 · 0–2 🇨🇭" },
+      { flag: "🇧🇦", name: "Bosnia H.", pts: 4, dg: "-1", st: "⚠️", cls: "Depende de diferencia de gol", tg: "yellow",
+        res: "1–1 🇨🇦 · 1–4 🇨🇭 · 3–1 🇶🇦" },
+      { flag: "🇶🇦", name: "Qatar", pts: 1, dg: "-8", st: "⛔", cls: "Eliminado", tg: "red",
+        res: "1–1 🇨🇭 · 0–6 🇨🇦 · 1–3 🇧🇦" }
+    ],
+    pend: "—"
+  },
+  {
+    name: "Grupo C",
+    teams: [
+      { flag: "🇧🇷", name: "Brasil", pts: 7, dg: "+6", st: "✅", cls: "Clasificado", tg: "green",
+        res: "1–1 🇲🇦 · 3–0 🇭🇹 · 3–0 🏴󠁧󠁢󠁳󠁣󠁴󠁿" },
+      { flag: "🇲🇦", name: "Marruecos", pts: 7, dg: "+3", st: "✅", cls: "Clasificado", tg: "green",
+        res: "1–1 🇧🇷 · 3–0 🇭🇹 · 2–0 🏴󠁧󠁢󠁳󠁣󠁴󠁿" },
+      { flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", name: "Escocia", pts: 3, dg: "-3", st: "🛟", cls: "Combo difícil", tg: "orange",
+        res: "1–0 🇭🇹 · 0–3 🇧🇷 · 0–2 🇲🇦" },
+      { flag: "🇭🇹", name: "Haití", pts: 0, dg: "-6", st: "⛔", cls: "Eliminado", tg: "red",
+        res: "0–1 🏴󠁧󠁢󠁳󠁣󠁴󠁿 · 0–3 🇧🇷 · 0–3 🇲🇦" }
+    ],
+    pend: "—"
+  },
+  {
+    name: "Grupo D",
+    teams: [
+      { flag: "🇺🇸", name: "EE.UU.", pts: 6, dg: "+5", st: "✅", cls: "Clasificado", tg: "green",
+        res: "4–1 🇵🇾 · 2–0 🇦🇺" },
+      { flag: "🇦🇺", name: "Australia", pts: 3, dg: "0", st: "⚠️", cls: "Gana y clasifica", tg: "yellow",
+        res: "2–0 🇹🇷 · 0–2 🇺🇸" },
+      { flag: "🇵🇾", name: "Paraguay", pts: 3, dg: "-2", st: "⚠️", cls: "Gana y clasifica", tg: "yellow",
+        res: "1–4 🇺🇸 · 1–0 🇹🇷" },
+      { flag: "🇹🇷", name: "Turquía", pts: 0, dg: "-3", st: "⛔", cls: "Eliminado", tg: "red",
+        res: "0–2 🇦🇺 · 0–1 🇵🇾" }
+    ],
+    pend: "🇹🇷 vs 🇺🇸 · 🇵🇾 vs 🇦🇺"
+  },
+  {
+    name: "Grupo E",
+    teams: [
+      { flag: "🇩🇪", name: "Alemania", pts: 6, dg: "+7", st: "✅", cls: "Clasificado", tg: "green",
+        res: "7–1 🇨🇼 · 2–1 🇨🇮" },
+      { flag: "🇨🇮", name: "Costa de Marfil", pts: 3, dg: "0", st: "⚠️", cls: "Gana y clasifica", tg: "yellow",
+        res: "1–0 🇪🇨 · 1–2 🇩🇪" },
+      { flag: "🇪🇨", name: "Ecuador", pts: 1, dg: "-1", st: "🛟", cls: "Gana + combo", tg: "orange",
+        res: "0–1 🇨🇮 · 0–0 🇨🇼" },
+      { flag: "🇨🇼", name: "Curazao", pts: 1, dg: "-6", st: "🛟", cls: "Gana + combo", tg: "orange",
+        res: "1–7 🇩🇪 · 0–0 🇪🇨" }
+    ],
+    pend: "🇪🇨 vs 🇩🇪 · 🇨🇼 vs 🇨🇮"
+  },
+  {
+    name: "Grupo F",
+    teams: [
+      { flag: "🇳🇱", name: "Países Bajos", pts: 4, dg: "+4", st: "⚠️", cls: "Empate clasifica", tg: "yellow",
+        res: "2–2 🇯🇵 · 5–1 🇸🇪" },
+      { flag: "🇯🇵", name: "Japón", pts: 4, dg: "+4", st: "⚠️", cls: "Empate clasifica", tg: "yellow",
+        res: "2–2 🇳🇱 · 4–0 🇹🇳" },
+      { flag: "🇸🇪", name: "Suecia", pts: 3, dg: "0", st: "⚠️", cls: "Gana y clasifica", tg: "yellow",
+        res: "5–1 🇹🇳 · 1–5 🇳🇱" },
+      { flag: "🇹🇳", name: "Túnez", pts: 0, dg: "-8", st: "🛟", cls: "Milagro", tg: "orange",
+        res: "1–5 🇸🇪 · 0–4 🇯🇵" }
+    ],
+    pend: "🇹🇳 vs 🇳🇱 · 🇯🇵 vs 🇸🇪"
+  },
+  {
+    name: "Grupo G",
+    teams: [
+      { flag: "🇪🇬", name: "Egipto", pts: 4, dg: "+2", st: "⚠️", cls: "Empate clasifica", tg: "yellow",
+        res: "1–1 🇧🇪 · 2–1 🇮🇷" },
+      { flag: "🇮🇷", name: "Irán", pts: 2, dg: "0", st: "🛟", cls: "Gana + combo", tg: "orange",
+        res: "2–2 🇳🇿 · 0–0 🇧🇪" },
+      { flag: "🇧🇪", name: "Bélgica", pts: 2, dg: "0", st: "🛟", cls: "Gana + combo", tg: "orange",
+        res: "1–1 🇪🇬 · 0–0 🇮🇷" },
+      { flag: "🇳🇿", name: "N. Zelanda", pts: 1, dg: "-2", st: "🛟", cls: "Gana + combo", tg: "orange",
+        res: "2–2 🇮🇷 · ?–? 🇪🇬" }
+    ],
+    pend: "🇪🇬 vs 🇮🇷 · 🇳🇿 vs 🇧🇪"
+  },
+  {
+    name: "Grupo H",
+    teams: [
+      { flag: "🇪🇸", name: "España", pts: 4, dg: "+4", st: "⚠️", cls: "Empate clasifica", tg: "yellow",
+        res: "0–0 🇨🇻 · 4–0 🇸🇦" },
+      { flag: "🇨🇻", name: "Cabo Verde", pts: 2, dg: "0", st: "⚠️", cls: "Gana y clasifica", tg: "yellow",
+        res: "0–0 🇪🇸 · 2–2 🇺🇾" },
+      { flag: "🇺🇾", name: "Uruguay", pts: 2, dg: "0", st: "⚠️", cls: "Gana y clasifica", tg: "yellow",
+        res: "1–1 🇸🇦 · 2–2 🇨🇻" },
+      { flag: "🇸🇦", name: "Arabia Saudita", pts: 1, dg: "-4", st: "🛟", cls: "Difícil", tg: "orange",
+        res: "1–1 🇺🇾 · 0–4 🇪🇸" }
+    ],
+    pend: "🇺🇾 vs 🇪🇸 · 🇨🇻 vs 🇸🇦"
+  },
+  {
+    name: "Grupo I",
+    teams: [
+      { flag: "🇫🇷", name: "Francia", pts: 6, dg: "+5", st: "✅", cls: "Clasificada", tg: "green",
+        res: "3–1 🇸🇳 · 3–0 🇮🇶" },
+      { flag: "🇳🇴", name: "Noruega", pts: 6, dg: "+4", st: "✅", cls: "Clasificada", tg: "green",
+        res: "4–1 🇮🇶 · 3–2 🇸🇳" },
+      { flag: "🇸🇳", name: "Senegal", pts: 0, dg: "-3", st: "🛟", cls: "Milagro", tg: "orange",
+        res: "1–3 🇫🇷 · 2–3 🇳🇴" },
+      { flag: "🇮🇶", name: "Irak", pts: 0, dg: "-6", st: "⛔", cls: "Eliminado", tg: "red",
+        res: "1–4 🇳🇴 · 0–3 🇫🇷" }
+    ],
+    pend: "🇳🇴 vs 🇫🇷 · 🇸🇳 vs 🇮🇶"
+  },
+  {
+    name: "Grupo J",
+    teams: [
+      { flag: "🇦🇷", name: "Argentina", pts: 6, dg: "+5", st: "✅", cls: "Clasificada", tg: "green",
+        res: "3–0 🇩🇿 · 2–0 🇦🇹" },
+      { flag: "🇦🇹", name: "Austria", pts: 3, dg: "0", st: "⚠️", cls: "Gana y clasifica", tg: "yellow",
+        res: "3–1 🇯🇴 · 0–2 🇦🇷" },
+      { flag: "🇩🇿", name: "Argelia", pts: 3, dg: "-2", st: "⚠️", cls: "Gana y clasifica", tg: "yellow",
+        res: "0–3 🇦🇷 · 2–1 🇯🇴" },
+      { flag: "🇯🇴", name: "Jordania", pts: 0, dg: "-3", st: "🛟", cls: "Milagro", tg: "orange",
+        res: "1–3 🇦🇹 · 1–2 🇩🇿" }
+    ],
+    pend: "🇩🇿 vs 🇦🇹 · 🇯🇴 vs 🇦🇷"
+  },
+  {
+    name: "Grupo K",
+    teams: [
+      { flag: "🇨🇴", name: "Colombia", pts: 6, dg: "+3", st: "✅", cls: "Clasificada", tg: "green",
+        res: "3–1 🇺🇿 · 1–0 🇨🇩" },
+      { flag: "🇵🇹", name: "Portugal", pts: 4, dg: "+5", st: "⚠️", cls: "Empate clasifica", tg: "yellow",
+        res: "1–1 🇨🇴 · 5–0 🇺🇿" },
+      { flag: "🇨🇩", name: "RD Congo", pts: 1, dg: "-1", st: "🛟", cls: "Gana + combo", tg: "orange",
+        res: "1–0 🇺🇿 · 0–1 🇨🇴" },
+      { flag: "🇺🇿", name: "Uzbekistán", pts: 0, dg: "-7", st: "⛔", cls: "Eliminado", tg: "red",
+        res: "1–3 🇨🇴 · 0–5 🇵🇹" }
+    ],
+    pend: "🇨🇩 vs 🇺🇿 · 🇨🇴 vs 🇵🇹"
+  },
+  {
+    name: "Grupo L",
+    teams: [
+      { flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", name: "Inglaterra", pts: 4, dg: "+2", st: "⚠️", cls: "Empate clasifica", tg: "yellow",
+        res: "4–2 🇭🇷 · 0–0 🇬🇭" },
+      { flag: "🇬🇭", name: "Ghana", pts: 4, dg: "+1", st: "⚠️", cls: "Empate clasifica", tg: "yellow",
+        res: "1–0 🇵🇦 · 0–0 🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
+      { flag: "🇭🇷", name: "Croacia", pts: 3, dg: "-1", st: "⚠️", cls: "Gana y clasifica", tg: "yellow",
+        res: "2–4 🏴󠁧󠁢󠁥󠁮󠁧󠁿 · 1–0 🇵🇦" },
+      { flag: "🇵🇦", name: "Panamá", pts: 0, dg: "-2", st: "⛔", cls: "Eliminado", tg: "red",
+        res: "0–1 🇬🇭 · 0–1 🇭🇷" }
+    ],
+    pend: "🇭🇷 vs 🇬🇭 · 🇵🇦 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+  }
+];
 
-const todayMatches=[{group:"B",home:"Bosnia H.",hf:"🇧🇦",away:"Qatar",af:"🇶🇦",time:"16:00",score:"3–1",comment:"Bosnia ganó 3-1. Queda 3° con 4 pts (-1 DG) y espera ser uno de los 8 mejores terceros. Qatar eliminado."},{group:"B",home:"Suiza",hf:"🇨🇭",away:"Canadá",af:"🇨🇦",time:"16:00",score:"2–1",comment:"Suiza ganó 2-1 y se queda con el 1° del grupo (7 pts). Canadá clasifica 2° (4 pts, +5 DG) por mejor diferencia de gol que Bosnia."},{group:"C",home:"Marruecos",hf:"🇲🇦",away:"Haití",af:"🇭🇹",time:"19:00",score:null,comment:"Marruecos (4 pts, +1 DG) clasifica empatando. Haití ya está eliminado (0 pts)."},{group:"C",home:"Escocia",hf:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",away:"Brasil",af:"🇧🇷",time:"19:00",score:null,comment:"Escocia (3 pts) necesita GANAR. Brasil (4 pts, +3 DG) clasifica empatando."},{group:"A",home:"Rep. Checa",hf:"🇨🇿",away:"México",af:"🇲🇽",time:"22:00",score:null,comment:"Checa (1 pt) debe ganar SÍ O SÍ y esperar que Corea pierda. México ya clasificado."},{group:"A",home:"Sudáfrica",hf:"🇿🇦",away:"Corea del Sur",af:"🇰🇷",time:"22:00",score:null,comment:"Sudáfrica (1 pt) debe ganar y que Checa no gane. Corea (3 pts) clasifica empatando."}];
-
-function renderToday(){document.getElementById('todayGrid').innerHTML=todayMatches.map(m=>{const s=m.score?'<span class="score">'+m.score+'</span>':'<span class="pending-tag">'+m.time+' ARG</span>';return'<div class="today-match"><span class="group-tag">'+m.group+'</span><div style="flex:1"><div><span class="teams">'+m.hf+' '+m.home+' vs '+m.away+' '+m.af+'</span> '+s+'</div><div style="font-size:0.63rem;color:var(--muted);margin-top:4px;line-height:1.35">'+m.comment+'</div></div></div>'}).join('')}
-
-function buildMatchLine(m){var c=m.r==='w'?'win':m.r==='d'?'draw':'loss';var i=m.r==='w'?'✅':m.r==='d'?'⚖️':'❌';return'<span class="match-line"><span class="m-result m-'+c+'">'+m.s+'</span><span class="m-icon">'+i+'</span><span class="m-vs">vs</span>'+m.f+' '+m.t+'</span>'}
-
-function buildPendingLine(p){return'<span class="pending-line">⏳ vs '+p.f+' <strong>'+p.v+'</strong> <span class="p-date">('+p.d+')</span></span>'}
-
-function render(){const c=document.getElementById('app');groups.forEach((g,i)=>{const d=document.createElement('div');d.className='group-card t'+(i%5);let h='<h2>'+g.name+'<span class=\"badge\">Jornada '+(g.teams[0].played.length)+'/3</span></h2>';h+='<table class=\"standings-table\"><thead><tr><th>Equipo</th><th class=\"num\">PTS</th><th class=\"num\">PP</th><th>Estado</th></tr></thead><tbody>';g.teams.forEach((t,j)=>{const r=j%2===0?'team-block-even':'team-block-odd';h+='<tr class=\"'+r+'\"><td class=\"team-cell\"><span class=\"flag\">'+t.flag+'</span>'+t.name+'</td><td class=\"num\">'+t.pts+'</td><td class=\"num\">'+t.pp+'</td><td><span class=\"status-text status-'+t.sClass+'\">'+t.status+'</span></td></tr>';h+='<tr class=\"'+r+'\"><td colspan=\"4\"><div class=\"team-detail\">';h+='<span class=\"section-label\">Resultados</span>';t.played.forEach(m=>{h+=buildMatchLine(m)});if(t.pending.length>0){t.pending.forEach(p=>{h+=buildPendingLine(p)})}if(t.req)h+='<div class=\"requirement\">→ '+t.req+'</div>';h+='</div></td></tr>'});h+='</tbody></table>';h+='<div class=\"group-reqs\"><strong>Estado del grupo:</strong><br>';g.reqs.forEach(r=>{h+='<div class=\"req-item\">'+r+'</div>'});h+='</div>';d.innerHTML=h;c.appendChild(d)})}
-
-function updateTimers(){
-  var now=new Date();
-  // Last update = right now (page load time, stored once)
-  if(!updateTimers._last){updateTimers._last=now}
-  var last=updateTimers._last;
-  document.getElementById('lastUpdate').textContent=
-    last.toLocaleDateString('es-AR',{day:'2-digit',month:'short',year:'numeric'})+' '+
-    last.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+' ARG';
-
-  // Next update = next 30-min mark + 5 min for cron to finish
-  var ms=now.getTime();
-  var next=new Date(Math.ceil(ms/1800000)*1800000 + 300000);
-  document.getElementById('nextUpdate').textContent=
-    next.toLocaleDateString('es-AR',{day:'2-digit',month:'short',year:'numeric'})+' '+
-    next.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'})+' ARG';
-
-  // Countdown
-  var diff=Math.max(0,Math.floor((next-now)/1000));
-  var m=Math.floor(diff/60),s=diff%60;
-  document.getElementById('countdown').textContent='(en '+m+':'+(s<10?'0':'')+s+')';
-
-  // Hard refresh when time arrives
-  if(diff===0){location.reload(true)}
-  else{setTimeout(updateTimers,1000)}
+function tag(text, cls) {
+  return `<span class="tag tag-${cls}">${text}</span>`;
 }
 
-// ═══════════ SPAWN FLOATING TROPHIES ═══════════
-(function spawnTrophies(){
-  var f=document.getElementById('trophyField');
-  for(var i=0;i<24;i++){
-    var t=document.createElement('img');
-    t.src='trophy.png';
-    t.className='trophy-float';
-    t.style.cssText=
-      '--dur:'+(14+Math.random()*20)+'s;'+
-      '--delay:'+(Math.random()*-20)+'s;'+
-      '--dx:'+((Math.random()-0.5)*200)+'px;'+
-      '--rot:'+(Math.random()*720-360)+'deg;'+
-      '--op:'+(0.04+Math.random()*0.06)+';'+
-      'left:'+(Math.random()*95)+'vw;'+
-      'width:'+(24+Math.random()*36)+'px';
-    f.appendChild(t);
-  }
-})();
-
-renderToday();render();updateTimers();
+function render() {
+  const c = document.getElementById('app');
+  groups.forEach(g => {
+    const card = document.createElement('div');
+    card.className = 'group-card';
+    let h = `<h2>${g.name}</h2>`;
+    h += '<table><thead><tr><th>Equipo</th><th class="pts">Pts</th><th class="dg">DG</th><th class="st"></th></tr></thead><tbody>';
+    g.teams.forEach(t => {
+      h += `<tr><td class="team"><span class="flag">${t.flag}</span>${t.name}</td>`;
+      h += `<td class="pts">${t.pts}</td><td class="dg">${t.dg}</td><td class="st">${t.st}</td></tr>`;
+      h += `<tr><td colspan="4" class="summary">${t.res} · ${tag(t.cls, t.tg)}</td></tr>`;
+    });
+    h += '</tbody></table>';
+    if (g.pend && g.pend !== "—") {
+      h += `<div class="pending">⏳ ${g.pend}</div>`;
+    }
+    h += `<div class="card-footer">`;
+    h += `<span class="source">Yahoo Sports · TUDN</span>`;
+    h += `<button class="btn-reload" onclick="location.reload()">↻ Recargar</button>`;
+    h += `</div>`;
+    card.innerHTML = h;
+    c.appendChild(card);
+  });
+}
+render();
 </script>
 </body>
 </html>
