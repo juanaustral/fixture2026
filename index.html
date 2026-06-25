@@ -473,17 +473,63 @@ function generarAnalisis(teams, pend) {
   return lines.filter(l => l.length > 5);
 }
 
-// Próximos partidos
+// Busca un equipo en los datos por nombre (aproximado)
+function buscarEquipo(nombre, grupos) {
+  for (const g of grupos) {
+    for (const t of g.teams) {
+      if (t.n.toLowerCase().includes(nombre.toLowerCase()) || 
+          nombre.toLowerCase().includes(t.n.toLowerCase())) {
+        return { equipo: t, grupo: g.name };
+      }
+    }
+  }
+  return null;
+}
+
+function statusIcon(s) {
+  if (s === "✅") return "✅";
+  if (s === "⚠️") return "⚠️";
+  if (s === "🛟") return "🛟";
+  if (s === "⛔") return "⛔";
+  return "";
+}
+
+function statusClass(s) {
+  if (s === "✅") return "st-c";
+  if (s === "⚠️") return "st-a";
+  if (s === "🛟") return "st-p";
+  if (s === "⛔") return "st-e";
+  return "";
+}
+
+// Próximos partidos con análisis
 const grid = document.getElementById('matchGrid');
 upcoming.forEach(m => {
   const card = document.createElement('div');
   card.className = 'match-card';
+  
+  // Buscar situación de cada equipo
+  const hInfo = buscarEquipo(m.h.replace(/[^a-zA-Záéíóúñü ]/g,'').trim(), G);
+  const aInfo = buscarEquipo(m.a.replace(/[^a-zA-Záéíóúñü ]/g,'').trim(), G);
+  
+  const hStatus = hInfo ? statusIcon(hInfo.equipo.s) : "";
+  const aStatus = aInfo ? statusIcon(aInfo.equipo.s) : "";
+  const hStCls = hInfo ? statusClass(hInfo.equipo.s) : "";
+  const aStCls = aInfo ? statusClass(aInfo.equipo.s) : "";
+  const hStText = hInfo ? hInfo.equipo.st : "";
+  const aStText = aInfo ? aInfo.equipo.st : "";
+  
   card.innerHTML = `
     <div class="match-teams">
-      <span>${m.h}</span> <span class="vs">vs</span> <span>${m.a}</span>
+      <span>${m.h} ${hStatus}</span> <span class="vs">vs</span> <span>${aStatus} ${m.a}</span>
     </div>
     <div class="match-info">
       <span class="group-label">${m.g}</span> · ${m.t}
+    </div>
+    <div style="margin-top:6px;font-size:0.65rem;line-height:1.5;color:#555;text-align:left">
+      <span class="status-tag ${hStCls}" style="font-size:0.6rem">${hStText}</span>
+      <span style="color:#86868b;font-size:0.6rem"> vs </span>
+      <span class="status-tag ${aStCls}" style="font-size:0.6rem">${aStText}</span>
     </div>`;
   grid.appendChild(card);
 });
