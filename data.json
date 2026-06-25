@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T00:00:00-03:00",
+  "updated": "2026-06-25T10:00:00-03:00",
   "source": "Flashscore",
   "groups": [
     {
@@ -45,9 +45,9 @@
           "sclass": "st-a",
           "matches": [
             {
-              "score": "2–2",
+              "score": "0–2",
               "opponent": "🇲🇽",
-              "result": "d"
+              "result": "l"
             },
             {
               "score": "1–1",
@@ -125,7 +125,7 @@
       "pendientes": "—",
       "resumen": [
         "✅ México: 1° (9 pts, +6 DG). Ganó los 3 partidos.",
-        "🔵 Sudáfrica: 2° (4 pts, -1 DG). Venció a Corea en la última fecha.",
+        "🔵 Sudáfrica: 2° (4 pts, -1 DG). Perdió con México, empató con Checa, venció a Corea.",
         "🔴 Corea del Sur: 3° (3 pts, -1 DG). Depende de otros grupos.",
         "🔴 Rep. Checa: eliminado (1 pt, -4 DG)."
       ],
