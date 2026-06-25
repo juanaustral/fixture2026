@@ -25,11 +25,13 @@
   .header{text-align:center;margin-bottom:28px}
   .header::after{content:'';display:block;width:80px;height:4px;background:linear-gradient(90deg,var(--red),var(--blue),var(--green));margin:18px auto 0;border-radius:2px}
   .header h1{font-size:2.6rem;font-weight:900;letter-spacing:-2px;color:var(--dgray);display:flex;align-items:center;justify-content:center;gap:10px}
-  .ball-icon{display:inline-block;font-size:2.2rem;animation:spin 3s infinite linear}
+  .ball-icon{width:44px;height:44px;vertical-align:middle;animation:spin 4s infinite linear;filter:drop-shadow(0 2px 6px rgba(0,0,0,.2))}
   @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
   .header h1 span{background:linear-gradient(135deg,var(--red) 20%,var(--blue) 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .header .author{font-size:.85rem;color:var(--muted);margin-bottom:4px}
-  .header .author a{color:var(--blue);text-decoration:none;font-weight:600}
+  .header .author{font-size:.8rem;color:var(--muted);margin-bottom:8px;letter-spacing:.3px;display:flex;align-items:center;justify-content:center;gap:6px}
+  .header .author::before,.header .author::after{content:'';display:inline-block;width:24px;height:1px;background:var(--border)}
+  .header .author a{color:var(--blue);text-decoration:none;font-weight:600;transition:color .2s}
+  .header .author a:hover{color:var(--red)}
   .header .update-info{font-size:.8rem;color:var(--text);margin:10px 0;line-height:1.5}
   .header .update-info strong{color:var(--dgray)}
   .header .next-update{font-size:.72rem;color:var(--muted)}
@@ -111,7 +113,7 @@
 <div class="page">
 
 <div class="header">
-  <h1><span class="ball-icon">⚽</span> Fixture <span>2026</span></h1>
+  <h1><img src="ball.png" class="ball-icon" alt="⚽"> Fixture <span>2026</span></h1>
   <div class="author">Desarrollado por <a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a></div>
   <div class="update-info">
     🟢 Actualizado: <strong id="lastUpdate">—</strong><br>
@@ -124,18 +126,13 @@
   <div class="widget-grid" id="widgetGrid"></div>
 </div>
 
-<div class="legend">
-  <div class="legend-item"><span class="legend-dot" style="background:var(--green)"></span> Clasificado</div>
-  <div class="legend-item"><span class="legend-dot" style="background:var(--blue)"></span> Cómodo</div>
-  <div class="legend-item"><span class="legend-dot" style="background:var(--red)"></span> Complicado</div>
-  <div class="legend-item"><span class="legend-dot" style="background:var(--dgray)"></span> Eliminado</div>
-</div>
-
 <div class="groups-grid" id="app"></div>
 
 <div class="footer">
   Datos: Flashscore · Yahoo Sports · DAZN · Olympics.com<br>
-  <a href="#" onclick="location.reload()">↻ Recargar</a> · <a href="https://github.com/juanaustral/fixture2026">GitHub</a>
+  Desarrollado por <a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a> ·
+  <a href="#" onclick="location.reload()">↻ Recargar</a> ·
+  <a href="https://github.com/juanaustral/fixture2026">GitHub</a>
 </div>
 
 </div>
@@ -145,7 +142,7 @@ const G=[{name:"Grupo A",teams:[{f:"🇲🇽",n:"México",p:6,d:"+3",ps:3,pp:0,s
 
 const upcoming=[{h:"🇨🇿 Rep. Checa",a:"🇲🇽 México",g:"A",t:"25 Jun 22:00"},{h:"🇿🇦 Sudáfrica",a:"🇰🇷 Corea del Sur",g:"A",t:"25 Jun 22:00"},{h:"🇪🇨 Ecuador",a:"🇩🇪 Alemania",g:"E",t:"25 Jun 17:00"},{h:"🇨🇼 Curazao",a:"🇨🇮 Costa de Marfil",g:"E",t:"25 Jun 17:00"},{h:"🇹🇳 Túnez",a:"🇳🇱 Países Bajos",g:"F",t:"25 Jun 20:00"},{h:"🇯🇵 Japón",a:"🇸🇪 Suecia",g:"F",t:"25 Jun 20:00"},{h:"🇹🇷 Turquía",a:"🇺🇸 EE.UU.",g:"D",t:"25 Jun 23:00"},{h:"🇵🇾 Paraguay",a:"🇦🇺 Australia",g:"D",t:"25 Jun 23:00"}];
 
-function buscarEquipo(nombre,grupos){for(const g of grupos)for(const t of g.teams)if(t.n.toLowerCase().includes(nombre.toLowerCase())||nombre.toLowerCase().includes(t.n.toLowerCase()))return{equipo:t,grupo:g.name};return null}
+function buscarEquipo(nombre,grupos){const limpio=nombre.replace(/[^a-zA-Záéíóúñü ]/g,'').trim().toLowerCase();for(const g of grupos)for(const t of g.teams){const tn=t.n.replace(/[^a-zA-Záéíóúñü ]/g,'').trim().toLowerCase();if(tn.includes(limpio)||limpio.includes(tn))return{equipo:t,grupo:g.name}}return null}
 
 // ── WIDGET RENDER ──
 function renderWidget(){
