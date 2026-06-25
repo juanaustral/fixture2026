@@ -507,71 +507,56 @@ function generarComentarioPartido(hInfo, aInfo) {
   if (!hInfo || !aInfo) return "";
   const h = hInfo.equipo;
   const a = aInfo.equipo;
+  const gh = hInfo.grupo;
+  const ga = aInfo.grupo;
   
-  // Caso 1: Ambos clasificados
-  if (h.s === "✅" && a.s === "✅") {
-    if (h.p > a.p) return `🇫🇷 ${h.n} busca asegurar el 1° puesto ante ${a.n}`;
-    if (a.p > h.p) return `🇫🇷 ${a.n} busca asegurar el 1° puesto ante ${h.n}`;
-    return `⚔️ ${h.n} y ${a.n} se juegan el liderato del grupo`;
-  }
+  const hPts = `${h.p} pts (${h.d} DG)`;
+  const aPts = `${a.p} pts (${a.d} DG)`;
   
-  // Caso 2: Uno clasificado vs otro que depende de sí
-  if (h.s === "✅" && a.s === "⚠️") {
-    return `🎯 ${a.n} necesita sumar puntos para clasificar — ${h.n} ya está adentro`;
-  }
-  if (a.s === "✅" && h.s === "⚠️") {
-    return `🎯 ${h.n} necesita sumar puntos para clasificar — ${a.n} ya está adentro`;
+  function estadoLargo(s) {
+    if (s === "✅") return "ya clasificado";
+    if (s === "⚠️") return "depende de sí mismo";
+    if (s === "🛟") return "necesita combo de resultados";
+    if (s === "⛔") return "eliminado";
+    return s;
   }
   
-  // Caso 3: Uno clasificado vs otro que necesita combo
-  if (h.s === "✅" && a.s === "🛟") {
-    return `🆘 ${a.n} necesita ganar y esperar — ${h.n} ya clasificado como favorito`;
-  }
-  if (a.s === "✅" && h.s === "🛟") {
-    return `🆘 ${h.n} necesita ganar y esperar — ${a.n} ya clasificado como favorito`;
-  }
-  
-  // Caso 4: Uno clasificado vs eliminado
-  if (h.s === "✅" && a.s === "⛔") {
-    return `💪 ${h.n} favorito ante ${a.n} que ya está eliminado`;
-  }
-  if (a.s === "✅" && h.s === "⛔") {
-    return `💪 ${a.n} favorito ante ${h.n} que ya está eliminado`;
+  function queNecesita(equipo) {
+    if (equipo.s === "✅") return `ya aseguró su lugar en 16vos`;
+    if (equipo.s === "⛔") return `matemáticamente eliminado`;
+    if (equipo.s === "⚠️") {
+      if (equipo.p >= 4) return `le alcanza con un empate para clasificar`;
+      return `necesita ganar para tener chances de clasificar`;
+    }
+    if (equipo.s === "🛟") {
+      if (equipo.p >= 3) return `ganando queda con 6 pts y espera ser uno de los mejores terceros`;
+      return `ganar no le alcanza por sí solo — necesita que otros resultados lo favorezcan`;
+    }
+    return "";
   }
   
-  // Caso 5: Ambos dependen de sí mismos
-  if (h.s === "⚠️" && a.s === "⚠️") {
-    return `🔥 DUELO DIRECTO — ${h.n} y ${a.n} se juegan la clasificación`;
+  // Mismo grupo
+  if (gh === ga) {
+    let txt = `${gh}: `;
+    txt += `${h.n} (${hPts}, ${estadoLargo(h.s)}) vs ${a.n} (${aPts}, ${estadoLargo(a.s)}). `;
+    txt += `${h.n} ${queNecesita(h)}. `;
+    txt += `${a.n} ${queNecesita(a)}. `;
+    
+    // Contexto extra si es duelo directo
+    if (h.s === "⚠️" && a.s === "⚠️" && Math.abs(h.p - a.p) <= 1) {
+      txt += `Es un duelo directo por la clasificación: el ganador avanza, el perdedor puede quedar afuera.`;
+    }
+    if ((h.s === "✅" && a.s === "⚠️") || (h.s === "⚠️" && a.s === "✅")) {
+      txt += `El clasificado parte como favorito, pero el otro equipo tiene todo por ganar.`;
+    }
+    if (h.s === "⛔" || a.s === "⛔") {
+      txt += `Partido de trámite para el eliminado, que juega por el honor.`;
+    }
+    return txt;
   }
   
-  // Caso 6: Uno depende de sí vs otro combo
-  if (h.s === "⚠️" && a.s === "🛟") {
-    return `⚡ ${h.n} depende de sí mismo — ${a.n} necesita un milagro`;
-  }
-  if (a.s === "⚠️" && h.s === "🛟") {
-    return `⚡ ${a.n} depende de sí mismo — ${h.n} necesita un milagro`;
-  }
-  
-  // Caso 7: Uno depende de sí vs eliminado
-  if (h.s === "⚠️" && a.s === "⛔") {
-    return `✅ ${h.n} debe ganarle a ${a.n} (ya eliminado) para asegurar el pase`;
-  }
-  if (a.s === "⚠️" && h.s === "⛔") {
-    return `✅ ${a.n} debe ganarle a ${h.n} (ya eliminado) para asegurar el pase`;
-  }
-  
-  // Caso 8: Ambos combo
-  if (h.s === "🛟" && a.s === "🛟") {
-    return `🤞 ${h.n} y ${a.n} necesitan ganar y esperar resultados — el que pierda queda afuera`;
-  }
-  
-  // Caso 9: Ambos eliminados
-  if (h.s === "⛔" && a.s === "⛔") {
-    return `😔 Partido sin trascendencia — ambos ya están eliminados`;
-  }
-  
-  // Default
-  return `⚽ ${h.n} vs ${a.n} — partido clave para la definición del grupo`;
+  // Distintos grupos (no debería pasar en fase de grupos)
+  return `${h.n} (${hPts}) vs ${a.n} (${aPts}) — partido de la fecha ${gh}`;
 }
 
 const grid = document.getElementById('matchGrid');
@@ -618,9 +603,8 @@ G.forEach(g => {
   h += '<table><thead><tr><th>Equipo</th><th class="c">Pts</th><th class="c">DG</th><th class="c"></th></tr></thead><tbody>';
   g.teams.forEach(t => {
     const parts = t.m.map(m => `<span class="${resultClass[m.r]}">${m.v} ${m.c} ${resultLabel[m.r]}</span>`).join(' · ');
-    h += `<tr><td class="team"><span class="flag">${t.f}</span>${t.n}</td>`;
+    h += `<tr><td class="team"><span class="flag">${t.f}</span>${t.n}<br><span style="font-size:0.6rem;color:#555;line-height:1.6;display:block;padding-left:1.5rem">${parts} · <span class="status-tag ${t.sc}">${t.st}</span></span></td>`;
     h += `<td class="pts c">${t.p}</td><td class="c">${t.d}</td><td class="c">${t.s}</td></tr>`;
-    h += `<tr><td colspan="4" class="matches-line">${parts} · <span class="status-tag ${t.sc}">${t.st}</span></td></tr>`;
   });
   h += '</tbody></table>';
   if (g.pend && g.pend !== "—") {
