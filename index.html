@@ -504,28 +504,29 @@ function statusClass(s) {
 
 // Próximos partidos con análisis
 function generarComentarioPartido(hInfo, aInfo) {
-  if (!hInfo || !aInfo) return "";
+  if (!hInfo || !aInfo) return ["",""];
   const h = hInfo.equipo;
   const a = aInfo.equipo;
+  const g = hInfo.grupo;
   
   function presion(s) {
-    if (s === "⛔") return "sin presión";
-    if (s === "✅") return "sin presión";
+    if (s === "⛔") return "sin presión (eliminado)";
+    if (s === "✅") return "sin presión (clasificado)";
     if (s === "⚠️") return "máxima presión";
     if (s === "🛟") return "presión extrema";
     return "";
   }
   
   function situacion(equipo) {
-    if (equipo.s === "✅") return `ya está en 16vos`;
-    if (equipo.s === "⛔") return `ya está eliminado`;
+    if (equipo.s === "✅") return `ya clasificado`;
+    if (equipo.s === "⛔") return `eliminado`;
     if (equipo.s === "⚠️") {
-      if (equipo.p >= 4) return `le basta un empate`;
-      return `tiene que ganar sí o sí`;
+      if (equipo.p >= 4) return `le alcanza empate`;
+      return `necesita ganar`;
     }
     if (equipo.s === "🛟") {
-      if (equipo.p >= 3) return `gana pero depende de otros`;
-      return `necesita un milagro`;
+      if (equipo.p >= 3) return `gana y espera`;
+      return `necesita milagro`;
     }
     return "";
   }
@@ -535,8 +536,17 @@ function generarComentarioPartido(hInfo, aInfo) {
   const hSit = situacion(h);
   const aSit = situacion(a);
   
-  let linea1 = `${h.f} ${h.n} (${h.p}pts): ${hSit} — ${hPre}`;
-  let linea2 = `${a.f} ${a.n} (${a.p}pts): ${aSit} — ${aPre}`;
+  let linea1 = `${h.f} ${h.n} · ${h.p}pts · ${hSit} · ${hPre}`;
+  let linea2 = `${a.f} ${a.n} · ${a.p}pts · ${aSit} · ${aPre}`;
+  
+  // Si ambos tienen máxima presión, marcar duelo directo
+  if (h.s === "⚠️" && a.s === "⚠️" && Math.abs(h.p - a.p) <= 1) {
+    linea1 += " 🔥";
+    linea2 += " 🔥";
+  }
+  // Si uno está clasificado y el otro no
+  if (h.s === "✅" && a.s !== "✅") linea1 += " 🏆";
+  if (a.s === "✅" && h.s !== "✅") linea2 += " 🏆";
   
   return [linea1, linea2];
 }
@@ -586,19 +596,16 @@ G.forEach(g => {
   h += '<table><thead><tr><th>Equipo</th><th class="c">Pts</th><th class="c">DG</th><th class="c"></th></tr></thead><tbody>';
   g.teams.forEach(t => {
     const parts = t.m.map(m => `<span class="${resultClass[m.r]}">${m.v} ${m.c} ${resultLabel[m.r]}</span>`).join(' · ');
-    h += `<tr><td class="team"><span class="flag">${t.f}</span>${t.n}<br><span style="font-size:0.6rem;color:#555;line-height:1.6;display:block;padding-left:1.5rem">${parts} · <span class="status-tag ${t.sc}">${t.st}</span></span></td>`;
+    // Info de resultados y situación debajo del nombre
+    h += `<tr><td class="team"><span class="flag">${t.f}</span>${t.n}<br>`;
+    h += `<span style="font-size:0.6rem;color:#555;line-height:1.5;display:block;padding-left:1.5rem">${parts}</span>`;
+    h += `<span style="font-size:0.6rem;line-height:1.5;display:block;padding-left:1.5rem"><span class="status-tag ${t.sc}">${t.st}</span></span>`;
+    h += `</td>`;
     h += `<td class="pts c">${t.p}</td><td class="c">${t.d}</td><td class="c">${t.s}</td></tr>`;
   });
   h += '</tbody></table>';
   if (g.pend && g.pend !== "—") {
     h += `<div class="pendientes"><strong>⏳ Pendientes:</strong> ${g.pend}</div>`;
-  }
-  // Análisis automático
-  const bullets = generarAnalisis(g.teams, g.pend);
-  if (bullets.length > 0) {
-    h += '<div class="analisis"><ul>';
-    bullets.forEach(b => { h += `<li>• ${b}</li>`; });
-    h += '</ul></div>';
   }
   h += `<div class="card-footer"><span class="source">Yahoo Sports · TUDN</span><button class="btn" onclick="location.reload()">↻ Recargar</button></div>`;
   card.innerHTML = h;
