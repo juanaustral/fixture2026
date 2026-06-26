@@ -13,9 +13,9 @@
   .page{position:relative;z-index:1;padding:20px 16px;max-width:1680px;margin:0 auto}
   .header{text-align:center;margin-bottom:28px}
   .header::after{content:'';display:block;width:80px;height:4px;background:linear-gradient(90deg,var(--red),var(--blue),var(--green));margin:18px auto 0;border-radius:2px}
-  /* Top decorative bar */
-  .page::before{content:'';display:block;height:5px;background:repeating-linear-gradient(90deg,var(--green) 0px,var(--green) 40px,var(--lgray) 40px,var(--lgray) 42px,var(--blue) 42px,var(--blue) 82px,var(--lgray) 82px,var(--lgray) 84px,var(--red) 84px,var(--red) 124px,var(--lgray) 124px,var(--lgray) 126px);margin-bottom:20px;border-radius:3px}
   .header h1{font-size:2.6rem;font-weight:900;letter-spacing:-2px;color:var(--dgray);display:flex;align-items:center;justify-content:center;gap:10px}
+  .header h1 .fixture-text{background:linear-gradient(135deg,var(--red) 0%,var(--blue) 50%,var(--green) 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmerTitle 3s ease-in-out infinite}
+  @keyframes shimmerTitle{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
   .ball-icon{width:44px;height:44px;vertical-align:middle;animation:spin 4s infinite linear;filter:drop-shadow(0 2px 6px rgba(0,0,0,.2))}
   @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
   .header h1 span{background:linear-gradient(135deg,var(--red) 20%,var(--blue) 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -27,27 +27,24 @@
   .header .next-update{font-size:.76rem;color:var(--muted)}
   .countdown{color:var(--blue);font-weight:700}
   /* Widget */
-  .widget{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:24px;box-shadow:var(--shadow);position:relative}
-  .widget::before{content:'';position:absolute;top:0;left:20px;right:20px;height:2px;background:linear-gradient(90deg,transparent,var(--green),var(--green),transparent);opacity:.3}
-  .widget h3{font-size:.85rem;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;font-weight:700;display:flex;align-items:center;gap:6px}
-  .widget h3::after{content:'⚽⚽';font-size:.55rem;opacity:.4;margin-left:auto;letter-spacing:2px}
+  .widget{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:24px;box-shadow:var(--shadow)}
+  .widget h3{font-size:.95rem;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;font-weight:700}
   .widget-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .w-match{background:#f6f7f5;border-radius:12px;padding:14px;border:1px solid var(--border);transition:all .2s}
+  .w-match{background:#f6f7f5;border-radius:12px;padding:16px;border:1px solid var(--border);transition:all .2s}
   .w-match:hover{background:#eef0ec;transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.06)}
-  .w-teams{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;margin-bottom:4px}
-  .w-teams .vs{color:var(--muted);font-weight:400;font-size:.7rem;margin:0 6px}
-  .w-group{display:inline-block;background:var(--blue);color:#fff;font-size:.58rem;padding:2px 8px;border-radius:5px;font-weight:700;text-transform:uppercase;margin-right:8px}
+  .w-teams{display:flex;align-items:center;gap:8px;font-size:.92rem;font-weight:700;margin-bottom:6px}
+  .w-teams .vs{color:var(--muted);font-weight:400;font-size:.78rem;margin:0 8px}
+  .w-group{display:inline-block;background:var(--blue);color:#fff;font-size:.65rem;padding:3px 10px;border-radius:5px;font-weight:700;text-transform:uppercase;margin-right:8px}
   .w-team-block{display:inline-flex;align-items:center;gap:6px}
-  .w-form{display:inline-flex;gap:2px;font-size:.55rem}
-  .w-form span{width:16px;height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.45rem}
+  .w-form{display:inline-flex;gap:2px;font-size:.6rem}
+  .w-form span{width:18px;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.5rem}
   .w-form .fw{background:rgba(60,172,59,.15);color:var(--green)}.w-form .fd{background:rgba(184,150,12,.1);color:#b8960c}
   .w-form .fl{background:rgba(230,29,37,.1);color:var(--red)}.w-form .fp{background:rgba(42,57,141,.08);color:var(--blue)}
-  .w-analysis{font-size:.64rem;color:var(--text);line-height:1.4;margin-top:8px;padding:8px 10px;background:rgba(42,57,141,0.04);border-radius:8px;border-left:3px solid var(--blue)}
+  .w-analysis{font-size:.72rem;color:var(--text);line-height:1.5;margin-top:8px;padding:10px 12px;background:rgba(42,57,141,0.04);border-radius:8px;border-left:3px solid var(--blue)}
   .w-analysis strong{color:var(--dgray)}
   /* Ranking 3ros */
-  .ranking-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:24px;box-shadow:var(--shadow);position:relative}
-  .ranking-section::before{content:'';position:absolute;top:0;left:20px;right:20px;height:2px;background:linear-gradient(90deg,transparent,var(--blue),var(--blue),transparent);opacity:.3}
-  .ranking-section h3{font-size:.85rem;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;font-weight:700}
+  .ranking-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:24px;box-shadow:var(--shadow)}
+  .ranking-section h3{font-size:.95rem;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;font-weight:700}
   .ranking-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
   .rank-card{background:#f8f9f6;border-radius:10px;padding:10px 12px;border:1px solid var(--border);display:flex;align-items:center;gap:8px;font-size:.72rem;transition:all .2s;position:relative}
   .rank-card.in{background:linear-gradient(135deg,rgba(60,172,59,.06),rgba(60,172,59,.02))}
@@ -60,10 +57,9 @@
   .cut-line{grid-column:1/-1;height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent);margin:4px 0;position:relative}
   .cut-line::after{content:'— CORTE —';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--bg);padding:0 12px;font-size:.58rem;color:var(--red);font-weight:700;letter-spacing:1px}
   /* Groups */
-  .groups-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px;position:relative}
-  .groups-grid::before{content:'';position:absolute;top:-12px;left:0;right:0;height:3px;background:repeating-linear-gradient(90deg,var(--green) 0px,var(--green) 24px,var(--lgray) 24px,var(--lgray) 26px,var(--blue) 26px,var(--blue) 50px,var(--lgray) 50px,var(--lgray) 52px,var(--red) 52px,var(--red) 76px,var(--lgray) 76px,var(--lgray) 78px);border-radius:2px;opacity:.6}
-  .group-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:0;box-shadow:var(--shadow);transition:all .2s;position:relative;overflow:hidden}
-  .group-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-1px)}
+  .groups-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px}
+  .group-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:0;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s;position:relative}
+  .group-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.12);transform:translateY(-2px)}
   .group-card.t0{background:linear-gradient(180deg,rgba(60,172,59,.15) 0%,#fff 20%)}
   .group-card.t1{background:linear-gradient(180deg,rgba(42,57,141,.12) 0%,#fff 20%)}
   .group-card.t2{background:linear-gradient(180deg,rgba(230,29,37,.10) 0%,#fff 20%)}
@@ -118,7 +114,7 @@
 <div id="trophyField"></div>
 <div class="page">
 <div class="header">
-  <h1><img src="ball.png" class="ball-icon" alt="⚽"> Fixture <span>2026</span></h1>
+  <h1><img src="ball.png" class="ball-icon" alt="⚽"> <span class="fixture-text">Fixture 2026</span></h1>
   <div class="author"><span>Desarrollado por</span><a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a></div>
   <div class="update-info"><span class="next-update">⏰ Próxima actualización: <strong id="nextUpdate">—</strong> <span class="countdown" id="countdown"></span></span></div>
 </div>
