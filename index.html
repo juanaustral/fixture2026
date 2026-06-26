@@ -83,7 +83,7 @@
 </div>
 <div class="widget"><h3>📅 Próximos partidos — 26 y 27 de junio</h3><div class="widget-grid" id="widgetGrid"></div></div>
 <div class="groups-grid" id="app"></div>
-<div class="footer">Datos: Flashscore · Yahoo Sports · DAZN · Olympics.com<br>Desarrollado por <a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a> · <a href="#" onclick="location.reload()">↻ Recargar</a> · <a href="https://github.com/juanaustral/fixture2026">GitHub</a></div>
+<div class="footer">Datos: Flashscore · Yahoo Sports · DAZN · Olympics.com<br>Desarrollado por <a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a> · <a href="#" onclick="location.reload()">↻ Recargar</a> · <a href="https://github.com/juanaustral/fixture2026">GitHub</a><br><span style="font-size:.6rem;color:var(--muted)">v.<span id="versionTag">—</span></span></div>
 </div>
 <script>
 const API='https://raw.githubusercontent.com/juanaustral/fixture2026/main/data.json';
@@ -95,6 +95,7 @@ async function loadData(){
   try{const r=await fetch(API);d=await r.json()}catch(e){}
   if(!d||!d.groups)d=DEFAULT_DATA;
   G=d.groups;upcoming=d.upcoming;
+  document.getElementById('versionTag').textContent=d.updated||'?';
   document.getElementById('widgetGrid').innerHTML='';
   document.getElementById('app').innerHTML='';
   renderWidget();render();
