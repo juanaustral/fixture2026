@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T21:20:00-03:00",
+  "updated": "2026-06-25T21:40:00-03:00",
   "source": "Flashscore",
   "groups": [
     {
@@ -656,7 +656,7 @@
           "flag": "🇳🇱",
           "name": "Países Bajos",
           "pts": 7,
-          "dg": "+5",
+          "dg": "+6",
           "played": 3,
           "pending": 0,
           "status": "Clasificado",
@@ -673,7 +673,7 @@
               "result": "w"
             },
             {
-              "score": "2–1",
+              "score": "3–1",
               "opponent": "🇹🇳",
               "result": "w"
             }
@@ -684,8 +684,8 @@
         {
           "flag": "🇯🇵",
           "name": "Japón",
-          "pts": 7,
-          "dg": "+5",
+          "pts": 5,
+          "dg": "+4",
           "played": 3,
           "pending": 0,
           "status": "Clasificado",
@@ -702,9 +702,9 @@
               "result": "w"
             },
             {
-              "score": "1–0",
+              "score": "1–1",
               "opponent": "🇸🇪",
-              "result": "w"
+              "result": "d"
             }
           ],
           "pendientes": [],
@@ -713,8 +713,8 @@
         {
           "flag": "🇸🇪",
           "name": "Suecia",
-          "pts": 3,
-          "dg": "-1",
+          "pts": 4,
+          "dg": "+0",
           "played": 3,
           "pending": 0,
           "status": "Complicado",
@@ -731,19 +731,19 @@
               "result": "l"
             },
             {
-              "score": "0–1",
+              "score": "1–1",
               "opponent": "🇯🇵",
-              "result": "l"
+              "result": "d"
             }
           ],
           "pendientes": [],
-          "req": "3° con 3 pts (-1 DG). Espera ser uno de los 8 mejores terceros."
+          "req": "3° con 4 pts (+0 DG). Espera ser uno de los 8 mejores terceros."
         },
         {
           "flag": "🇹🇳",
           "name": "Túnez",
           "pts": 0,
-          "dg": "-9",
+          "dg": "-10",
           "played": 3,
           "pending": 0,
           "status": "Eliminado",
@@ -760,7 +760,7 @@
               "result": "l"
             },
             {
-              "score": "1–2",
+              "score": "1–3",
               "opponent": "🇳🇱",
               "result": "l"
             }
@@ -771,10 +771,10 @@
       ],
       "pendientes": "—",
       "resumen": [
-        "✅ Países Bajos: 1° (7 pts, +5 DG). Venció a Túnez y clasifica.",
-        "✅ Japón: 2° (7 pts, +5 DG). Venció a Suecia y clasifica.",
-        "🟠 Suecia: 3° con 3 pts (-1 DG). Espera ser uno de los 8 mejores terceros.",
-        "🔴 Túnez: eliminado (0 pts, -9 DG)."
+        "✅ Países Bajos: 1° (7 pts, +6 DG). Venció a Túnez y clasifica.",
+        "✅ Japón: 2° (5 pts, +4 DG). Empató con Suecia y clasifica.",
+        "🟠 Suecia: 3° con 4 pts (+0 DG). Espera ser uno de los 8 mejores terceros.",
+        "🔴 Túnez: eliminado (0 pts, -10 DG)."
       ],
       "cerrado": true
     },
@@ -1584,6 +1584,78 @@
       "away": "🇦🇺 Australia",
       "group": "D",
       "time": "25 Jun 23:00"
+    },
+    {
+      "home": "🇳🇴 Noruega",
+      "away": "🇫🇷 Francia",
+      "group": "I",
+      "time": "26 Jun 16:00"
+    },
+    {
+      "home": "🇸🇳 Senegal",
+      "away": "🇮🇶 Irak",
+      "group": "I",
+      "time": "26 Jun 16:00"
+    },
+    {
+      "home": "🇺🇾 Uruguay",
+      "away": "🇪🇸 España",
+      "group": "H",
+      "time": "26 Jun 21:00"
+    },
+    {
+      "home": "🇨🇻 Cabo Verde",
+      "away": "🇸🇦 Arabia Saudita",
+      "group": "H",
+      "time": "26 Jun 21:00"
+    },
+    {
+      "home": "🇪🇬 Egipto",
+      "away": "🇮🇷 Irán",
+      "group": "G",
+      "time": "27 Jun 00:00"
+    },
+    {
+      "home": "🇳🇿 N. Zelanda",
+      "away": "🇧🇪 Bélgica",
+      "group": "G",
+      "time": "27 Jun 00:00"
+    },
+    {
+      "home": "🇭🇷 Croacia",
+      "away": "🇬🇭 Ghana",
+      "group": "L",
+      "time": "27 Jun 18:00"
+    },
+    {
+      "home": "🇵🇦 Panamá",
+      "away": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra",
+      "group": "L",
+      "time": "27 Jun 18:00"
+    },
+    {
+      "home": "🇨🇩 RD Congo",
+      "away": "🇺🇿 Uzbekistán",
+      "group": "K",
+      "time": "27 Jun 20:30"
+    },
+    {
+      "home": "🇨🇴 Colombia",
+      "away": "🇵🇹 Portugal",
+      "group": "K",
+      "time": "27 Jun 20:30"
+    },
+    {
+      "home": "🇩🇿 Argelia",
+      "away": "🇦🇹 Austria",
+      "group": "J",
+      "time": "27 Jun 23:00"
+    },
+    {
+      "home": "🇯🇴 Jordania",
+      "away": "🇦🇷 Argentina",
+      "group": "J",
+      "time": "27 Jun 23:00"
     }
   ]
 }
