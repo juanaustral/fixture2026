@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T15:22:11.325152",
+  "updated": "2026-06-26T21:40:00.547824",
   "source": "Flashscore",
   "groups": [
     {
@@ -1048,10 +1048,10 @@
         {
           "flag": "🇫🇷",
           "name": "Francia",
-          "pts": 6,
-          "dg": "+5",
-          "played": 2,
-          "pending": 1,
+          "pts": 9,
+          "dg": "+8",
+          "played": 3,
+          "pending": 0,
           "status": "Clasificado",
           "sclass": "st-c",
           "matches": [
@@ -1064,24 +1064,23 @@
               "score": "3–0",
               "opponent": "🇮🇶",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "26 Jun 16:00",
-              "vs": "Noruega",
-              "flag": "🇳🇴"
+              "score": "4–1",
+              "opponent": "🇳🇴",
+              "result": "w"
             }
           ],
+          "pendientes": [],
           "req": ""
         },
         {
           "flag": "🇳🇴",
           "name": "Noruega",
           "pts": 6,
-          "dg": "+4",
-          "played": 2,
-          "pending": 1,
+          "dg": "+1",
+          "played": 3,
+          "pending": 0,
           "status": "Clasificado",
           "sclass": "st-c",
           "matches": [
@@ -1094,26 +1093,25 @@
               "score": "3–2",
               "opponent": "🇸🇳",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "26 Jun 16:00",
-              "vs": "Francia",
-              "flag": "🇫🇷"
+              "score": "1–4",
+              "opponent": "🇫🇷",
+              "result": "l"
             }
           ],
+          "pendientes": [],
           "req": ""
         },
         {
           "flag": "🇸🇳",
           "name": "Senegal",
-          "pts": 0,
-          "dg": "-3",
-          "played": 2,
-          "pending": 1,
-          "status": "Complicado",
-          "sclass": "st-p",
+          "pts": 3,
+          "dg": "+2",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
           "matches": [
             {
               "score": "1–3",
@@ -1124,24 +1122,23 @@
               "score": "2–3",
               "opponent": "🇳🇴",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "26 Jun 16:00",
-              "vs": "Irak",
-              "flag": "🇮🇶"
+              "score": "5–0",
+              "opponent": "🇮🇶",
+              "result": "w"
             }
           ],
-          "req": "Ganar y esperar."
+          "pendientes": [],
+          "req": "Eliminado."
         },
         {
           "flag": "🇮🇶",
           "name": "Irak",
           "pts": 0,
-          "dg": "-6",
-          "played": 2,
-          "pending": 1,
+          "dg": "-11",
+          "played": 3,
+          "pending": 0,
           "status": "Complicado",
           "sclass": "st-p",
           "matches": [
@@ -1154,24 +1151,25 @@
               "score": "0–3",
               "opponent": "🇫🇷",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "26 Jun 16:00",
-              "vs": "Senegal",
-              "flag": "🇸🇳"
+              "score": "0–5",
+              "opponent": "🇸🇳",
+              "result": "l"
             }
           ],
-          "req": "Ganar y esperar."
+          "pendientes": [],
+          "req": "Eliminado."
         }
       ],
-      "pendientes": "🇳🇴 vs 🇫🇷 · 🇸🇳 vs 🇮🇶",
+      "pendientes": ":",
       "resumen": [
-        "✅ Francia y Noruega: clasificados. Juegan por el 1°.",
-        "🔴 Senegal e Irak: eliminados."
+        "✅ Francia: 1° (9 pts, +8 DG). Ganó el grupo.",
+        "✅ Noruega: 2° (6 pts, +1 DG). Clasificada como 2°.",
+        "🔴 Senegal: eliminado (3 pts, +2 DG).",
+        "🔴 Irak: eliminado (0 pts, -11 DG)."
       ],
-      "cerrado": false
+      "cerrado": true
     },
     {
       "name": "Grupo J",
@@ -1571,18 +1569,6 @@
     }
   ],
   "upcoming": [
-    {
-      "home": "🇳🇴 Noruega",
-      "away": "🇫🇷 Francia",
-      "group": "I",
-      "time": "26 Jun 16:00"
-    },
-    {
-      "home": "🇸🇳 Senegal",
-      "away": "🇮🇶 Irak",
-      "group": "I",
-      "time": "26 Jun 16:00"
-    },
     {
       "home": "🇺🇾 Uruguay",
       "away": "🇪🇸 España",
