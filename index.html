@@ -121,7 +121,8 @@
 <div class="widget"><h3 id="widgetTitle">📅 Próximos partidos</h3><div class="widget-grid" id="widgetGrid"></div></div>
 <div id="rankingAnchor"></div>
 <div class="groups-grid" id="app"></div>
-<div class="footer">Datos: Flashscore · Yahoo Sports · DAZN · Olympics.com<br>Desarrollado por <a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a> · <a href="#" onclick="location.reload()">↻ Recargar</a> · <a href="https://github.com/juanaustral/fixture2026">GitHub</a><br><span style="font-size:.6rem;color:var(--muted)">v.<span id="versionTag">—</span></span></div>
+<div class="footer">Datos: Flashscore · Yahoo Sports · DAZN · Olympics.com<br>Desarrollado por <a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a> · <a href="#" onclick="location.reload()">↻ Recargar</a> · <a href="https://github.com/juanaustral/fixture2026">GitHub</a><br><a href="#" onclick="toggleChangelog();return false" style="font-size:.62rem;color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--muted)" id="versionTag">—</a></div>
+<div id="changelogOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:999;align-items:center;justify-content:center" onclick="if(event.target===this)toggleChangelog()"><div style="background:var(--card);border-radius:14px;padding:24px;max-width:440px;width:90%;max-height:70vh;overflow-y:auto;box-shadow:0 8px 40px rgba(0,0,0,.2)"><h3 style="font-size:.9rem;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:8px">📋 Historial de versiones</h3><div id="changelogContent"></div><button onclick="toggleChangelog()" style="margin-top:14px;background:var(--blue);color:#fff;border:none;padding:6px 18px;border-radius:8px;cursor:pointer;font-size:.7rem;font-weight:600">Cerrar</button></div></div>
 </div>
 <script>
 const API='https://raw.githubusercontent.com/juanaustral/fixture2026/main/data.json';
@@ -147,7 +148,7 @@ async function loadData(){
   if(!d||!d.groups)d=DEFAULT_DATA;
   const prevG=G;
   G=d.groups;upcoming=d.upcoming||[];
-  document.getElementById('versionTag').textContent=d.updated||'?';
+  document.getElementById('versionTag').textContent=formatVersion(d.updated);
   document.getElementById('widgetGrid').innerHTML='';
   document.getElementById('app').innerHTML='';
   document.getElementById('rankingAnchor').innerHTML='';
@@ -315,9 +316,44 @@ function updateTimers(){
 }
 
 (function(){var f=document.getElementById('trophyField');for(var i=0;i<20;i++){var t=document.createElement('img');t.src='https://raw.githubusercontent.com/juanaustral/fixture2026/main/trophy.png';t.className='trophy-float';t.style.cssText='--dur:'+(14+Math.random()*20)+'s;--delay:'+(Math.random()*-20)+'s;--dx:'+((Math.random()-.5)*200)+'px;--rot:'+(Math.random()*720-360)+'deg;--op:'+(.03+Math.random()*.05)+';left:'+(Math.random()*95)+'vw;width:'+(22+Math.random()*30)+'px';f.appendChild(t)}
-  // Floating mini-balls
   for(var i=0;i<8;i++){var b=document.createElement('span');b.textContent='⚽';b.style.cssText='position:fixed;pointer-events:none;z-index:0;font-size:'+(8+Math.random()*14)+'px;opacity:'+(.04+Math.random()*.06)+';left:'+(Math.random()*95)+'vw;animation:floatB '+(16+Math.random()*20)+'s '+(Math.random()*-20)+'s infinite linear';f.appendChild(b)}
   var style=document.createElement('style');style.textContent='@keyframes floatB{0%{transform:translateY(105vh) rotate(0)}100%{transform:translateY(-10vh) rotate(360deg)}}';document.head.appendChild(style);})();
+
+  // Version & changelog
+  var VERSION_COUNT=13;
+  var CHANGELOG=[
+    {v:13,date:'26 jun',text:'Correcciones de diseño: barras decorativas eliminadas, hover arreglado, textos más grandes, título con animación shimmer.'},
+    {v:12,date:'26 jun',text:'Widget: textos más legibles y slots de horario más destacados. Decoraciones mundialistas: ⚽ flotantes y detalles visuales.'},
+    {v:11,date:'26 jun',text:'Widget: mejor alineación de equipos y análisis detallado por partido. Ranking de 3ros mejorado con más información.'},
+    {v:10,date:'26 jun',text:'Rediseño completo: ranking de mejores 3ros, dots de jornada, badges con íconos, skeleton loading, resultados con emojis, mini-form en widget, animación highlight y parallax.'},
+    {v:9,date:'24-25 jun',text:'Timeout de carga de streams + botón reintentar. Límite de 5 reintentos por slot.'},
+    {v:8,date:'24 jun',text:'Reproductor directo tvhd2 sin wrapper ni CSS clip.'},
+    {v:7,date:'24 jun',text:'Corrección de localStorage para evitar URLs cacheadas viejas.'},
+    {v:6,date:'24 jun',text:'Menú limpio sin URL input ni mute. Crédito con colores FIFA: Desarrollado por Juan Martinez Garcia.'},
+    {v:5,date:'24 jun',text:'Menú en 2 filas con mute, play/pause y switch de layout vertical↔horizontal.'},
+    {v:4,date:'24 jun',text:'20 canales deportivos. Selector de canal + input de URL manual.'},
+    {v:3,date:'24 jun',text:'Fullscreen por slot y swap de streams con atajos de teclado.'},
+    {v:2,date:'24 jun',text:'Dos streams side-by-side con layout vertical/horizontal y persistencia en localStorage.'},
+    {v:1,date:'24 jun',text:'Versión inicial: dos iframes con streams deportivos del Mundial 2026.'}
+  ];
+
+  function formatVersion(iso){
+    if(!iso||iso==='?')return 'v'+VERSION_COUNT+' · sin datos';
+    try{
+      var d=new Date(iso);
+      var months=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+      var day=d.getDate(),month=months[d.getMonth()],hour=('0'+d.getHours()).slice(-2),min=('0'+d.getMinutes()).slice(-2);
+      return 'v'+VERSION_COUNT+' · última modificación: '+day+' '+month+' '+hour+':'+min;
+    }catch(e){return 'v'+VERSION_COUNT+' · '+iso}
+  }
+
+  function toggleChangelog(){
+    var ov=document.getElementById('changelogOverlay');
+    if(ov.style.display==='flex'){ov.style.display='none';return}
+    var c=document.getElementById('changelogContent');
+    c.innerHTML=CHANGELOG.map(function(e){return '<div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--border);font-size:.68rem;line-height:1.4"><strong style="color:var(--blue)">v'+e.v+'</strong> <span style="color:var(--muted);font-size:.58rem">'+e.date+'</span><br>'+e.text+'</div>'}).join('');
+    ov.style.display='flex';
+  }
 
 loadData().then(()=>{updateTimers();setInterval(loadData,60000)});
 </script>
