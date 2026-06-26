@@ -114,9 +114,10 @@ function buscarEquipo(nombre,grupos){
 function renderWidget(){
   const grid=document.getElementById('widgetGrid');
   // Dynamic title from actual data
-  const dates=[...new Set(upcoming.map(m=>m.time.split(' ').slice(0,3).join(' ')))];
+  const dates=[...new Set(upcoming.map(m=>m.time.split(' ').slice(0,2).join(' ')))];
   const titleEl=document.getElementById('widgetTitle');
-  if(dates.length)titleEl.textContent='📅 Próximos partidos — '+dates.map(d=>{const p=d.split(' ');return p[0]+' '+p[1]}).join(' y ');
+  const months={Jan:'enero',Feb:'febrero',Mar:'marzo',Apr:'abril',May:'mayo',Jun:'junio',Jul:'julio',Aug:'agosto',Sep:'septiembre',Oct:'octubre',Nov:'noviembre',Dec:'diciembre'};
+  if(dates.length)titleEl.textContent='📅 Próximos partidos — '+dates.map(d=>{const p=d.split(' ');return parseInt(p[0])+' de '+months[p[1]]}).join(' y ');
   const slots={};
   upcoming.forEach(m=>{if(!slots[m.time])slots[m.time]=[];slots[m.time].push(m)});
   const order=Object.keys(slots).sort();
