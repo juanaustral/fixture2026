@@ -82,7 +82,7 @@
   <div class="author"><span>Desarrollado por</span><a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a></div>
   <div class="update-info"><span class="next-update">⏰ Próxima actualización: <strong id="nextUpdate">—</strong> <span class="countdown" id="countdown"></span></span></div>
 </div>
-<div class="widget"><h3>📅 Próximos partidos — 26 y 27 de junio</h3><div class="widget-grid" id="widgetGrid"></div></div>
+<div class="widget"><h3 id="widgetTitle">📅 Próximos partidos</h3><div class="widget-grid" id="widgetGrid"></div></div>
 <div class="groups-grid" id="app"></div>
 <div class="footer">Datos: Flashscore · Yahoo Sports · DAZN · Olympics.com<br>Desarrollado por <a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a> · <a href="#" onclick="location.reload()">↻ Recargar</a> · <a href="https://github.com/juanaustral/fixture2026">GitHub</a><br><span style="font-size:.6rem;color:var(--muted)">v.<span id="versionTag">—</span></span></div>
 </div>
@@ -113,9 +113,13 @@ function buscarEquipo(nombre,grupos){
 
 function renderWidget(){
   const grid=document.getElementById('widgetGrid');
+  // Dynamic title from actual data
+  const dates=[...new Set(upcoming.map(m=>m.time.split(' ').slice(0,3).join(' ')))];
+  const titleEl=document.getElementById('widgetTitle');
+  if(dates.length)titleEl.textContent='📅 Próximos partidos — '+dates.map(d=>{const p=d.split(' ');return p[0]+' '+p[1]}).join(' y ');
   const slots={};
   upcoming.forEach(m=>{if(!slots[m.time])slots[m.time]=[];slots[m.time].push(m)});
-  const order=['26 Jun 16:00','26 Jun 21:00','27 Jun 00:00','27 Jun 18:00','27 Jun 20:30','27 Jun 23:00'];
+  const order=Object.keys(slots).sort();
   order.forEach(time=>{
     if(!slots[time])return;
     const hdr=document.createElement('div');
@@ -169,7 +173,7 @@ function render(){
       h+='</div></td></tr>';
     });
     h+='</tbody></table>';
-    if(g.pendientes&&g.pendientes!=='—')h+='<div class="pendientes"><strong>⏳ Pendientes:</strong> '+g.pendientes+'</div>';
+    if(!g.cerrado&&g.pendientes&&g.pendientes!=='—')h+='<div class="pendientes"><strong>⏳ Pendientes:</strong> '+g.pendientes+'</div>';
     h+='<div class="group-reqs"><strong>Estado del grupo:</strong><br>'+g.resumen.map(r=>'<div>'+r+'</div>').join('')+'</div>';
     c.innerHTML=h;app.appendChild(c);
   });
