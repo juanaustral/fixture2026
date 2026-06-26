@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T21:40:00-03:00",
+  "updated": "2026-06-25T23:45:00-03:00",
   "source": "Flashscore",
   "groups": [
     {
@@ -396,9 +396,9 @@
           "flag": "🇺🇸",
           "name": "EE.UU.",
           "pts": 6,
-          "dg": "+5",
-          "played": 2,
-          "pending": 1,
+          "dg": "+4",
+          "played": 3,
+          "pending": 0,
           "status": "Clasificado",
           "sclass": "st-c",
           "matches": [
@@ -411,26 +411,25 @@
               "score": "2–0",
               "opponent": "🇦🇺",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 23:00",
-              "vs": "Turquía",
-              "flag": "🇹🇷"
+              "score": "1–2",
+              "opponent": "🇹🇷",
+              "result": "l"
             }
           ],
+          "pendientes": [],
           "req": ""
         },
         {
           "flag": "🇦🇺",
           "name": "Australia",
-          "pts": 3,
+          "pts": 4,
           "dg": "+0",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
           "matches": [
             {
               "score": "2–0",
@@ -441,26 +440,25 @@
               "score": "0–2",
               "opponent": "🇺🇸",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 23:00",
-              "vs": "Paraguay",
-              "flag": "🇵🇾"
+              "score": "0–0",
+              "opponent": "🇵🇾",
+              "result": "d"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": ""
         },
         {
           "flag": "🇵🇾",
           "name": "Paraguay",
-          "pts": 3,
+          "pts": 4,
           "dg": "-2",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "played": 3,
+          "pending": 0,
+          "status": "Complicado",
+          "sclass": "st-p",
           "matches": [
             {
               "score": "1–4",
@@ -471,26 +469,25 @@
               "score": "1–0",
               "opponent": "🇹🇷",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 23:00",
-              "vs": "Australia",
-              "flag": "🇦🇺"
+              "score": "0–0",
+              "opponent": "🇦🇺",
+              "result": "d"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": "3° con 4 pts (-2 DG). Espera ser uno de los 8 mejores terceros."
         },
         {
           "flag": "🇹🇷",
           "name": "Turquía",
-          "pts": 0,
-          "dg": "-3",
-          "played": 2,
-          "pending": 1,
-          "status": "Complicado",
-          "sclass": "st-p",
+          "pts": 3,
+          "dg": "-2",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
           "matches": [
             {
               "score": "0–2",
@@ -501,24 +498,25 @@
               "score": "0–1",
               "opponent": "🇵🇾",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 23:00",
-              "vs": "EE.UU.",
-              "flag": "🇺🇸"
+              "score": "2–1",
+              "opponent": "🇺🇸",
+              "result": "w"
             }
           ],
-          "req": "Ganar y esperar."
+          "pendientes": [],
+          "req": "Eliminado."
         }
       ],
-      "pendientes": "🇹🇷 vs 🇺🇸 · 🇵🇾 vs 🇦🇺",
+      "pendientes": "—",
       "resumen": [
-        "✅ EE.UU.: clasificado.",
-        "🔵 Australia vs Paraguay: duelo directo — el ganador clasifica. Empate favorece a Australia por DG."
+        "✅ EE.UU.: 1° (6 pts, +4 DG). Perdió ante Turquía pero ya estaba clasificado.",
+        "✅ Australia: 2° (4 pts, 0 DG). Empató con Paraguay y clasifica por mejor DG.",
+        "🟠 Paraguay: 3° (4 pts, -2 DG). Espera ser uno de los 8 mejores terceros.",
+        "🔴 Turquía: eliminado (3 pts, -2 DG)."
       ],
-      "cerrado": false
+      "cerrado": true
     },
     {
       "name": "Grupo E",
@@ -1573,18 +1571,6 @@
     }
   ],
   "upcoming": [
-    {
-      "home": "🇹🇷 Turquía",
-      "away": "🇺🇸 EE.UU.",
-      "group": "D",
-      "time": "25 Jun 23:00"
-    },
-    {
-      "home": "🇵🇾 Paraguay",
-      "away": "🇦🇺 Australia",
-      "group": "D",
-      "time": "25 Jun 23:00"
-    },
     {
       "home": "🇳🇴 Noruega",
       "away": "🇫🇷 Francia",
