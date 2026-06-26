@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T17:30:00-03:00",
+  "updated": "2026-06-25T21:20:00-03:00",
   "source": "Flashscore",
   "groups": [
     {
@@ -655,12 +655,12 @@
         {
           "flag": "🇳🇱",
           "name": "Países Bajos",
-          "pts": 4,
-          "dg": "+4",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "pts": 7,
+          "dg": "+5",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
           "matches": [
             {
               "score": "2–2",
@@ -671,26 +671,25 @@
               "score": "5–1",
               "opponent": "🇸🇪",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 20:00",
-              "vs": "Túnez",
-              "flag": "🇹🇳"
+              "score": "2–1",
+              "opponent": "🇹🇳",
+              "result": "w"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": ""
         },
         {
           "flag": "🇯🇵",
           "name": "Japón",
-          "pts": 4,
-          "dg": "+4",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "pts": 7,
+          "dg": "+5",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
           "matches": [
             {
               "score": "2–2",
@@ -701,26 +700,25 @@
               "score": "4–0",
               "opponent": "🇹🇳",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 20:00",
-              "vs": "Suecia",
-              "flag": "🇸🇪"
+              "score": "1–0",
+              "opponent": "🇸🇪",
+              "result": "w"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": ""
         },
         {
           "flag": "🇸🇪",
           "name": "Suecia",
           "pts": 3,
-          "dg": "+0",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "dg": "-1",
+          "played": 3,
+          "pending": 0,
+          "status": "Complicado",
+          "sclass": "st-p",
           "matches": [
             {
               "score": "5–1",
@@ -731,26 +729,25 @@
               "score": "1–5",
               "opponent": "🇳🇱",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 20:00",
-              "vs": "Japón",
-              "flag": "🇯🇵"
+              "score": "0–1",
+              "opponent": "🇯🇵",
+              "result": "l"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": "3° con 3 pts (-1 DG). Espera ser uno de los 8 mejores terceros."
         },
         {
           "flag": "🇹🇳",
           "name": "Túnez",
           "pts": 0,
-          "dg": "-8",
-          "played": 2,
-          "pending": 1,
-          "status": "Complicado",
-          "sclass": "st-p",
+          "dg": "-9",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
           "matches": [
             {
               "score": "1–5",
@@ -761,25 +758,25 @@
               "score": "0–4",
               "opponent": "🇯🇵",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "25 Jun 20:00",
-              "vs": "Países Bajos",
-              "flag": "🇳🇱"
+              "score": "1–2",
+              "opponent": "🇳🇱",
+              "result": "l"
             }
           ],
-          "req": "Ganar y esperar."
+          "pendientes": [],
+          "req": "Eliminado."
         }
       ],
-      "pendientes": "🇹🇳 vs 🇳🇱 · 🇯🇵 vs 🇸🇪",
+      "pendientes": "—",
       "resumen": [
-        "🔵 Países Bajos y Japón: empatando clasifican.",
-        "🔵 Suecia: ganándole a Japón clasifica.",
-        "🔴 Túnez: goleada histórica + Suecia pierda."
+        "✅ Países Bajos: 1° (7 pts, +5 DG). Venció a Túnez y clasifica.",
+        "✅ Japón: 2° (7 pts, +5 DG). Venció a Suecia y clasifica.",
+        "🟠 Suecia: 3° con 3 pts (-1 DG). Espera ser uno de los 8 mejores terceros.",
+        "🔴 Túnez: eliminado (0 pts, -9 DG)."
       ],
-      "cerrado": false
+      "cerrado": true
     },
     {
       "name": "Grupo G",
@@ -1576,18 +1573,6 @@
     }
   ],
   "upcoming": [
-    {
-      "home": "🇹🇳 Túnez",
-      "away": "🇳🇱 Países Bajos",
-      "group": "F",
-      "time": "25 Jun 20:00"
-    },
-    {
-      "home": "🇯🇵 Japón",
-      "away": "🇸🇪 Suecia",
-      "group": "F",
-      "time": "25 Jun 20:00"
-    },
     {
       "home": "🇹🇷 Turquía",
       "away": "🇺🇸 EE.UU.",
