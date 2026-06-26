@@ -62,18 +62,13 @@
   .group-card.t2{background:linear-gradient(180deg,rgba(230,29,37,.10) 0%,#fff 20%)}
   .group-card.t3{background:linear-gradient(180deg,rgba(71,74,74,.08) 0%,#fff 20%)}
   .group-card.t4{background:linear-gradient(180deg,rgba(60,172,59,.10) 0%,#fff 20%)}
-  .group-card .g-head{padding:14px 18px 10px;cursor:pointer;display:flex;align-items:center;gap:8px;position:sticky;top:0;z-index:2;background:inherit;border-bottom:1px solid transparent;transition:border-color .2s}
-  .group-card.open .g-head{border-bottom-color:var(--border)}
+  .group-card .g-head{padding:14px 18px 10px;display:flex;align-items:center;gap:8px;position:sticky;top:0;z-index:2;background:inherit;border-bottom:2px solid var(--border)}
   .group-card .g-head h2{font-size:1rem;color:var(--blue);font-weight:700;display:flex;align-items:center;gap:8px;letter-spacing:-.3px;flex:1}
   .group-card .g-head .jornada-dots{display:flex;gap:3px;margin-left:auto;align-items:center}
   .group-card .g-head .jornada-dots .dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background .3s}
   .group-card .g-head .jornada-dots .dot.done{background:var(--green)}
   .group-card .g-head .jornada-dots .dot.current{background:var(--blue);box-shadow:0 0 4px var(--blue)}
-  .group-card .g-head .toggle{font-size:.7rem;color:var(--muted);transition:transform .25s;flex-shrink:0}
-  .group-card.open .g-head .toggle{transform:rotate(180deg)}
-  .group-card .g-body{max-height:0;overflow:hidden;transition:max-height .4s ease;padding:0 18px}
-  .group-card.open .g-body{max-height:800px;padding:0 18px 14px}
-  .group-card.cerrado .g-body{max-height:none;padding:0 18px 14px}
+  .group-card .g-body{padding:0 18px 14px}
   table{width:100%;border-collapse:collapse;font-size:.78rem}
   th{text-align:left;color:var(--muted);font-weight:700;font-size:.63rem;text-transform:uppercase;letter-spacing:.7px;padding:8px;border-bottom:2px solid var(--border);background:rgba(255,255,255,.5)}
   th.cc{text-align:center;width:36px}
@@ -109,7 +104,7 @@
   .footer{text-align:center;margin-top:36px;padding:16px;font-size:.66rem;color:var(--muted);border-top:1px solid var(--border)}
   .footer a{color:var(--blue);text-decoration:none;font-weight:600}
   @media(max-width:768px){.groups-grid{grid-template-columns:1fr}.widget-grid{grid-template-columns:1fr}.ranking-grid{grid-template-columns:1fr 1fr}.header h1{font-size:2rem}.page{padding:10px 8px}}
-  @media(max-width:400px){.header h1{font-size:1.6rem;letter-spacing:-1px}.ball-icon{width:28px;height:28px}.group-card .g-head{padding:10px 12px 8px}.group-card.open .g-body,.group-card.cerrado .g-body{padding:0 10px 10px}.group-card .g-head h2{font-size:.88rem}.ranking-grid{grid-template-columns:1fr}.rank-card{font-size:.68rem}}
+  @media(max-width:400px){.header h1{font-size:1.6rem;letter-spacing:-1px}.ball-icon{width:28px;height:28px}.group-card .g-head{padding:10px 12px 8px}.group-card .g-body{padding:0 10px 10px}.group-card .g-head h2{font-size:.88rem}.ranking-grid{grid-template-columns:1fr}.rank-card{font-size:.68rem}}
 </style>
 </head>
 <body>
@@ -244,12 +239,12 @@ function renderRanking(){
 function render(prevG){
   const app=document.getElementById('app');
   G.forEach((g,i)=>{
-    const c=document.createElement('div');c.className='group-card t'+(i%5)+(g.cerrado?' cerrado':'');
+    const c=document.createElement('div');c.className='group-card t'+(i%5);
     const played=g.teams[0].played||0;
     var dots='';
     for(var d=1;d<=3;d++)dots+='<span class="dot'+(d<=played?' done':'')+(d===played+1&&!g.cerrado?' current':'')+'"></span>';
-    const icon=g.cerrado?'🔒':'';
-    var h='<div class="g-head" onclick="this.parentElement.classList.toggle(\'open\')"><h2>'+g.name+'</h2><span class="jornada-dots">'+dots+'</span><span class="toggle">▼</span></div>';
+    const icon=g.cerrado?' 🔒':'';
+    var h='<div class="g-head"><h2>'+g.name+icon+'</h2><span class="jornada-dots">'+dots+'</span></div>';
     h+='<div class="g-body"><table><thead><tr><th>Equipo</th><th class="cc">Pts</th><th class="cc">PP</th><th>Estado</th></tr></thead><tbody>';
     g.teams.forEach((t,j)=>{
       const r=j%2===0?'tr-even':'tr-odd';
