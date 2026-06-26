@@ -232,7 +232,7 @@ function renderRanking(){
   var h='<h3>🏆 Ranking de mejores terceros</h3><div class="ranking-grid">';
   third.forEach((t,i)=>{
     const cls=i<8?'in':'out';
-    const icon=t.status==='Clasificado'?'✅':t.status==='Eliminado'?'⬛':t.pending?'🔵':'🔴';
+    const icon=i<8?'✅':t.status==='Eliminado'?'⬛':'🔴';
     h+='<div class="rank-card '+cls+'"><span class="pos">'+(i+1)+'</span><span>'+t.flag+'</span><span class="info"><strong>'+t.name+'</strong><br><span class="pts">'+t.pts+' pts · DG '+t.dg+' · '+t.group+'</span></span><span class="st st-'+({'st-c':'c','st-a':'a','st-p':'p','st-e':'e'}[t.sclass]||'a')+'">'+icon+'</span></div>';
     if(i===7)h+='<div class="cut-line"></div>';
   });
