@@ -122,7 +122,7 @@
           "req": "Eliminado."
         }
       ],
-      "pendientes": "—",
+      "pendientes": ":",
       "resumen": [
         "✅ México: 1° (9 pts, +6 DG). Ganó los 3 partidos.",
         "🔵 Sudáfrica: 2° (4 pts, -1 DG). Perdió con México, empató con Checa, venció a Corea.",
@@ -251,7 +251,7 @@
           "req": "Eliminado."
         }
       ],
-      "pendientes": "—",
+      "pendientes": ":",
       "resumen": [
         "✅ Suiza: 1° (7 pts, +4 DG).",
         "✅ Canadá: 2° (4 pts, +5 DG).",
@@ -380,7 +380,7 @@
           "req": "Eliminado."
         }
       ],
-      "pendientes": "—",
+      "pendientes": ":",
       "resumen": [
         "✅ Brasil: 1° (7 pts, +6 DG).",
         "✅ Marruecos: 2° (7 pts, +3 DG).",
@@ -529,7 +529,7 @@
           "req": "Eliminado."
         }
       ],
-      "pendientes": "—",
+      "pendientes": ":",
       "resumen": [
         "✅ EE.UU.: 1° (6 pts, +4 DG).",
         "✅ Australia: 2° (4 pts, 0 DG). Empate con Paraguay le bastó.",
@@ -678,7 +678,7 @@
           "req": "Eliminado."
         }
       ],
-      "pendientes": "—",
+      "pendientes": ":",
       "resumen": [
         "✅ Alemania: 1° (6 pts, +6 DG).",
         "✅ Costa de Marfil: 2° (6 pts, +2 DG).",
@@ -827,7 +827,7 @@
           "req": "Eliminado."
         }
       ],
-      "pendientes": "—",
+      "pendientes": ":",
       "resumen": [
         "✅ Países Bajos: 1° (7 pts, +6 DG).",
         "✅ Japón: 2° (5 pts, +4 DG).",
@@ -1360,7 +1360,7 @@
       "pendientes": "🇩🇿 vs 🇦🇹 · 🇯🇴 vs 🇦🇷",
       "resumen": [
         "✅ Argentina: clasificada.",
-        "🔵 Austria vs Argelia: duelo directo — el ganador clasifica."
+        "🔵 Austria vs Argelia: duelo directo : el ganador clasifica."
       ],
       "cerrado": false
     },
