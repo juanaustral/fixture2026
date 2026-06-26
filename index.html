@@ -30,10 +30,11 @@
   .widget-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .w-match{background:#f6f7f5;border-radius:12px;padding:14px;border:1px solid var(--border);transition:all .2s}
   .w-match:hover{background:#eef0ec;transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.06)}
-  .w-teams{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;margin-bottom:4px;flex-wrap:wrap}
-  .w-teams .vs{color:var(--muted);font-weight:400;font-size:.7rem;margin:0 4px}
-  .w-group{display:inline-block;background:var(--blue);color:#fff;font-size:.58rem;padding:2px 8px;border-radius:5px;font-weight:700;text-transform:uppercase;margin-right:6px}
-  .w-form{display:inline-flex;gap:2px;margin-left:auto;font-size:.55rem}
+  .w-teams{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;margin-bottom:4px}
+  .w-teams .vs{color:var(--muted);font-weight:400;font-size:.7rem;margin:0 6px}
+  .w-group{display:inline-block;background:var(--blue);color:#fff;font-size:.58rem;padding:2px 8px;border-radius:5px;font-weight:700;text-transform:uppercase;margin-right:8px}
+  .w-team-block{display:inline-flex;align-items:center;gap:6px}
+  .w-form{display:inline-flex;gap:2px;font-size:.55rem}
   .w-form span{width:16px;height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.45rem}
   .w-form .fw{background:rgba(60,172,59,.15);color:var(--green)}.w-form .fd{background:rgba(184,150,12,.1);color:#b8960c}
   .w-form .fl{background:rgba(230,29,37,.1);color:var(--red)}.w-form .fp{background:rgba(42,57,141,.08);color:var(--blue)}
@@ -168,6 +169,46 @@ function getForm(t){
   return f;
 }
 
+function getPositionInGroup(g,teamName){
+  const s=[...g.teams].sort((a,b)=>b.pts-a.pts||parseInt(b.dg)-parseInt(a.dg));
+  for(var i=0;i<s.length;i++)if(s[i].name===teamName)return i+1;
+  return '?';
+}
+function buildAnalysis(h,a,hg,ag){
+  // Detailed scenario analysis for both teams
+  var lines=[];
+  const hPos=getPositionInGroup(hg,h.name),aPos=getPositionInGroup(ag,a.name);
+  const hGD=hg.teams.find(t=>t.name===h.name)?.dg||'?';
+  const aGD=ag.teams.find(t=>t.name===a.name)?.dg||'?';
+  
+  // Header line
+  lines.push('<strong>'+h.flag+' '+h.name+'</strong> ('+h.pts+' pts, DG '+hGD+', '+hPos+'°) vs <strong>'+a.flag+' '+a.name+'</strong> ('+a.pts+' pts, DG '+aGD+', '+aPos+'°)');
+  
+  // Home team scenario
+  var hSc='';
+  if(h.sclass==='st-c')hSc=h.name+' ya está clasificado. Juega por el primer puesto del grupo.';
+  else if(h.sclass==='st-a')hSc='Si '+h.name+' gana, clasifica. Si empata, depende del otro resultado. Si pierde, necesita que el otro resultado lo favorezca.';
+  else if(h.sclass==='st-p')hSc=h.name+' debe ganar y esperar resultados de otros grupos. Un empate o derrota lo deja eliminado.';
+  else hSc=h.name+' está eliminado. Juega por honor.';
+  lines.push('<span style="color:var(--blue)">▶</span> '+hSc);
+  
+  // Away team scenario
+  var aSc='';
+  if(a.sclass==='st-c')aSc=a.name+' ya está clasificado. Juega por el primer puesto del grupo.';
+  else if(a.sclass==='st-a')aSc='Si '+a.name+' gana, clasifica. Si empata, depende del otro resultado. Si pierde, necesita que el otro resultado lo favorezca.';
+  else if(a.sclass==='st-p')aSc=a.name+' debe ganar y esperar resultados de otros grupos. Un empate o derrota lo deja eliminado.';
+  else aSc=a.name+' está eliminado. Juega por honor.';
+  lines.push('<span style="color:var(--blue)">▶</span> '+aSc);
+  
+  // Key context
+  if(h.sclass==='st-c'&&a.sclass!=='st-c')lines.push('🏆 Con '+h.name+' ya clasificado, '+a.name+' se juega la clasificación en este partido.');
+  else if(a.sclass==='st-c'&&h.sclass!=='st-c')lines.push('🏆 Con '+a.name+' ya clasificado, '+h.name+' se juega la clasificación en este partido.');
+  else if(h.sclass==='st-a'&&a.sclass==='st-a')lines.push('🔥 Duelo directo por la clasificación: el ganador se mete en octavos. Un empate deja a ambos dependiendo del otro partido del grupo.');
+  else if(h.sclass==='st-p'&&a.sclass==='st-p')lines.push('⚠️ Partido de vida o muerte: ambos necesitan ganar y que otros resultados los acompañen para seguir con chances.');
+  else if(h.sclass==='st-e'||a.sclass==='st-e')lines.push('🎭 Partido de trámite: al menos un equipo ya está eliminado.');
+  
+  return lines.join('<br>');
+}
 function renderWidget(){
   const grid=document.getElementById('widgetGrid');
   const dates=[...new Set(upcoming.map(m=>m.time.split(' ').slice(0,2).join(' ')))];
@@ -185,26 +226,16 @@ function renderWidget(){
     slots[time].forEach(m=>{
       const hInfo=buscarEquipo(m.home.replace(/[^a-zA-Záéíóúñü ]/g,'').trim(),G);
       const aInfo=buscarEquipo(m.away.replace(/[^a-zA-Záéíóúñü ]/g,'').trim(),G);
-      let an='',hForm='',aForm='';
+      let an='',hForm='',aForm='',hg=null,ag=null;
       if(hInfo&&aInfo){
-        const h=hInfo.equipo,a=aInfo.equipo;
+        const h=hInfo.equipo,a=aInfo.equipo;hg=hInfo.grupo;ag=aInfo.grupo;
+        const hgObj=G.find(g=>g.name===hg),agObj=G.find(g=>g.name===ag);
         hForm='<span class="w-form">'+getForm(h).map(r=>'<span class="f'+({'V':'w','E':'d','D':'l','·':'p'}[r])+'">'+r+'</span>').join('')+'</span>';
         aForm='<span class="w-form">'+getForm(a).map(r=>'<span class="f'+({'V':'w','E':'d','D':'l','·':'p'}[r])+'">'+r+'</span>').join('')+'</span>';
-        var lines=[];
-        var hLine='<span class="st-tag '+h.sclass+'" style="font-size:.58rem">'+h.status+'</span> <strong>'+h.flag+' '+h.name+'</strong> ('+h.pts+' pts)';
-        if(h.req)hLine+=' — '+h.req.charAt(0).toLowerCase()+h.req.slice(1);
-        lines.push(hLine);
-        var aLine='<span class="st-tag '+a.sclass+'" style="font-size:.58rem">'+a.status+'</span> <strong>'+a.flag+' '+a.name+'</strong> ('+a.pts+' pts)';
-        if(a.req)aLine+=' — '+a.req.charAt(0).toLowerCase()+a.req.slice(1);
-        lines.push(aLine);
-        if(h.sclass==='st-c'&&a.sclass!=='st-c')lines.push('🏆 '+h.name+' ya clasificado — '+a.name+' se juega la vida.');
-        else if(a.sclass==='st-c'&&h.sclass!=='st-c')lines.push('🏆 '+a.name+' ya clasificado — '+h.name+' se juega la vida.');
-        else if(h.sclass==='st-a'&&a.sclass==='st-a')lines.push('🔥 Duelo directo: el ganador se lleva la clasificación.');
-        else if(h.sclass==='st-p'&&a.sclass==='st-p')lines.push('⚠️ Ambos necesitan ganar y esperar otros resultados.');
-        an=lines.join('<br>');
+        if(hgObj&&agObj)an=buildAnalysis(h,a,hgObj,agObj);
       }
       const c=document.createElement('div');c.className='w-match';
-      c.innerHTML='<div class="w-teams"><span class="w-group">'+m.group+'</span>'+m.home+hForm+' <span class="vs">vs</span> '+m.away+aForm+'</div><div class="w-analysis">'+an+'</div>';
+      c.innerHTML='<div class="w-teams"><span class="w-group">'+m.group+'</span><span class="w-team-block">'+m.home+hForm+'</span> <span class="vs">vs</span> <span class="w-team-block">'+m.away+aForm+'</span></div><div class="w-analysis">'+an+'</div>';
       grid.appendChild(c);
     });
   });
@@ -217,18 +248,20 @@ function renderRanking(){
     const s=[...g.teams].sort((a,b)=>b.pts-a.pts||parseInt(b.dg)-parseInt(a.dg));
     if(s.length>=3){
       const t3=s[2];if(t3.pts===0&&t3.pending===0)return;
-      third.push({flag:t3.flag,name:t3.name,pts:t3.pts,dg:parseInt(t3.dg),pending:t3.pending,group:g.name,status:t3.status,sclass:t3.sclass});
+      third.push({flag:t3.flag,name:t3.name,pts:t3.pts,dg:parseInt(t3.dg),pending:t3.pending,group:g.name,status:t3.status,sclass:t3.sclass,cerrado:!!g.cerrado});
     }
   });
   third.sort((a,b)=>b.pts-a.pts||b.dg-a.dg);
   if(!third.length)return;
   const anchor=document.getElementById('rankingAnchor');
   const sec=document.createElement('div');sec.className='ranking-section';
-  var h='<h3>🏆 Ranking de mejores terceros</h3><div class="ranking-grid">';
+  var h='<h3>🏆 Ranking de mejores terceros</h3><p style="font-size:.68rem;color:var(--muted);margin-bottom:12px">Los 8 mejores de 12 grupos avanzan a octavos. Grupos cerrados: A,B,C,D,E,F,I. Resto: aún con partidos pendientes.</p><div class="ranking-grid">';
   third.forEach((t,i)=>{
     const cls=i<8?'in':'out';
     const icon=i<8?'✅':t.status==='Eliminado'?'⬛':'🔴';
-    h+='<div class="rank-card '+cls+'"><span class="pos">'+(i+1)+'</span><span>'+t.flag+'</span><span class="info"><strong>'+t.name+'</strong><br><span class="pts">'+t.pts+' pts · DG '+t.dg+' · '+t.group+'</span></span><span class="st st-'+({'st-c':'c','st-a':'a','st-p':'p','st-e':'e'}[t.sclass]||'a')+'">'+icon+'</span></div>';
+    const pendTag=t.pending?' <span style="font-size:.5rem;background:rgba(42,57,141,.1);color:var(--blue);padding:1px 4px;border-radius:3px">'+t.pending+' pend</span>':'';
+    const statusText=t.cerrado?'Cerrado':'Abierto';
+    h+='<div class="rank-card '+cls+'"><span class="pos">'+(i+1)+'</span><span>'+t.flag+'</span><span class="info"><strong>'+t.name+'</strong>'+pendTag+'<br><span class="pts">'+t.pts+' pts · DG '+(t.dg>0?'+':'')+t.dg+' · Grupo '+t.group.replace('Grupo ','')+' · '+statusText+'</span></span><span class="st st-'+({'st-c':'c','st-a':'a','st-p':'p','st-e':'e'}[t.sclass]||'a')+'">'+icon+'</span></div>';
     if(i===7)h+='<div class="cut-line"></div>';
   });
   h+='</div>';sec.innerHTML=h;
