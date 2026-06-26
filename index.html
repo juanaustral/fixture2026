@@ -23,6 +23,8 @@
   .header .author span{font-weight:400;letter-spacing:.3px}
   .header .author a{color:var(--blue);text-decoration:none;font-weight:700;letter-spacing:-.2px;transition:color .2s;font-size:.85rem}
   .header .author a:hover{color:var(--red)}
+  .visor-link{display:inline-block;margin:6px 0;padding:5px 16px;background:linear-gradient(135deg,rgba(60,172,59,.12),rgba(42,57,141,.08));border:1px solid rgba(60,172,59,.25);border-radius:20px;font-size:.72rem;color:var(--green);text-decoration:none;font-weight:600;transition:all .2s}
+  .visor-link:hover{background:linear-gradient(135deg,rgba(60,172,59,.2),rgba(42,57,141,.14));border-color:rgba(60,172,59,.4);color:#2a7d2b;transform:translateY(-1px)}
   .header .update-info{font-size:.78rem;color:var(--text);margin:8px 0;line-height:1.5}
   .header .next-update{font-size:.76rem;color:var(--muted)}
   .countdown{color:var(--blue);font-weight:700}
@@ -116,6 +118,7 @@
 <div class="header">
   <h1><img src="ball.png" class="ball-icon" alt="⚽"> <span class="fixture-text">Fixture 2026</span></h1>
   <div class="author"><span>Desarrollado por</span><a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a></div>
+  <a href="https://juanaustral.github.io/visor-dual/" class="visor-link" title="Mirá dos partidos del Mundial al mismo tiempo">📺 Ver partidos en vivo · Visor Dual</a>
   <div class="update-info"><span class="next-update">⏰ Próxima actualización: <strong id="nextUpdate">—</strong> <span class="countdown" id="countdown"></span></span></div>
 </div>
 <div class="widget"><h3 id="widgetTitle">📅 Próximos partidos</h3><div class="widget-grid" id="widgetGrid"></div></div>
