@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T21:47:24.532150+00:00",
+  "updated": "2026-06-26T21:50:00.000000+00:00",
   "source": "Flashscore",
   "groups": [
     {
@@ -915,12 +915,12 @@
         {
           "flag": "🇪🇸",
           "name": "España",
-          "pts": 4,
-          "dg": "+4",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "pts": 7,
+          "dg": "+5",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
           "matches": [
             {
               "score": "0–0",
@@ -931,26 +931,25 @@
               "score": "4–0",
               "opponent": "🇸🇦",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "26 Jun 21:00",
-              "vs": "Uruguay",
-              "flag": "🇺🇾"
+              "score": "1–0",
+              "opponent": "🇺🇾",
+              "result": "w"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": ""
         },
         {
           "flag": "🇺🇾",
           "name": "Uruguay",
           "pts": 2,
-          "dg": "+0",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "dg": "-1",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
           "matches": [
             {
               "score": "1–1",
@@ -961,26 +960,25 @@
               "score": "2–2",
               "opponent": "🇨🇻",
               "result": "d"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "26 Jun 21:00",
-              "vs": "España",
-              "flag": "🇪🇸"
+              "score": "0–1",
+              "opponent": "🇪🇸",
+              "result": "l"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": "Eliminado."
         },
         {
           "flag": "🇨🇻",
           "name": "Cabo Verde",
-          "pts": 2,
-          "dg": "+0",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "pts": 3,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Complicado",
+          "sclass": "st-p",
           "matches": [
             {
               "score": "0–0",
@@ -991,26 +989,25 @@
               "score": "2–2",
               "opponent": "🇺🇾",
               "result": "d"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "26 Jun 21:00",
-              "vs": "Arabia Saudita",
-              "flag": "🇸🇦"
+              "score": "0–0",
+              "opponent": "🇸🇦",
+              "result": "d"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": "3° con 3 pts (0 DG). Espera ser uno de los 8 mejores terceros."
         },
         {
           "flag": "🇸🇦",
           "name": "Arabia Saudita",
-          "pts": 1,
+          "pts": 2,
           "dg": "-4",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
           "matches": [
             {
               "score": "1–1",
@@ -1021,26 +1018,25 @@
               "score": "0–4",
               "opponent": "🇪🇸",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "26 Jun 21:00",
-              "vs": "Cabo Verde",
-              "flag": "🇨🇻"
+              "score": "0–0",
+              "opponent": "🇨🇻",
+              "result": "d"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": "Eliminado."
         }
       ],
-      "pendientes": "🇺🇾 vs 🇪🇸 · 🇨🇻 vs 🇸🇦",
+      "pendientes": "",
       "resumen": [
-        "🔵 España: empatando clasifica.",
-        "🔵 Uruguay: ganándole a España clasifica.",
-        "🔵 Cabo Verde: ganándole a Arabia Saudita clasifica.",
-        "🔴 Arabia Saudita: ganar + Uruguay pierda + 4 DG."
+        "✅ España: 1° (7 pts, +5 DG). Ganó el grupo.",
+        "🔴 Cabo Verde: 2° (3 pts, 0 DG). Empates en toda la fase de grupos.",
+        "🔴 Uruguay: 3° (2 pts, -1 DG). Eliminado.",
+        "🔴 Arabia Saudita: 4° (2 pts, -4 DG). Eliminado."
       ],
-      "cerrado": false
+      "cerrado": true
     },
     {
       "name": "Grupo I",
@@ -1569,18 +1565,6 @@
     }
   ],
   "upcoming": [
-    {
-      "home": "🇺🇾 Uruguay",
-      "away": "🇪🇸 España",
-      "group": "H",
-      "time": "26 Jun 21:00"
-    },
-    {
-      "home": "🇨🇻 Cabo Verde",
-      "away": "🇸🇦 Arabia Saudita",
-      "group": "H",
-      "time": "26 Jun 21:00"
-    },
     {
       "home": "🇪🇬 Egipto",
       "away": "🇮🇷 Irán",
