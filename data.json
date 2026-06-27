@@ -1434,12 +1434,12 @@
         {
           "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
           "name": "Inglaterra",
-          "pts": 4,
-          "dg": "+2",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "pts": 7,
+          "dg": "+4",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
           "matches": [
             {
               "score": "4–2",
@@ -1450,56 +1450,25 @@
               "score": "0–0",
               "opponent": "🇬🇭",
               "result": "d"
-            }
-          ],
-          "pendientes": [
-            {
-              "date": "27 Jun 18:00",
-              "vs": "Panamá",
-              "flag": "🇵🇦"
-            }
-          ],
-          "req": "Ganando clasifica."
-        },
-        {
-          "flag": "🇬🇭",
-          "name": "Ghana",
-          "pts": 4,
-          "dg": "+1",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
-          "matches": [
-            {
-              "score": "1–0",
-              "opponent": "🇵🇦",
-              "result": "w"
             },
             {
-              "score": "0–0",
-              "opponent": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-              "result": "d"
+              "score": "2–0",
+              "opponent": "🇵🇦",
+              "result": "w"
             }
           ],
-          "pendientes": [
-            {
-              "date": "27 Jun 18:00",
-              "vs": "Croacia",
-              "flag": "🇭🇷"
-            }
-          ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": ""
         },
         {
           "flag": "🇭🇷",
           "name": "Croacia",
-          "pts": 3,
-          "dg": "-1",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "pts": 6,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
           "matches": [
             {
               "score": "2–4",
@@ -1510,26 +1479,54 @@
               "score": "1–0",
               "opponent": "🇵🇦",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 18:00",
-              "vs": "Ghana",
-              "flag": "🇬🇭"
+              "score": "2–1",
+              "opponent": "🇬🇭",
+              "result": "w"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇬🇭",
+          "name": "Ghana",
+          "pts": 4,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Complicado",
+          "sclass": "st-p",
+          "matches": [
+            {
+              "score": "1–0",
+              "opponent": "🇵🇦",
+              "result": "w"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+              "result": "d"
+            },
+            {
+              "score": "1–2",
+              "opponent": "🇭🇷",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 4 pts (0 DG). Espera ser uno de los 8 mejores terceros."
         },
         {
           "flag": "🇵🇦",
           "name": "Panamá",
           "pts": 0,
-          "dg": "-2",
-          "played": 2,
-          "pending": 1,
-          "status": "Complicado",
-          "sclass": "st-p",
+          "dg": "-4",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
           "matches": [
             {
               "score": "0–1",
@@ -1540,40 +1537,29 @@
               "score": "0–1",
               "opponent": "🇭🇷",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 18:00",
-              "vs": "Inglaterra",
-              "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+              "score": "0–2",
+              "opponent": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+              "result": "l"
             }
           ],
-          "req": "Ganar y esperar."
+          "pendientes": [],
+          "req": "Eliminado."
         }
       ],
-      "pendientes": "🇭🇷 vs 🇬🇭 · 🇵🇦 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "pendientes": "",
       "resumen": [
-        "🔵 Inglaterra y Ghana: empatando clasifican.",
-        "🔵 Croacia: ganándole a Ghana clasifica.",
-        "🔴 Panamá: eliminado."
+        "✅ Inglaterra: 1° (7 pts, +4 DG). Ganó el grupo.",
+        "✅ Croacia: 2° (6 pts, 0 DG). Clasificada como 2°.",
+        "🔴 Ghana: 3° (4 pts, 0 DG). Espera ser uno de los 8 mejores terceros.",
+        "🔴 Panamá: eliminado (0 pts, -4 DG)."
       ],
-      "cerrado": false
+      "cerrado": true
     }
   ],
+  "updated": "2026-06-27T18:15:00.000000+00:00",
   "upcoming": [
-    {
-      "home": "🇭🇷 Croacia",
-      "away": "🇬🇭 Ghana",
-      "group": "L",
-      "time": "27 Jun 18:00"
-    },
-    {
-      "home": "🇵🇦 Panamá",
-      "away": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra",
-      "group": "L",
-      "time": "27 Jun 18:00"
-    },
     {
       "home": "🇨🇩 RD Congo",
       "away": "🇺🇿 Uzbekistán",
