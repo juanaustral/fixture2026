@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T21:50:00.000000+00:00",
+  "updated": "2026-06-27T05:23:50.442284+00:00",
   "source": "Flashscore",
   "groups": [
     {
@@ -782,12 +782,12 @@
         {
           "flag": "🇪🇬",
           "name": "Egipto",
-          "pts": 4,
+          "pts": 5,
           "dg": "+2",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
           "matches": [
             {
               "score": "1–1",
@@ -798,26 +798,25 @@
               "score": "3–1",
               "opponent": "🇳🇿",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 00:00",
-              "vs": "Irán",
-              "flag": "🇮🇷"
+              "score": "1–1",
+              "opponent": "🇮🇷",
+              "result": "d"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": ""
         },
         {
           "flag": "🇮🇷",
           "name": "Irán",
-          "pts": 2,
-          "dg": "+0",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "pts": 3,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Complicado",
+          "sclass": "st-p",
           "matches": [
             {
               "score": "2–2",
@@ -828,26 +827,25 @@
               "score": "0–0",
               "opponent": "🇧🇪",
               "result": "d"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 00:00",
-              "vs": "Egipto",
-              "flag": "🇪🇬"
+              "score": "1–1",
+              "opponent": "🇪🇬",
+              "result": "d"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": "3° con 3 pts (0 DG). Espera ser uno de los 8 mejores terceros."
         },
         {
           "flag": "🇧🇪",
           "name": "Bélgica",
-          "pts": 2,
-          "dg": "+0",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "pts": 5,
+          "dg": "+4",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
           "matches": [
             {
               "score": "1–1",
@@ -858,26 +856,25 @@
               "score": "0–0",
               "opponent": "🇮🇷",
               "result": "d"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 00:00",
-              "vs": "N. Zelanda",
-              "flag": "🇳🇿"
+              "score": "5–1",
+              "opponent": "🇳🇿",
+              "result": "w"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": ""
         },
         {
           "flag": "🇳🇿",
           "name": "N. Zelanda",
           "pts": 1,
-          "dg": "-2",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "dg": "-6",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
           "matches": [
             {
               "score": "2–2",
@@ -888,26 +885,25 @@
               "score": "1–3",
               "opponent": "🇪🇬",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 00:00",
-              "vs": "Bélgica",
-              "flag": "🇧🇪"
+              "score": "1–5",
+              "opponent": "🇧🇪",
+              "result": "l"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": "Eliminado."
         }
       ],
-      "pendientes": "🇪🇬 vs 🇮🇷 · 🇳🇿 vs 🇧🇪",
+      "pendientes": "",
       "resumen": [
-        "🔵 Egipto: empatando clasifica.",
-        "🔵 Irán: ganándole a Egipto clasifica.",
-        "🔵 Bélgica: ganarle a NZ y esperar.",
-        "🔴 N. Zelanda: debe ganar sí o sí."
+        "✅ Bélgica: 1° (5 pts, +4 DG). Ganó el grupo por diferencia de gol.",
+        "✅ Egipto: 2° (5 pts, +2 DG). Clasificada como 2°.",
+        "🔴 Irán: 3° (3 pts, 0 DG). Espera ser uno de los 8 mejores terceros.",
+        "🔴 N. Zelanda: eliminado (1 pt, -6 DG)."
       ],
-      "cerrado": false
+      "cerrado": true
     },
     {
       "name": "Grupo H",
@@ -1565,18 +1561,6 @@
     }
   ],
   "upcoming": [
-    {
-      "home": "🇪🇬 Egipto",
-      "away": "🇮🇷 Irán",
-      "group": "G",
-      "time": "27 Jun 00:00"
-    },
-    {
-      "home": "🇳🇿 N. Zelanda",
-      "away": "🇧🇪 Bélgica",
-      "group": "G",
-      "time": "27 Jun 00:00"
-    },
     {
       "home": "🇭🇷 Croacia",
       "away": "🇬🇭 Ghana",
