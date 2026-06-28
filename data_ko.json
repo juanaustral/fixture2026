@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T20:38:57+00:00",
+  "updated": "2026-06-28T21:19:00+00:00",
   "source": "Flashscore",
   "teams": {
     "Sudáfrica": {
@@ -1292,9 +1292,10 @@
           "date": "28 jun 16:00",
           "home": "Sudáfrica",
           "away": "Canadá",
-          "hscore": null,
-          "ascore": null,
-          "status": "live",
+          "hscore": 0,
+          "ascore": 1,
+          "status": "played",
+          "extra": null,
           "stadium": "MetLife Stadium, NY"
         },
         {
@@ -1455,7 +1456,7 @@
         {
           "id": 101,
           "date": "5-8 jul",
-          "home": "Gan. M1",
+          "home": "Canadá 🇨🇦",
           "away": "Gan. M2",
           "hscore": null,
           "ascore": null,
