@@ -74,6 +74,7 @@
   .match-card .form-dots .fd{width:10px;height:10px;border-radius:2px;font-size:.45rem;display:flex;align-items:center;justify-content:center}
   .match-card .form-dots .fd.w{background:rgba(60,172,59,.15);color:var(--green)}.match-card .form-dots .fd.d{background:rgba(184,150,12,.1);color:#b8960c}
   .match-card .form-dots .fd.l{background:rgba(230,29,37,.1);color:var(--red)}
+  .match-card .t-match-line{font-size:.48rem;color:var(--muted);padding-left:32px;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.2px}
   .match-card .extra{font-size:.52rem;color:var(--muted);margin-top:4px;text-align:right;font-style:italic}
   /* Future rounds */
   .round:not(:first-child) .match-card{background:linear-gradient(135deg,rgba(42,57,141,.02),var(--card));border-style:dashed}
@@ -132,9 +133,13 @@ function getTeamFlag(name){
   var flagMap={'Sudáfrica':'🇿🇦','Canadá':'🇨🇦','Brasil':'🇧🇷','Japón':'🇯🇵','Alemania':'🇩🇪','Paraguay':'🇵🇾','Países Bajos':'🇳🇱','Marruecos':'🇲🇦','Costa de Marfil':'🇨🇮','Noruega':'🇳🇴','Francia':'🇫🇷','Suecia':'🇸🇪','México':'🇲🇽','Ecuador':'🇪🇨','Inglaterra':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','RD Congo':'🇨🇩','Bélgica':'🇧🇪','Senegal':'🇸🇳','EE.UU.':'🇺🇸','Bosnia H.':'🇧🇦','España':'🇪🇸','Austria':'🇦🇹','Portugal':'🇵🇹','Croacia':'🇭🇷','Suiza':'🇨🇭','Argelia':'🇩🇿','Australia':'🇦🇺','Egipto':'🇪🇬','Argentina':'🇦🇷','Cabo Verde':'🇨🇻','Colombia':'🇨🇴','Ghana':'🇬🇭'};
   return flagMap[name]||'🏳️';
 }
-
-function getTeamStats(name){
+function getMatchLine(name){
   var t=TEAMS[name];
+  if(!t||!t.matches_detail||!t.matches_detail.length)return '';
+  var icons={w:'⚽',d:'🤝',l:'❌'};
+  return '<div class="t-match-line">'+t.matches_detail.map(function(mt){return (icons[mt.result]||'·')+' '+mt.score}).join('  ')+'</div>';
+}
+function getTeamStats(name){
   if(!t||!t.group)return '';
   var h='<div class="team-stats"><span class="stat-tag">'+t.pos+' Grupo '+t.group+'</span><span class="stat-tag">'+t.pts+' pts · DG '+t.dg+'</span>';
   h+=getFormDots(t.form);
@@ -159,9 +164,10 @@ function renderBracket(){
       var as=m.ascore!==null?m.ascore:'-';
       var extra=m.extra||'';
       var stadium=m.stadium?' <span class="stadium">'+m.stadium+'</span>':'';
-      var hStats='',aStats='';
+      var hStats='',aStats='',hMatchLine='',aMatchLine='';
       if(mi<16||round.name==='16avos de final'){
         hStats=getTeamStats(m.home);aStats=getTeamStats(m.away);
+        hMatchLine=getMatchLine(m.home);aMatchLine=getMatchLine(m.away);
       }
       var hFlag=getTeamFlag(m.home),aFlag=getTeamFlag(m.away);
       var hName=m.home,aName=m.away;
@@ -170,7 +176,7 @@ function renderBracket(){
       else{hFlag='🏆';hName=m.home}
       if(m.away.indexOf('Gan.')!==0){aFlag=getTeamFlag(m.away);aName=m.away;aClick=' onclick="showTeamProfile(\''+m.away.replace(/'/g,"\\'")+'\')"'}
       else{aFlag='🏆';aName=m.away}
-      card.innerHTML='<div class="mc-date">🕐 '+m.date+stadium+'</div><div class="teams"><div class="team-row '+hw+'"><span class="flag">'+hFlag+'</span><span class="name"'+hClick+'>'+hName+'</span><span class="score">'+hs+'</span></div>'+hStats+'<div class="team-row '+aw+'"><span class="flag">'+aFlag+'</span><span class="name"'+aClick+'>'+aName+'</span><span class="score">'+as+'</span></div>'+aStats+'</div>'+(extra?'<div class="extra">'+extra+'</div>':'');
+      card.innerHTML='<div class="mc-date">🕐 '+m.date+stadium+'</div><div class="teams"><div class="team-row '+hw+'"><span class="flag">'+hFlag+'</span><span class="name"'+hClick+'>'+hName+'</span><span class="score">'+hs+'</span></div>'+hMatchLine+hStats+'<div class="team-row '+aw+'"><span class="flag">'+aFlag+'</span><span class="name"'+aClick+'>'+aName+'</span><span class="score">'+as+'</span></div>'+aMatchLine+aStats+'</div>'+(extra?'<div class="extra">'+extra+'</div>':'');
       if(mi>0)card.style.marginTop=Math.max(0,(20*(16/round.matches.length)/2))+'px';
       col.appendChild(card);
     });
@@ -187,7 +193,7 @@ function updateTimers(){
 }
 
 var VERSION_COUNT=19;
-var CHANGELOG=[{v:19,date:'28 jun',text:'Perfil de equipo: modal con rating, ataque/defensa/arquero, historial FIFA, resultados de fase de grupos.'},{v:17,date:'28 jun',text:'Rediseño: fixture de eliminación directa estilo bracket.'},{v:16,date:'26 jun',text:'Botón Visor Dual en header: abre en pestaña nueva.'},{v:15,date:'26 jun',text:'Botón "📺 Ver partidos en vivo" que enlaza al Visor Dual.'},{v:14,date:'26 jun',text:'Footer simplificado con changelog modal.'},{v:13,date:'26 jun',text:'Barras decorativas eliminadas, hover arreglado, título shimmer.'},{v:12,date:'26 jun',text:'Widget: textos legibles, slots destacados, decoraciones mundialistas.'},{v:11,date:'26 jun',text:'Widget: análisis detallado por partido, ranking mejorado.'},{v:10,date:'26 jun',text:'Ranking 3ros, dots de jornada, badges, skeleton, emojis.'}];
+var CHANGELOG=[{v:19,date:'28 jun',text:'Perfil de equipo con resultados de fase de grupos visibles en el bracket y modal.'},{v:17,date:'28 jun',text:'Rediseño: fixture de eliminación directa estilo bracket.'},{v:16,date:'26 jun',text:'Botón Visor Dual en header: abre en pestaña nueva.'},{v:15,date:'26 jun',text:'Botón "📺 Ver partidos en vivo" que enlaza al Visor Dual.'},{v:14,date:'26 jun',text:'Footer simplificado con changelog modal.'},{v:13,date:'26 jun',text:'Barras decorativas eliminadas, hover arreglado, título shimmer.'},{v:12,date:'26 jun',text:'Widget: textos legibles, slots destacados, decoraciones mundialistas.'},{v:11,date:'26 jun',text:'Widget: análisis detallado por partido, ranking mejorado.'},{v:10,date:'26 jun',text:'Ranking 3ros, dots de jornada, badges, skeleton, emojis.'}];
 
 function formatVersion(iso){
   if(!iso||iso==='?')return 'v'+VERSION_COUNT+' · sin datos';
