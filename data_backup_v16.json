@@ -1,0 +1,1652 @@
+{
+  "updated": "2026-06-28T09:36:00+00:00",
+  "source": "Flashscore + Yahoo Sports",
+  "groups": [
+    {
+      "name": "Grupo A",
+      "teams": [
+        {
+          "flag": "🇲🇽",
+          "name": "México",
+          "pts": 9,
+          "dg": "+6",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "2–0",
+              "opponent": "🇿🇦",
+              "result": "w"
+            },
+            {
+              "score": "1–0",
+              "opponent": "🇰🇷",
+              "result": "w"
+            },
+            {
+              "score": "3–0",
+              "opponent": "🇨🇿",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇿🇦",
+          "name": "Sudáfrica",
+          "pts": 4,
+          "dg": "-1",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "0–2",
+              "opponent": "🇲🇽",
+              "result": "l"
+            },
+            {
+              "score": "1–1",
+              "opponent": "🇨🇿",
+              "result": "d"
+            },
+            {
+              "score": "1–0",
+              "opponent": "🇰🇷",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇰🇷",
+          "name": "Corea del Sur",
+          "pts": 3,
+          "dg": "-1",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "2–1",
+              "opponent": "🇨🇿",
+              "result": "w"
+            },
+            {
+              "score": "0–1",
+              "opponent": "🇲🇽",
+              "result": "l"
+            },
+            {
+              "score": "0–1",
+              "opponent": "🇿🇦",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 3 pts (-1 DG). Depende de otros grupos."
+        },
+        {
+          "flag": "🇨🇿",
+          "name": "Rep. Checa",
+          "pts": 1,
+          "dg": "-4",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "1–2",
+              "opponent": "🇰🇷",
+              "result": "l"
+            },
+            {
+              "score": "1–1",
+              "opponent": "🇿🇦",
+              "result": "d"
+            },
+            {
+              "score": "0–3",
+              "opponent": "🇲🇽",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        }
+      ],
+      "pendientes": "",
+      "resumen": [
+        "✅ México: 1° (9 pts, +6 DG). Ganó los 3 partidos.",
+        "✅ Sudáfrica: 2° (4 pts, -1 DG). Clasificó como 2°.",
+        "⬛ Corea del Sur: 3° (3 pts, -1 DG). Eliminado. No clasificó.",
+        "⬛ Rep. Checa: eliminado (1 pt, -4 DG)."
+      ],
+      "cerrado": true
+    },
+    {
+      "name": "Grupo B",
+      "teams": [
+        {
+          "flag": "🇨🇭",
+          "name": "Suiza",
+          "pts": 7,
+          "dg": "+4",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–1",
+              "opponent": "🇶🇦",
+              "result": "d"
+            },
+            {
+              "score": "4–1",
+              "opponent": "🇧🇦",
+              "result": "w"
+            },
+            {
+              "score": "2–1",
+              "opponent": "🇨🇦",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇨🇦",
+          "name": "Canadá",
+          "pts": 4,
+          "dg": "+5",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–1",
+              "opponent": "🇧🇦",
+              "result": "d"
+            },
+            {
+              "score": "6–0",
+              "opponent": "🇶🇦",
+              "result": "w"
+            },
+            {
+              "score": "1–2",
+              "opponent": "🇨🇭",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇧🇦",
+          "name": "Bosnia H.",
+          "pts": 4,
+          "dg": "-1",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–1",
+              "opponent": "🇨🇦",
+              "result": "d"
+            },
+            {
+              "score": "1–4",
+              "opponent": "🇨🇭",
+              "result": "l"
+            },
+            {
+              "score": "3–1",
+              "opponent": "🇶🇦",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 4 pts (-1 DG). Espera ser uno de los 8 mejores terceros."
+        },
+        {
+          "flag": "🇶🇦",
+          "name": "Qatar",
+          "pts": 1,
+          "dg": "-8",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "1–1",
+              "opponent": "🇨🇭",
+              "result": "d"
+            },
+            {
+              "score": "0–6",
+              "opponent": "🇨🇦",
+              "result": "l"
+            },
+            {
+              "score": "1–3",
+              "opponent": "🇧🇦",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        }
+      ],
+      "pendientes": "",
+      "resumen": [
+        "✅ Suiza: 1° (7 pts, +4 DG).",
+        "✅ Canadá: 2° (4 pts, +5 DG).",
+        "✅ Bosnia H.: 3° (4 pts, -1 DG). Clasificó como mejor tercero.",
+        "⬛ Qatar: eliminado."
+      ],
+      "cerrado": true
+    },
+    {
+      "name": "Grupo C",
+      "teams": [
+        {
+          "flag": "🇧🇷",
+          "name": "Brasil",
+          "pts": 7,
+          "dg": "+6",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–1",
+              "opponent": "🇲🇦",
+              "result": "d"
+            },
+            {
+              "score": "3–0",
+              "opponent": "🇭🇹",
+              "result": "w"
+            },
+            {
+              "score": "3–0",
+              "opponent": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇲🇦",
+          "name": "Marruecos",
+          "pts": 7,
+          "dg": "+3",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–1",
+              "opponent": "🇧🇷",
+              "result": "d"
+            },
+            {
+              "score": "1–0",
+              "opponent": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+              "result": "w"
+            },
+            {
+              "score": "4–2",
+              "opponent": "🇭🇹",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+          "name": "Escocia",
+          "pts": 3,
+          "dg": "-3",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "1–0",
+              "opponent": "🇭🇹",
+              "result": "w"
+            },
+            {
+              "score": "0–1",
+              "opponent": "🇲🇦",
+              "result": "l"
+            },
+            {
+              "score": "0–3",
+              "opponent": "🇧🇷",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 3 pts (-3 DG). Espera ser uno de los 8 mejores terceros."
+        },
+        {
+          "flag": "🇭🇹",
+          "name": "Haití",
+          "pts": 0,
+          "dg": "-6",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "0–1",
+              "opponent": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+              "result": "l"
+            },
+            {
+              "score": "0–3",
+              "opponent": "🇧🇷",
+              "result": "l"
+            },
+            {
+              "score": "2–4",
+              "opponent": "🇲🇦",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        }
+      ],
+      "pendientes": "",
+      "resumen": [
+        "✅ Brasil: 1° (7 pts, +6 DG).",
+        "✅ Marruecos: 2° (7 pts, +3 DG).",
+        "⬛ Escocia: 3° (3 pts, -3 DG). Eliminado. No clasificó.",
+        "⬛ Haití: eliminado."
+      ],
+      "cerrado": true
+    },
+    {
+      "name": "Grupo D",
+      "teams": [
+        {
+          "flag": "🇺🇸",
+          "name": "EE.UU.",
+          "pts": 6,
+          "dg": "+4",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "4–1",
+              "opponent": "🇵🇾",
+              "result": "w"
+            },
+            {
+              "score": "2–0",
+              "opponent": "🇦🇺",
+              "result": "w"
+            },
+            {
+              "score": "2–3",
+              "opponent": "🇹🇷",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇦🇺",
+          "name": "Australia",
+          "pts": 4,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "2–0",
+              "opponent": "🇹🇷",
+              "result": "w"
+            },
+            {
+              "score": "0–2",
+              "opponent": "🇺🇸",
+              "result": "l"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🇵🇾",
+              "result": "d"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇵🇾",
+          "name": "Paraguay",
+          "pts": 4,
+          "dg": "-2",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–4",
+              "opponent": "🇺🇸",
+              "result": "l"
+            },
+            {
+              "score": "1–0",
+              "opponent": "🇹🇷",
+              "result": "w"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🇦🇺",
+              "result": "d"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 4 pts (-2 DG). Espera otros grupos."
+        },
+        {
+          "flag": "🇹🇷",
+          "name": "Turquía",
+          "pts": 3,
+          "dg": "-2",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "0–2",
+              "opponent": "🇦🇺",
+              "result": "l"
+            },
+            {
+              "score": "0–1",
+              "opponent": "🇵🇾",
+              "result": "l"
+            },
+            {
+              "score": "3–2",
+              "opponent": "🇺🇸",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        }
+      ],
+      "pendientes": "",
+      "resumen": [
+        "✅ EE.UU.: 1° (6 pts, +4 DG).",
+        "✅ Australia: 2° (4 pts, 0 DG). Empate con Paraguay le bastó.",
+        "✅ Paraguay: 3° (4 pts, -2 DG). Clasificó como mejor tercero.",
+        "⬛ Turquía: eliminado (3 pts, -2 DG)."
+      ],
+      "cerrado": true
+    },
+    {
+      "name": "Grupo E",
+      "teams": [
+        {
+          "flag": "🇩🇪",
+          "name": "Alemania",
+          "pts": 6,
+          "dg": "+6",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "7–1",
+              "opponent": "🇨🇼",
+              "result": "w"
+            },
+            {
+              "score": "2–1",
+              "opponent": "🇨🇮",
+              "result": "w"
+            },
+            {
+              "score": "1–2",
+              "opponent": "🇪🇨",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇨🇮",
+          "name": "Costa de Marfil",
+          "pts": 6,
+          "dg": "+2",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–0",
+              "opponent": "🇪🇨",
+              "result": "w"
+            },
+            {
+              "score": "1–2",
+              "opponent": "🇩🇪",
+              "result": "l"
+            },
+            {
+              "score": "2–0",
+              "opponent": "🇨🇼",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇪🇨",
+          "name": "Ecuador",
+          "pts": 4,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "0–1",
+              "opponent": "🇨🇮",
+              "result": "l"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🇨🇼",
+              "result": "d"
+            },
+            {
+              "score": "2–1",
+              "opponent": "🇩🇪",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 4 pts (0 DG). Buenas chances de ser uno de los 8 mejores terceros."
+        },
+        {
+          "flag": "🇨🇼",
+          "name": "Curazao",
+          "pts": 1,
+          "dg": "-8",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "1–7",
+              "opponent": "🇩🇪",
+              "result": "l"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🇪🇨",
+              "result": "d"
+            },
+            {
+              "score": "0–2",
+              "opponent": "🇨🇮",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        }
+      ],
+      "pendientes": "",
+      "resumen": [
+        "✅ Alemania: 1° (6 pts, +6 DG).",
+        "✅ Costa de Marfil: 2° (6 pts, +2 DG).",
+        "✅ Ecuador: 3° (4 pts, 0 DG). Clasificó como mejor tercero.",
+        "⬛ Curazao: eliminado (1 pt, -8 DG)."
+      ],
+      "cerrado": true
+    },
+    {
+      "name": "Grupo F",
+      "teams": [
+        {
+          "flag": "🇳🇱",
+          "name": "Países Bajos",
+          "pts": 7,
+          "dg": "+6",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "2–2",
+              "opponent": "🇯🇵",
+              "result": "d"
+            },
+            {
+              "score": "5–1",
+              "opponent": "🇸🇪",
+              "result": "w"
+            },
+            {
+              "score": "3–1",
+              "opponent": "🇹🇳",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇯🇵",
+          "name": "Japón",
+          "pts": 5,
+          "dg": "+4",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "2–2",
+              "opponent": "🇳🇱",
+              "result": "d"
+            },
+            {
+              "score": "4–0",
+              "opponent": "🇹🇳",
+              "result": "w"
+            },
+            {
+              "score": "1–1",
+              "opponent": "🇸🇪",
+              "result": "d"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇸🇪",
+          "name": "Suecia",
+          "pts": 4,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "5–1",
+              "opponent": "🇹🇳",
+              "result": "w"
+            },
+            {
+              "score": "1–5",
+              "opponent": "🇳🇱",
+              "result": "l"
+            },
+            {
+              "score": "1–1",
+              "opponent": "🇯🇵",
+              "result": "d"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 4 pts (0 DG). Buenas chances de ser mejor 3°."
+        },
+        {
+          "flag": "🇹🇳",
+          "name": "Túnez",
+          "pts": 0,
+          "dg": "-10",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "1–5",
+              "opponent": "🇸🇪",
+              "result": "l"
+            },
+            {
+              "score": "0–4",
+              "opponent": "🇯🇵",
+              "result": "l"
+            },
+            {
+              "score": "1–3",
+              "opponent": "🇳🇱",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        }
+      ],
+      "pendientes": "",
+      "resumen": [
+        "✅ Países Bajos: 1° (7 pts, +6 DG).",
+        "✅ Japón: 2° (5 pts, +4 DG).",
+        "✅ Suecia: 3° (4 pts, 0 DG). Clasificó como mejor tercero.",
+        "⬛ Túnez: eliminado (0 pts, -10 DG)."
+      ],
+      "cerrado": true
+    },
+    {
+      "name": "Grupo G",
+      "teams": [
+        {
+          "flag": "🇪🇬",
+          "name": "Egipto",
+          "pts": 5,
+          "dg": "+2",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–1",
+              "opponent": "🇧🇪",
+              "result": "d"
+            },
+            {
+              "score": "3–1",
+              "opponent": "🇳🇿",
+              "result": "w"
+            },
+            {
+              "score": "1–1",
+              "opponent": "🇮🇷",
+              "result": "d"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇮🇷",
+          "name": "Irán",
+          "pts": 3,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "2–2",
+              "opponent": "🇳🇿",
+              "result": "d"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🇧🇪",
+              "result": "d"
+            },
+            {
+              "score": "1–1",
+              "opponent": "🇪🇬",
+              "result": "d"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 3 pts (0 DG). Espera ser uno de los 8 mejores terceros."
+        },
+        {
+          "flag": "🇧🇪",
+          "name": "Bélgica",
+          "pts": 5,
+          "dg": "+4",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–1",
+              "opponent": "🇪🇬",
+              "result": "d"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🇮🇷",
+              "result": "d"
+            },
+            {
+              "score": "5–1",
+              "opponent": "🇳🇿",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇳🇿",
+          "name": "N. Zelanda",
+          "pts": 1,
+          "dg": "-6",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "2–2",
+              "opponent": "🇮🇷",
+              "result": "d"
+            },
+            {
+              "score": "1–3",
+              "opponent": "🇪🇬",
+              "result": "l"
+            },
+            {
+              "score": "1–5",
+              "opponent": "🇧🇪",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        }
+      ],
+      "pendientes": "",
+      "resumen": [
+        "✅ Bélgica: 1° (5 pts, +4 DG). Ganó el grupo por diferencia de gol.",
+        "✅ Egipto: 2° (5 pts, +2 DG). Clasificó como 2°.",
+        "⬛ Irán: 3° (3 pts, 0 DG). Eliminado. No clasificó.",
+        "⬛ N. Zelanda: eliminado (1 pt, -6 DG)."
+      ],
+      "cerrado": true
+    },
+    {
+      "name": "Grupo H",
+      "teams": [
+        {
+          "flag": "🇪🇸",
+          "name": "España",
+          "pts": 7,
+          "dg": "+5",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "0–0",
+              "opponent": "🇨🇻",
+              "result": "d"
+            },
+            {
+              "score": "4–0",
+              "opponent": "🇸🇦",
+              "result": "w"
+            },
+            {
+              "score": "1–0",
+              "opponent": "🇺🇾",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇺🇾",
+          "name": "Uruguay",
+          "pts": 2,
+          "dg": "-1",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "1–1",
+              "opponent": "🇸🇦",
+              "result": "d"
+            },
+            {
+              "score": "2–2",
+              "opponent": "🇨🇻",
+              "result": "d"
+            },
+            {
+              "score": "0–1",
+              "opponent": "🇪🇸",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        },
+        {
+          "flag": "🇨🇻",
+          "name": "Cabo Verde",
+          "pts": 3,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "0–0",
+              "opponent": "🇪🇸",
+              "result": "d"
+            },
+            {
+              "score": "2–2",
+              "opponent": "🇺🇾",
+              "result": "d"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🇸🇦",
+              "result": "d"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 3 pts (0 DG). Espera ser uno de los 8 mejores terceros."
+        },
+        {
+          "flag": "🇸🇦",
+          "name": "Arabia Saudita",
+          "pts": 2,
+          "dg": "-4",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "1–1",
+              "opponent": "🇺🇾",
+              "result": "d"
+            },
+            {
+              "score": "0–4",
+              "opponent": "🇪🇸",
+              "result": "l"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🇨🇻",
+              "result": "d"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        }
+      ],
+      "pendientes": "",
+      "resumen": [
+        "✅ España: 1° (7 pts, +5 DG). Ganó el grupo.",
+        "✅ Cabo Verde: 2° (3 pts, 0 DG). Clasificó invicto con 3 empates.",
+        "⬛ Uruguay: 3° (2 pts, -1 DG). Eliminado.",
+        "⬛ Arabia Saudita: 4° (2 pts, -4 DG). Eliminado."
+      ],
+      "cerrado": true
+    },
+    {
+      "name": "Grupo I",
+      "teams": [
+        {
+          "flag": "🇫🇷",
+          "name": "Francia",
+          "pts": 9,
+          "dg": "+8",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "3–1",
+              "opponent": "🇸🇳",
+              "result": "w"
+            },
+            {
+              "score": "3–0",
+              "opponent": "🇮🇶",
+              "result": "w"
+            },
+            {
+              "score": "4–1",
+              "opponent": "🇳🇴",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇳🇴",
+          "name": "Noruega",
+          "pts": 6,
+          "dg": "+1",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "4–1",
+              "opponent": "🇮🇶",
+              "result": "w"
+            },
+            {
+              "score": "3–2",
+              "opponent": "🇸🇳",
+              "result": "w"
+            },
+            {
+              "score": "1–4",
+              "opponent": "🇫🇷",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇸🇳",
+          "name": "Senegal",
+          "pts": 3,
+          "dg": "+2",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–3",
+              "opponent": "🇫🇷",
+              "result": "l"
+            },
+            {
+              "score": "2–3",
+              "opponent": "🇳🇴",
+              "result": "l"
+            },
+            {
+              "score": "5–0",
+              "opponent": "🇮🇶",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 3 pts (+2 DG). Espera ser uno de los 8 mejores terceros."
+        },
+        {
+          "flag": "🇮🇶",
+          "name": "Irak",
+          "pts": 0,
+          "dg": "-11",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "1–4",
+              "opponent": "🇳🇴",
+              "result": "l"
+            },
+            {
+              "score": "0–3",
+              "opponent": "🇫🇷",
+              "result": "l"
+            },
+            {
+              "score": "0–5",
+              "opponent": "🇸🇳",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        }
+      ],
+      "pendientes": "",
+      "resumen": [
+        "✅ Francia: 1° (9 pts, +8 DG). Ganó el grupo.",
+        "✅ Noruega: 2° (6 pts, +1 DG). Clasificó como 2°.",
+        "✅ Senegal: 3° (3 pts, +2 DG). Clasificó como mejor tercero.",
+        "⬛ Irak: eliminado (0 pts, -11 DG)."
+      ],
+      "cerrado": true
+    },
+    {
+      "name": "Grupo J",
+      "teams": [
+        {
+          "flag": "🇦🇷",
+          "name": "Argentina",
+          "pts": 9,
+          "dg": "+7",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "3–0",
+              "opponent": "🇩🇿",
+              "result": "w"
+            },
+            {
+              "score": "2–0",
+              "opponent": "🇦🇹",
+              "result": "w"
+            },
+            {
+              "score": "3–1",
+              "opponent": "🇯🇴",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇦🇹",
+          "name": "Austria",
+          "pts": 4,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "3–1",
+              "opponent": "🇯🇴",
+              "result": "w"
+            },
+            {
+              "score": "0–2",
+              "opponent": "🇦🇷",
+              "result": "l"
+            },
+            {
+              "score": "3–3",
+              "opponent": "🇩🇿",
+              "result": "d"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇩🇿",
+          "name": "Argelia",
+          "pts": 4,
+          "dg": "-2",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "0–3",
+              "opponent": "🇦🇷",
+              "result": "l"
+            },
+            {
+              "score": "2–1",
+              "opponent": "🇯🇴",
+              "result": "w"
+            },
+            {
+              "score": "3–3",
+              "opponent": "🇦🇹",
+              "result": "d"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 4 pts (-2 DG). Espera otros grupos."
+        },
+        {
+          "flag": "🇯🇴",
+          "name": "Jordania",
+          "pts": 0,
+          "dg": "-5",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "1–3",
+              "opponent": "🇦🇹",
+              "result": "l"
+            },
+            {
+              "score": "1–2",
+              "opponent": "🇩🇿",
+              "result": "l"
+            },
+            {
+              "score": "1–3",
+              "opponent": "🇦🇷",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        }
+      ],
+      "pendientes": "",
+      "resumen": [
+        "✅ Argentina: 1° (9 pts, +7 DG). Ganó los 3 partidos.",
+        "✅ Austria: 2° (4 pts, 0 DG). Clasificó como 2°.",
+        "✅ Argelia: 3° (4 pts, -2 DG). Clasificó como mejor tercero.",
+        "⬛ Jordania: eliminado (0 pts, -5 DG). Perdió los 3 partidos."
+      ],
+      "cerrado": true
+    },
+    {
+      "name": "Grupo K",
+      "teams": [
+        {
+          "flag": "🇨🇴",
+          "name": "Colombia",
+          "pts": 7,
+          "dg": "+3",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "3–1",
+              "opponent": "🇺🇿",
+              "result": "w"
+            },
+            {
+              "score": "1–0",
+              "opponent": "🇨🇩",
+              "result": "w"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🇵🇹",
+              "result": "d"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇵🇹",
+          "name": "Portugal",
+          "pts": 5,
+          "dg": "+5",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–1",
+              "opponent": "🇨🇩",
+              "result": "d"
+            },
+            {
+              "score": "5–0",
+              "opponent": "🇺🇿",
+              "result": "w"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🇨🇴",
+              "result": "d"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇨🇩",
+          "name": "RD Congo",
+          "pts": 4,
+          "dg": "+1",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–1",
+              "opponent": "🇵🇹",
+              "result": "d"
+            },
+            {
+              "score": "0–1",
+              "opponent": "🇨🇴",
+              "result": "l"
+            },
+            {
+              "score": "3–1",
+              "opponent": "🇺🇿",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 4 pts (+1 DG). Espera ser uno de los 8 mejores terceros."
+        },
+        {
+          "flag": "🇺🇿",
+          "name": "Uzbekistán",
+          "pts": 0,
+          "dg": "-9",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "1–3",
+              "opponent": "🇨🇴",
+              "result": "l"
+            },
+            {
+              "score": "0–5",
+              "opponent": "🇵🇹",
+              "result": "l"
+            },
+            {
+              "score": "1–3",
+              "opponent": "🇨🇩",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        }
+      ],
+      "pendientes": "",
+      "resumen": [
+        "✅ Colombia: 1° (7 pts, +3 DG). Ganó el grupo con 2 victorias y un empate.",
+        "✅ Portugal: 2° (5 pts, +5 DG). Clasificó como 2°.",
+        "✅ RD Congo: 3° (4 pts, +1 DG). Clasificó como mejor tercero.",
+        "⬛ Uzbekistán: eliminado (0 pts, -9 DG). Perdió los 3 partidos."
+      ],
+      "cerrado": true
+    },
+    {
+      "name": "Grupo L",
+      "teams": [
+        {
+          "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+          "name": "Inglaterra",
+          "pts": 7,
+          "dg": "+4",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "4–2",
+              "opponent": "🇭🇷",
+              "result": "w"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🇬🇭",
+              "result": "d"
+            },
+            {
+              "score": "2–0",
+              "opponent": "🇵🇦",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇭🇷",
+          "name": "Croacia",
+          "pts": 6,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "2–4",
+              "opponent": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+              "result": "l"
+            },
+            {
+              "score": "1–0",
+              "opponent": "🇵🇦",
+              "result": "w"
+            },
+            {
+              "score": "2–1",
+              "opponent": "🇬🇭",
+              "result": "w"
+            }
+          ],
+          "pendientes": [],
+          "req": ""
+        },
+        {
+          "flag": "🇬🇭",
+          "name": "Ghana",
+          "pts": 4,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
+          "matches": [
+            {
+              "score": "1–0",
+              "opponent": "🇵🇦",
+              "result": "w"
+            },
+            {
+              "score": "0–0",
+              "opponent": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+              "result": "d"
+            },
+            {
+              "score": "1–2",
+              "opponent": "🇭🇷",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "3° con 4 pts (0 DG). Espera ser uno de los 8 mejores terceros."
+        },
+        {
+          "flag": "🇵🇦",
+          "name": "Panamá",
+          "pts": 0,
+          "dg": "-4",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
+          "matches": [
+            {
+              "score": "0–1",
+              "opponent": "🇬🇭",
+              "result": "l"
+            },
+            {
+              "score": "0–1",
+              "opponent": "🇭🇷",
+              "result": "l"
+            },
+            {
+              "score": "0–2",
+              "opponent": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+              "result": "l"
+            }
+          ],
+          "pendientes": [],
+          "req": "Eliminado."
+        }
+      ],
+      "pendientes": "",
+      "resumen": [
+        "✅ Inglaterra: 1° (7 pts, +4 DG). Ganó el grupo.",
+        "✅ Croacia: 2° (6 pts, 0 DG). Clasificó como 2°.",
+        "✅ Ghana: 3° (4 pts, 0 DG). Clasificó como mejor tercero.",
+        "⬛ Panamá: eliminado (0 pts, -4 DG)."
+      ],
+      "cerrado": true
+    }
+  ],
+  "upcoming": [
+    {
+      "time": "28 Jun 16:00",
+      "home": "🇿🇦 Sudáfrica",
+      "away": "🇨🇦 Canadá",
+      "group": "1/16"
+    },
+    {
+      "time": "29 Jun 14:00",
+      "home": "🇧🇷 Brasil",
+      "away": "🇯🇵 Japón",
+      "group": "1/16"
+    },
+    {
+      "time": "29 Jun 17:30",
+      "home": "🇩🇪 Alemania",
+      "away": "🇵🇾 Paraguay",
+      "group": "1/16"
+    },
+    {
+      "time": "29 Jun 22:00",
+      "home": "🇳🇱 Países Bajos",
+      "away": "🇲🇦 Marruecos",
+      "group": "1/16"
+    },
+    {
+      "time": "30 Jun 14:00",
+      "home": "🇨🇮 Costa de Marfil",
+      "away": "🇳🇴 Noruega",
+      "group": "1/16"
+    },
+    {
+      "time": "30 Jun 18:00",
+      "home": "🇫🇷 Francia",
+      "away": "🇸🇪 Suecia",
+      "group": "1/16"
+    },
+    {
+      "time": "30 Jun 22:00",
+      "home": "🇲🇽 México",
+      "away": "🇪🇨 Ecuador",
+      "group": "1/16"
+    },
+    {
+      "time": "1 Jul 13:00",
+      "home": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra",
+      "away": "🇨🇩 RD Congo",
+      "group": "1/16"
+    },
+    {
+      "time": "1 Jul 17:00",
+      "home": "🇧🇪 Bélgica",
+      "away": "🇸🇳 Senegal",
+      "group": "1/16"
+    },
+    {
+      "time": "1 Jul 21:00",
+      "home": "🇺🇸 EE.UU.",
+      "away": "🇧🇦 Bosnia H.",
+      "group": "1/16"
+    },
+    {
+      "time": "2 Jul 16:00",
+      "home": "🇪🇸 España",
+      "away": "🇦🇹 Austria",
+      "group": "1/16"
+    },
+    {
+      "time": "2 Jul 20:00",
+      "home": "🇵🇹 Portugal",
+      "away": "🇭🇷 Croacia",
+      "group": "1/16"
+    },
+    {
+      "time": "3 Jul 00:00",
+      "home": "🇨🇭 Suiza",
+      "away": "🇩🇿 Argelia",
+      "group": "1/16"
+    },
+    {
+      "time": "3 Jul 15:00",
+      "home": "🇦🇺 Australia",
+      "away": "🇪🇬 Egipto",
+      "group": "1/16"
+    },
+    {
+      "time": "3 Jul 19:00",
+      "home": "🇦🇷 Argentina",
+      "away": "🇨🇻 Cabo Verde",
+      "group": "1/16"
+    },
+    {
+      "time": "3 Jul 22:30",
+      "home": "🇨🇴 Colombia",
+      "away": "🇬🇭 Ghana",
+      "group": "1/16"
+    }
+  ]
+}

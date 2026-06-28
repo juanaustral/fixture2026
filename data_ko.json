@@ -1,0 +1,310 @@
+{
+  "updated": "2026-06-28T00:00:00-03:00",
+  "source": "Flashscore",
+  "rounds": [
+    {
+      "name": "16avos de final",
+      "matches": [
+        {
+          "id": 1,
+          "date": "28 jun 16:00",
+          "home": "🇿🇦 Sudáfrica",
+          "away": "🇨🇦 Canadá",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 2,
+          "date": "29 jun 14:00",
+          "home": "🇧🇷 Brasil",
+          "away": "🇯🇵 Japón",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 3,
+          "date": "29 jun 17:30",
+          "home": "🇩🇪 Alemania",
+          "away": "🇵🇾 Paraguay",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 4,
+          "date": "29 jun 22:00",
+          "home": "🇳🇱 Países Bajos",
+          "away": "🇲🇦 Marruecos",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 5,
+          "date": "30 jun 14:00",
+          "home": "🇨🇮 Costa de Marfil",
+          "away": "🇳🇴 Noruega",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 6,
+          "date": "30 jun 18:00",
+          "home": "🇫🇷 Francia",
+          "away": "🇸🇪 Suecia",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 7,
+          "date": "30 jun 22:00",
+          "home": "🇲🇽 México",
+          "away": "🇪🇨 Ecuador",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 8,
+          "date": "1 jul 13:00",
+          "home": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra",
+          "away": "🇨🇩 RD Congo",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 9,
+          "date": "1 jul 17:00",
+          "home": "🇧🇪 Bélgica",
+          "away": "🇸🇳 Senegal",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 10,
+          "date": "1 jul 21:00",
+          "home": "🇺🇸 EE.UU.",
+          "away": "🇧🇦 Bosnia H.",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 11,
+          "date": "2 jul 16:00",
+          "home": "🇪🇸 España",
+          "away": "🇦🇹 Austria",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 12,
+          "date": "2 jul 20:00",
+          "home": "🇵🇹 Portugal",
+          "away": "🇭🇷 Croacia",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 13,
+          "date": "3 jul 00:00",
+          "home": "🇨🇭 Suiza",
+          "away": "🇩🇿 Argelia",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 14,
+          "date": "3 jul 15:00",
+          "home": "🇦🇺 Australia",
+          "away": "🇪🇬 Egipto",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 15,
+          "date": "3 jul 19:00",
+          "home": "🇦🇷 Argentina",
+          "away": "🇨🇻 Cabo Verde",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 16,
+          "date": "3 jul 22:30",
+          "home": "🇨🇴 Colombia",
+          "away": "🇬🇭 Ghana",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    {
+      "name": "Octavos de final",
+      "matches": [
+        {
+          "id": 101,
+          "date": "5-8 jul",
+          "home": "Ganador M1",
+          "away": "Ganador M2",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 102,
+          "date": "5-8 jul",
+          "home": "Ganador M3",
+          "away": "Ganador M4",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 103,
+          "date": "5-8 jul",
+          "home": "Ganador M5",
+          "away": "Ganador M6",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 104,
+          "date": "5-8 jul",
+          "home": "Ganador M7",
+          "away": "Ganador M8",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 105,
+          "date": "5-8 jul",
+          "home": "Ganador M9",
+          "away": "Ganador M10",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 106,
+          "date": "5-8 jul",
+          "home": "Ganador M11",
+          "away": "Ganador M12",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 107,
+          "date": "5-8 jul",
+          "home": "Ganador M13",
+          "away": "Ganador M14",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 108,
+          "date": "5-8 jul",
+          "home": "Ganador M15",
+          "away": "Ganador M16",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    {
+      "name": "Cuartos de final",
+      "matches": [
+        {
+          "id": 201,
+          "date": "10-11 jul",
+          "home": "Ganador O1",
+          "away": "Ganador O2",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 202,
+          "date": "10-11 jul",
+          "home": "Ganador O3",
+          "away": "Ganador O4",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 203,
+          "date": "10-11 jul",
+          "home": "Ganador O5",
+          "away": "Ganador O6",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 204,
+          "date": "10-11 jul",
+          "home": "Ganador O7",
+          "away": "Ganador O8",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    {
+      "name": "Semifinales",
+      "matches": [
+        {
+          "id": 301,
+          "date": "14-15 jul",
+          "home": "Ganador C1",
+          "away": "Ganador C2",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        },
+        {
+          "id": 302,
+          "date": "14-15 jul",
+          "home": "Ganador C3",
+          "away": "Ganador C4",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        }
+      ]
+    },
+    {
+      "name": "Final",
+      "matches": [
+        {
+          "id": 401,
+          "date": "19 jul",
+          "home": "Ganador S1",
+          "away": "Ganador S2",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming"
+        }
+      ]
+    }
+  ]
+}
