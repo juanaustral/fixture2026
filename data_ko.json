@@ -1,6 +1,456 @@
 {
   "updated": "2026-06-28T00:00:00-03:00",
   "source": "Flashscore",
+  "teams": {
+    "Sudáfrica": {
+      "flag": "🇿🇦",
+      "group": "A",
+      "pos": "2°",
+      "pts": 4,
+      "dg": "-1",
+      "played": 3,
+      "form": [
+        "D",
+        "E",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Canadá": {
+      "flag": "🇨🇦",
+      "group": "B",
+      "pos": "2°",
+      "pts": 4,
+      "dg": "+5",
+      "played": 3,
+      "form": [
+        "E",
+        "V",
+        "D"
+      ],
+      "status": "Clasificado"
+    },
+    "Brasil": {
+      "flag": "🇧🇷",
+      "group": "C",
+      "pos": "1°",
+      "pts": 7,
+      "dg": "+6",
+      "played": 3,
+      "form": [
+        "E",
+        "V",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Japón": {
+      "flag": "🇯🇵",
+      "group": "F",
+      "pos": "2°",
+      "pts": 5,
+      "dg": "+4",
+      "played": 3,
+      "form": [
+        "E",
+        "V",
+        "E"
+      ],
+      "status": "Clasificado"
+    },
+    "Alemania": {
+      "flag": "🇩🇪",
+      "group": "E",
+      "pos": "1°",
+      "pts": 6,
+      "dg": "+6",
+      "played": 3,
+      "form": [
+        "V",
+        "V",
+        "D"
+      ],
+      "status": "Clasificado"
+    },
+    "Paraguay": {
+      "flag": "🇵🇾",
+      "group": "D",
+      "pos": "3°",
+      "pts": 4,
+      "dg": "-2",
+      "played": 3,
+      "form": [
+        "D",
+        "V",
+        "E"
+      ],
+      "status": "Clasificado"
+    },
+    "Países Bajos": {
+      "flag": "🇳🇱",
+      "group": "F",
+      "pos": "1°",
+      "pts": 7,
+      "dg": "+6",
+      "played": 3,
+      "form": [
+        "E",
+        "V",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Marruecos": {
+      "flag": "🇲🇦",
+      "group": "C",
+      "pos": "2°",
+      "pts": 7,
+      "dg": "+3",
+      "played": 3,
+      "form": [
+        "E",
+        "V",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Costa de Marfil": {
+      "flag": "🇨🇮",
+      "group": "E",
+      "pos": "2°",
+      "pts": 6,
+      "dg": "+2",
+      "played": 3,
+      "form": [
+        "V",
+        "D",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Noruega": {
+      "flag": "🇳🇴",
+      "group": "I",
+      "pos": "2°",
+      "pts": 6,
+      "dg": "+1",
+      "played": 3,
+      "form": [
+        "V",
+        "V",
+        "D"
+      ],
+      "status": "Clasificado"
+    },
+    "Francia": {
+      "flag": "🇫🇷",
+      "group": "I",
+      "pos": "1°",
+      "pts": 9,
+      "dg": "+8",
+      "played": 3,
+      "form": [
+        "V",
+        "V",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Suecia": {
+      "flag": "🇸🇪",
+      "group": "F",
+      "pos": "3°",
+      "pts": 4,
+      "dg": "0",
+      "played": 3,
+      "form": [
+        "V",
+        "D",
+        "E"
+      ],
+      "status": "Clasificado"
+    },
+    "México": {
+      "flag": "🇲🇽",
+      "group": "A",
+      "pos": "1°",
+      "pts": 9,
+      "dg": "+6",
+      "played": 3,
+      "form": [
+        "V",
+        "V",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Ecuador": {
+      "flag": "🇪🇨",
+      "group": "E",
+      "pos": "3°",
+      "pts": 4,
+      "dg": "0",
+      "played": 3,
+      "form": [
+        "D",
+        "E",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Inglaterra": {
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "group": "L",
+      "pos": "1°",
+      "pts": 7,
+      "dg": "+4",
+      "played": 3,
+      "form": [
+        "V",
+        "E",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "RD Congo": {
+      "flag": "🇨🇩",
+      "group": "K",
+      "pos": "3°",
+      "pts": 4,
+      "dg": "+1",
+      "played": 3,
+      "form": [
+        "E",
+        "D",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Bélgica": {
+      "flag": "🇧🇪",
+      "group": "G",
+      "pos": "1°",
+      "pts": 5,
+      "dg": "+4",
+      "played": 3,
+      "form": [
+        "E",
+        "E",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Senegal": {
+      "flag": "🇸🇳",
+      "group": "I",
+      "pos": "3°",
+      "pts": 3,
+      "dg": "+2",
+      "played": 3,
+      "form": [
+        "D",
+        "D",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "EE.UU.": {
+      "flag": "🇺🇸",
+      "group": "D",
+      "pos": "1°",
+      "pts": 6,
+      "dg": "+4",
+      "played": 3,
+      "form": [
+        "V",
+        "V",
+        "D"
+      ],
+      "status": "Clasificado"
+    },
+    "Bosnia H.": {
+      "flag": "🇧🇦",
+      "group": "B",
+      "pos": "3°",
+      "pts": 4,
+      "dg": "-1",
+      "played": 3,
+      "form": [
+        "E",
+        "D",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "España": {
+      "flag": "🇪🇸",
+      "group": "H",
+      "pos": "1°",
+      "pts": 7,
+      "dg": "+5",
+      "played": 3,
+      "form": [
+        "E",
+        "V",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Austria": {
+      "flag": "🇦🇹",
+      "group": "J",
+      "pos": "2°",
+      "pts": 4,
+      "dg": "0",
+      "played": 3,
+      "form": [
+        "V",
+        "D",
+        "E"
+      ],
+      "status": "Clasificado"
+    },
+    "Portugal": {
+      "flag": "🇵🇹",
+      "group": "K",
+      "pos": "2°",
+      "pts": 5,
+      "dg": "+5",
+      "played": 3,
+      "form": [
+        "E",
+        "V",
+        "E"
+      ],
+      "status": "Clasificado"
+    },
+    "Croacia": {
+      "flag": "🇭🇷",
+      "group": "L",
+      "pos": "2°",
+      "pts": 6,
+      "dg": "0",
+      "played": 3,
+      "form": [
+        "D",
+        "V",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Suiza": {
+      "flag": "🇨🇭",
+      "group": "B",
+      "pos": "1°",
+      "pts": 7,
+      "dg": "+4",
+      "played": 3,
+      "form": [
+        "E",
+        "V",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Argelia": {
+      "flag": "🇩🇿",
+      "group": "J",
+      "pos": "3°",
+      "pts": 4,
+      "dg": "-2",
+      "played": 3,
+      "form": [
+        "D",
+        "V",
+        "E"
+      ],
+      "status": "Clasificado"
+    },
+    "Australia": {
+      "flag": "🇦🇺",
+      "group": "D",
+      "pos": "2°",
+      "pts": 4,
+      "dg": "0",
+      "played": 3,
+      "form": [
+        "V",
+        "D",
+        "E"
+      ],
+      "status": "Clasificado"
+    },
+    "Egipto": {
+      "flag": "🇪🇬",
+      "group": "G",
+      "pos": "2°",
+      "pts": 5,
+      "dg": "+2",
+      "played": 3,
+      "form": [
+        "E",
+        "V",
+        "E"
+      ],
+      "status": "Clasificado"
+    },
+    "Argentina": {
+      "flag": "🇦🇷",
+      "group": "J",
+      "pos": "1°",
+      "pts": 9,
+      "dg": "+7",
+      "played": 3,
+      "form": [
+        "V",
+        "V",
+        "V"
+      ],
+      "status": "Clasificado"
+    },
+    "Cabo Verde": {
+      "flag": "🇨🇻",
+      "group": "H",
+      "pos": "2°",
+      "pts": 3,
+      "dg": "0",
+      "played": 3,
+      "form": [
+        "E",
+        "E",
+        "E"
+      ],
+      "status": "Clasificado"
+    },
+    "Colombia": {
+      "flag": "🇨🇴",
+      "group": "K",
+      "pos": "1°",
+      "pts": 7,
+      "dg": "+3",
+      "played": 3,
+      "form": [
+        "V",
+        "V",
+        "E"
+      ],
+      "status": "Clasificado"
+    },
+    "Ghana": {
+      "flag": "🇬🇭",
+      "group": "L",
+      "pos": "3°",
+      "pts": 4,
+      "dg": "0",
+      "played": 3,
+      "form": [
+        "V",
+        "E",
+        "D"
+      ],
+      "status": "Clasificado"
+    }
+  },
   "rounds": [
     {
       "name": "16avos de final",
@@ -8,146 +458,162 @@
         {
           "id": 1,
           "date": "28 jun 16:00",
-          "home": "🇿🇦 Sudáfrica",
-          "away": "🇨🇦 Canadá",
+          "home": "Sudáfrica",
+          "away": "Canadá",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "MetLife Stadium, NY"
         },
         {
           "id": 2,
           "date": "29 jun 14:00",
-          "home": "🇧🇷 Brasil",
-          "away": "🇯🇵 Japón",
+          "home": "Brasil",
+          "away": "Japón",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "AT&T Stadium, TX"
         },
         {
           "id": 3,
           "date": "29 jun 17:30",
-          "home": "🇩🇪 Alemania",
-          "away": "🇵🇾 Paraguay",
+          "home": "Alemania",
+          "away": "Paraguay",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "SoFi Stadium, CA"
         },
         {
           "id": 4,
           "date": "29 jun 22:00",
-          "home": "🇳🇱 Países Bajos",
-          "away": "🇲🇦 Marruecos",
+          "home": "Países Bajos",
+          "away": "Marruecos",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "Mercedes-Benz, GA"
         },
         {
           "id": 5,
           "date": "30 jun 14:00",
-          "home": "🇨🇮 Costa de Marfil",
-          "away": "🇳🇴 Noruega",
+          "home": "Costa de Marfil",
+          "away": "Noruega",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "Gillette Stadium, MA"
         },
         {
           "id": 6,
           "date": "30 jun 18:00",
-          "home": "🇫🇷 Francia",
-          "away": "🇸🇪 Suecia",
+          "home": "Francia",
+          "away": "Suecia",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "Arrowhead, MO"
         },
         {
           "id": 7,
           "date": "30 jun 22:00",
-          "home": "🇲🇽 México",
-          "away": "🇪🇨 Ecuador",
+          "home": "México",
+          "away": "Ecuador",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "Estadio Azteca, MX"
         },
         {
           "id": 8,
           "date": "1 jul 13:00",
-          "home": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra",
-          "away": "🇨🇩 RD Congo",
+          "home": "Inglaterra",
+          "away": "RD Congo",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "Wembley, UK"
         },
         {
           "id": 9,
           "date": "1 jul 17:00",
-          "home": "🇧🇪 Bélgica",
-          "away": "🇸🇳 Senegal",
+          "home": "Bélgica",
+          "away": "Senegal",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "BC Place, CA"
         },
         {
           "id": 10,
           "date": "1 jul 21:00",
-          "home": "🇺🇸 EE.UU.",
-          "away": "🇧🇦 Bosnia H.",
+          "home": "EE.UU.",
+          "away": "Bosnia H.",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "Lumen Field, WA"
         },
         {
           "id": 11,
           "date": "2 jul 16:00",
-          "home": "🇪🇸 España",
-          "away": "🇦🇹 Austria",
+          "home": "España",
+          "away": "Austria",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "MetLife Stadium, NY"
         },
         {
           "id": 12,
           "date": "2 jul 20:00",
-          "home": "🇵🇹 Portugal",
-          "away": "🇭🇷 Croacia",
+          "home": "Portugal",
+          "away": "Croacia",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "Hard Rock, FL"
         },
         {
           "id": 13,
           "date": "3 jul 00:00",
-          "home": "🇨🇭 Suiza",
-          "away": "🇩🇿 Argelia",
+          "home": "Suiza",
+          "away": "Argelia",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "NRG Stadium, TX"
         },
         {
           "id": 14,
           "date": "3 jul 15:00",
-          "home": "🇦🇺 Australia",
-          "away": "🇪🇬 Egipto",
+          "home": "Australia",
+          "away": "Egipto",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "Levi's, CA"
         },
         {
           "id": 15,
           "date": "3 jul 19:00",
-          "home": "🇦🇷 Argentina",
-          "away": "🇨🇻 Cabo Verde",
+          "home": "Argentina",
+          "away": "Cabo Verde",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "River Plate, AR"
         },
         {
           "id": 16,
           "date": "3 jul 22:30",
-          "home": "🇨🇴 Colombia",
-          "away": "🇬🇭 Ghana",
+          "home": "Colombia",
+          "away": "Ghana",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "Camping World, FL"
         }
       ]
     },
@@ -157,74 +623,82 @@
         {
           "id": 101,
           "date": "5-8 jul",
-          "home": "Ganador M1",
-          "away": "Ganador M2",
+          "home": "Gan. M1",
+          "away": "Gan. M2",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         },
         {
           "id": 102,
           "date": "5-8 jul",
-          "home": "Ganador M3",
-          "away": "Ganador M4",
+          "home": "Gan. M3",
+          "away": "Gan. M4",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         },
         {
           "id": 103,
           "date": "5-8 jul",
-          "home": "Ganador M5",
-          "away": "Ganador M6",
+          "home": "Gan. M5",
+          "away": "Gan. M6",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         },
         {
           "id": 104,
           "date": "5-8 jul",
-          "home": "Ganador M7",
-          "away": "Ganador M8",
+          "home": "Gan. M7",
+          "away": "Gan. M8",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         },
         {
           "id": 105,
           "date": "5-8 jul",
-          "home": "Ganador M9",
-          "away": "Ganador M10",
+          "home": "Gan. M9",
+          "away": "Gan. M10",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         },
         {
           "id": 106,
           "date": "5-8 jul",
-          "home": "Ganador M11",
-          "away": "Ganador M12",
+          "home": "Gan. M11",
+          "away": "Gan. M12",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         },
         {
           "id": 107,
           "date": "5-8 jul",
-          "home": "Ganador M13",
-          "away": "Ganador M14",
+          "home": "Gan. M13",
+          "away": "Gan. M14",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         },
         {
           "id": 108,
           "date": "5-8 jul",
-          "home": "Ganador M15",
-          "away": "Ganador M16",
+          "home": "Gan. M15",
+          "away": "Gan. M16",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         }
       ]
     },
@@ -234,38 +708,42 @@
         {
           "id": 201,
           "date": "10-11 jul",
-          "home": "Ganador O1",
-          "away": "Ganador O2",
+          "home": "Gan. O1",
+          "away": "Gan. O2",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         },
         {
           "id": 202,
           "date": "10-11 jul",
-          "home": "Ganador O3",
-          "away": "Ganador O4",
+          "home": "Gan. O3",
+          "away": "Gan. O4",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         },
         {
           "id": 203,
           "date": "10-11 jul",
-          "home": "Ganador O5",
-          "away": "Ganador O6",
+          "home": "Gan. O5",
+          "away": "Gan. O6",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         },
         {
           "id": 204,
           "date": "10-11 jul",
-          "home": "Ganador O7",
-          "away": "Ganador O8",
+          "home": "Gan. O7",
+          "away": "Gan. O8",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         }
       ]
     },
@@ -275,20 +753,22 @@
         {
           "id": 301,
           "date": "14-15 jul",
-          "home": "Ganador C1",
-          "away": "Ganador C2",
+          "home": "Gan. C1",
+          "away": "Gan. C2",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         },
         {
           "id": 302,
           "date": "14-15 jul",
-          "home": "Ganador C3",
-          "away": "Ganador C4",
+          "home": "Gan. C3",
+          "away": "Gan. C4",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "—"
         }
       ]
     },
@@ -297,12 +777,13 @@
       "matches": [
         {
           "id": 401,
-          "date": "19 jul",
-          "home": "Ganador S1",
-          "away": "Ganador S2",
+          "date": "19 jul 16:00",
+          "home": "Gan. S1",
+          "away": "Gan. S2",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming"
+          "status": "upcoming",
+          "stadium": "MetLife Stadium, NJ"
         }
       ]
     }
