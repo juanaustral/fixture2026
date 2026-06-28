@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-28T01:52:26.673035+00:00",
-  "source": "Flashscore",
+  "updated": "2026-06-28T03:45:00+00:00",
+  "source": "Flashscore + FOX Sports",
   "groups": [
     {
       "name": "Grupo A",
@@ -1169,10 +1169,10 @@
         {
           "flag": "🇦🇷",
           "name": "Argentina",
-          "pts": 6,
-          "dg": "+5",
-          "played": 2,
-          "pending": 1,
+          "pts": 9,
+          "dg": "+7",
+          "played": 3,
+          "pending": 0,
           "status": "Clasificado",
           "sclass": "st-c",
           "matches": [
@@ -1185,26 +1185,25 @@
               "score": "2–0",
               "opponent": "🇦🇹",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 23:00",
-              "vs": "Jordania",
-              "flag": "🇯🇴"
+              "score": "3–1",
+              "opponent": "🇯🇴",
+              "result": "w"
             }
           ],
+          "pendientes": [],
           "req": ""
         },
         {
           "flag": "🇦🇹",
           "name": "Austria",
-          "pts": 3,
-          "dg": "+0",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "pts": 4,
+          "dg": "0",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
           "matches": [
             {
               "score": "3–1",
@@ -1215,26 +1214,25 @@
               "score": "0–2",
               "opponent": "🇦🇷",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 23:00",
-              "vs": "Argelia",
-              "flag": "🇩🇿"
+              "score": "2–2",
+              "opponent": "🇩🇿",
+              "result": "d"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": ""
         },
         {
           "flag": "🇩🇿",
           "name": "Argelia",
-          "pts": 3,
+          "pts": 4,
           "dg": "-2",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "played": 3,
+          "pending": 0,
+          "status": "Complicado",
+          "sclass": "st-p",
           "matches": [
             {
               "score": "0–3",
@@ -1245,26 +1243,25 @@
               "score": "2–1",
               "opponent": "🇯🇴",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 23:00",
-              "vs": "Austria",
-              "flag": "🇦🇹"
+              "score": "2–2",
+              "opponent": "🇦🇹",
+              "result": "d"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": "3° con 4 pts (-2 DG). Espera otros grupos."
         },
         {
           "flag": "🇯🇴",
           "name": "Jordania",
           "pts": 0,
-          "dg": "-3",
-          "played": 2,
-          "pending": 1,
-          "status": "Complicado",
-          "sclass": "st-p",
+          "dg": "-5",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
           "matches": [
             {
               "score": "1–3",
@@ -1275,25 +1272,25 @@
               "score": "1–2",
               "opponent": "🇩🇿",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 23:00",
-              "vs": "Argentina",
-              "flag": "🇦🇷"
+              "score": "1–3",
+              "opponent": "🇦🇷",
+              "result": "l"
             }
           ],
-          "req": "Ganar y esperar."
+          "pendientes": [],
+          "req": "Eliminado."
         }
       ],
-      "pendientes": "🇩🇿 vs 🇦🇹 · 🇯🇴 vs 🇦🇷",
+      "pendientes": "",
       "resumen": [
-        "✅ Argentina: clasificada.",
-        "🔵 Austria vs Argelia: duelo directo : el ganador clasifica.",
-        "🔴 Jordania: necesita ganarle a Argentina y esperar otros resultados."
+        "✅ Argentina: 1° (9 pts, +7 DG). Ganó los 3 partidos.",
+        "✅ Austria: 2° (4 pts, 0 DG). Clasificó como 2° con un empate 2-2 ante Argelia.",
+        "🔴 Argelia: 3° (4 pts, -2 DG). Espera otros grupos.",
+        "🔴 Jordania: eliminado (0 pts, -5 DG). Perdió los 3 partidos."
       ],
-      "cerrado": false
+      "cerrado": true
     },
     {
       "name": "Grupo K",
@@ -1554,18 +1551,5 @@
       "cerrado": true
     }
   ],
-  "upcoming": [
-    {
-      "home": "🇩🇿 Argelia",
-      "away": "🇦🇹 Austria",
-      "group": "J",
-      "time": "27 Jun 23:00"
-    },
-    {
-      "home": "🇯🇴 Jordania",
-      "away": "🇦🇷 Argentina",
-      "group": "J",
-      "time": "27 Jun 23:00"
-    }
-  ]
+  "upcoming": []
 }
