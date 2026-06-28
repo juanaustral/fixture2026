@@ -29,22 +29,30 @@
   .bracket-wrap{overflow-x:auto;padding-bottom:20px;-webkit-overflow-scrolling:touch}
   .bracket{display:flex;gap:20px;min-width:max-content;padding:8px 4px}
   .round{display:flex;flex-direction:column;justify-content:space-around;gap:12px;min-width:240px}
-  .round-title{text-align:center;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#fff;margin-bottom:4px;padding:5px 10px;background:var(--blue);border-radius:6px}
+  .round-title{text-align:center;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#fff;margin-bottom:6px;padding:6px 12px;background:var(--blue);border-radius:6px}
   .round:last-child .round-title{background:linear-gradient(135deg,#c9a84c,#f5d76e,#c9a84c);color:var(--dgray)}
-  .match-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);min-width:215px;transition:all .2s;position:relative}
+  .match-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);min-width:235px;transition:all .2s;position:relative}
   .match-card:hover{box-shadow:0 4px 18px rgba(0,0,0,.1);transform:translateY(-2px)}
   .match-card.played{background:linear-gradient(135deg,rgba(60,172,59,.04),var(--card))}
   .match-card.played .winner .name{font-weight:800}
   .match-card.live{background:linear-gradient(135deg,rgba(230,29,37,.04),var(--card));border-color:var(--red);animation:livePulse 2s infinite}
   @keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(230,29,37,.2)}50%{box-shadow:0 0 0 6px rgba(230,29,37,0)}}
-  .match-card .mc-date{display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
-  .match-card .mc-date .stadium{font-size:.5rem;color:var(--muted);opacity:.6}
-  .match-card .teams{display:flex;flex-direction:column;gap:2px}
-  .match-card .team-row{display:flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.03)}
+  .match-card .mc-date{display:flex;align-items:center;gap:6px;margin-bottom:10px;font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+  .match-card .mc-date .stadium{font-size:.55rem;color:var(--muted);opacity:.6}
+  .match-card .teams{display:flex;flex-direction:column;gap:3px}
+  .match-card .team-row{display:flex;align-items:center;gap:8px;font-size:.92rem;font-weight:600;padding:5px 0;border-bottom:1px solid rgba(0,0,0,.03)}
   .match-card .team-row:last-child{border-bottom:none}
-  .match-card .team-row .flag{font-size:1.1rem;width:24px;text-align:center;flex-shrink:0}
+  .match-card .team-row .flag{font-size:1.2rem;width:26px;text-align:center;flex-shrink:0}
   .match-card .team-row .name{cursor:pointer;flex:1;min-width:0}
   .match-card .team-row .name:hover{color:var(--blue);text-decoration:underline}
+  .match-card .team-row .score{font-weight:900;font-size:1rem;color:var(--blue);min-width:32px;text-align:center;flex-shrink:0}
+  .match-card .team-stats{font-size:.62rem;color:var(--muted);display:flex;gap:10px;margin-top:2px}
+  .match-card .team-stats .stat-tag{background:rgba(42,57,141,.06);padding:2px 6px;border-radius:3px;white-space:nowrap}
+  .match-card .form-dots{display:flex;gap:2px;margin-left:auto}
+  .match-card .form-dots .fd{width:12px;height:12px;border-radius:2px;font-size:.5rem;display:flex;align-items:center;justify-content:center}
+  .match-card .form-dots .fd.w{background:rgba(60,172,59,.15);color:var(--green)}.match-card .form-dots .fd.d{background:rgba(184,150,12,.1);color:#b8960c}
+  .match-card .form-dots .fd.l{background:rgba(230,29,37,.1);color:var(--red)}
+  .match-card .t-match-line{font-size:.64rem;color:var(--muted);padding-left:34px;margin-top:3px;line-height:1.5;letter-spacing:.2px}
   /* Team profile modal */
   #teamModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;align-items:center;justify-content:center}
   #teamModal .modal-box{background:var(--card);border-radius:16px;padding:28px;max-width:480px;width:92%;max-height:85vh;overflow-y:auto;box-shadow:0 12px 48px rgba(0,0,0,.25);position:relative}
