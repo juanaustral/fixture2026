@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T05:23:50.442284+00:00",
+  "updated": "2026-06-28T01:52:26.673035+00:00",
   "source": "Flashscore",
   "groups": [
     {
@@ -1301,10 +1301,10 @@
         {
           "flag": "🇨🇴",
           "name": "Colombia",
-          "pts": 6,
+          "pts": 7,
           "dg": "+3",
-          "played": 2,
-          "pending": 1,
+          "played": 3,
+          "pending": 0,
           "status": "Clasificado",
           "sclass": "st-c",
           "matches": [
@@ -1317,26 +1317,25 @@
               "score": "1–0",
               "opponent": "🇨🇩",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 20:30",
-              "vs": "Portugal",
-              "flag": "🇵🇹"
+              "score": "0–0",
+              "opponent": "🇵🇹",
+              "result": "d"
             }
           ],
+          "pendientes": [],
           "req": ""
         },
         {
           "flag": "🇵🇹",
           "name": "Portugal",
-          "pts": 4,
+          "pts": 5,
           "dg": "+5",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "played": 3,
+          "pending": 0,
+          "status": "Clasificado",
+          "sclass": "st-c",
           "matches": [
             {
               "score": "1–1",
@@ -1347,26 +1346,25 @@
               "score": "5–0",
               "opponent": "🇺🇿",
               "result": "w"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 20:30",
-              "vs": "Colombia",
-              "flag": "🇨🇴"
+              "score": "0–0",
+              "opponent": "🇨🇴",
+              "result": "d"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": ""
         },
         {
           "flag": "🇨🇩",
           "name": "RD Congo",
-          "pts": 1,
-          "dg": "-1",
-          "played": 2,
-          "pending": 1,
-          "status": "Cómodo",
-          "sclass": "st-a",
+          "pts": 4,
+          "dg": "+1",
+          "played": 3,
+          "pending": 0,
+          "status": "Complicado",
+          "sclass": "st-p",
           "matches": [
             {
               "score": "1–1",
@@ -1377,26 +1375,25 @@
               "score": "0–1",
               "opponent": "🇨🇴",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 20:30",
-              "vs": "Uzbekistán",
-              "flag": "🇺🇿"
+              "score": "3–1",
+              "opponent": "🇺🇿",
+              "result": "w"
             }
           ],
-          "req": "Ganando clasifica."
+          "pendientes": [],
+          "req": "3° con 4 pts (+1 DG). Espera ser uno de los 8 mejores terceros."
         },
         {
           "flag": "🇺🇿",
           "name": "Uzbekistán",
           "pts": 0,
-          "dg": "-7",
-          "played": 2,
-          "pending": 1,
-          "status": "Complicado",
-          "sclass": "st-p",
+          "dg": "-9",
+          "played": 3,
+          "pending": 0,
+          "status": "Eliminado",
+          "sclass": "st-e",
           "matches": [
             {
               "score": "1–3",
@@ -1407,26 +1404,25 @@
               "score": "0–5",
               "opponent": "🇵🇹",
               "result": "l"
-            }
-          ],
-          "pendientes": [
+            },
             {
-              "date": "27 Jun 20:30",
-              "vs": "RD Congo",
-              "flag": "🇨🇩"
+              "score": "1–3",
+              "opponent": "🇨🇩",
+              "result": "l"
             }
           ],
-          "req": "Ganar y esperar."
+          "pendientes": [],
+          "req": "Eliminado."
         }
       ],
-      "pendientes": "🇨🇩 vs 🇺🇿 · 🇨🇴 vs 🇵🇹",
+      "pendientes": "",
       "resumen": [
-        "✅ Colombia: clasificada.",
-        "🔵 Portugal: empatando clasifica.",
-        "🔵 RD Congo: ganándole a Uzbekistán clasifica.",
-        "🔴 Uzbekistán: golear y esperar."
+        "✅ Colombia: 1° (7 pts, +3 DG). Ganó el grupo con 2 victorias y un empate.",
+        "✅ Portugal: 2° (5 pts, +5 DG). Clasificada como 2° con un empate 0-0 ante Colombia.",
+        "🔴 RD Congo: 3° (4 pts, +1 DG). Espera ser uno de los 8 mejores terceros.",
+        "🔴 Uzbekistán: eliminado (0 pts, -9 DG). Perdió los 3 partidos."
       ],
-      "cerrado": false
+      "cerrado": true
     },
     {
       "name": "Grupo L",
@@ -1558,20 +1554,7 @@
       "cerrado": true
     }
   ],
-  "updated": "2026-06-27T18:15:00.000000+00:00",
   "upcoming": [
-    {
-      "home": "🇨🇩 RD Congo",
-      "away": "🇺🇿 Uzbekistán",
-      "group": "K",
-      "time": "27 Jun 20:30"
-    },
-    {
-      "home": "🇨🇴 Colombia",
-      "away": "🇵🇹 Portugal",
-      "group": "K",
-      "time": "27 Jun 20:30"
-    },
     {
       "home": "🇩🇿 Argelia",
       "away": "🇦🇹 Austria",
