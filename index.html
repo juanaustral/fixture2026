@@ -140,6 +140,7 @@ function getMatchLine(name){
   return '<div class="t-match-line">'+t.matches_detail.map(function(mt){return (icons[mt.result]||'·')+' '+mt.score}).join('  ')+'</div>';
 }
 function getTeamStats(name){
+  var t=TEAMS[name];
   if(!t||!t.group)return '';
   var h='<div class="team-stats"><span class="stat-tag">'+t.pos+' Grupo '+t.group+'</span><span class="stat-tag">'+t.pts+' pts · DG '+t.dg+'</span>';
   h+=getFormDots(t.form);
