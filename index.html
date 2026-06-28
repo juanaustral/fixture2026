@@ -43,7 +43,28 @@
   .match-card .team-row{display:flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.03)}
   .match-card .team-row:last-child{border-bottom:none}
   .match-card .team-row .flag{font-size:1.1rem;width:24px;text-align:center;flex-shrink:0}
-  .match-card .team-row .name{flex:1;min-width:0}
+  .match-card .team-row .name{cursor:pointer;flex:1;min-width:0}
+  .match-card .team-row .name:hover{color:var(--blue);text-decoration:underline}
+  /* Team profile modal */
+  #teamModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;align-items:center;justify-content:center}
+  #teamModal .modal-box{background:var(--card);border-radius:16px;padding:28px;max-width:480px;width:92%;max-height:85vh;overflow-y:auto;box-shadow:0 12px 48px rgba(0,0,0,.25);position:relative}
+  #teamModal .modal-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--muted);padding:4px 8px;border-radius:6px;transition:all .15s}
+  #teamModal .modal-close:hover{background:rgba(0,0,0,.05);color:var(--text)}
+  #teamModal .t-flag{font-size:3rem;text-align:center;margin-bottom:6px}
+  #teamModal .t-name{font-size:1.3rem;font-weight:900;text-align:center;color:var(--dgray);margin-bottom:2px}
+  #teamModal .t-sub{font-size:.7rem;text-align:center;color:var(--muted);margin-bottom:14px}
+  #teamModal .t-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+  #teamModal .t-stat{background:#f6f7f5;border-radius:10px;padding:10px 12px;text-align:center}
+  #teamModal .t-stat .val{font-size:1.2rem;font-weight:900;color:var(--blue)}
+  #teamModal .t-stat .lbl{font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:.3px}
+  #teamModal .t-bar-wrap{margin:10px 0}
+  #teamModal .t-bar-label{display:flex;justify-content:space-between;font-size:.6rem;color:var(--muted);margin-bottom:2px}
+  #teamModal .t-bar{height:8px;border-radius:4px;background:var(--border);overflow:hidden}
+  #teamModal .t-bar-fill{height:100%;border-radius:4px;transition:width .4s ease}
+  #teamModal .t-results{margin-top:12px}
+  #teamModal .t-results h4{font-size:.7rem;color:var(--blue);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+  #teamModal .t-results .t-match{display:flex;align-items:center;gap:8px;font-size:.68rem;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.03)}
+  #teamModal .t-results .t-match .r-icon{width:20px;text-align:center;font-size:.7rem}
   .match-card .team-row .score{font-weight:900;font-size:.9rem;color:var(--blue);min-width:28px;text-align:center;flex-shrink:0}
   .match-card .team-row.winner .name{color:var(--green)}
   .match-card .team-row.winner .score{color:var(--green)}
@@ -79,6 +100,7 @@
 <div class="bracket-wrap"><div class="bracket" id="bracket"></div></div>
 <div class="footer">Datos: Flashscore · Wikipedia · Olympics.com<br>Desarrollado por <a href="https://juanmartinezgarcia.com">Juan Martinez Garcia</a> · <a href="https://github.com/juanaustral/fixture2026">GitHub</a><br><a href="#" onclick="toggleChangelog();return false" style="font-size:.55rem;color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--muted)" id="versionTag">—</a></div>
 <div id="changelogOverlay" onclick="if(event.target===this)toggleChangelog()"><div style="background:var(--card);border-radius:14px;padding:24px;max-width:440px;width:90%;max-height:70vh;overflow-y:auto;box-shadow:0 8px 40px rgba(0,0,0,.2)"><h3 style="font-size:.9rem;color:var(--blue);margin-bottom:14px">📋 Historial de versiones</h3><div id="changelogContent"></div><button onclick="toggleChangelog()" style="margin-top:14px;background:var(--blue);color:#fff;border:none;padding:6px 18px;border-radius:8px;cursor:pointer;font-size:.7rem;font-weight:600">Cerrar</button></div></div>
+<div id="teamModal" onclick="if(event.target===this)closeTeamModal()"><div class="modal-box"><button class="modal-close" onclick="closeTeamModal()">✕</button><div id="teamModalContent"></div></div></div>
 </div>
 <script>
 var API='https://raw.githubusercontent.com/juanaustral/fixture2026/main/data_ko.json';
@@ -143,9 +165,12 @@ function renderBracket(){
       }
       var hFlag=getTeamFlag(m.home),aFlag=getTeamFlag(m.away);
       var hName=m.home,aName=m.away;
-      if(m.home.indexOf('Gan.')===0){hFlag='🏆';hName=m.home}
-      if(m.away.indexOf('Gan.')===0){aFlag='🏆';aName=m.away}
-      card.innerHTML='<div class="mc-date">🕐 '+m.date+stadium+'</div><div class="teams"><div class="team-row '+hw+'"><span class="flag">'+hFlag+'</span><span class="name">'+hName+'</span><span class="score">'+hs+'</span></div>'+hStats+'<div class="team-row '+aw+'"><span class="flag">'+aFlag+'</span><span class="name">'+aName+'</span><span class="score">'+as+'</span></div>'+aStats+'</div>'+(extra?'<div class="extra">'+extra+'</div>':'');
+      var hClick='',aClick='';
+      if(m.home.indexOf('Gan.')!==0){hFlag=getTeamFlag(m.home);hName=m.home;hClick=' onclick="showTeamProfile(\''+m.home.replace(/'/g,"\\'")+'\')"'}
+      else{hFlag='🏆';hName=m.home}
+      if(m.away.indexOf('Gan.')!==0){aFlag=getTeamFlag(m.away);aName=m.away;aClick=' onclick="showTeamProfile(\''+m.away.replace(/'/g,"\\'")+'\')"'}
+      else{aFlag='🏆';aName=m.away}
+      card.innerHTML='<div class="mc-date">🕐 '+m.date+stadium+'</div><div class="teams"><div class="team-row '+hw+'"><span class="flag">'+hFlag+'</span><span class="name"'+hClick+'>'+hName+'</span><span class="score">'+hs+'</span></div>'+hStats+'<div class="team-row '+aw+'"><span class="flag">'+aFlag+'</span><span class="name"'+aClick+'>'+aName+'</span><span class="score">'+as+'</span></div>'+aStats+'</div>'+(extra?'<div class="extra">'+extra+'</div>':'');
       if(mi>0)card.style.marginTop=Math.max(0,(20*(16/round.matches.length)/2))+'px';
       col.appendChild(card);
     });
@@ -168,6 +193,29 @@ function formatVersion(iso){
   if(!iso||iso==='?')return 'v'+VERSION_COUNT+' · sin datos';
   try{var d=new Date(iso);var m=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];return 'v'+VERSION_COUNT+' · última modificación: '+d.getDate()+' '+m[d.getMonth()]+' '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2)}catch(e){return 'v'+VERSION_COUNT+' · '+iso}
 }
+
+function showTeamProfile(name){
+  var t=TEAMS[name];
+  if(!t){alert('Sin datos de '+name);return}
+  var flag=t.flag||getTeamFlag(name);
+  var rating=t.rating||50;
+  var barColor=rating>=80?'var(--green)':rating>=60?'var(--blue)':rating>=40?'#f0a500':'var(--red)';
+  var m=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  var formDots=getFormDots(t.form||[]);
+  var fifaRank=t.fifa_rank||'?';
+  var best=t.best||'?';
+  var apps=t.apps||'?';
+  var conf=t.conf||'?';
+  var h='<div class="t-flag">'+flag+'</div><div class="t-name">'+name+'</div><div class="t-sub">'+conf+' · Ranking FIFA: #'+fifaRank+' · '+apps+'° Mundial</div>';
+  h+='<div class="t-grid"><div class="t-stat"><div class="val">'+t.pts+'</div><div class="lbl">Puntos</div></div><div class="t-stat"><div class="val">'+t.dg+'</div><div class="lbl">Dif. Gol</div></div><div class="t-stat"><div class="val">'+t.pos+'</div><div class="lbl">Grupo '+t.group+'</div></div><div class="t-stat"><div class="val">'+t.played+' PJ</div><div class="lbl">Partidos</div></div></div>';
+  h+='<div class="t-bar-wrap"><div class="t-bar-label"><span>Calidad general</span><span>'+rating+'/100</span></div><div class="t-bar"><div class="t-bar-fill" style="width:'+rating+'%;background:'+barColor+'"></div></div></div>';
+  h+='<div class="t-grid" style="grid-template-columns:1fr 1fr 1fr"><div class="t-stat"><div class="val" style="font-size:.85rem">'+t.attack+'</div><div class="lbl">Ataque</div></div><div class="t-stat"><div class="val" style="font-size:.85rem">'+t.defense+'</div><div class="lbl">Defensa</div></div><div class="t-stat"><div class="val" style="font-size:.85rem">'+t.keeper+'</div><div class="lbl">Arquero</div></div></div>';
+  h+='<div style="font-size:.6rem;color:var(--muted)">Forma: '+formDots+'</div>';
+  h+='<div style="font-size:.6rem;color:var(--muted);margin-top:2px">Mejor resultado histórico: '+best+'</div>';
+  document.getElementById('teamModalContent').innerHTML=h;
+  document.getElementById('teamModal').style.display='flex';
+}
+function closeTeamModal(){document.getElementById('teamModal').style.display='none'}
 
 function toggleChangelog(){
   var ov=document.getElementById('changelogOverlay');
