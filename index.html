@@ -140,20 +140,27 @@ function getFormDots(form){
   }).join('')+'</span>';
 }
 
+function cleanName(name){
+  if(!name)return'';
+  return name.replace(/ [\u{1F1E6}-\u{1F1FF}]{2}$/u,'').trim();
+}
 function getTeamFlag(name){
-  var t=TEAMS[name];
+  var cn=cleanName(name);
+  var t=TEAMS[cn];
   if(t&&t.flag)return t.flag;
   var flagMap={'Sudáfrica':'🇿🇦','Canadá':'🇨🇦','Brasil':'🇧🇷','Japón':'🇯🇵','Alemania':'🇩🇪','Paraguay':'🇵🇾','Países Bajos':'🇳🇱','Marruecos':'🇲🇦','Costa de Marfil':'🇨🇮','Noruega':'🇳🇴','Francia':'🇫🇷','Suecia':'🇸🇪','México':'🇲🇽','Ecuador':'🇪🇨','Inglaterra':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','RD Congo':'🇨🇩','Bélgica':'🇧🇪','Senegal':'🇸🇳','EE.UU.':'🇺🇸','Bosnia H.':'🇧🇦','España':'🇪🇸','Austria':'🇦🇹','Portugal':'🇵🇹','Croacia':'🇭🇷','Suiza':'🇨🇭','Argelia':'🇩🇿','Australia':'🇦🇺','Egipto':'🇪🇬','Argentina':'🇦🇷','Cabo Verde':'🇨🇻','Colombia':'🇨🇴','Ghana':'🇬🇭'};
-  return flagMap[name]||'🏳️';
+  return flagMap[cn]||'🏳️';
 }
 function getKnockoutResults(name){
   if(!KO_DATA||!KO_DATA.rounds)return[];
+  var cn=cleanName(name);
   var results=[];
   KO_DATA.rounds.forEach(function(round){
     round.matches.forEach(function(m){
       if(m.status!=='played')return;
-      if(m.home===name||m.away===name){
-        var isHome=m.home===name;
+      var hn=cleanName(m.home),an=cleanName(m.away);
+      if(hn===cn||an===cn){
+        var isHome=hn===cn;
         var myScore=isHome?m.hscore:m.ascore;
         var oppScore=isHome?m.ascore:m.hscore;
         var opp=isHome?m.away:m.home;
@@ -166,7 +173,8 @@ function getKnockoutResults(name){
   return results;
 }
 function getMatchLine(name){
-  var t=TEAMS[name];
+  var cn=cleanName(name);
+  var t=TEAMS[cn];
   var pills=[];
   // Group stage
   if(t&&t.matches_detail&&t.matches_detail.length){
@@ -188,7 +196,8 @@ function getMatchLine(name){
   return '<div class="t-result-pills">'+pills.join('')+'</div>';
 }
 function getTeamStats(name){
-  var t=TEAMS[name];
+  var cn=cleanName(name);
+  var t=TEAMS[cn];
   if(!t||!t.group)return '';
   var h='<div class="team-stats"><span class="stat-tag">'+t.pos+' Grupo '+t.group+'</span><span class="stat-tag">'+t.pts+' pts · DG '+t.dg+'</span>';
   h+=getFormDots(t.form);
@@ -248,7 +257,8 @@ function formatVersion(iso){
 }
 
 function showTeamProfile(name){
-  var t=TEAMS[name];
+  var cn=cleanName(name);
+  var t=TEAMS[cn];
   if(!t){alert('Sin datos de '+name);return}
   var flag=t.flag||getTeamFlag(name);
   var rating=t.rating||50;
