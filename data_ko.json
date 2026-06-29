@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T20:30:00+00:00",
+  "updated": "2026-06-29T21:30:00+00:00",
   "source": "Flashscore",
   "teams": {
     "Sudáfrica": {
@@ -1303,9 +1303,9 @@
           "date": "29 jun 14:00",
           "home": "Brasil",
           "away": "Japón",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 2,
+          "ascore": 1,
+          "status": "played",
           "stadium": "AT&T Stadium, TX"
         },
         {
@@ -1457,7 +1457,7 @@
           "id": 101,
           "date": "5-8 jul",
           "home": "Canadá 🇨🇦",
-          "away": "Gan. M2",
+          "away": "Brasil 🇧🇷",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
