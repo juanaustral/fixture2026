@@ -146,16 +146,46 @@ function getTeamFlag(name){
   var flagMap={'Sudáfrica':'🇿🇦','Canadá':'🇨🇦','Brasil':'🇧🇷','Japón':'🇯🇵','Alemania':'🇩🇪','Paraguay':'🇵🇾','Países Bajos':'🇳🇱','Marruecos':'🇲🇦','Costa de Marfil':'🇨🇮','Noruega':'🇳🇴','Francia':'🇫🇷','Suecia':'🇸🇪','México':'🇲🇽','Ecuador':'🇪🇨','Inglaterra':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','RD Congo':'🇨🇩','Bélgica':'🇧🇪','Senegal':'🇸🇳','EE.UU.':'🇺🇸','Bosnia H.':'🇧🇦','España':'🇪🇸','Austria':'🇦🇹','Portugal':'🇵🇹','Croacia':'🇭🇷','Suiza':'🇨🇭','Argelia':'🇩🇿','Australia':'🇦🇺','Egipto':'🇪🇬','Argentina':'🇦🇷','Cabo Verde':'🇨🇻','Colombia':'🇨🇴','Ghana':'🇬🇭'};
   return flagMap[name]||'🏳️';
 }
+function getKnockoutResults(name){
+  if(!KO_DATA||!KO_DATA.rounds)return[];
+  var results=[];
+  KO_DATA.rounds.forEach(function(round){
+    round.matches.forEach(function(m){
+      if(m.status!=='played')return;
+      if(m.home===name||m.away===name){
+        var isHome=m.home===name;
+        var myScore=isHome?m.hscore:m.ascore;
+        var oppScore=isHome?m.ascore:m.hscore;
+        var opp=isHome?m.away:m.home;
+        var result=myScore>oppScore?'w':myScore<oppScore?'l':'d';
+        var roundLabel=round.name.replace(' de final','').replace('avos','avos');
+        results.push({score:myScore+'\u2013'+oppScore,opponent:opp,result:result,round:roundLabel,id:m.id});
+      }
+    });
+  });
+  return results;
+}
 function getMatchLine(name){
   var t=TEAMS[name];
-  if(!t||!t.matches_detail||!t.matches_detail.length)return '';
-  var icons={w:'⚽',d:'🤝',l:'❌'};
-  return '<div class="t-result-pills">'+t.matches_detail.map(function(mt){
-    var oname=mt.opponent.split(' ').slice(1).join(' ')||mt.opponent;
-    if(oname.length>12)oname=oname.substring(0,10)+'…';
-    var label=mt.result==='w'?'⚽':mt.result==='d'?'🤝':'❌';
-    return '<span class="t-result-pill '+mt.result+'">'+label+' '+mt.score+' '+oname+'</span>';
-  }).join('')+'</div>';
+  var pills=[];
+  // Group stage
+  if(t&&t.matches_detail&&t.matches_detail.length){
+    t.matches_detail.forEach(function(mt){
+      var oname=mt.opponent.split(' ').slice(1).join(' ')||mt.opponent;
+      if(oname.length>12)oname=oname.substring(0,10)+'\u2026';
+      pills.push('<span class="t-result-pill '+mt.result+'">'+(mt.result==='w'?'\u26bd':mt.result==='d'?'\uD83E\uDD1D':'\u274c')+' '+mt.score+' '+oname+'</span>');
+    });
+  }
+  // Knockout
+  var ko=getKnockoutResults(name);
+  ko.forEach(function(k){
+    var oname=k.opponent;
+    if(oname.length>12)oname=oname.substring(0,10)+'\u2026';
+    var icon=k.result==='w'?'\u26bd':k.result==='d'?'\uD83E\uDD1D':'\u274c';
+    pills.push('<span class="t-result-pill '+k.result+'" style="border:1px solid currentColor">'+icon+' '+k.score+' '+oname+' <small style="opacity:.7">'+k.round+'</small></span>');
+  });
+  if(!pills.length)return '';
+  return '<div class="t-result-pills">'+pills.join('')+'</div>';
 }
 function getTeamStats(name){
   var t=TEAMS[name];
@@ -184,10 +214,8 @@ function renderBracket(){
       var extra=m.extra||'';
       var stadium=m.stadium?' <span class="stadium">'+m.stadium+'</span>':'';
       var hStats='',aStats='',hMatchLine='',aMatchLine='';
-      if(mi<16||round.name==='16avos de final'){
-        hStats=getTeamStats(m.home);aStats=getTeamStats(m.away);
-        hMatchLine=getMatchLine(m.home);aMatchLine=getMatchLine(m.away);
-      }
+      hStats=getTeamStats(m.home);aStats=getTeamStats(m.away);
+      hMatchLine=getMatchLine(m.home);aMatchLine=getMatchLine(m.away);
       var hFlag=getTeamFlag(m.home),aFlag=getTeamFlag(m.away);
       var hName=m.home,aName=m.away;
       var hClick='',aClick='';
@@ -211,8 +239,8 @@ function updateTimers(){
   if(d===0)location.reload(true);else setTimeout(updateTimers,1000);
 }
 
-var VERSION_COUNT=19;
-var CHANGELOG=[{v:19,date:'28 jun',text:'Perfil de equipo con resultados de fase de grupos visibles en el bracket y modal.'},{v:17,date:'28 jun',text:'Rediseño: fixture de eliminación directa estilo bracket.'},{v:16,date:'26 jun',text:'Botón Visor Dual en header: abre en pestaña nueva.'},{v:15,date:'26 jun',text:'Botón "📺 Ver partidos en vivo" que enlaza al Visor Dual.'},{v:14,date:'26 jun',text:'Footer simplificado con changelog modal.'},{v:13,date:'26 jun',text:'Barras decorativas eliminadas, hover arreglado, título shimmer.'},{v:12,date:'26 jun',text:'Widget: textos legibles, slots destacados, decoraciones mundialistas.'},{v:11,date:'26 jun',text:'Widget: análisis detallado por partido, ranking mejorado.'},{v:10,date:'26 jun',text:'Ranking 3ros, dots de jornada, badges, skeleton, emojis.'}];
+var VERSION_COUNT=20;
+var CHANGELOG=[{v:20,date:'29 jun',text:'Resultados visibles en TODAS las rondas del bracket. Knockout aparece en modal y debajo de cada equipo.'},{v:19,date:'28 jun',text:'Perfil de equipo con resultados de fase de grupos visibles en el bracket y modal.'},{v:17,date:'28 jun',text:'Rediseño: fixture de eliminación directa estilo bracket.'},{v:16,date:'26 jun',text:'Botón Visor Dual en header: abre en pestaña nueva.'},{v:15,date:'26 jun',text:'Botón "📺 Ver partidos en vivo" que enlaza al Visor Dual.'},{v:14,date:'26 jun',text:'Footer simplificado con changelog modal.'},{v:13,date:'26 jun',text:'Barras decorativas eliminadas, hover arreglado, título shimmer.'},{v:12,date:'26 jun',text:'Widget: textos legibles, slots destacados, decoraciones mundialistas.'},{v:11,date:'26 jun',text:'Widget: análisis detallado por partido, ranking mejorado.'},{v:10,date:'26 jun',text:'Ranking 3ros, dots de jornada, badges, skeleton, emojis.'}];
 
 function formatVersion(iso){
   if(!iso||iso==='?')return 'v'+VERSION_COUNT+' · sin datos';
@@ -245,6 +273,16 @@ function showTeamProfile(name){
       var ri=mt.result==='w'?'⚽':mt.result==='d'?'🤝':'❌';
       var rc=mt.result==='w'?'color:var(--green)':mt.result==='d'?'color:#b8960c':'color:var(--red)';
       h+='<div class="t-match"><span class="r-icon" style="'+rc+'">'+ri+'</span><span>'+mt.score+' vs '+mt.opponent+'</span></div>';
+    });
+    h+='</div>';
+  }
+  var koMatches=getKnockoutResults(name);
+  if(koMatches.length){
+    h+='<div class="t-results"><h4>🏆 Eliminatorias</h4>';
+    koMatches.forEach(function(k){
+      var ri=k.result==='w'?'⚽':k.result==='d'?'🤝':'❌';
+      var rc=k.result==='w'?'color:var(--green)':k.result==='d'?'color:#b8960c':'color:var(--red)';
+      h+='<div class="t-match"><span class="r-icon" style="'+rc+'">'+ri+'</span><span>'+k.score+' vs '+k.opponent+' <small style="opacity:.6">('+k.round+')</small></span></div>';
     });
     h+='</div>';
   }
