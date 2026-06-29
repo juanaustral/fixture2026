@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T21:19:00+00:00",
+  "updated": "2026-06-29T18:13:39+00:00",
   "source": "Flashscore",
   "teams": {
     "Sudáfrica": {
@@ -1300,16 +1300,6 @@
         },
         {
           "id": 2,
-          "date": "29 jun 14:00",
-          "home": "Brasil",
-          "away": "Japón",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
-          "stadium": "AT&T Stadium, TX"
-        },
-        {
-          "id": 3,
           "date": "29 jun 17:30",
           "home": "Alemania",
           "away": "Paraguay",
@@ -1319,7 +1309,7 @@
           "stadium": "SoFi Stadium, CA"
         },
         {
-          "id": 4,
+          "id": 3,
           "date": "29 jun 22:00",
           "home": "Países Bajos",
           "away": "Marruecos",
@@ -1329,7 +1319,7 @@
           "stadium": "Mercedes-Benz, GA"
         },
         {
-          "id": 5,
+          "id": 4,
           "date": "30 jun 14:00",
           "home": "Costa de Marfil",
           "away": "Noruega",
@@ -1339,7 +1329,7 @@
           "stadium": "Gillette Stadium, MA"
         },
         {
-          "id": 6,
+          "id": 5,
           "date": "30 jun 18:00",
           "home": "Francia",
           "away": "Suecia",
@@ -1349,7 +1339,7 @@
           "stadium": "Arrowhead, MO"
         },
         {
-          "id": 7,
+          "id": 6,
           "date": "30 jun 22:00",
           "home": "México",
           "away": "Ecuador",
@@ -1359,7 +1349,7 @@
           "stadium": "Estadio Azteca, MX"
         },
         {
-          "id": 8,
+          "id": 7,
           "date": "1 jul 13:00",
           "home": "Inglaterra",
           "away": "RD Congo",
@@ -1369,7 +1359,7 @@
           "stadium": "Wembley, UK"
         },
         {
-          "id": 9,
+          "id": 8,
           "date": "1 jul 17:00",
           "home": "Bélgica",
           "away": "Senegal",
@@ -1379,7 +1369,7 @@
           "stadium": "BC Place, CA"
         },
         {
-          "id": 10,
+          "id": 9,
           "date": "1 jul 21:00",
           "home": "EE.UU.",
           "away": "Bosnia H.",
@@ -1389,7 +1379,7 @@
           "stadium": "Lumen Field, WA"
         },
         {
-          "id": 11,
+          "id": 10,
           "date": "2 jul 16:00",
           "home": "España",
           "away": "Austria",
@@ -1399,7 +1389,7 @@
           "stadium": "MetLife Stadium, NY"
         },
         {
-          "id": 12,
+          "id": 11,
           "date": "2 jul 20:00",
           "home": "Portugal",
           "away": "Croacia",
@@ -1409,7 +1399,7 @@
           "stadium": "Hard Rock, FL"
         },
         {
-          "id": 13,
+          "id": 12,
           "date": "3 jul 00:00",
           "home": "Suiza",
           "away": "Argelia",
@@ -1419,7 +1409,7 @@
           "stadium": "NRG Stadium, TX"
         },
         {
-          "id": 14,
+          "id": 13,
           "date": "3 jul 15:00",
           "home": "Australia",
           "away": "Egipto",
@@ -1429,7 +1419,7 @@
           "stadium": "Levi's, CA"
         },
         {
-          "id": 15,
+          "id": 14,
           "date": "3 jul 19:00",
           "home": "Argentina",
           "away": "Cabo Verde",
@@ -1439,7 +1429,7 @@
           "stadium": "River Plate, AR"
         },
         {
-          "id": 16,
+          "id": 15,
           "date": "3 jul 22:30",
           "home": "Colombia",
           "away": "Ghana",
@@ -1527,7 +1517,7 @@
           "id": 108,
           "date": "5-8 jul",
           "home": "Gan. M15",
-          "away": "Gan. M16",
+          "away": "—",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
