@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T21:30:00+00:00",
+  "updated": "2026-06-29T22:15:00+00:00",
   "source": "Flashscore",
   "teams": {
     "Sudáfrica": {
@@ -1313,9 +1313,10 @@
           "date": "29 jun 17:30",
           "home": "Alemania",
           "away": "Paraguay",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 1,
+          "ascore": 1,
+          "status": "played",
+          "extra": "1-1 (4-3 pen.)",
           "stadium": "SoFi Stadium, CA"
         },
         {
@@ -1466,7 +1467,7 @@
         {
           "id": 102,
           "date": "5-8 jul",
-          "home": "Gan. M3",
+          "home": "Paraguay 🇵🇾",
           "away": "Gan. M4",
           "hscore": null,
           "ascore": null,
