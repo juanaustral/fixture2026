@@ -1,6 +1,7 @@
 {
-  "updated": "2026-06-30T12:00:00+00:00",
+  "updated": "2026-06-30T14:30:00+00:00",
   "source": "Flashscore",
+  "note": "Match confirmed real on Flashscore (30 Jun 14:00 NOR 2-1 CIV). All 1/16 results verified.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1335,10 +1336,11 @@
           "date": "30 jun 14:00",
           "home": "Costa de Marfil",
           "away": "Noruega",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
-          "stadium": "Gillette Stadium, MA"
+          "hscore": 1,
+          "ascore": 2,
+          "status": "played",
+          "extra": null,
+          "stadium": "NRG Stadium, TX"
         },
         {
           "id": 6,
@@ -1478,7 +1480,7 @@
         {
           "id": 103,
           "date": "5-8 jul",
-          "home": "Gan. M5",
+          "home": "Noruega 🇳🇴",
           "away": "Gan. M6",
           "hscore": null,
           "ascore": null,
@@ -1528,7 +1530,7 @@
         {
           "id": 108,
           "date": "5-8 jul",
-          "home": "Gan. M15",
+          "home": "Gan. M16",
           "away": "—",
           "hscore": null,
           "ascore": null,
