@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T22:15:00+00:00",
+  "updated": "2026-06-29T23:15:00+00:00",
   "source": "Flashscore + Yahoo Sports",
   "groups": [
     {
@@ -1552,12 +1552,6 @@
     }
   ],
   "upcoming": [
-    {
-      "time": "29 Jun 17:30",
-      "home": "🇩🇪 Alemania",
-      "away": "🇵🇾 Paraguay",
-      "group": "1/16"
-    },
     {
       "time": "29 Jun 22:00",
       "home": "🇳🇱 Países Bajos",
