@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T04:30:00+00:00",
+  "updated": "2026-06-30T12:00:00+00:00",
   "source": "Flashscore",
   "teams": {
     "Sudáfrica": {
@@ -1457,9 +1457,9 @@
       "matches": [
         {
           "id": 101,
-          "date": "5-8 jul",
+          "date": "4 jul 14:00",
           "home": "Canadá 🇨🇦",
-          "away": "Brasil 🇧🇷",
+          "away": "Marruecos 🇲🇦",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
@@ -1468,8 +1468,8 @@
         {
           "id": 102,
           "date": "5-8 jul",
-          "home": "Paraguay 🇵🇾",
-          "away": "Marruecos 🇲🇦",
+          "home": "Brasil 🇧🇷",
+          "away": "Paraguay 🇵🇾",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
