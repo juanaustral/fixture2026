@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-30T21:00:00+00:00",
+  "updated": "2026-06-30T23:45:00+00:00",
   "source": "Flashscore",
-  "note": "Verified against Flashscore (30 Jun 14:00 NOR 2-1 CIV; 30 Jun 18:00 FRA 3-0 SWE). All 16avos results verified.",
+  "note": "Verified against Flashscore (30 Jun). Updated octavos pairings based on Flashscore bracket: Paraguay-France, Brazil-Norway.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1470,9 +1470,9 @@
         },
         {
           "id": 102,
-          "date": "5-8 jul",
-          "home": "Brasil 🇧🇷",
-          "away": "Paraguay 🇵🇾",
+          "date": "4 jul 18:00",
+          "home": "Paraguay 🇵🇾",
+          "away": "Francia 🇫🇷",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
@@ -1480,9 +1480,9 @@
         },
         {
           "id": 103,
-          "date": "5-8 jul",
-          "home": "Noruega 🇳🇴",
-          "away": "Francia 🇫🇷",
+          "date": "5 jul 17:00",
+          "home": "Brasil 🇧🇷",
+          "away": "Noruega 🇳🇴",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
