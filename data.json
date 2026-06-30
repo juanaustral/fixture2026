@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T14:30:00+00:00",
+  "updated": "2026-06-30T21:00:00+00:00",
   "source": "Flashscore + Yahoo Sports",
   "groups": [
     {
@@ -1552,12 +1552,6 @@
     }
   ],
   "upcoming": [
-    {
-      "time": "30 Jun 18:00",
-      "home": "🇫🇷 Francia",
-      "away": "🇸🇪 Suecia",
-      "group": "1/16"
-    },
     {
       "time": "30 Jun 22:00",
       "home": "🇲🇽 México",

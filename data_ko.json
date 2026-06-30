@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-30T14:30:00+00:00",
+  "updated": "2026-06-30T21:00:00+00:00",
   "source": "Flashscore",
-  "note": "Match confirmed real on Flashscore (30 Jun 14:00 NOR 2-1 CIV). All 1/16 results verified.",
+  "note": "Verified against Flashscore (30 Jun 14:00 NOR 2-1 CIV; 30 Jun 18:00 FRA 3-0 SWE). All 16avos results verified.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1347,9 +1347,10 @@
           "date": "30 jun 18:00",
           "home": "Francia",
           "away": "Suecia",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 3,
+          "ascore": 0,
+          "status": "played",
+          "extra": null,
           "stadium": "Arrowhead, MO"
         },
         {
@@ -1481,7 +1482,7 @@
           "id": 103,
           "date": "5-8 jul",
           "home": "Noruega 🇳🇴",
-          "away": "Gan. M6",
+          "away": "Francia 🇫🇷",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
