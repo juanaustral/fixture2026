@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T23:15:00+00:00",
+  "updated": "2026-06-30T04:30:00+00:00",
   "source": "Flashscore",
   "teams": {
     "Sudáfrica": {
@@ -1324,9 +1324,10 @@
           "date": "29 jun 22:00",
           "home": "Países Bajos",
           "away": "Marruecos",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 1,
+          "ascore": 1,
+          "status": "played",
+          "extra": "1-1 (2-3 pen.)",
           "stadium": "Mercedes-Benz, GA"
         },
         {
@@ -1468,7 +1469,7 @@
           "id": 102,
           "date": "5-8 jul",
           "home": "Paraguay 🇵🇾",
-          "away": "Gan. M4",
+          "away": "Marruecos 🇲🇦",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
