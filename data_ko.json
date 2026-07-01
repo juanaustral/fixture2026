@@ -1,7 +1,7 @@
 {
   "updated": "2026-07-01T20:00:00+00:00",
   "source": "Flashscore",
-  "note": "Belgica 0-1 Senegal (en juego, 45+3). Octavos: Canada-Morocco, Paraguay-France, Brazil-Norway, Mexico-England confirmed.",
+  "note": "Belgica 0-2 Senegal (en juego, 57'). Octavos: Canada-Morocco, Paraguay-France, Brazil-Norway, Mexico-England confirmed.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1381,7 +1381,7 @@
           "home": "Bélgica",
           "away": "Senegal",
           "hscore": 0,
-          "ascore": 1,
+          "ascore": 2,
           "status": "live",
           "stadium": "BC Place, CA"
         },
