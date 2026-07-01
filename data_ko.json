@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-01T07:30:00+00:00",
+  "updated": "2026-07-01T18:24:44+00:00",
   "source": "Flashscore",
-  "note": "Verified against Flashscore (1 Jul). Mexico 2-0 Ecuador (30 Jun). Updated octavos: Mexico advances to face Gan. M8.",
+  "note": "England 2-1 RD Congo (1 Jul). Mexico-England octavos confirmed.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1369,9 +1369,10 @@
           "date": "1 jul 13:00",
           "home": "Inglaterra",
           "away": "RD Congo",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 2,
+          "ascore": 1,
+          "status": "played",
+          "extra": null,
           "stadium": "Wembley, UK"
         },
         {
@@ -1491,9 +1492,9 @@
         },
         {
           "id": 104,
-          "date": "5-8 jul",
+          "date": "5 jul 21:00",
           "home": "México 🇲🇽",
-          "away": "Gan. M8",
+          "away": "Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
