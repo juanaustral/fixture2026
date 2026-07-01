@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-01T22:30:00+00:00",
+  "updated": "2026-07-01T23:30:00+00:00",
   "source": "Flashscore",
-  "note": "Senegal 2-0 Belgica (completado). Octavos: Canada-Morocco, Paraguay-France, Brazil-Norway, Mexico-England confirmed.",
+  "note": "Belgica 3-2 Senegal (completado). Octavos: Canada-Morocco, Paraguay-France, Brazil-Norway, Mexico-England confirmed.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1380,7 +1380,7 @@
           "date": "1 jul 17:00",
           "home": "Bélgica",
           "away": "Senegal",
-          "hscore": 0,
+          "hscore": 3,
           "ascore": 2,
           "status": "played",
           "stadium": "BC Place, CA"
