@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-30T23:45:00+00:00",
+  "updated": "2026-07-01T05:10:00+00:00",
   "source": "Flashscore",
-  "note": "Verified against Flashscore (30 Jun). Updated octavos pairings based on Flashscore bracket: Paraguay-France, Brazil-Norway.",
+  "note": "Verified against Flashscore (1 Jul). Mexico 2-0 Ecuador (30 Jun). Updated octavos: Mexico advances to face Gan. M8.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1358,9 +1358,10 @@
           "date": "30 jun 22:00",
           "home": "México",
           "away": "Ecuador",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 2,
+          "ascore": 0,
+          "status": "played",
+          "extra": null,
           "stadium": "Estadio Azteca, MX"
         },
         {
@@ -1491,7 +1492,7 @@
         {
           "id": 104,
           "date": "5-8 jul",
-          "home": "Gan. M7",
+          "home": "México 🇲🇽",
           "away": "Gan. M8",
           "hscore": null,
           "ascore": null,
