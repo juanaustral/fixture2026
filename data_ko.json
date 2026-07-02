@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-01T23:30:00+00:00",
+  "updated": "2026-07-02T00:30:00+00:00",
   "source": "Flashscore",
-  "note": "Belgica 3-2 Senegal (completado). Octavos: Canada-Morocco, Paraguay-France, Brazil-Norway, Mexico-England confirmed.",
+  "note": "Belgica 3-2 Senegal (completado). Belgica avanza a Octavos vs gan. M10. Octavos: Canada-Morocco, Paraguay-France, Brazil-Norway, Mexico-England confirmed.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1503,7 +1503,7 @@
         {
           "id": 105,
           "date": "6-8 jul",
-          "home": "Senegal 🇸🇳",
+          "home": "Bélgica 🇧🇪",
           "away": "Gan. M10",
           "hscore": null,
           "ascore": null,
