@@ -1,7 +1,7 @@
 {
   "updated": "2026-07-02T01:30:00+00:00",
   "source": "Flashscore",
-  "note": "USA 1-0 Bosnia H. (en juego, 2 jul). Belgica avanza a Octavos vs gan. M10. Octavos: Canada-Morocco, Paraguay-France, Brazil-Norway, Mexico-England confirmed.",
+  "note": "Octavos: Canada-Morocco, Paraguay-France, Brazil-Norway, Mexico-England confirmed. USA vs Bosnia upcoming (1 jul 21:00).",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1390,9 +1390,9 @@
           "date": "1 jul 21:00",
           "home": "EE.UU.",
           "away": "Bosnia H.",
-          "hscore": 1,
-          "ascore": 0,
-          "status": "live",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming",
           "stadium": "Lumen Field, WA"
         },
         {
@@ -1534,7 +1534,7 @@
           "id": 108,
           "date": "5-8 jul",
           "home": "Gan. M16",
-          "away": "—",
+          "away": "Gan. M15",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
