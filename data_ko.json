@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-03T18:53:30-03:00",
+  "updated": "2026-07-03T19:08:00-03:00",
   "source": "Flashscore",
-  "note": "Suiza 2-0 Argelia (completado). Australia 1-1 Egipto (2-4 pen.) Egipto avanza. Argentina-Cabo Verde y Colombia-Ghana en previa.",
+  "note": "Argentina-Cabo Verde EN VIVO 0-0 (12'). Colombia-Ghana en previa.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1445,7 +1445,7 @@
           "away": "Cabo Verde",
           "hscore": null,
           "ascore": null,
-          "status": "upcoming",
+          "status": "live",
           "stadium": "River Plate, AR"
         },
         {
