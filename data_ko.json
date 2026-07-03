@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-03T01:33:00+00:00",
+  "updated": "2026-07-03T03:30:00+00:00",
   "source": "Flashscore",
-  "note": "16avos: Espana 3-0 Austria (completado). Portugal 2-1 Croacia (completado). Portugal avanza a octavos vs Espana. Octavos: Canada-Morocco, Paraguay-France, Brazil-Norway, Mexico-England, Belgium-USA, Espana-Portugal confirmados.",
+  "note": "Suiza 1-0 Argelia (EN VIVO, 19'). Australia-Egipto, Argentina-Cabo Verde y Colombia-Ghana en previa.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1421,9 +1421,10 @@
           "date": "3 jul 00:00",
           "home": "Suiza",
           "away": "Argelia",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 1,
+          "ascore": 0,
+          "status": "live",
+          "minute": "19'",
           "stadium": "NRG Stadium, TX"
         },
         {
