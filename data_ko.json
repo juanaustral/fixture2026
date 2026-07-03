@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-02T22:15:00+00:00",
+  "updated": "2026-07-03T01:33:00+00:00",
   "source": "Flashscore",
-  "note": "16avos: Espana 3-0 Austria (completado). M12 Portugal vs Croacia EN VIVO 0-0 (37'). Espana avanza a octavos vs Gan. M12. Octavos: Canada-Morocco, Paraguay-France, Brazil-Norway, Mexico-England, Belgium-USA, Espana-Gan.M12 confirmados.",
+  "note": "16avos: Espana 3-0 Austria (completado). Portugal 2-1 Croacia (completado). Portugal avanza a octavos vs Espana. Octavos: Canada-Morocco, Paraguay-France, Brazil-Norway, Mexico-England, Belgium-USA, Espana-Portugal confirmados.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1411,9 +1411,9 @@
           "date": "2 jul 20:00",
           "home": "Portugal",
           "away": "Croacia",
-          "hscore": null,
-          "ascore": null,
-          "status": "live",
+          "hscore": 2,
+          "ascore": 1,
+          "status": "played",
           "stadium": "Hard Rock, FL"
         },
         {
@@ -1515,7 +1515,7 @@
           "id": 106,
           "date": "5-8 jul",
           "home": "España 🇪🇸",
-          "away": "Gan. M12",
+          "away": "Portugal 🇵🇹",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
