@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-03T03:30:00+00:00",
+  "updated": "2026-07-03T04:39:00+00:00",
   "source": "Flashscore",
-  "note": "Suiza 1-0 Argelia (EN VIVO, 19'). Australia-Egipto, Argentina-Cabo Verde y Colombia-Ghana en previa.",
+  "note": "Suiza 2-0 Argelia (EN VIVO, 60'). Australia-Egipto, Argentina-Cabo Verde y Colombia-Ghana en previa.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1421,10 +1421,10 @@
           "date": "3 jul 00:00",
           "home": "Suiza",
           "away": "Argelia",
-          "hscore": 1,
+          "hscore": 2,
           "ascore": 0,
           "status": "live",
-          "minute": "19'",
+          "minute": "60'",
           "stadium": "NRG Stadium, TX"
         },
         {
