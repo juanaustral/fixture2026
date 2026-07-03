@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-03T13:00:00+00:00",
+  "updated": "2026-07-03T19:25:00+00:00",
   "source": "Flashscore",
-  "note": "Suiza 2-0 Argelia (completado). Australia-Egipto EN VIVO 0-0 (9'). Argentina-Cabo Verde y Colombia-Ghana en previa.",
+  "note": "Suiza 2-0 Argelia (completado). Australia-Egipto EN VIVO 1-1 (58'). Argentina-Cabo Verde y Colombia-Ghana en previa.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1432,8 +1432,8 @@
           "date": "3 jul 15:00",
           "home": "Australia",
           "away": "Egipto",
-          "hscore": 0,
-          "ascore": 0,
+          "hscore": 1,
+          "ascore": 1,
           "status": "live",
           "stadium": "Levi's, CA"
         },
