@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-04T15:30:00-03:00",
-  "source": "TUDN",
-  "note": "16avos completados. Octavos: Canada-Marruecos y Paraguay-Francia hoy (4 jul).",
+  "updated": "2026-07-04T12:00:00-03:00",
+  "source": "Flashscore / Yahoo Sports",
+  "note": "Octavos comienzan: Canada vs Marruecos (14:00) y Paraguay vs Francia (18:00) hoy 4 jul.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1317,7 +1317,7 @@
           "hscore": 1,
           "ascore": 1,
           "status": "played",
-          "extra": "1-1 (3-4 pen.)",
+          "extra": "Paraguay 4-3 penales",
           "stadium": "SoFi Stadium, CA"
         },
         {
@@ -1328,7 +1328,7 @@
           "hscore": 1,
           "ascore": 1,
           "status": "played",
-          "extra": "1-1 (2-3 pen.)",
+          "extra": "Marruecos 3-2 penales",
           "stadium": "Mercedes-Benz, GA"
         },
         {
@@ -1437,7 +1437,7 @@
           "ascore": 1,
           "status": "played",
           "stadium": "Levi's, CA",
-          "extra": "1-1 (2-4 pen.)"
+          "extra": "Egipto 4-2 penales"
         },
         {
           "id": 15,
@@ -1468,82 +1468,90 @@
         {
           "id": 101,
           "date": "4 jul 14:00",
-          "home": "Canadá 🇨🇦",
-          "away": "Marruecos 🇲🇦",
+          "home": "Canada",
+          "away": "Marruecos",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
-          "stadium": "—"
+          "extra": null,
+          "stadium": "NRG Stadium, Houston"
         },
         {
           "id": 102,
           "date": "4 jul 18:00",
-          "home": "Paraguay 🇵🇾",
-          "away": "Francia 🇫🇷",
+          "home": "Paraguay",
+          "away": "Francia",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
-          "stadium": "—"
+          "extra": null,
+          "stadium": "Lincoln Financial Field, Philadelphia"
         },
         {
           "id": 103,
           "date": "5 jul 17:00",
-          "home": "Brasil 🇧🇷",
-          "away": "Noruega 🇳🇴",
+          "home": "Brasil",
+          "away": "Noruega",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
-          "stadium": "—"
+          "extra": null,
+          "stadium": "MetLife Stadium, NJ"
         },
         {
           "id": 104,
           "date": "5 jul 21:00",
-          "home": "México 🇲🇽",
-          "away": "Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+          "home": "Mexico",
+          "away": "Inglaterra",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
-          "stadium": "—"
+          "extra": null,
+          "stadium": "Estadio Azteca, CDMX"
         },
         {
           "id": 105,
-          "date": "6-8 jul",
-          "home": "Bélgica 🇧🇪",
-          "away": "EE.UU. 🇺🇸",
+          "date": "6 jul 16:00",
+          "home": "Espana",
+          "away": "Portugal",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
-          "stadium": "—"
+          "extra": null,
+          "stadium": "AT&T Stadium, Dallas"
         },
         {
           "id": 106,
-          "date": "5-8 jul",
-          "home": "España 🇪🇸",
-          "away": "Portugal 🇵🇹",
+          "date": "6 jul 21:00",
+          "home": "Belgica",
+          "away": "EE.UU.",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
-          "stadium": "—"
+          "extra": null,
+          "stadium": "Lumen Field, Seattle"
         },
         {
           "id": 107,
-          "date": "5-8 jul",
+          "date": "7 jul 13:00",
+          "home": "Egipto",
+          "away": "Argentina",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming",
+          "extra": null,
+          "stadium": "Mercedes-Benz Stadium, Atlanta"
+        },
+        {
+          "id": 108,
+          "date": "7 jul 17:00",
           "home": "Suiza",
           "away": "Colombia",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
-          "stadium": "—"
-        },
-        {
-          "id": 108,
-          "date": "5-8 jul",
-          "home": "Argentina",
-          "away": "Egipto",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
-          "stadium": "—"
+          "extra": null,
+          "stadium": "BC Place, Vancouver"
         }
       ]
     },
