@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-03T22:10:00-03:00",
+  "updated": "2026-07-04T11:50:00-03:00",
   "source": "TUDN",
-  "note": "Colombia 1-0 Ghana (14', en vivo). Argentina 3-2 Cabo Verde (t.e.).",
+  "note": "Colombia 1-0 Ghana. Octavos iniciando.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1456,7 +1456,7 @@
           "away": "Ghana",
           "hscore": 1,
           "ascore": 0,
-          "status": "live",
+          "status": "played",
           "stadium": "Camping World, FL"
         }
       ]
@@ -1528,7 +1528,7 @@
           "id": 107,
           "date": "5-8 jul",
           "home": "Suiza",
-          "away": "Gan. M16",
+          "away": "Colombia",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
