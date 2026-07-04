@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-04T12:00:00-03:00",
+  "updated": "2026-07-04T16:15:00-03:00",
   "source": "Flashscore / Yahoo Sports",
-  "note": "Octavos comienzan: Canada vs Marruecos (14:00) y Paraguay vs Francia (18:00) hoy 4 jul.",
+  "note": "Octavos: Marruecos 3-0 Canada (completado). Paraguay vs Francia (18:00) pendiente.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1470,9 +1470,9 @@
           "date": "4 jul 14:00",
           "home": "Canada",
           "away": "Marruecos",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 0,
+          "ascore": 3,
+          "status": "played",
           "extra": null,
           "stadium": "NRG Stadium, Houston"
         },
@@ -1560,13 +1560,13 @@
       "matches": [
         {
           "id": 201,
-          "date": "10-11 jul",
-          "home": "Gan. O1",
+          "date": "9 jul 17:00",
+          "home": "Marruecos",
           "away": "Gan. O2",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
-          "stadium": "—"
+          "stadium": "Gillette Stadium, Boston"
         },
         {
           "id": 202,
