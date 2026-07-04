@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-04T11:50:00-03:00",
+  "updated": "2026-07-04T15:30:00-03:00",
   "source": "TUDN",
-  "note": "Colombia 1-0 Ghana. Octavos iniciando.",
+  "note": "16avos completados. Octavos: Canada-Marruecos y Paraguay-Francia hoy (4 jul).",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1383,6 +1383,7 @@
           "hscore": 3,
           "ascore": 2,
           "status": "played",
+          "extra": "3-2 t.e.",
           "stadium": "BC Place, CA"
         },
         {
