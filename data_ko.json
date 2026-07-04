@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-04T16:15:00-03:00",
+  "updated": "2026-07-04T16:55:00-03:00",
   "source": "Flashscore / Yahoo Sports",
-  "note": "Octavos: Marruecos 3-0 Canada (completado). Paraguay vs Francia (18:00) pendiente.",
+  "note": "Octavos: Marruecos 3-0 Canada (completado). Paraguay 0-1 Francia (en vivo 81'). Resto el 5-7 jul.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1481,9 +1481,9 @@
           "date": "4 jul 18:00",
           "home": "Paraguay",
           "away": "Francia",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 0,
+          "ascore": 1,
+          "status": "live",
           "extra": null,
           "stadium": "Lincoln Financial Field, Philadelphia"
         },
