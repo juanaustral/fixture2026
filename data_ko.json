@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-03T19:08:00-03:00",
+  "updated": "2026-07-03T21:12:00-03:00",
   "source": "Flashscore",
-  "note": "Argentina-Cabo Verde EN VIVO 0-0 (12'). Colombia-Ghana en previa.",
+  "note": "Argentina-Cabo Verde 1-1 (81'). Colombia-Ghana en previa.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1443,8 +1443,8 @@
           "date": "3 jul 19:00",
           "home": "Argentina",
           "away": "Cabo Verde",
-          "hscore": null,
-          "ascore": null,
+          "hscore": 1,
+          "ascore": 1,
           "status": "live",
           "stadium": "River Plate, AR"
         },
