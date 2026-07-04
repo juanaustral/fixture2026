@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-03T21:52:13-03:00",
-  "source": "Flashscore",
-  "note": "Argentina 3-2 Cabo Verde (t.e.). Colombia-Ghana en previa (22:30).",
+  "updated": "2026-07-03T22:10:00-03:00",
+  "source": "TUDN",
+  "note": "Colombia 1-0 Ghana (14', en vivo). Argentina 3-2 Cabo Verde (t.e.).",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1454,9 +1454,9 @@
           "date": "3 jul 22:30",
           "home": "Colombia",
           "away": "Ghana",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 1,
+          "ascore": 0,
+          "status": "live",
           "stadium": "Camping World, FL"
         }
       ]
