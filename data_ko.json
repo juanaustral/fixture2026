@@ -41,7 +41,18 @@
           "opponent": "🇰🇷 Corea del Sur",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Escuadra competitiva que puede dar sorpresas. Ranking FIFA #58, 4 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Talon de Aquiles: defensa irregular que concede ocasiones. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 1E 1D). Clasifico 2°. Mejor actuacion historica: Fase de grupos. Saldo goleador negativo. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Canadá",
+          "s": "0-1",
+          "res": "l",
+          "x": null
+        }
+      ],
+      "form_desc": "1V 1E 1D"
     },
     "Canadá": {
       "flag": "🇨🇦",
@@ -81,7 +92,25 @@
           "opponent": "🇨🇭 Suiza",
           "result": "l"
         }
-      ]
+      ],
+      "analysis": "Equipo solido con aspiraciones profundas. Ranking FIFA #41, 3 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Defensa rocosa, de las mas solidas del torneo. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 1E 1D). Clasifico 2°. Mejor actuacion historica: Fase de grupos. Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Sudáfrica",
+          "s": "1-0",
+          "res": "w",
+          "x": null
+        },
+        {
+          "r": "Octavos de final",
+          "o": "Marruecos",
+          "s": "0-3",
+          "res": "l",
+          "x": null
+        }
+      ],
+      "form_desc": "1V 1E 1D"
     },
     "Brasil": {
       "flag": "🇧🇷",
@@ -121,7 +150,18 @@
           "opponent": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #3, 22 participaciones mundialistas. Potencia ofensiva elite con multiples recursos de gol. Defensa rocosa, de las mas solidas del torneo. Porteria bien custodiada por un guardameta de nivel. Campana solida (2V 1E 0D). Primero de grupo. Gloria pasada, la presion del favorito. Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Japón",
+          "s": "2-1",
+          "res": "w",
+          "x": ""
+        }
+      ],
+      "form_desc": "2V 1E 0D"
     },
     "Japón": {
       "flag": "🇯🇵",
@@ -161,7 +201,18 @@
           "opponent": "🇸🇪 Suecia",
           "result": "d"
         }
-      ]
+      ],
+      "analysis": "Equipo solido con aspiraciones profundas. Ranking FIFA #20, 8 participaciones mundialistas. Ataque peligroso, rapido y con buena definicion. Defensa confiable, pocos errores graves. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 2E 0D). Clasifico 2°. Mejor marca: octavos. Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Brasil",
+          "s": "1-2",
+          "res": "l",
+          "x": ""
+        }
+      ],
+      "form_desc": "1V 2E 0D"
     },
     "Alemania": {
       "flag": "🇩🇪",
@@ -201,7 +252,18 @@
           "opponent": "🇪🇨 Ecuador",
           "result": "l"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #14, 20 participaciones mundialistas. Ataque peligroso, rapido y con buena definicion. Defensa rocosa, de las mas solidas del torneo. Porteria bien custodiada por un guardameta de nivel. Campana solida (2V 0E 1D). Primero de grupo. Gloria pasada, la presion del favorito. Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Paraguay",
+          "s": "1-1 (p)",
+          "res": "l",
+          "x": "Paraguay 4-3 penales"
+        }
+      ],
+      "form_desc": "2V 0E 1D"
     },
     "Paraguay": {
       "flag": "🇵🇾",
@@ -241,7 +303,25 @@
           "opponent": "🇦🇺 Australia",
           "result": "d"
         }
-      ]
+      ],
+      "analysis": "Equipo batallador en busca de hacer historia. Ranking FIFA #48, 9 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Talon de Aquiles: defensa irregular que concede ocasiones. El arquero es un punto debil: destellos pero inconsistente. Clasificacion sin brillo (1V 1E 1D). Clasifico 3°. Techo: cuartos de final. Saldo goleador negativo. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Alemania",
+          "s": "1-1 (p)",
+          "res": "w",
+          "x": "Paraguay 4-3 penales"
+        },
+        {
+          "r": "Octavos de final",
+          "o": "Francia",
+          "s": "0-1",
+          "res": "l",
+          "x": null
+        }
+      ],
+      "form_desc": "1V 1E 1D"
     },
     "Países Bajos": {
       "flag": "🇳🇱",
@@ -281,7 +361,18 @@
           "opponent": "🇹🇳 Túnez",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #6, 12 participaciones mundialistas. Potencia ofensiva elite con multiples recursos de gol. Defensa rocosa, de las mas solidas del torneo. Porteria bien custodiada por un guardameta de nivel. Campana solida (2V 1E 0D). Primero de grupo. Sabe lo que es llegar a la cima. Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Marruecos",
+          "s": "1-1 (p)",
+          "res": "l",
+          "x": "Marruecos 3-2 penales"
+        }
+      ],
+      "form_desc": "2V 1E 0D"
     },
     "Marruecos": {
       "flag": "🇲🇦",
@@ -321,7 +412,25 @@
           "opponent": "🇭🇹 Haití",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #13, 7 participaciones mundialistas. Potencia ofensiva elite con multiples recursos de gol. Defensa confiable, pocos errores graves. Porteria bien custodiada por un guardameta de nivel. Campana solida (2V 1E 0D). Clasifico 2°. Ya conoce semifinales. Saldo goleador positivo. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Países Bajos",
+          "s": "1-1 (p)",
+          "res": "w",
+          "x": "Marruecos 3-2 penales"
+        },
+        {
+          "r": "Octavos de final",
+          "o": "Canadá",
+          "s": "3-0",
+          "res": "w",
+          "x": null
+        }
+      ],
+      "form_desc": "2V 1E 0D"
     },
     "Costa de Marfil": {
       "flag": "🇨🇮",
@@ -361,7 +470,18 @@
           "opponent": "🇨🇼 Curazao",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Equipo solido con aspiraciones profundas. Ranking FIFA #47, 5 participaciones mundialistas. Ataque peligroso, rapido y con buena definicion. Defensa confiable, pocos errores graves. Porteria bien custodiada por un guardameta de nivel. Campana solida (2V 0E 1D). Clasifico 2°. Mejor actuacion historica: Fase de grupos. Saldo goleador positivo. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Noruega",
+          "s": "1-2",
+          "res": "l",
+          "x": null
+        }
+      ],
+      "form_desc": "2V 0E 1D"
     },
     "Noruega": {
       "flag": "🇳🇴",
@@ -401,7 +521,18 @@
           "opponent": "🇫🇷 Francia",
           "result": "l"
         }
-      ]
+      ],
+      "analysis": "Equipo solido con aspiraciones profundas. Ranking FIFA #43, 4 participaciones mundialistas. Ataque peligroso, rapido y con buena definicion. Defensa confiable, pocos errores graves. Porteria bien custodiada por un guardameta de nivel. Campana solida (2V 0E 1D). Clasifico 2°. Mejor marca: octavos. Saldo goleador positivo. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Costa de Marfil",
+          "s": "2-1",
+          "res": "w",
+          "x": null
+        }
+      ],
+      "form_desc": "2V 0E 1D"
     },
     "Francia": {
       "flag": "🇫🇷",
@@ -441,7 +572,25 @@
           "opponent": "🇳🇴 Noruega",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #2, 16 participaciones mundialistas. Potencia ofensiva elite con multiples recursos de gol. Defensa rocosa, de las mas solidas del torneo. Porteria bien custodiada por un guardameta de nivel. Paso perfecto en grupos (3V). Primero de grupo. Gloria pasada, la presion del favorito. Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Suecia",
+          "s": "3-0",
+          "res": "w",
+          "x": null
+        },
+        {
+          "r": "Octavos de final",
+          "o": "Paraguay",
+          "s": "1-0",
+          "res": "w",
+          "x": null
+        }
+      ],
+      "form_desc": "3V 0E 0D"
     },
     "Suecia": {
       "flag": "🇸🇪",
@@ -481,7 +630,18 @@
           "opponent": "🇯🇵 Japón",
           "result": "d"
         }
-      ]
+      ],
+      "analysis": "Escuadra competitiva que puede dar sorpresas. Ranking FIFA #23, 13 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Talon de Aquiles: defensa irregular que concede ocasiones. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 1E 1D). Clasifico 3°. Sabe lo que es llegar a la cima. Saldo de gol neutral. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Francia",
+          "s": "0-3",
+          "res": "l",
+          "x": null
+        }
+      ],
+      "form_desc": "1V 1E 1D"
     },
     "México": {
       "flag": "🇲🇽",
@@ -521,7 +681,18 @@
           "opponent": "🇨🇿 Rep. Checa",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #15, 18 participaciones mundialistas. Potencia ofensiva elite con multiples recursos de gol. Defensa rocosa, de las mas solidas del torneo. Porteria bien custodiada por un guardameta de nivel. Paso perfecto en grupos (3V). Primero de grupo. Techo: cuartos de final. Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Ecuador",
+          "s": "2-0",
+          "res": "w",
+          "x": null
+        }
+      ],
+      "form_desc": "3V 0E 0D"
     },
     "Ecuador": {
       "flag": "🇪🇨",
@@ -561,7 +732,18 @@
           "opponent": "🇩🇪 Alemania",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Escuadra competitiva que puede dar sorpresas. Ranking FIFA #36, 5 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Talon de Aquiles: defensa irregular que concede ocasiones. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 1E 1D). Clasifico 3°. Mejor marca: octavos. Saldo de gol neutral. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "México",
+          "s": "0-2",
+          "res": "l",
+          "x": null
+        }
+      ],
+      "form_desc": "1V 1E 1D"
     },
     "Inglaterra": {
       "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -601,7 +783,18 @@
           "opponent": "🇵🇦 Panamá",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #4, 17 participaciones mundialistas. Potencia ofensiva elite con multiples recursos de gol. Defensa confiable, pocos errores graves. Porteria bien custodiada por un guardameta de nivel. Campana solida (2V 1E 0D). Primero de grupo. Gloria pasada, la presion del favorito. Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "RD Congo",
+          "s": "2-1",
+          "res": "w",
+          "x": null
+        }
+      ],
+      "form_desc": "2V 1E 0D"
     },
     "RD Congo": {
       "flag": "🇨🇩",
@@ -641,7 +834,18 @@
           "opponent": "🇺🇿 Uzbekistán",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Escuadra competitiva que puede dar sorpresas. Ranking FIFA #64, 2 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Defensa confiable, pocos errores graves. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 1E 1D). Clasifico 3°. Mejor actuacion historica: Fase de grupos (1974 como Zaire). Saldo goleador positivo. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Inglaterra",
+          "s": "1-2",
+          "res": "l",
+          "x": null
+        }
+      ],
+      "form_desc": "1V 1E 1D"
     },
     "Bélgica": {
       "flag": "🇧🇪",
@@ -681,7 +885,18 @@
           "opponent": "🇳🇿 N. Zelanda",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #5, 15 participaciones mundialistas. Ataque peligroso, rapido y con buena definicion. Defensa confiable, pocos errores graves. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 2E 0D). Primero de grupo. Mejor actuacion historica: Tercer puesto (2018). Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Senegal",
+          "s": "3-2",
+          "res": "w",
+          "x": "3-2 t.e."
+        }
+      ],
+      "form_desc": "1V 2E 0D"
     },
     "Senegal": {
       "flag": "🇸🇳",
@@ -721,7 +936,18 @@
           "opponent": "🇮🇶 Irak",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Escuadra competitiva que puede dar sorpresas. Ranking FIFA #18, 4 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Defensa confiable, pocos errores graves. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 0E 2D). Clasifico 3°. Techo: cuartos de final. Saldo goleador positivo. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Bélgica",
+          "s": "2-3",
+          "res": "l",
+          "x": "3-2 t.e."
+        }
+      ],
+      "form_desc": "1V 0E 2D"
     },
     "EE.UU.": {
       "flag": "🇺🇸",
@@ -761,7 +987,18 @@
           "opponent": "🇹🇷 Turquía",
           "result": "l"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #11, 12 participaciones mundialistas. Ataque peligroso, rapido y con buena definicion. Defensa confiable, pocos errores graves. Porteria bien custodiada por un guardameta de nivel. Campana solida (2V 0E 1D). Primero de grupo. Ya conoce semifinales. Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Bosnia H.",
+          "s": "2-0",
+          "res": "w",
+          "x": ""
+        }
+      ],
+      "form_desc": "2V 0E 1D"
     },
     "Bosnia H.": {
       "flag": "🇧🇦",
@@ -801,7 +1038,18 @@
           "opponent": "🇶🇦 Qatar",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Escuadra competitiva que puede dar sorpresas. Ranking FIFA #55, 2 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Talon de Aquiles: defensa irregular que concede ocasiones. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 1E 1D). Clasifico 3°. Mejor actuacion historica: Fase de grupos (2014). Saldo goleador negativo. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "EE.UU.",
+          "s": "0-2",
+          "res": "l",
+          "x": ""
+        }
+      ],
+      "form_desc": "1V 1E 1D"
     },
     "España": {
       "flag": "🇪🇸",
@@ -841,7 +1089,18 @@
           "opponent": "🇺🇾 Uruguay",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #8, 16 participaciones mundialistas. Potencia ofensiva elite con multiples recursos de gol. Defensa rocosa, de las mas solidas del torneo. Porteria bien custodiada por un guardameta de nivel. Campana solida (2V 1E 0D). Primero de grupo. Gloria pasada, la presion del favorito. Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Austria",
+          "s": "3-0",
+          "res": "w",
+          "x": null
+        }
+      ],
+      "form_desc": "2V 1E 0D"
     },
     "Austria": {
       "flag": "🇦🇹",
@@ -881,7 +1140,18 @@
           "opponent": "🇩🇿 Argelia",
           "result": "d"
         }
-      ]
+      ],
+      "analysis": "Escuadra competitiva que puede dar sorpresas. Ranking FIFA #29, 8 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Talon de Aquiles: defensa irregular que concede ocasiones. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 1E 1D). Clasifico 2°. Mejor actuacion historica: Tercer puesto (1954). Saldo de gol neutral. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "España",
+          "s": "0-3",
+          "res": "l",
+          "x": null
+        }
+      ],
+      "form_desc": "1V 1E 1D"
     },
     "Portugal": {
       "flag": "🇵🇹",
@@ -921,7 +1191,18 @@
           "opponent": "🇨🇴 Colombia",
           "result": "d"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #7, 9 participaciones mundialistas. Ataque peligroso, rapido y con buena definicion. Defensa rocosa, de las mas solidas del torneo. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 2E 0D). Clasifico 2°. Mejor actuacion historica: Tercer puesto (1966). Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Croacia",
+          "s": "2-1",
+          "res": "w",
+          "x": ""
+        }
+      ],
+      "form_desc": "1V 2E 0D"
     },
     "Croacia": {
       "flag": "🇭🇷",
@@ -961,7 +1242,18 @@
           "opponent": "🇬🇭 Ghana",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Equipo solido con aspiraciones profundas. Ranking FIFA #10, 7 participaciones mundialistas. Ataque peligroso, rapido y con buena definicion. Talon de Aquiles: defensa irregular que concede ocasiones. Porteria bien custodiada por un guardameta de nivel. Campana solida (2V 0E 1D). Clasifico 2°. Sabe lo que es llegar a la cima. Saldo de gol neutral. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Portugal",
+          "s": "1-2",
+          "res": "l",
+          "x": ""
+        }
+      ],
+      "form_desc": "2V 0E 1D"
     },
     "Suiza": {
       "flag": "🇨🇭",
@@ -1001,7 +1293,18 @@
           "opponent": "🇨🇦 Canadá",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #12, 13 participaciones mundialistas. Potencia ofensiva elite con multiples recursos de gol. Defensa confiable, pocos errores graves. Porteria bien custodiada por un guardameta de nivel. Campana solida (2V 1E 0D). Primero de grupo. Techo: cuartos de final. Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Argelia",
+          "s": "2-0",
+          "res": "w",
+          "x": null
+        }
+      ],
+      "form_desc": "2V 1E 0D"
     },
     "Argelia": {
       "flag": "🇩🇿",
@@ -1041,7 +1344,18 @@
           "opponent": "🇦🇹 Austria",
           "result": "d"
         }
-      ]
+      ],
+      "analysis": "Equipo batallador en busca de hacer historia. Ranking FIFA #34, 5 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Talon de Aquiles: defensa irregular que concede ocasiones. El arquero es un punto debil: destellos pero inconsistente. Clasificacion sin brillo (1V 1E 1D). Clasifico 3°. Mejor marca: octavos. Saldo goleador negativo. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Suiza",
+          "s": "0-2",
+          "res": "l",
+          "x": null
+        }
+      ],
+      "form_desc": "1V 1E 1D"
     },
     "Australia": {
       "flag": "🇦🇺",
@@ -1081,7 +1395,18 @@
           "opponent": "🇵🇾 Paraguay",
           "result": "d"
         }
-      ]
+      ],
+      "analysis": "Escuadra competitiva que puede dar sorpresas. Ranking FIFA #27, 7 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Talon de Aquiles: defensa irregular que concede ocasiones. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 1E 1D). Clasifico 2°. Mejor marca: octavos. Saldo de gol neutral. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Egipto",
+          "s": "1-1 (p)",
+          "res": "l",
+          "x": "Egipto 4-2 penales"
+        }
+      ],
+      "form_desc": "1V 1E 1D"
     },
     "Egipto": {
       "flag": "🇪🇬",
@@ -1121,7 +1446,18 @@
           "opponent": "🇮🇷 Irán",
           "result": "d"
         }
-      ]
+      ],
+      "analysis": "Equipo solido con aspiraciones profundas. Ranking FIFA #35, 4 participaciones mundialistas. Ataque peligroso, rapido y con buena definicion. Defensa confiable, pocos errores graves. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 2E 0D). Clasifico 2°. Mejor marca: octavos. Saldo goleador positivo. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Australia",
+          "s": "1-1 (p)",
+          "res": "w",
+          "x": "Egipto 4-2 penales"
+        }
+      ],
+      "form_desc": "1V 2E 0D"
     },
     "Argentina": {
       "flag": "🇦🇷",
@@ -1161,7 +1497,18 @@
           "opponent": "🇯🇴 Jordania",
           "result": "w"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #1, 19 participaciones mundialistas. Potencia ofensiva elite con multiples recursos de gol. Defensa rocosa, de las mas solidas del torneo. Porteria bien custodiada por un guardameta de nivel. Paso perfecto en grupos (3V). Primero de grupo. Gloria pasada, la presion del favorito. Diferencial de gol amplio. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Cabo Verde",
+          "s": "3-2",
+          "res": "w",
+          "x": "3-2 t.e."
+        }
+      ],
+      "form_desc": "3V 0E 0D"
     },
     "Cabo Verde": {
       "flag": "🇨🇻",
@@ -1201,7 +1548,18 @@
           "opponent": "🇸🇦 Arabia Saudita",
           "result": "d"
         }
-      ]
+      ],
+      "analysis": "Escuadra competitiva que puede dar sorpresas. Ranking FIFA #67, 1 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Talon de Aquiles: defensa irregular que concede ocasiones. Porteria bien custodiada por un guardameta de nivel. Clasificacion ajustada (0V 3E 0D). Clasifico 2°. Debutante en mundiales. Saldo de gol neutral. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Argentina",
+          "s": "2-3",
+          "res": "l",
+          "x": "3-2 t.e."
+        }
+      ],
+      "form_desc": "0V 3E 0D"
     },
     "Colombia": {
       "flag": "🇨🇴",
@@ -1241,7 +1599,18 @@
           "opponent": "🇵🇹 Portugal",
           "result": "d"
         }
-      ]
+      ],
+      "analysis": "Candidato al titulo. Ranking FIFA #17, 7 participaciones mundialistas. Potencia ofensiva elite con multiples recursos de gol. Defensa confiable, pocos errores graves. Porteria bien custodiada por un guardameta de nivel. Campana solida (2V 1E 0D). Primero de grupo. Techo: cuartos de final. Saldo goleador positivo. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Ghana",
+          "s": "1-0",
+          "res": "w",
+          "x": ""
+        }
+      ],
+      "form_desc": "2V 1E 0D"
     },
     "Ghana": {
       "flag": "🇬🇭",
@@ -1281,7 +1650,18 @@
           "opponent": "🇭🇷 Croacia",
           "result": "l"
         }
-      ]
+      ],
+      "analysis": "Escuadra competitiva que puede dar sorpresas. Ranking FIFA #52, 5 participaciones mundialistas. Ofensiva funcional pero sin un killer de area. Talon de Aquiles: defensa irregular que concede ocasiones. Porteria bien custodiada por un guardameta de nivel. Clasificacion sin brillo (1V 1E 1D). Clasifico 3°. Techo: cuartos de final. Saldo de gol neutral. ",
+      "ko_matches": [
+        {
+          "r": "16avos de final",
+          "o": "Colombia",
+          "s": "0-1",
+          "res": "l",
+          "x": ""
+        }
+      ],
+      "form_desc": "1V 1E 1D"
     }
   },
   "rounds": [
@@ -1468,7 +1848,7 @@
         {
           "id": 101,
           "date": "4 jul 14:00",
-          "home": "Canada",
+          "home": "Canadá",
           "away": "Marruecos",
           "hscore": 0,
           "ascore": 3,
@@ -1501,7 +1881,7 @@
         {
           "id": 104,
           "date": "5 jul 21:00",
-          "home": "Mexico",
+          "home": "México",
           "away": "Inglaterra",
           "hscore": null,
           "ascore": null,
@@ -1512,7 +1892,7 @@
         {
           "id": 105,
           "date": "6 jul 16:00",
-          "home": "Espana",
+          "home": "España",
           "away": "Portugal",
           "hscore": null,
           "ascore": null,
@@ -1523,7 +1903,7 @@
         {
           "id": 106,
           "date": "6 jul 21:00",
-          "home": "Belgica",
+          "home": "Bélgica",
           "away": "EE.UU.",
           "hscore": null,
           "ascore": null,
