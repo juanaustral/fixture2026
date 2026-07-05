@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-04T20:35:00-03:00",
+  "updated": "2026-07-05T06:28:27-03:00",
   "source": "Flashscore / Yahoo Sports",
-  "note": "Octavos: Marruecos 3-0 Canada (completado). Francia 1-0 Paraguay (completado). Resto el 5-7 jul.",
+  "note": "Octavos: Francia 1-0 Paraguay, Marruecos 3-0 Canada (completados). Brasil-Noruega y Mexico-Inglaterra el 5 jul. Espana-Portugal y Belgica-EE.UU. el 6 jul. Egipto-Argentina y Suiza-Colombia el 7 jul.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1942,7 +1942,7 @@
           "id": 201,
           "date": "9 jul 17:00",
           "home": "Marruecos",
-          "away": "Gan. O2",
+          "away": "Francia",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
