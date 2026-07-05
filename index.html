@@ -233,11 +233,7 @@ body{
 <div class="header">
   <div class="header-inner">
     <h1>
-      <svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5">
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" opacity=".4"/>
-        <circle cx="12" cy="12" r="4" fill="rgba(255,255,255,.15)"/>
-      </svg>
+      <img src="ball.png" class="ball-icon" alt="">
       Fixture 2026
     </h1>
     <div class="meta">
@@ -265,7 +261,7 @@ var API='https://raw.githubusercontent.com/juanaustral/fixture2026/main/data_ko.
 var D=null,T={};
 var VC=37;
 var CL=[
-  {v:37,date:'5 jul',text:'Header sticky, mas grande, pelota mas rapida, version link sin dotted.'},
+  {v:37,date:'5 jul',text:'Header sticky, mas grande. Pelota Adidas girando. Version link sin HTML entity.'},
   {v:36,date:'5 jul',text:'Francia confirmado en cuartos vs Marruecos.'},
   {v:35,date:'4 jul',text:'Header redisenado con gradiente mundialista + badge credito + fondo con trofeos y pelotas flotando.'},
   {v:34,date:'4 jul',text:'Pills coloreadas, modal dual, critica textual.'},
@@ -411,8 +407,8 @@ function tc(){
 }
 
 function fv(iso){
-  if(!iso||iso==='?')return 'v'+VC+' &middot; --';
-  try{var d=new Date(iso);return 'v'+VC+' &middot; '+('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2)+' '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2)}catch(e){return 'v'+VC+' &middot; '+iso}
+  if(!iso||iso==='?')return 'v'+VC+' · --';
+  try{var d=new Date(iso);return 'v'+VC+' · '+('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2)+' '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2)}catch(e){return 'v'+VC+' · '+iso}
 }
 function ut(){
   var n=new Date(),nx=new Date(Math.ceil(n.getTime()/1800000)*1800000+480000);
