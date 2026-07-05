@@ -48,25 +48,25 @@ body{
 
 /* ── HEADER ── */
 .header{
-  position:relative;z-index:1;
+  position:sticky;top:0;z-index:10;
   background:linear-gradient(135deg,var(--blue) 0%,#1a2570 40%,var(--red) 70%,var(--green) 100%);
   padding:0;flex-shrink:0;
   box-shadow:0 2px 20px rgba(42,57,141,.25);
 }
 .header-inner{
-  display:flex;align-items:center;justify-content:center;gap:12px;
-  padding:14px 16px;flex-wrap:wrap;
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  padding:18px 20px;flex-wrap:wrap;
   background:rgba(0,0,0,.12);
   backdrop-filter:blur(4px);
 }
 .header h1{
-  font-size:1.2rem;font-weight:900;letter-spacing:-.5px;
+  font-size:1.35rem;font-weight:900;letter-spacing:-.5px;
   color:#fff;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.2);
   display:flex;align-items:center;gap:8px;
 }
 .header h1 .ball-icon{
-  display:inline-block;width:28px;height:28px;
-  animation:spin 6s linear infinite;
+  display:inline-block;width:30px;height:30px;
+  animation:spin 4s linear infinite;
 }
 @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
 
@@ -82,8 +82,8 @@ body{
 }
 .header .visor-link:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5)}
 .header .version-link{
-  font-size:.5rem;color:rgba(255,255,255,.6);text-decoration:none;
-  border-bottom:1px dotted rgba(255,255,255,.3);white-space:nowrap;
+  font-size:.55rem;color:rgba(255,255,255,.7);text-decoration:none;
+  font-weight:500;white-space:nowrap;transition:color .15s;
 }
 .header .version-link:hover{color:#fff}
 
@@ -106,9 +106,9 @@ body{
 .header .credit .name{font-weight:700;color:#fff}
 
 @media(max-width:700px){
-  .header-inner{gap:6px;padding:10px 8px}
-  .header h1{font-size:.9rem}
-  .header h1 .ball-icon{width:22px;height:22px}
+  .header-inner{gap:8px;padding:12px 10px}
+  .header h1{font-size:1rem}
+  .header h1 .ball-icon{width:24px;height:24px}
   .header .credit{font-size:.5rem;padding:3px 10px}
   .header .meta{font-size:.52rem;gap:4px}
 }
