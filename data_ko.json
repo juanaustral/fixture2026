@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T18:00:00-03:00",
+  "updated": "2026-07-06T18:14:48-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia",
   "note": "Oct 6 jul: España 1-0 Portugal (avanza a Cuartos vs ganador USA-Bélgica). Oct 6 jul: EE.UU. vs Bélgica. Oct 7 jul: Argentina-Egipto, Suiza-Colombia.",
   "teams": {
@@ -1924,7 +1924,7 @@
           "away": "Portugal",
           "hscore": 1,
           "ascore": 0,
-          "status": "upcoming",
+          "status": "played",
           "extra": null,
           "stadium": "AT&T Stadium, Dallas"
         },
@@ -1989,7 +1989,7 @@
         {
           "id": 203,
           "date": "10-11 jul",
-          "home": "Gan. O5",
+          "home": "España",
           "away": "Gan. O6",
           "hscore": null,
           "ascore": null,
