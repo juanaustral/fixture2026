@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-06T00:07:36-03:00",
+  "updated": "2026-07-06T18:00:00-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia",
-  "note": "Octavos 5 jul: Noruega 2-1 Brasil, Marruecos 3-0 Canada, Francia 1-0 Paraguay, Mexico 2-3 Inglaterra. Octavos restantes: Espana-Portugal y Belgica-EE.UU. el 6 jul. Egipto-Argentina y Suiza-Colombia el 7 jul.",
+  "note": "Oct 6 jul: España 1-0 Portugal (avanza a Cuartos vs ganador USA-Bélgica). Oct 6 jul: EE.UU. vs Bélgica. Oct 7 jul: Argentina-Egipto, Suiza-Colombia.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1112,6 +1112,13 @@
           "s": "3-0",
           "res": "w",
           "x": null
+        },
+        {
+          "r": "Octavos de final",
+          "o": "Portugal",
+          "s": "1-0",
+          "res": "w",
+          "x": null
         }
       ],
       "form_desc": "2V 1E 0D"
@@ -1214,6 +1221,13 @@
           "s": "2-1",
           "res": "w",
           "x": ""
+        },
+        {
+          "r": "Octavos de final",
+          "o": "España",
+          "s": "0-1",
+          "res": "l",
+          "x": null
         }
       ],
       "form_desc": "1V 2E 0D"
@@ -1908,8 +1922,8 @@
           "date": "6 jul 16:00",
           "home": "España",
           "away": "Portugal",
-          "hscore": null,
-          "ascore": null,
+          "hscore": 1,
+          "ascore": 0,
           "status": "upcoming",
           "extra": null,
           "stadium": "AT&T Stadium, Dallas"
