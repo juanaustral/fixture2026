@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-05T19:34:45-03:00",
+  "updated": "2026-07-06T00:07:36-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia",
-  "note": "Octavos 5 jul: Noruega 2-1 Brasil, Marruecos-France, Paraguay-Francia pend. Mexico-Inglaterra programado 5 jul 21:00. Octavos restantes: Espana-Portugal y Belgica-EE.UU. el 6 jul. Egipto-Argentina y Suiza-Colombia el 7 jul.",
+  "note": "Octavos 5 jul: Noruega 2-1 Brasil, Marruecos 3-0 Canada, Francia 1-0 Paraguay, Mexico 2-3 Inglaterra. Octavos restantes: Espana-Portugal y Belgica-EE.UU. el 6 jul. Egipto-Argentina y Suiza-Colombia el 7 jul.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1897,9 +1897,9 @@
           "date": "5 jul 21:00",
           "home": "México",
           "away": "Inglaterra",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 2,
+          "ascore": 3,
+          "status": "played",
           "extra": null,
           "stadium": "Estadio Azteca, CDMX"
         },
@@ -1966,7 +1966,7 @@
           "id": 202,
           "date": "10-11 jul",
           "home": "Noruega",
-          "away": "Gan. M104",
+          "away": "Inglaterra",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
