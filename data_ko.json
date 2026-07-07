@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-07T11:35:11-03:00",
+  "updated": "2026-07-07T12:00:00-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia",
-  "note": "Oct 6 jul: España 1-0 Portugal (completado). Bélgica 4-1 EE.UU. (completado). Cuartos: España vs Bélgica. Oct 7 jul: Argentina-Egipto, Suiza-Colombia.",
+  "note": "Oct 6 jul: Espana 1-0 Portugal (completado). Belgica 4-1 EE.UU. (completado). Cuartos: Espana vs Belgica. Oct 7 jul: Argentina-Egipto (13:00), Suiza-Colombia (17:00) — en progreso.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1958,10 +1958,9 @@
           "date": "7 jul 13:00",
           "home": "Egipto",
           "away": "Argentina",
-          "hscore": 0,
-          "ascore": 1,
-          "status": "played",
-          "extra": null,
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming",
           "stadium": "Mercedes-Benz Stadium, Atlanta"
         },
         {
@@ -1969,10 +1968,9 @@
           "date": "7 jul 17:00",
           "home": "Suiza",
           "away": "Colombia",
-          "hscore": 2,
-          "ascore": 1,
-          "status": "played",
-          "extra": null,
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming",
           "stadium": "BC Place, Vancouver"
         }
       ]
@@ -2012,13 +2010,13 @@
         },
         {
           "id": 204,
-          "date": "10-11 jul",
-          "home": "🇦🇷 Argentina",
-          "away": "🇨🇭 Suiza",
+          "date": "11 jul 21:00",
+          "home": "Gan. M107",
+          "away": "Gan. M108",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
-          "stadium": "—"
+          "stadium": "Arrowhead Stadium, Kansas City"
         }
       ]
     },
