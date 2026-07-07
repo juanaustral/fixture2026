@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-06T18:14:48-03:00",
+  "updated": "2026-07-06T20:30:00-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia",
-  "note": "Oct 6 jul: España 1-0 Portugal (avanza a Cuartos vs ganador USA-Bélgica). Oct 6 jul: EE.UU. vs Bélgica. Oct 7 jul: Argentina-Egipto, Suiza-Colombia.",
+  "note": "Oct 6 jul: España 1-0 Portugal (avanza a Cuartos vs ganador USA-Bélgica). Oct 6 jul: EE.UU. 1-3 Bélgica (en juego 75'). Oct 7 jul: Argentina-Egipto, Suiza-Colombia.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1933,9 +1933,9 @@
           "date": "6 jul 21:00",
           "home": "Bélgica",
           "away": "EE.UU.",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 3,
+          "ascore": 1,
+          "status": "live",
           "extra": null,
           "stadium": "Lumen Field, Seattle"
         },
