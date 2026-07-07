@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-07T12:00:00-03:00",
+  "updated": "2026-07-07T15:06:00-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia",
-  "note": "Oct 6 jul: Espana 1-0 Portugal (completado). Belgica 4-1 EE.UU. (completado). Cuartos: Espana vs Belgica. Oct 7 jul: Argentina-Egipto (13:00), Suiza-Colombia (17:00) — en progreso.",
+  "note": "Oct 7 jul: Argentina 3-2 Egipto (completado). Suiza vs Colombia pendiente. Cuartos: Argentina vs Gan. M108.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1497,6 +1497,13 @@
           "s": "1-1 (p)",
           "res": "w",
           "x": "Egipto 4-2 penales"
+        },
+        {
+          "r": "Octavos de final",
+          "o": "Argentina",
+          "s": "2-3",
+          "res": "l",
+          "x": null
         }
       ],
       "form_desc": "1V 2E 0D"
@@ -1548,6 +1555,13 @@
           "s": "3-2",
           "res": "w",
           "x": "3-2 t.e."
+        },
+        {
+          "r": "Octavos de final",
+          "o": "Egipto",
+          "s": "3-2",
+          "res": "w",
+          "x": null
         }
       ],
       "form_desc": "3V 0E 0D"
@@ -1958,9 +1972,9 @@
           "date": "7 jul 13:00",
           "home": "Egipto",
           "away": "Argentina",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 2,
+          "ascore": 3,
+          "status": "played",
           "stadium": "Mercedes-Benz Stadium, Atlanta"
         },
         {
@@ -2011,7 +2025,7 @@
         {
           "id": 204,
           "date": "11 jul 21:00",
-          "home": "Gan. M107",
+          "home": "Argentina",
           "away": "Gan. M108",
           "hscore": null,
           "ascore": null,
