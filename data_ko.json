@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T23:55:00-03:00",
+  "updated": "2026-07-07T11:35:11-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia",
   "note": "Oct 6 jul: España 1-0 Portugal (completado). Bélgica 4-1 EE.UU. (completado). Cuartos: España vs Bélgica. Oct 7 jul: Argentina-Egipto, Suiza-Colombia.",
   "teams": {
@@ -1958,9 +1958,9 @@
           "date": "7 jul 13:00",
           "home": "Egipto",
           "away": "Argentina",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 0,
+          "ascore": 1,
+          "status": "played",
           "extra": null,
           "stadium": "Mercedes-Benz Stadium, Atlanta"
         },
@@ -1969,9 +1969,9 @@
           "date": "7 jul 17:00",
           "home": "Suiza",
           "away": "Colombia",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 2,
+          "ascore": 1,
+          "status": "played",
           "extra": null,
           "stadium": "BC Place, Vancouver"
         }
@@ -2013,8 +2013,8 @@
         {
           "id": 204,
           "date": "10-11 jul",
-          "home": "Gan. O7",
-          "away": "Gan. O8",
+          "home": "🇦🇷 Argentina",
+          "away": "🇨🇭 Suiza",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
