@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-07T15:06:00-03:00",
+  "updated": "2026-07-07T21:30:00-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia",
-  "note": "Oct 7 jul: Argentina 3-2 Egipto (completado). Suiza vs Colombia pendiente. Cuartos: Argentina vs Gan. M108.",
+  "note": "Oct 7 jul completados: Argentina 3-2 Egipto, Suiza 0-0 Colombia (4-3 penales). Cuartos: Argentina vs Suiza.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1344,6 +1344,13 @@
           "s": "2-0",
           "res": "w",
           "x": null
+        },
+        {
+          "r": "Octavos de final",
+          "o": "Colombia",
+          "s": "0-0 (p)",
+          "res": "w",
+          "x": "Suiza 4-3 penales"
         }
       ],
       "form_desc": "2V 1E 0D"
@@ -1664,6 +1671,13 @@
           "s": "1-0",
           "res": "w",
           "x": ""
+        },
+        {
+          "r": "Octavos de final",
+          "o": "Suiza",
+          "s": "1-1 (p)",
+          "res": "l",
+          "x": "Suiza 4-3 penales"
         }
       ],
       "form_desc": "2V 1E 0D"
@@ -1715,6 +1729,13 @@
           "s": "0-1",
           "res": "l",
           "x": ""
+        },
+        {
+          "r": "Octavos de final",
+          "o": "Suiza",
+          "s": "0-0 (p)",
+          "res": "l",
+          "x": "Suiza 4-3 penales"
         }
       ],
       "form_desc": "1V 1E 1D"
@@ -1982,10 +2003,11 @@
           "date": "7 jul 17:00",
           "home": "Suiza",
           "away": "Colombia",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
-          "stadium": "BC Place, Vancouver"
+          "hscore": 0,
+          "ascore": 0,
+          "status": "played",
+          "stadium": "BC Place, Vancouver",
+          "extra": "Suiza 4-3 penales"
         }
       ]
     },
@@ -2026,7 +2048,7 @@
           "id": 204,
           "date": "11 jul 21:00",
           "home": "Argentina",
-          "away": "Gan. M108",
+          "away": "Suiza",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
