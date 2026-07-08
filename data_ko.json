@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-07T21:30:00-03:00",
+  "updated": "2026-07-08T12:00:00-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia",
-  "note": "Oct 7 jul completados: Argentina 3-2 Egipto, Suiza 0-0 Colombia (4-3 penales). Cuartos: Argentina vs Suiza.",
+  "note": "Oct 7 jul completados: Argentina 3-2 Egipto, Suiza 0-0 Colombia (4-3 penales). Cuartos: Marruecos-Francia (9 jul), Noruega-Inglaterra (11 jul), España-Belgica (10 jul), Argentina-Suiza (11 jul).",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -2026,27 +2026,27 @@
         },
         {
           "id": 202,
-          "date": "10-11 jul",
+          "date": "11 jul 18:00",
           "home": "Noruega",
           "away": "Inglaterra",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
-          "stadium": "—"
+          "stadium": "Hard Rock Stadium, Miami"
         },
         {
           "id": 203,
-          "date": "10-11 jul",
+          "date": "10 jul 16:00",
           "home": "España",
           "away": "Bélgica",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
-          "stadium": "—"
+          "stadium": "SoFi Stadium, Inglewood"
         },
         {
           "id": 204,
-          "date": "11 jul 21:00",
+          "date": "11 jul 22:00",
           "home": "Argentina",
           "away": "Suiza",
           "hscore": null,
