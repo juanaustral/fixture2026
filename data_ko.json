@@ -1689,7 +1689,7 @@
         {
           "r": "Octavos de final",
           "o": "Suiza",
-          "s": "1-1 (p)",
+          "s": "0-0 (p)",
           "res": "l",
           "x": "Suiza 4-3 penales"
         }
@@ -1743,13 +1743,6 @@
           "s": "0-1",
           "res": "l",
           "x": ""
-        },
-        {
-          "r": "Octavos de final",
-          "o": "Suiza",
-          "s": "0-0 (p)",
-          "res": "l",
-          "x": "Suiza 4-3 penales"
         }
       ],
       "form_desc": "1V 1E 1D"
@@ -2040,16 +2033,6 @@
         },
         {
           "id": 202,
-          "date": "11 jul 18:00",
-          "home": "Noruega",
-          "away": "Inglaterra",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
-          "stadium": "Hard Rock Stadium, Miami"
-        },
-        {
-          "id": 203,
           "date": "10 jul 16:00",
           "home": "España",
           "away": "Bélgica",
@@ -2057,6 +2040,16 @@
           "ascore": null,
           "status": "upcoming",
           "stadium": "SoFi Stadium, Inglewood"
+        },
+        {
+          "id": 203,
+          "date": "11 jul 18:00",
+          "home": "Noruega",
+          "away": "Inglaterra",
+          "hscore": null,
+          "ascore": null,
+          "status": "upcoming",
+          "stadium": "Hard Rock Stadium, Miami"
         },
         {
           "id": 204,
@@ -2076,7 +2069,7 @@
         {
           "id": 301,
           "date": "14-15 jul",
-          "home": "Gan. C1",
+          "home": "Francia",
           "away": "Gan. C2",
           "hscore": null,
           "ascore": null,
