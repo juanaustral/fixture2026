@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-10T07:00:00-03:00",
-  "source": "Flashscore / Yahoo Sports / Wikipedia / FIFA",
-  "note": "Cuartos: Francia 2-0 Marruecos (9 jul). Francia a Semifinales. Hoy: España vs Bélgica (16:00 ARG). Pendientes: Noruega-Inglaterra (11 jul), Argentina-Suiza (11 jul).",
+  "updated": "2026-07-10T21:50:00-03:00",
+  "source": "Flashscore / Yahoo Sports / Wikipedia / FIFA / The Athletic",
+  "note": "Cuartos: Francia 2-0 Marruecos (9 jul), Espana 2-1 Belgica (10 jul). Francia y Espana a Semis. Pendientes C2 y C4: Noruega-Inglaterra (11 jul), Argentina-Suiza (11 jul).",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -929,6 +929,13 @@
           "s": "4-1",
           "res": "w",
           "x": null
+        },
+        {
+          "r": "Cuartos de final",
+          "o": "España",
+          "s": "1-2",
+          "res": "l",
+          "x": null
         }
       ],
       "form_desc": "1V 2E 0D"
@@ -1145,6 +1152,13 @@
           "r": "Octavos de final",
           "o": "Portugal",
           "s": "1-0",
+          "res": "w",
+          "x": null
+        },
+        {
+          "r": "Cuartos de final",
+          "o": "Bélgica",
+          "s": "2-1",
           "res": "w",
           "x": null
         }
@@ -2036,9 +2050,9 @@
           "date": "10 jul 16:00",
           "home": "España",
           "away": "Bélgica",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
+          "hscore": 2,
+          "ascore": 1,
+          "status": "played",
           "stadium": "SoFi Stadium, Inglewood"
         },
         {
@@ -2079,7 +2093,7 @@
         {
           "id": 302,
           "date": "14-15 jul",
-          "home": "Gan. C3",
+          "home": "España",
           "away": "Gan. C4",
           "hscore": null,
           "ascore": null,
