@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-10T21:50:00-03:00",
+  "updated": "2026-07-11T20:58:38-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia / FIFA / The Athletic",
-  "note": "Cuartos: Francia 2-0 Marruecos (9 jul), Espana 2-1 Belgica (10 jul). Francia a S1 vs C2 (Noruega/Inglaterra). Espana a S2 vs C4 (Argentina/Suiza).",
+  "note": "Cuartos: Francia 2-0 Marruecos (9 jul), Espana 2-1 Belgica (10 jul), Noruega 1-2 Inglaterra t.e. (11 jul). Francia a S1 vs Inglaterra. Espana a S2 vs C4 (Argentina/Suiza).",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -551,6 +551,13 @@
           "s": "2-1",
           "res": "w",
           "x": null
+        },
+        {
+          "r": "Cuartos de final",
+          "o": "Inglaterra",
+          "s": "1-2",
+          "res": "l",
+          "x": "1-2 t.e."
         }
       ],
       "form_desc": "2V 0E 1D"
@@ -834,6 +841,13 @@
           "s": "3-2",
           "res": "w",
           "x": null
+        },
+        {
+          "r": "Cuartos de final",
+          "o": "Noruega",
+          "s": "2-1",
+          "res": "w",
+          "x": "1-2 t.e."
         }
       ],
       "form_desc": "2V 1E 0D"
@@ -2064,10 +2078,11 @@
           "date": "11 jul 18:00",
           "home": "Noruega",
           "away": "Inglaterra",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
-          "stadium": "Hard Rock Stadium, Miami"
+          "hscore": 1,
+          "ascore": 2,
+          "status": "played",
+          "stadium": "Hard Rock Stadium, Miami",
+          "extra": "1-2 t.e."
         },
         {
           "id": 203,
@@ -2098,7 +2113,7 @@
           "id": 301,
           "date": "14-15 jul",
           "home": "Francia",
-          "away": "Gan. C2",
+          "away": "Inglaterra",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
