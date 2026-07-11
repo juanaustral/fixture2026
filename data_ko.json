@@ -1,7 +1,7 @@
 {
   "updated": "2026-07-10T21:50:00-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia / FIFA / The Athletic",
-  "note": "Cuartos: Francia 2-0 Marruecos (9 jul), Espana 2-1 Belgica (10 jul). Francia y Espana a Semis. Pendientes C2 y C4: Noruega-Inglaterra (11 jul), Argentina-Suiza (11 jul).",
+  "note": "Cuartos: Francia 2-0 Marruecos (9 jul), Espana 2-1 Belgica (10 jul). Francia a S1 vs C2 (Noruega/Inglaterra). Espana a S2 vs C4 (Argentina/Suiza).",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -718,6 +718,13 @@
           "s": "2-0",
           "res": "w",
           "x": null
+        },
+        {
+          "r": "Octavos de final",
+          "o": "Inglaterra",
+          "s": "2-3",
+          "res": "l",
+          "x": null
         }
       ],
       "form_desc": "3V 0E 0D"
@@ -818,6 +825,13 @@
           "r": "16avos de final",
           "o": "RD Congo",
           "s": "2-1",
+          "res": "w",
+          "x": null
+        },
+        {
+          "r": "Octavos de final",
+          "o": "México",
+          "s": "3-2",
           "res": "w",
           "x": null
         }
@@ -2047,16 +2061,6 @@
         },
         {
           "id": 202,
-          "date": "10 jul 16:00",
-          "home": "España",
-          "away": "Bélgica",
-          "hscore": 2,
-          "ascore": 1,
-          "status": "played",
-          "stadium": "SoFi Stadium, Inglewood"
-        },
-        {
-          "id": 203,
           "date": "11 jul 18:00",
           "home": "Noruega",
           "away": "Inglaterra",
@@ -2064,6 +2068,16 @@
           "ascore": null,
           "status": "upcoming",
           "stadium": "Hard Rock Stadium, Miami"
+        },
+        {
+          "id": 203,
+          "date": "10 jul 16:00",
+          "home": "España",
+          "away": "Bélgica",
+          "hscore": 2,
+          "ascore": 1,
+          "status": "played",
+          "stadium": "SoFi Stadium, Inglewood"
         },
         {
           "id": 204,
