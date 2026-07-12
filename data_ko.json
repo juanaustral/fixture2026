@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-12T12:00:00-03:00",
+  "updated": "2026-07-12T01:50:49-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia / FIFA / The Athletic",
-  "note": "Cuartos: Francia 2-0 Marruecos (9 jul), Noruega 1-2 Inglaterra t.e. (11 jul), Espana 2-1 Belgica (10 jul), Argentina 1-0 Suiza (11 jul, Mac Allister 10'). Semifinales: Francia vs Inglaterra, Espana vs Argentina.",
+  "note": "Cuartos: Francia 2-0 Marruecos (9 jul), Noruega 1-2 Inglaterra t.e. (11 jul), Espana 2-1 Belgica (10 jul), Argentina 3-1 Suiza t.e. (11 jul, Mac Allister 10', Alvarez 112', L. Martinez 120+1'; Ndoye 67'). Semifinales: Francia vs Espana, Inglaterra vs Argentina.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1411,7 +1411,7 @@
         {
           "r": "Cuartos de final",
           "o": "Argentina",
-          "s": "0-1",
+          "s": "1-3",
           "res": "l",
           "x": null
         }
@@ -1636,7 +1636,7 @@
         {
           "r": "Cuartos de final",
           "o": "Suiza",
-          "s": "1-0",
+          "s": "3-1",
           "res": "w",
           "x": null
         }
@@ -2113,11 +2113,11 @@
           "date": "11 jul 22:00",
           "home": "Argentina",
           "away": "Suiza",
-          "hscore": 1,
-          "ascore": 0,
+          "hscore": 3,
+          "ascore": 1,
           "status": "played",
           "stadium": "Arrowhead Stadium, Kansas City",
-          "extra": null
+          "extra": "3-1 t.e."
         }
       ]
     },
@@ -2128,7 +2128,7 @@
           "id": 301,
           "date": "14-15 jul",
           "home": "Francia",
-          "away": "Inglaterra",
+          "away": "España",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
@@ -2137,7 +2137,7 @@
         {
           "id": 302,
           "date": "14-15 jul",
-          "home": "España",
+          "home": "Inglaterra",
           "away": "Argentina",
           "hscore": null,
           "ascore": null,
