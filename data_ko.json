@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-11T20:58:38-03:00",
+  "updated": "2026-07-12T00:10:26-03:00",
   "source": "Flashscore / Yahoo Sports / Wikipedia / FIFA / The Athletic",
-  "note": "Cuartos: Francia 2-0 Marruecos (9 jul), Espana 2-1 Belgica (10 jul), Noruega 1-2 Inglaterra t.e. (11 jul). Francia a S1 vs Inglaterra. Espana a S2 vs C4 (Argentina/Suiza).",
+  "note": "Cuartos: Francia 2-0 Marruecos (9 jul), Noruega 1-2 Inglaterra t.e. (11 jul), Espana 2-1 Belgica (10 jul), Argentina 1-0 Suiza (11 jul). Semifinales: Francia vs Inglaterra, Espana vs Argentina.",
   "teams": {
     "Sudáfrica": {
       "flag": "🇿🇦",
@@ -1407,6 +1407,13 @@
           "s": "0-0 (p)",
           "res": "w",
           "x": "Suiza 4-3 penales"
+        },
+        {
+          "r": "Cuartos de final",
+          "o": "Argentina",
+          "s": "0-1",
+          "res": "l",
+          "x": null
         }
       ],
       "form_desc": "2V 1E 0D"
@@ -1623,6 +1630,13 @@
           "r": "Octavos de final",
           "o": "Egipto",
           "s": "3-2",
+          "res": "w",
+          "x": null
+        },
+        {
+          "r": "Cuartos de final",
+          "o": "Suiza",
+          "s": "1-0",
           "res": "w",
           "x": null
         }
@@ -2099,10 +2113,11 @@
           "date": "11 jul 22:00",
           "home": "Argentina",
           "away": "Suiza",
-          "hscore": null,
-          "ascore": null,
-          "status": "upcoming",
-          "stadium": "Arrowhead Stadium, Kansas City"
+          "hscore": 1,
+          "ascore": 0,
+          "status": "played",
+          "stadium": "Arrowhead Stadium, Kansas City",
+          "extra": null
         }
       ]
     },
@@ -2123,7 +2138,7 @@
           "id": 302,
           "date": "14-15 jul",
           "home": "España",
-          "away": "Gan. C4",
+          "away": "Argentina",
           "hscore": null,
           "ascore": null,
           "status": "upcoming",
