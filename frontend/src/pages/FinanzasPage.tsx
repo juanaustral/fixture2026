@@ -52,8 +52,8 @@ export function FinanzasPage() {
     setError(null)
     try {
       const [servRes, resumRes] = await Promise.all([
-        fetch('/api/finanzas/servicios'),
-        fetch('/api/finanzas/resumen-tarjeta'),
+        fetch('/api/finanzas/services'),
+        fetch('/api/finanzas/credit-card-statements'),
       ])
       if (servRes.ok) {
         const data = await servRes.json()
@@ -72,7 +72,7 @@ export function FinanzasPage() {
 
   async function saveServicio() {
     try {
-      const res = await fetch('/api/finanzas/servicios', {
+      const res = await fetch('/api/finanzas/services', {
         method: editing ? 'PUT' : 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editing ? { ...form, id: editing.id } : form),
@@ -89,7 +89,7 @@ export function FinanzasPage() {
 
   async function deleteServicio(id: string) {
     try {
-      const res = await fetch(`/api/finanzas/servicios?id=${id}`, { method: 'DELETE' })
+      const res = await fetch(`/api/finanzas/services?id=${id}`, { method: 'DELETE' })
       if (!res.ok) throw new Error(`Error ${res.status}`)
       await loadData()
     } catch (e) {
@@ -99,7 +99,7 @@ export function FinanzasPage() {
 
   async function saveResumen() {
     try {
-      const res = await fetch('/api/finanzas/resumen-tarjeta', {
+      const res = await fetch('/api/finanzas/credit-card-statements', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(resumenForm),

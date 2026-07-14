@@ -9,7 +9,7 @@ import ReactMarkdown from 'react-markdown'
 interface TreeNode {
   name: string
   path: string
-  type: 'file' | 'directory'
+  type: 'file' | 'folder' | 'directory'
   children?: TreeNode[]
 }
 
@@ -130,14 +130,14 @@ export function NotasPage() {
           }`}
           style={{ paddingLeft: `${12 + depth * 16}px` }}
           onClick={() => {
-            if (node.type === 'directory') {
+            if (node.type === 'folder' || node.type === 'directory') {
               toggleExpand(node.path)
             } else {
               loadContent(node.path)
             }
           }}
         >
-          {node.type === 'directory' ? (
+          {node.type === 'folder' || node.type === 'directory' ? (
             <>
               {expanded.has(node.path) ? <ChevronDown size={14} className="shrink-0" /> : <ChevronRight size={14} className="shrink-0" />}
               <Folder size={16} className="shrink-0 text-yellow-500" />
@@ -150,7 +150,7 @@ export function NotasPage() {
           )}
           <span className="truncate">{node.name}</span>
         </button>
-        {node.type === 'directory' && expanded.has(node.path) && node.children && (
+        {(node.type === 'folder' || node.type === 'directory') && expanded.has(node.path) && node.children && (
           <div>{renderTree(node.children, depth + 1)}</div>
         )}
       </div>

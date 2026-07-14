@@ -155,10 +155,11 @@ if not DEEPSEEK_KEY:
         with open("/root/.hermes/.env") as f:
             for line in f:
                 if line.startswith("DEEPSEEK_API_KEY="):
-                    DEEPSEEK_KEY = line.strip().split("=", 1)[1]
                     break
     except: pass
 
+
+# ── Cache en memoria (60s TTL) ──
 # ── Cache en memoria (60s TTL) ────────────────────────────────────────────
 _cache: dict[str, tuple[float, object]] = {}  # key -> (expiry_timestamp, value)
 _CACHE_TTL = 60  # seconds
@@ -1171,6 +1172,7 @@ async def akira_info():
 
     return info
 
+# ═══════════════════════════════════════════════════════════════════════════
 static_dir = BASE_DIR / "static"
 if static_dir.exists():
     app.mount("/", StaticFiles(directory=str(static_dir), html=True), name="static")

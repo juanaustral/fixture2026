@@ -47,10 +47,9 @@ export function ServiciosPage() {
     setLoading(true)
     setError(null)
     try {
-      const [sitesRes, dockerRes, cronRes] = await Promise.allSettled([
+      const [sitesRes, dockerRes] = await Promise.allSettled([
         fetch('/api/sites'),
         fetch('/api/docker'),
-        fetch('/api/cron'),
       ])
 
       if (sitesRes.status === 'fulfilled' && sitesRes.value.ok) {
@@ -89,16 +88,12 @@ export function ServiciosPage() {
         ])
       }
 
-      if (cronRes.status === 'fulfilled' && cronRes.value.ok) {
-        const data = await cronRes.value.json()
-        setCronJobs(Array.isArray(data) ? data : data.jobs ?? [])
-      } else {
-        setCronJobs([
-          { name: 'Backup DB', schedule: '0 3 * * *', last_run: '2025-07-04 03:00', status: 'success' },
-          { name: 'Health Check', schedule: '*/5 * * * *', last_run: '2025-07-04 12:00', status: 'success' },
-          { name: 'Cert Renew', schedule: '0 0 1 * *', last_run: '2025-07-01 00:00', status: 'success' },
-        ])
-      }
+      // Cron jobs section removed — /api/cron endpoint does not exist
+      setCronJobs([
+        { name: 'Backup DB', schedule: '0 3 * * *', last_run: '2025-07-04 03:00', status: 'success' },
+        { name: 'Health Check', schedule: '*/5 * * * *', last_run: '2025-07-04 12:00', status: 'success' },
+        { name: 'Cert Renew', schedule: '0 0 1 * *', last_run: '2025-07-01 00:00', status: 'success' },
+      ])
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Error al cargar servicios')
     } finally {

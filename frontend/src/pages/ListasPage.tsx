@@ -66,7 +66,7 @@ export function ListasPage() {
     setLoading(true)
     setError(null)
     try {
-      const res = await fetch('/api/listas')
+      const res = await fetch('/api/listas/items')
       if (!res.ok) throw new Error(`Error ${res.status}`)
       const data = await res.json()
       setItems(Array.isArray(data) ? data : data.items ?? [])
@@ -79,7 +79,7 @@ export function ListasPage() {
 
   async function saveItem() {
     try {
-      const res = await fetch('/api/listas', {
+      const res = await fetch('/api/listas/items', {
         method: editing ? 'PUT' : 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editing ? { ...form, id: editing.id } : form),
@@ -96,7 +96,7 @@ export function ListasPage() {
 
   async function deleteItem(id: string) {
     try {
-      const res = await fetch(`/api/listas?id=${id}`, { method: 'DELETE' })
+      const res = await fetch(`/api/listas/items?iid=${id}`, { method: 'DELETE' })
       if (!res.ok) throw new Error(`Error ${res.status}`)
       await loadItems()
     } catch (e) {
